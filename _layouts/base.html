@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  
+  {% include head.html %}
+
+  <body id="{{ page.title }}">
+    
+    <div class="wrapper">
+      
+      {% include header.html %}
+
+      <section>
+
+        <div id="container">
+          {{ content }}
+        </div>
+
+      </section>
+
+      {% include footer.html %}
+      
+    </div>
+
+    <script src="javascripts/scale.fix.js"></script>
+    {% include analytics.html %}
+
+  </body>
+</html>
