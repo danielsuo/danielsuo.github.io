@@ -3,6 +3,33 @@ layout: base
 title: home
 ---
 
-<p>&#8220;Men (and women) wanted for hazardous journey. Small wages. Bitter cold. Long months of complete darkness. Constant danger. Safe return doubtful. Honour and recognition in case of success.&#8221;</p>
+<!-- This loops through the paginated posts -->
 
-{{ site.posts }}
+{% for post in paginator.posts %}
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <p class="author">
+    <span class="date">{{ post.date | date: "%-d %B %Y" }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
+{% endfor %}
+
+<!-- Pagination links -->
+{% if paginator.previous_page or paginator.next_page %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <span><a href="{{ paginator.previous_page_path }}" class="previous">Previous</a></span>
+    {% else %}
+      <span>Previous</span>
+    {% endif %}
+
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+    {% if paginator.next_page %}
+      <span><a href="{{ paginator.next_page_path }}" class="next">Next</a></span>
+    {% else %}
+      <span>Next</span>
+    {% endif %}
+  </div>
+{% endif %}
