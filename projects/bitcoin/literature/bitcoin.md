@@ -98,7 +98,8 @@ The probability of an attacker catching up from a given deficit is analogous to 
 $$\begin{eqnarray}
    p & = & \textrm{probability an honest node finds the next block}\\
    q & = & \textrm{probability the attacker finds the next block}\\
-   q_z & = & \textrm{probability the attacker will ever catch up from z blocks behind}\\
+   q_z & = & \textrm{probability the attacker will ever catch up}\\
+       &   & \textrm{from z blocks behind}\\
 \end{eqnarray}$$
 
 $$ q_z = \begin{cases}
