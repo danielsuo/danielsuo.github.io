@@ -1,0 +1,15 @@
+{
+    "docs": [{
+        "id": 1,
+        "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+        "author": ["satoshi-nakamoto"],
+        "date": "October 31, 2008",
+        "slug": "bitcoin",
+        "formats": ["html", "pdf", "ext"],
+        "categories": ["cryptography", "economics", "bitcoin"],
+        "doctype": "essay",
+        "external": "https://bitcoin.org/bitcoin.pdf",
+        "review": true,
+        "link": "bitcoin.pdf"
+    }]
+}
