@@ -13,7 +13,7 @@ Borrowed heavily from the [Satoshi Nakamoto Institute](http://nakamotoinstitute.
     {% if resource.review %}
       (<a href="review/{{ resource.slug }}.html">Review</a>)
     {% endif %}
-    <a href="literature/{{ resource.link }}">{{ resource.title }}</a>
+    <a href="literature/{{ resource.slug }}.html">{{ resource.title }}</a>
   </li>
 {% endfor %}
 
