@@ -103,8 +103,8 @@ $$\begin{eqnarray}
 \end{eqnarray}$$
 
 $$ q_z = \begin{cases}
-    1 & if p \leq q \\ 
-    (q/p)^z & if p > q \\ 
+    1 & p \leq q \\ 
+    (q/p)^z & p > q \\ 
 \end{cases}$$
 
 Given our assumption that $$p>q$$, the probability drops exponentially as the number of blocks the attacker has to catch up with increases. With the odds against him, if he doesn't make a lucky lunge forward early on, his chances become vanishingly small as he falls further behind.
@@ -120,9 +120,9 @@ $$\lambda = z \frac{q}{p}$$
 To get the probability the attacker could still catch up now, we multiply the Poisson density for each amount of progress he could have made by the probability he could catch up from that point:
 
 $$ \sum_{k=0}^\infty \frac{\lambda^k e^{-\lambda}}{k!} \cdot
-  \left\{\begin{array}{rr}
-    (q/p)^{(z-k)} & if k \leq z \\
-    1 & if k > z
+  \left\{\begin{array}{rrr}
+    (q/p)^{(z-k)} & k \leq z \\
+    1 & k > z
   \end{array}\right\}
 $$
 

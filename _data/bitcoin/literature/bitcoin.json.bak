@@ -1,15 +1,5 @@
 {
     "docs": [{
-        "id": 4,
-        "title": "b-money",
-        "author": ["wei-dai"],
-        "date": "November 1998",
-        "slug": "b-money",
-        "formats": ["html", "txt", "ext"],
-        "categories": ["economics", "cryptography", "bitcoin", "Cypherpunk"],
-        "doctype": "essay",
-        "external": "http://www.weidai.com/bmoney.txt"
-    }, {
         "id": 5,
         "title": "Design of a Secure Timestamping Service with Minimal Trust Requirements",
         "author": ["henri-massias", "xavier-serret-avila", "jean-jacques-quisquater"],

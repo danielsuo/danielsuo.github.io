@@ -9,7 +9,16 @@
         "categories": ["cryptography", "economics", "bitcoin"],
         "doctype": "essay",
         "external": "https://bitcoin.org/bitcoin.pdf",
-        "review": true,
-        "link": "bitcoin.pdf"
+        "review": true
+    }, {
+        "id": 2,
+        "title": "b-money",
+        "author": ["wei-dai"],
+        "date": "November 1998",
+        "slug": "b-money",
+        "formats": ["html", "txt", "ext"],
+        "categories": ["economics", "cryptography", "bitcoin", "Cypherpunk"],
+        "doctype": "essay",
+        "external": "http://www.weidai.com/bmoney.txt"
     }]
 }
