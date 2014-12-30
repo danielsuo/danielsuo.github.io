@@ -20,5 +20,14 @@
         "categories": ["economics", "cryptography", "bitcoin", "Cypherpunk"],
         "doctype": "essay",
         "external": "http://www.weidai.com/bmoney.txt"
+    }, {
+        "id": 3,
+        "title": "Design of a Secure Timestamping Service with Minimal Trust Requirements",
+        "author": ["henri-massias", "xavier-serret-avila", "jean-jacques-quisquater"],
+        "date": "May 1999",
+        "slug": "secure-timestamping-service",
+        "formats": ["unavailable"],
+        "categories": ["cryptography"],
+        "doctype": "journal"
     }]
 }

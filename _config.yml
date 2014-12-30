@@ -3,3 +3,5 @@ description: Scientific progress goes 'boink'
 url: http://www.danielsuo.com
 
 paginate: 5
+kramdown:
+  smart_quotes:  lsquo,rsquo,ldquo,rdquo

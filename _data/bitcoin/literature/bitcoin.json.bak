@@ -1,14 +1,5 @@
 {
-    "docs": [{
-        "id": 5,
-        "title": "Design of a Secure Timestamping Service with Minimal Trust Requirements",
-        "author": ["henri-massias", "xavier-serret-avila", "jean-jacques-quisquater"],
-        "date": "May 1999",
-        "slug": "secure-timestamping-service",
-        "formats": ["unavailable"],
-        "categories": ["cryptography"],
-        "doctype": "journal"
-    }, {
+    "docs": [, {
         "id": 6,
         "title": "How to Time-Stamp a Digital Document",
         "author": ["stuart-haber", "w-scott-stornetta"],

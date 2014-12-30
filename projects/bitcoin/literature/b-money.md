@@ -1,7 +1,10 @@
 ---
 layout: base
-title: Bitcoin -- A Peer-to-Peer Electronic Cash System
+title: B-money
 ---
+
+# B-money
+Wei Dai ([original](b-money.txt))
 
 I am fascinated by Tim May's crypto-anarchy. Unlike the communities
 traditionally associated with the word "anarchy", in a crypto-anarchy the
