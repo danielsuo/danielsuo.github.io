@@ -29,7 +29,7 @@ Borrowed heavily from the [Satoshi Nakamoto Institute](http://nakamotoinstitute.
       
       {{ data[0].first }} {{ data[0].middle }} {{ data[0].last }}{% unless forloop.last %},{% endunless %}
     {% endfor %}
-    ({{ resource.date }})
+    ({{ resource.year }})
   </li>
 {% endfor %}
 
@@ -40,3 +40,11 @@ To provide explanations and context.
 
 ## New ideas
 To address limitations and introduce extensions.
+- Speed and efficiency of verification
+- Security of wallets
+- Side chains
+- Fee-setting mechanisms
+- Incentives for running nodes
+
+## Site improvements
+- Link references in each resource

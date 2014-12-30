@@ -1,14 +1,5 @@
 {
     "docs": [, {
-        "id": 6,
-        "title": "How to Time-Stamp a Digital Document",
-        "author": ["stuart-haber", "w-scott-stornetta"],
-        "date": "1991",
-        "slug": "time-stamp-digital-document",
-        "formats": ["unavailable"],
-        "categories": ["cryptography"],
-        "doctype": "journal"
-    }, {
         "id": 7,
         "title": "Improving the Efficiency and Reliability of Digital Time-Stamping",
         "author": ["dave-bayer", "stuart-haber", "w-scott-stornetta"],
