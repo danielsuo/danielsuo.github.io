@@ -3,6 +3,7 @@ layout: base
 title: projects
 ---
 
-<div id="container">
-<p>A work in progress</p>
-</div>
+# Projects
+This page is a work in progress.
+
+- [A family of bitcoin projects](bitcoin)

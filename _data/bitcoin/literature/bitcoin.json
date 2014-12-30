@@ -1,33 +1,30 @@
-{
-    "docs": [{
-        "id": 1,
-        "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
-        "author": ["satoshi-nakamoto"],
-        "date": "October 31, 2008",
-        "slug": "bitcoin",
-        "formats": ["html", "pdf", "ext"],
-        "categories": ["cryptography", "economics", "bitcoin"],
-        "doctype": "essay",
-        "external": "https://bitcoin.org/bitcoin.pdf",
-        "review": true
-    }, {
-        "id": 2,
-        "title": "b-money",
-        "author": ["wei-dai"],
-        "date": "November 1998",
-        "slug": "b-money",
-        "formats": ["html", "txt", "ext"],
-        "categories": ["economics", "cryptography", "bitcoin", "Cypherpunk"],
-        "doctype": "essay",
-        "external": "http://www.weidai.com/bmoney.txt"
-    }, {
-        "id": 3,
-        "title": "Design of a Secure Timestamping Service with Minimal Trust Requirements",
-        "author": ["henri-massias", "xavier-serret-avila", "jean-jacques-quisquater"],
-        "date": "May 1999",
-        "slug": "secure-timestamping-service",
-        "formats": ["unavailable"],
-        "categories": ["cryptography"],
-        "doctype": "journal"
-    }]
-}
+[{
+    "id": 1,
+    "title": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+    "author": ["satoshi-nakamoto"],
+    "date": "October 2008",
+    "slug": "bitcoin",
+    "formats": ["html", "pdf", "ext"],
+    "categories": ["cryptography", "economics", "bitcoin"],
+    "doctype": "essay",
+    "external": "https://bitcoin.org/bitcoin.pdf",
+}, {
+    "id": 2,
+    "title": "b-money",
+    "author": ["wei-dai"],
+    "date": "November 1998",
+    "slug": "b-money",
+    "formats": ["html", "txt", "ext"],
+    "categories": ["economics", "cryptography", "bitcoin", "Cypherpunk"],
+    "doctype": "essay",
+    "external": "http://www.weidai.com/bmoney.txt"
+}, {
+    "id": 3,
+    "title": "Design of a Secure Timestamping Service with Minimal Trust Requirements",
+    "author": ["henri-massias", "xavier-serret-avila", "jean-jacques-quisquater"],
+    "date": "May 1999",
+    "slug": "secure-timestamping-service",
+    "formats": ["unavailable"],
+    "categories": ["cryptography"],
+    "doctype": "journal"
+}]
