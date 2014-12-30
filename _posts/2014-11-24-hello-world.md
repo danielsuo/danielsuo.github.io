@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello, world!
-category: Coin.jl
+categories: [bitcoin, Crypto.jl, Coin.jl]
 ---
 
 I'm starting a new project and will be documenting my progress here. I'm exploring (B\|b)itcoin and will begin with reimplementing some basic parts of the protocol. I'll be using [`Julia`](http://julialang.org/).
