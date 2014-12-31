@@ -40,4 +40,14 @@
     "formats": ["unavailable"],
     "categories": ["cryptography"],
     "doctype": "journal"
+}, {
+    "id": 5,
+    "title": "Improving the Efficiency and Reliability of Digital Time-Stamping",
+    "author": ["dave-bayer", "stuart-haber", "w-scott-stornetta"],
+    "date": "March 1992",
+    "year": "1992",
+    "slug": "improving-time-stamping",
+    "formats": ["unavailable"],
+    "categories": ["cryptography"],
+    "doctype": "journal"
 }]

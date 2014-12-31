@@ -1,14 +1,5 @@
 {
     "docs": [, {
-        "id": 7,
-        "title": "Improving the Efficiency and Reliability of Digital Time-Stamping",
-        "author": ["dave-bayer", "stuart-haber", "w-scott-stornetta"],
-        "date": "March 1992",
-        "slug": "improving-time-stamping",
-        "formats": ["unavailable"],
-        "categories": ["cryptography"],
-        "doctype": "journal"
-    }, {
         "id": 8,
         "title": "Secure Names for Bit-Strings",
         "author": ["stuart-haber", "w-scott-stornetta"],
