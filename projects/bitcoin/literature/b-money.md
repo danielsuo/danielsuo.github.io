@@ -3,7 +3,7 @@ layout: base
 title: B-money
 ---
 
-# B-money
+## B-money
 Wei Dai ([original](b-money.txt))
 
 I am fascinated by Tim May's crypto-anarchy. Unlike the communities
@@ -115,9 +115,7 @@ protocol can probably be made more efficient and secure, but I hope this
 is a step toward making crypto-anarchy a practical as well as theoretical
 possibility.
 
--------
-
-Appendix A: alternative b-money creation
+### Appendix A: alternative b-money creation
 
 One of the more problematic parts in the b-money protocol is money
 creation. This part of the protocol requires that all of the account

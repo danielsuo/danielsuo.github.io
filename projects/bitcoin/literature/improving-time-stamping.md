@@ -3,17 +3,17 @@ layout: base
 title: Improving the Efficiency and Reliability of Digital Time-Stamping
 ---
 
-# Improving the Efficiency and Reliability of Digital Time-Stamping
+## Improving the Efficiency and Reliability of Digital Time-Stamping
 Dave Bayer, Stuart Haber, and W. Scott Stornetta ([original](improving-time-stamping.pdf))
 
-## Abstract
+### Abstract
 To establish that a document was created after a given moment in time, it is necessary to report events that could not have been predicted before they happened. To establish that a document was created before a given moment in time, it is necessary to cause an event based on the document, which can be observed by others. Cryptographic hash functions can be used both to report events succinctly, and to cause events based on documents without revealing their contents. Haber and Stornetta have proposed two schemes for digital time-stamping which rely on these principles [HaSt 91].
 
 We reexamine one of those protocols, addressing the resource constraint required for storage and verification of time-stamp certificates. By using trees, we show how to achieve an exponential increase in the publicity obtained for each time-stamping event, while reducing the storage and the computation required in order to validate a given certificate. 
 
 We show how time-stamping can be used in certain circumstances to extend the useful lifetime of different kinds of cryptographic certifications of authenticity, in the event that the certifying protocol is compromised. This can be applied to digital signatures, or to time-stamping itself, making the digital time-stamping process renewable.
 
-## 1. Introduction
+### 1. Introduction
 Causality fixes events in time. If an event was determined by certain earlier events and determines certain subsequent events, then the event is sandwiched securely into its place in history. Fundamentally, this is why paper documents have forensic qualities allowing them to be accurately dated and examined for signs of after-the-fact tampering. However, documents kept in digital form need not be closely tied to any physical medium, and tampering may not leave any tell-tale signs in the medium.
 
 Could an analogous notion of causality be applied to digital documents to correctly date them, and to make undetected tampering infeasible? Any solution would have to time-stamp the data itself, without any reliance on the properties of a physical medium, and would be especially useful and trusterwotyh if the date and time of the time-stamp could not be forged.
@@ -26,7 +26,7 @@ There are  several ways in which a cryptographic system can be compromised. For 
 
 Finally, in [§5](#5) we discuss the relationships between the different methods of digital time-stamping that have been proposed.
 
-## 2. <a name="2"></a>
+### 2. Hash functions<a name="2"></a>
 The principal tool we use in specifying digital time-stamping schemes, here as in [HaSt 91], is the idea of a cryptographic hash function. This is a function compressing digital documents of arbitrary length to bit-strings of a fixed length, for which it is computationally infeasible to find two different documents that are mapped by the function to the same _hash value_. (Such a pair is called a _collision_ for the hash function.) Hence it is infeasible to fabricate a document with a given hash value. In particular, a fragment of a document cannot be extended to a complete document with a given hash value, unless the fragment was known before the hash value was created. In brief, a hash value must follow its associated document in time.
 
 There are practical implementations of hash functions, for example those of Rivest [Riv 90] and of Brachtl, _et al_. [BC+ 88], which seem to be reasonably secure.
@@ -40,7 +40,7 @@ He gave a constructive proof of their existence, on the assumption that there ex
 
 In the rest of this paper, we will assume that a cryptographic hash function $$h$$ is given: either a particular practical implementation, or one that has been chosen at random from a collision-free family.
 
-## 3. Trees <a name="3"></a>
+### 3. Trees <a name="3"></a>
 In the linking scheme, the challenger of a time-stamp is satisfied by following the linked chain from the document in question to a time-stamp certificate that the challenger considers trustworthy. If a trustworthy certificate occurs about every $$N$$ documents, say, then the verification process may require as many as $$N$$ steps. We may reduce this cost from $$N$$ to $$\log N$$, as follows.
 
 Suppose we combine the hash values of two users' documents into one new hash value, and publicize only the combined hash value. (We will consider "publicized" value to be trustworthy.) Either participant, by saving his or her own document as well as the other contributing hash value, can later establish that the document existed before the time when the combined hash value was publicized.
@@ -51,14 +51,14 @@ Once hashing functions are chosen, such a scheme could be carried out like a wor
 
 At minimum, daily global winners could be recorded in newspaper advertisements, to end up indefinitely on library microfilm. The newspaper functions as a widely available public record whose long-term preservation at many locations makes tampering very difficult. An individual who retains the set of values tracing the path between his document and the hash value appearing in the newspaper could establish the time of his document, without any reliance on other records. Anyone who wishes to be able to resolve time-stamps to greater accuracy needs only to record time-stamp broadcasts to greater accuracy.
 
-## 4. Using time-stamping to extend the lifetime of a threatened crpytographic operation <a name="4"></a>
+### 4. Using time-stamping to extend the lifetime of a threatened crpytographic operation <a name="4"></a>
 The valid lifetime of a digitally signed document can be extended with digital time-stamping, in the following way. Imagine an implementation of a particular digital signature scheme, with a particular choice of key lengths, and consider a plaintext document $$D$$ and its digital signature $$\sigma$$ by a particular user. Now let the pair $$(D,\sigma)$$ be time-stamped. Some time later the signature may become invalid, for any of a variety reasons, including the compromise of the user's private key, an increase in available computing power making signatures with keys of that length unsafe or the discovery of a basic flaw in the signature scheme. At that point, the document-signature pair becomes questionable, because it may be possible for someone other than the original signer to create valid signatures.
 
 However, if the pair $$(D,\sigma)$$ was time-stamped at a time before the signature was compromised, then the pair still constintutes a valid signature. This is because it is known to have been created at a time when only legitimate users could have produced it. Its valididty is not in question even though new signatures generated by the compromised method might no longer be trustworthy.
 
 The same technique applies to other instances of cryptographic protocols. In particular, the techniques can be used to renew the time-stamping process itself. Once again, imagine an implementation of a particular time-stamping scheme, and consider the pair $$(D,C)$$, where $$C$$ is a valid time-stamp certificate (in this implementation) for the document $$D$$. If $$(D,C)$$ is time-stamped by an improved time-stamping method before the original method is compromised, then one has evidence not only that the document existed prior to the time of the new time-stamp, but that it existed at the time stated in the original certificate. Prior to the compromise of the old implementation, the only way to create a certificate was by legitimate means. (The ability to renew time-stamps was mentioned in [HaSt 91] but an incorrect method was given. The mistake of the previous work was in assuming that it is sufficient to renew the certificate alone, and not the document-certificate pair. This fails, of course, if the compromise in question is a method of computing hash collisions for the hash functions used in submitting time-stamp requests.)
 
-## 5. Different methods of time-stamping <a name="5"></a>
+### 5. Different methods of time-stamping <a name="5"></a>
 To date, three different digital time-stamping techniques have been proposed: linear linking, random witness and linking into trees. What is the relationship between them? Does one supersede the others? Initially, one might think that trees satisfy time-stamping requirements better than the two previously proposed methods, because the tree protocol seems to reduce storage requirements while increasing the number of interested parties who serve as witnesses. But there are other tradeoffs to consider.
 
 First we consider the linking protocol. In certain applications, such as a laboratory notebook, it is crucial not only to have a trustworthy date for each entry but also to establish in a trustworthy manner the exact sequence in which all entries were made. Linear linking of one entry to the next provides the most straightfoward means of achieving this.
@@ -68,7 +68,7 @@ Next we consider the difference between the random-witness method and the tree m
 Given these tradeoffs, we imagine that the three methods may be used in a complementary fashion, as the following example illustrates. An individual or company might use linear linking to time-stamp its own accounting records, sending the final summary value for a given time period to a service maintained by a group of individuals or parties. This service constructs linked trees at regular intervals. The root of each tree is then certified as a widely viewed event by using the random-witness protocol among the participants. In this way, individual and group storage needs can be minimized, and the number of events which require an official record of witnessing
 can be greatly reduced.
 
-# References
+### References
 1. [BC+ 88] B. O. Brachtl, D. Coppersmith, M. M. Hyden, S. M. Matyas, Jr., C. H. W. Meyer, J. Oseas, Sh. Pilpel, and M. Shilling. Data authentication using modification detection codes based on a public one way encryption function. U.S. Patent No. 4,908,861, issued March 13, 1990. (Cf. C. H. Meyer and M. Shilling, Secure program load with modification detection code. In Securicom 88: 6ème Congrès mondial de la protection et de la s´ecurit´e informatique et des communications, pp. 111–130 (Paris, 1988).)
 2. [Dam 87] I. Damgård. Collision-free hash functions and public-key signature schemes. In Advances in Cryptology—Eurocrypt ’87, Lecture Notes in Computer Science, Vol. 304, pp. 203–217, Springer-Verlag (Berlin, 1988).
 3. [HaSt 91] S. Haber, W. S. Stornetta, How to time-stamp a digital document, Journal of Cryptography, Vol. 3, No. 2, pp. 99–111 (1991). (Presented at Crypto ’90.)
