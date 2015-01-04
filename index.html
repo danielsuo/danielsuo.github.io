@@ -14,22 +14,3 @@ title: home
     {{ post.content }}
   </div>
 {% endfor %}
-
-<!-- Pagination links -->
-{% if paginator.previous_page or paginator.next_page %}
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <span><a href="{{ paginator.previous_page_path }}" class="previous">Previous</a></span>
-    {% else %}
-      <span>Previous</span>
-    {% endif %}
-
-    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-
-    {% if paginator.next_page %}
-      <span><a href="{{ paginator.next_page_path }}" class="next">Next</a></span>
-    {% else %}
-      <span>Next</span>
-    {% endif %}
-  </div>
-{% endif %}
