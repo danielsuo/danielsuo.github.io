@@ -1,33 +1,5 @@
 {
     "docs": [, {
-        "id": 8,
-        "title": "Secure Names for Bit-Strings",
-        "author": ["stuart-haber", "w-scott-stornetta"],
-        "date": "April 1997",
-        "slug": "secure-names-bit-strings",
-        "formats": ["pdf"],
-        "categories": ["cryptography"],
-        "doctype": "journal"
-    }, {
-        "id": 9,
-        "title": "Hashcash - A Denial of Service Counter-Measure",
-        "author": ["adam-back"],
-        "date": "August 1, 2002",
-        "slug": "hashcash",
-        "formats": ["pdf", "ext"],
-        "categories": ["cryptography"],
-        "doctype": "journal",
-        "external": "http://www.hashcash.org/papers/hashcash.pdf"
-    }, {
-        "id": 10,
-        "title": "Protocols for Public Key Cryptosystems",
-        "author": ["ralph-c-merkle"],
-        "date": "April 1978",
-        "slug": "public-key-cryptosystems",
-        "formats": ["unavailable"],
-        "categories": ["cryptography"],
-        "doctype": "journal"
-    }, {
         "id": 11,
         "title": "An Introduction to Probability Theory and Its Applications, Vol. I",
         "author": ["william-feller"],
