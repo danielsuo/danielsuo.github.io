@@ -161,6 +161,10 @@ social img {
   float:left;
 }
 
+.content {
+  text-align: justify;
+}
+
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {

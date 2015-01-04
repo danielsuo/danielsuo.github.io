@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: On artificial intelligence and the brain
+categories: [beliefs]
 ---
 
 I wouldn't read into the Wired hype too much. I would say the AI community agrees on a much less exciting set of statements:
@@ -16,7 +16,6 @@ Either way, I agree with the Cindy Crawford comment. The issue of human biases--
 There certainly are folks in the AI community who want to *replicate* the brain, but for now, it seems that many more are just interested in tackling challenging problems with whatever approach that might work. For recognition problems, hierarchical / recursive approaches are very promising (think OCR or speech recognition) because it just gets really tiring to write all these procedural rules for what cats look like.
 
 But things get more interesting when you move beyond software-level solutions to the hardware layer. For example, neuromorphic chips promise both reliable analog signaling and massively parallel computation. The published approaches look silly now (borderline ridiculous, actually), but it's an important area to research because...math says so: exaflops burn a lot of calories and aren't even sufficient after a few iterations.
-----
 
 I think AI and theoretical neuroscience/learning algorithms are super cool, but I had to silent-LOL at this sentence:
 

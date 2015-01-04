@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: On APIs and ecosystems
+categories: [beliefs]
 ---
 
 Michael Suo wrote:

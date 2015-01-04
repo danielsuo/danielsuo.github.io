@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: On reading a lot
+categories: [beliefs]
 ---
 
 http://danshipper.com/how-to-read-a-lot-of-books

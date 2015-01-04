@@ -16,3 +16,6 @@ npm install
 # Run the server
 gulp
 ```
+
+# Improvements
+- Pagination over categories

@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: On a crowdsourcing model
+categories: [beliefs]
 ---
 
 Anyway, a completely unsolicited thought for consumer crowdsourcing (sounds like you're thinking about enterprise): there's an intriguing co-op grocery store in Park Slope, Brooklyn (a land of yuppies / hipsters...yupsters?). They have very cheap, extremely high quality food because in order to shop there, you must work for X hours / month in the store. They have massive throughput because competitors can't come close on value (ignoring, for the moment, other unfair advantages e.g., the community feel, possibly less profit-motivated owners).

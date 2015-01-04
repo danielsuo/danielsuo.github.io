@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: Don't hate (on the shitty start-ups)
+categories: [beliefs]
 ---
 
 As much as I hate on ridiculous start-ups (the saving grace for mine is we're tackling challenging computer vision problems...or something), I'm beginning to change my tune.

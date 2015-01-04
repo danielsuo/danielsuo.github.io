@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: On analog computing
+categories: [beliefs]
 ---
 
 Today, there is:

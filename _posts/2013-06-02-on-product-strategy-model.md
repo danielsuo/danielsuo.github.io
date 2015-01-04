@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: On product -> strategy -> model
+categories: [beliefs]
 ---
 
 http://www.avc.com/a_vc/2013/06/product-strategy-business-model.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+AVc+%28A+VC%29

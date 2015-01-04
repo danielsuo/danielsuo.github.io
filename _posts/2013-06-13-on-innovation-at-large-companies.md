@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: On innovation at large companies
+categories: [beliefs]
 ---
 
 Yeah--when I was at McKinsey, I spent a lot of time reading about innovation in context of large business and there are just an overwhelming number of reasons why they cannot (and in this case should not) be true innovators.

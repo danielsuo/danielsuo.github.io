@@ -1,7 +1,7 @@
 ---
-layout: base
-published: false
+layout: post
 title: On strategy taxes
+categories: [beliefs]
 ---
 
 From Michael:
