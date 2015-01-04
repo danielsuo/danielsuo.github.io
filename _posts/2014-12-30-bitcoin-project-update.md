@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bitcoin project update
-categories: [bitcoin, Crypto.jl, Coin.jl]
+categories: [main, bitcoin, Coin.jl, Crypto.jl]
 ---
 
 At the expense of this front page, I have been logging updates over the last month on a separate [project](projects/bitcoin) page. I don't yet have a good system for documenting project increments, so this will have to do for now.
