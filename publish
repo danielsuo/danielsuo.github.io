@@ -1,0 +1,17 @@
+#!/bin/sh
+
+git pull origin dev
+git add .
+git commit -m "$1"
+git push origin dev
+
+jekyll build
+
+git checkout master
+git pull origin master
+cp -R _site/* .
+git add .
+git commit -m "$1"
+git push origin master
+
+git checkout dev
