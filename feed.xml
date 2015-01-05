@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Daniel Suo - Articles</title>
+    <description>Scientific progress goes &#39;boink&#39;</description>
+    <link>http://www.danielsuo.com</link>
+    <atom:link href="http://www.danielsuo.com/feed.articles.xml" rel="self" type="application/rss+xml" />
+    
+      
+      <item>
+        <title>Bitcoin project update</title>
+        <description>&lt;p&gt;At the expense of this front page, I have been logging updates over the last month on a separate &lt;a href=&quot;projects/bitcoin&quot;&gt;project&lt;/a&gt; page. I don’t yet have a good system for documenting project increments, so this will have to do for now.&lt;/p&gt;
+
+&lt;p&gt;Briefly, there are now two software packages and a growing library of literature / my notes. I will post more in-depth updates if there is anything substantive to say.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 30 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://www.danielsuo.com/main/bitcoin/coin.jl/crypto.jl/2014/12/30/bitcoin-project-update.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/main/bitcoin/coin.jl/crypto.jl/2014/12/30/bitcoin-project-update.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Hello, world!</title>
+        <description>&lt;p&gt;I’m starting a new project and will be documenting my progress here. I’m exploring (B|b)itcoin and will begin with reimplementing some basic parts of the protocol. I’ll be using &lt;a href=&quot;http://julialang.org/&quot;&gt;&lt;code&gt;Julia&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;NB: even if I do everything correctly, I can’t recommend more strongly that you do not use this implementation for anything real.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-are-you-reimplementing&quot;&gt;Why are you reimplementing?&lt;/h3&gt;
+&lt;p&gt;I don’t know Bitcoin well enough to meaningfully contribute. Rebuilding a few major pieces forces me into the technical details, the community, the issues, and the possibilities, without anyone depending on me.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-are-you-using-julia&quot;&gt;Why are you using &lt;code&gt;Julia&lt;/code&gt;?&lt;/h3&gt;
+&lt;p&gt;A few reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I’m interested in &lt;code&gt;Julia&lt;/code&gt; as a possible replacement for work I’d do in &lt;code&gt;R&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, and &lt;code&gt;MATLAB&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;It’s young enough that there are easy ways to contribute.&lt;/li&gt;
+  &lt;li&gt;There doesn’t appear to be any &lt;code&gt;Julia&lt;/code&gt; implementation of the Bitcoin protocol. In other words, I can’t get lazy and just copy someone else’s source code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-will-you-be-building&quot;&gt;What will you be building?&lt;/h3&gt;
+&lt;p&gt;I’ll be starting with a simple command-line wallet. It will generate private and public keys, sign transactions, and broadcast to the Bitcoin network. For now, checking your balance is considered a luxury feature.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 24 Nov 2014 00:00:00 -0500</pubDate>
+        <link>http://www.danielsuo.com/main/bitcoin/coin.jl/crypto.jl/2014/11/24/hello-world.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/main/bitcoin/coin.jl/crypto.jl/2014/11/24/hello-world.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Testing, testing</title>
+        <description>&lt;p&gt;Hello, world!&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;4&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;6&lt;/span&gt;     &lt;span class=&quot;nx&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, 世界&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;\begin{equation}
+   E = mc^2
+\end{equation}&lt;/p&gt;
+</description>
+        <pubDate>Wed, 19 Nov 2014 00:00:00 -0500</pubDate>
+        <link>http://www.danielsuo.com/main/2014/11/19/testing.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/main/2014/11/19/testing.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On making decisions</title>
+        <description>&lt;p&gt;TTHAT’S AWESOME! Excitement aside, I see strong forward-looking arguments for both sides, so I’ll just offer how I think about such things without much in the way of advice. That and I’ve never really articulated how I make decisions, so I was curious. Looks a bit long, but the whole process usually takes less than a minute:&lt;/p&gt;
+
+&lt;p&gt;First, I almost never make decisions with too much consideration for the long-term beyond protecting against obvious downsides (e.g., drug addiction, murder, public burning of important bridges). The thing I know for sure is I don’t know how life will turn out and more importantly, how I’ll feel about it. The assumption is that ambition and openness to unexpected twists will get me to the right place. Right place, of course, being unknown today.&lt;/p&gt;
+
+&lt;p&gt;Second, I see opportunities as different (unknown) distributions of outcomes rather than two (or more) singular outcomes to choose between. I’m just looking for general knowns while recognizing my own actions/reactions affect the distributions a lot. In this particular case, I might see rapgenius as investing more in social capital (access to top entrepreneurs and VCs) with opportunity to recruit / lead top technical folks (not as in the weeds, but definitely seeing broad strokes) and I might see not rapgenius as investing more in intellectual capital. Both, like financial capital, benefit from earlier investment.&lt;/p&gt;
+
+&lt;p&gt;Third, if I’m debating between two or more options, that means they’re either all good or all shitty. That eliminates a lot of angst. In your case, they’re all good (er, that is, when the rest materialize. You could delay Rap Genius by saying you want to complete other processes to have full set of information).&lt;/p&gt;
+
+&lt;p&gt;Fourth, when finally pulling the trigger, I answer the question ‘what’s the worse that could happen’ because, as per above, I’m interested in bounding downside risk.&lt;/p&gt;
+
+&lt;p&gt;I’m now realizing this has perhaps uncomfortable implications for Lisa, but she probably could’ve guessed…&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Aug 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/08/01/on-making-decisions.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/08/01/on-making-decisions.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On strategy taxes</title>
+        <description>&lt;p&gt;From Michael:&lt;/p&gt;
+
+&lt;p&gt;Dad, you once asked me why Microsoft/Apple don’t just swoop in and build a better solution for cloud storage and sharing than Dropbox. At the time, I mentioned how difficult it is to build a new product and how much conflicting corporate concerns can get in the way.&lt;/p&gt;
+
+&lt;p&gt;I was reading Ben Thompson’s blog the other day, and he uses a term that I didn’t know existed, but clearly explains the situation: “strategy tax.”&lt;/p&gt;
+
+&lt;p&gt;A strategy tax is simply when broader corporate strategy interferes with a particular product. Microsoft and Apple have the resources and economies of scale to build a much better Dropbox, but their strategies constantly inflict a tax on their cloud storage solutions.&lt;/p&gt;
+
+&lt;p&gt;For Apple, the goal is to lock you in to their vertical stack – so iCloud works much better on the iPhone than on Android or Windows phones, and the Windows version of the software is deliberately inferior to the OSX version. For Microsoft, the goal is to sell their other products – SkyDrive is built into Outlook and Office and doesn’t play very well with other services.&lt;/p&gt;
+
+&lt;p&gt;Google’s cloud storage solution is much better than iCloud or SkyDrive, primarily because Google’s strategy (get more people to put more information on the web) is mostly parallel to the needs of cloud storage.&lt;/p&gt;
+
+&lt;p&gt;Dropbox, on the other hand, has no strategy tax. Their only strategy is to build the best cloud storage system that exists. They also can employ “strategy credits,” which are features that Dropbox can include easily but that they know other companies will refuse to have.&lt;/p&gt;
+
+&lt;p&gt;I googled “strategy tax” for a bit, and it seems that this is the first article to really use the term (Dave Winer, by the way, is the inventor of RSS). Appropriately enough, it was first used to describe Microsoft.&lt;/p&gt;
+
+&lt;p&gt;This is such a powerful concept; it really frames the issue in a way that makes it immediately understandable. It has already given me a few insights:&lt;/p&gt;
+
+&lt;p&gt;First, I think this means that the tech business oscillates between fragmentation and centralization. Microsoft was once an agile company that was constantly innovating. This allowed it to grow rapidly and makes lots of money, which it used to acquire top talent and develop ever more products. Over time, however, the strategy taxes from maintaining so many products built up, and Microsoft was transformed into the clumsy giant it is today. The promise of “Web 2.0” (what a strangely antiquated concept now!) has been funneled into the giant silos of Facebook, Twitter, Google, and co., but if history is any indication, their strangehold on data and social interaction will not be permanent.&lt;/p&gt;
+
+&lt;p&gt;Second, is this what is happening to Google? One big hypothesis for the shutdown of Google Reader is that it was in direct competition with Google+, and used a platform (RSS) that Google couldn’t control. Thus, Reader was shut down at the behest of broader corporate strategy – the biggest strategy tax imaginable. I’ve heard many alternate theories for why Reader was shut down, so perhaps I’m crying wolf, but it bears thinking on: has Google become too big to build optimal products? Just the other day Google Latitude was shut down and its features integrated into Google+.&lt;/p&gt;
+
+&lt;p&gt;This might just be a series of bad decisions on Google’s part – they can definitely still dream big (Wi-Fi through weather balloons! Gigabit fiber internet!), and two product shutdowns doesn’t mean that corporate strategy is shifting. Daniel pointed out to me that the biggest difference between Google and Microsoft is that Google is run by engineers while Microsoft is run by business people. Maybe that’s what will save them from stagnation.&lt;/p&gt;
+
+&lt;p&gt;Lastly, this might be the primary cause of inefficiency in tech today. Someone recently told me that the only two websites on the internet that don’t have a “Tweet this” and “Like this” button are Facebook and Twitter, respectively. Companies are sacrificing good products in order to further business strategies, which makes the web more isolated and more proprietary than it should be. Both Marco Arment and Anil Dash have written very eloquently on the loss of openness on the web these days.&lt;/p&gt;
+
+&lt;p&gt;No closing remarks, but we should talk about these developments.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 11 Jul 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/07/11/on-strategy-taxes.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/07/11/on-strategy-taxes.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On APIs and ecosystems</title>
+        <description>&lt;p&gt;Michael Suo wrote:&lt;/p&gt;
+
+&lt;p&gt;Good read, and I think he’s generally right: http://www.marco.org/2013/07/03/lockdown&lt;/p&gt;
+
+&lt;p&gt;Sad to see free-for-all APIs go&lt;/p&gt;
+
+&lt;p&gt;2 takeaways for me:&lt;/p&gt;
+
+&lt;p&gt;1) Take the Google approach to APIs: i.e., the high road (Reader notwithstanding). I gorged on the Maps API yesterday and it is excellent. Their philosophy is use our API by all means (even commercially), but we don’t want you abusing, so we’ll rate-limit unless you pay some nominal fee to help us cover costs.&lt;/p&gt;
+
+&lt;p&gt;From a business perspective, I do believe that it’s more powerful to have the extremely free API for an extremely valuable service because it is the single best way to develop an incredible (and incredibly defensible) ecosystem. Certainly the extremely valuable is the necessary and more important short-term component (Facebook / Twitter doing well, but Podio, with it’s really great API, is meh), but I’ll hypothesize that you eventually stagnate unless you promote a vibrant, self-sustaining ecosystem for developers (not just users).&lt;/p&gt;
+
+&lt;p&gt;2) Really, truly question direct competition (e.g., Google+ vs Facebook). Usually, it’s not a good idea. If we do compete directly, have a very clear idea how we win. Last year, I read a really compelling (and contrarian) article for Google+’s long game and its brilliance, but I can’t find it and don’t remember what it was (not Brad Feld’s article; that’s fluff).&lt;/p&gt;
+</description>
+        <pubDate>Wed, 03 Jul 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/07/03/on-apis-and-ecosystems.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/07/03/on-apis-and-ecosystems.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On reading a lot</title>
+        <description>&lt;p&gt;http://danshipper.com/how-to-read-a-lot-of-books&lt;/p&gt;
+
+&lt;p&gt;He has some good ideas, but it’s missing a lot on the strategy of reading books quickly and understanding books holistically (way more important, I think).&lt;/p&gt;
+
+&lt;p&gt;Both are accomplished, I think, by understanding the structure of a book fairly well. This takes 15 minutes of upfront time that includes such simple things as reading the TOC, reading the forward to understand motivation, browsing the first few paragraphs of each chapter to relate back to the TOC / forward.&lt;/p&gt;
+
+&lt;p&gt;This by itself has sped up my reading the most because it provides context and meaning to the individual examples / paragraphs I’m reading. Sort of like how it’s easier to clean if you already have a place for everything (which, I do not…).&lt;/p&gt;
+
+&lt;p&gt;Also…helps to know when to quit reading a book.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Jul 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/07/01/on-reading-a-lot.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/07/01/on-reading-a-lot.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On a technology thesis (take 2)</title>
+        <description>&lt;p&gt;Input, curate, extract&lt;/p&gt;
+</description>
+        <pubDate>Fri, 14 Jun 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/06/14/on-a-technology-thesis-take-2.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/06/14/on-a-technology-thesis-take-2.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On a technology thesis</title>
+        <description>&lt;p&gt;Thought this would be an interesting exercise, but the email got so long over the last hour that I have to have, like, a table of contents. My fear is that such a long email will cockblock a fruitful discussion (man, I don’t have time for this shit), but the hope is that this topic is interesting enough to overcome that.&lt;/p&gt;
+
+&lt;p&gt;Section 1: Introductions – lots of names floating around on this email
+Section 2: Thesis? Da fuq? – what do you think the future looks like? what would be the biggest changes to human behavior as a result?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Section 1: Introductions
+This is a topic that I thought would benefit from folks not yet on LAC discussing – in particular, a few people Kane roped together for a Sunday afternoon meetup to talk tech. Didn’t add all the new folks to LAC directly because growing lists inorganically feels like just that; inorganic. My general rule of thumb is that if most people have met in person, then it’s all good. I think we’re almost there.&lt;/p&gt;
+
+&lt;p&gt;New folks cc’d: James Knight (Romotive -&amp;gt; Google, engineer), Josh Vekhter (Mathematician -&amp;gt; ZocDoc, engineer), Kevin Kwok (Greylock, VC), and David Luan (Thiel fellow -&amp;gt; founder of computer vision startup) joined us for an afternoon talking shop. Peter Boyce needs no introduction.&lt;/p&gt;
+
+&lt;p&gt;Leather Apron Club (LAC): a wannabe intellectual descendant of Ben Franklin’s Junto. You’ve got (from this past Sunday) me, Kane, Lisa, Yoni, Allen, and also Dennis Tang (GQ editor), Winston Yan (MD/Phd at Harvard), Tina Zou (Goldman banker, soon to be data scientist), Kevin Lee (Hudson River Trading, continuing to be Hudson River Trading), and Benny Zhu (Founder of financial data analytics company).&lt;/p&gt;
+
+&lt;p&gt;Phew. That was way longer than I intended, but for sake of positively growing a small group, hope it was worth it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Section 2: Defining a thesis
+Quick background: Michael got a meeting with Fred Wilson of Union Square Ventures, and I started wondering how one might impress a guy like Fred Wilson. One answer – have a thesis on what will happen next in the world of technology – led to a bigger question: what would our thesis be and, almost the more difficult question, how would we even find it?&lt;/p&gt;
+
+&lt;p&gt;For example, when FW started USV, his thesis was effectively two-fold: 1) web services, or the application layer, will inject technology into the lives of the masses and 2) NYC will be a mecca for start-up technology because media, telecom, and finance would be the next areas gobbled up by tech.&lt;/p&gt;
+
+&lt;p&gt;This thesis seems trivial now, but it wasn’t in 2004. In fact, it flatly contradicted mainstream thinking and it’s been the intellectual underpinning for USV’s success (that and not being dicks).&lt;/p&gt;
+
+&lt;p&gt;So let’s try to tackle the questions in reverse. First, how would we even find a thesis? I imagine it would be a triangulation between a) the past and b) imaginations of the future. The past informs us of general principles by which value is determined and created, and imaginations of the future helps us Wayne Gretsky.&lt;/p&gt;
+
+&lt;p&gt;To me, value falls into time, status, or pleasure (status being big and different enough in nature from pleasure that I break it out) and it is created by either human or technological means (I lump pack animals in with “technology”). Historically, mass wealth was created by enslaving (Ford and MSFT count), claiming, or trading and often a combination of the three. Today, we effectively do the same with technology: we buy technology, claim digital land and mind share, and trade the results.&lt;/p&gt;
+
+&lt;p&gt;Given all that, what could be massively valuable in the future? Put another way, what would our thesis be? A first order estimate might be [insert trend already happening in certain industries, e.g., web services] will come to dominate [insert industry not yet affected]. But let’s bump up to second order. We’re hearing a lot about ‘the internet of things’, ‘wearable computing’, ‘3Dification’ (both UX and atoms &amp;lt;-&amp;gt; bits) and augmented reality, which are all really ways of breaking computing out of their traditional domains (i.e., computer devices) to help users fuse technology more naturally with the world around them. In other words, as technology advances, it becomes less apparent to the end user.&lt;/p&gt;
+
+&lt;p&gt;This is probably far enough for a VC’s practical purposes. If your head’s too far in the clouds, you’ll pretty soon find it up your own ass.&lt;/p&gt;
+
+&lt;p&gt;For t3h shits, what if we think 3rd order: if software will eat the world, what will eat software? My sense is that new hardware paradigms will birth new ways of conceiving of and architecting software. If you’ve read Innovator’s Dilemma (summary here), you might recognize this as a kind of meta disruption (not the buzzword disruption here, but as originally defined by Christensen). As software becomes more and more attractive from a business perspective (insane margins, massive scalability, insanely low capital outlay), folks trend towards it at the expense of lower-margin, smaller markets. But these are exactly the places where innovation happens and how large established companies get eaten up.&lt;/p&gt;
+
+&lt;p&gt;So, I’ll rephrase this as short-, medium-, and long-term theses:&lt;/p&gt;
+
+&lt;p&gt;Short-term (next 5 years): Software will continue eating the world
+Medium-term (next 10 years): Software will be abstracted away in much the same way hardware is being abstracted away today–all about the UX
+Long-term (next ?? years?): Hardware will eat software (e.g., your brain is simultaneously hardware and software)&lt;/p&gt;
+
+&lt;p&gt;Before this afternoon, I’d never really thought about a “thesis” and certainly don’t have any convictions on what will happen in the future of technology. I’m just spewing shit here, so very curious to hear what you all think about what lies ahead, especially if you have something more specific than these absurdly broad strokes.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;On that note, a brain fart: we’ve been biased (so far, anyway) to the leading edge of technology.&lt;/p&gt;
+
+&lt;p&gt;​I sort of wrote off the expansion of current trends to wider industries / people as first order, but that’s probably short-sighted of me.&lt;/p&gt;
+
+&lt;p&gt;​I would only need to point to emergent properties that might arise as more people and industries catch up to where leaders are today. One cell whatevs, but a few trillion?&lt;/p&gt;
+
+&lt;p&gt;​I like the wave metaphor–disruption happens both from fully processing a wave (long-form disruption?) and from new waves.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 14 Jun 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/06/14/on-a-technology-thesis.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/06/14/on-a-technology-thesis.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On innovation at large companies</title>
+        <description>&lt;p&gt;Yeah–when I was at McKinsey, I spent a lot of time reading about innovation in context of large business and there are just an overwhelming number of reasons why they cannot (and in this case should not) be true innovators.&lt;/p&gt;
+
+&lt;p&gt;However, I still disagree with this guy’s advice because I see it as short-sighted. First, companies who adopt this attitude of buying innovation almost never stay at the forefront of observing said innovation (i.e., even if they could buy it, they don’t see it). Second, companies with vast resources are exactly the ones who could be bearing the risk of trying (and failing), but instead, institutional pressure prevents them from even trying. If you try to innovate and fail, your job is on the line, but as the old saying goes, “no one ever got fired for buying IBM” (i.e., taking the conservative path).&lt;/p&gt;
+
+&lt;p&gt;I admire companies like Google and Intel because they don’t mind investing large amounts of capital on unknown payoffs from R&amp;amp;D. However, even they fall into a particular type of innovation trap articulated by Professor Christensen at HBS (innovator’s dilemma) – as companies mature, they tend towards greener pastures (e.g., higher-margin higher-end products), but in doing so, they leave themselves vulnerable to scrappy upstarts who don’t mind the brown grass and eventually eat the big companies from behind.&lt;/p&gt;
+
+&lt;p&gt;This is probably too much information without enough context, so I’ll stop here. Simply put: large companies don’t “innovate” as much as they should, but for very understandable, if not excusable, reasons.&lt;/p&gt;
+
+&lt;p&gt;Also, it goes without saying that his logic reduces to no innovation. Why should &lt;em&gt;anyone&lt;/em&gt; bother innovating? Especially if my entire life’s savings and years of my efforts as an entrepreneur are going into something that might fail.&lt;/p&gt;
+
+&lt;p&gt;One last thought: Lisa is working on an internal project for McKinsey reviewing survey information from CEOs and other business leaders regarding long-term planning. One of the main criticisms and complaints of and from business people today is that short-term thinking persists. For example, we’ll do everything we can to make this quarter’s sales look good, even to the detriment of future quarters and we certainly wouldn’t invest large amounts today because a) that’s money out today and b) uncertain gains tomorrow.&lt;/p&gt;
+
+&lt;p&gt;McKinsey’s chief has been pushing this concept ‘Long-Term Capitalism’ for the past year or two, but I think his message is both flawed and naive. He raises the well-known problems I described above, but offers solutions that are fairly trivial (mostly of the flavor, X group of influential people must champion and lead the charge). These solutions simply don’t address the pressures that these people face. As a board member of a public company, I am paid several hundred K a year to go to a few board meetings and if I rock the boat, share prices might go down. If they go down, not only would I lose my seat, I’d also likely lose status and future board positions as well. As an institutional investor (think Vanguard), if I can’t generate good returns each quarter, people will move money from my fund to someone else’s–and I will get paid significantly less!&lt;/p&gt;
+
+&lt;p&gt;The one example of a great company that is both innovating and investing for the long term is Amazon. I completely forgot about them earlier, but a conversation with Lisa just now reminded me. For virtually their entire existence, they’ve told their shareholders that they will reinvest all profit back into the business (i.e., no profit left to distribute to shareholders). The only reason they can get away with this and still have such a well-performing valuation (as indicated by stock price) is because they have proven time and again that they make very, very good use of that capital. They are “taking over the world” and generating better returns on that capital than the vast majority of investors could do otherwise, so they don’t complain!&lt;/p&gt;
+
+&lt;p&gt;In a word, they have earned shareholder trust to invest for the long-term. This is the key component missing in all of these initiatives and speeches and everything else. I trust that you will spend my money better than I could spend it myself. And just like any other form of trust, it must be earned and it will never be easy!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Jun 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/06/13/on-innovation-at-large-companies.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/06/13/on-innovation-at-large-companies.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On a crowdsourcing model</title>
+        <description>&lt;p&gt;Anyway, a completely unsolicited thought for consumer crowdsourcing (sounds like you’re thinking about enterprise): there’s an intriguing co-op grocery store in Park Slope, Brooklyn (a land of yuppies / hipsters…yupsters?). They have very cheap, extremely high quality food because in order to shop there, you must work for X hours / month in the store. They have massive throughput because competitors can’t come close on value (ignoring, for the moment, other unfair advantages e.g., the community feel, possibly less profit-motivated owners).&lt;/p&gt;
+
+&lt;p&gt;To link back to crowdsourcing, you effectively make demand for and supply of labor the same. This likely doesn’t work for many problems (i.e., is Park Slope replicable), but may have applications that an otherwise strictly better duolingo / recaptcha model (supply and demand demand and supply each other) can’t address. Perhaps processing high-demand data: to consume processed data (e.g., deduplicated tweets), you must process some data or pay some money. Mathematically, I think this scales; each piece of data needs to get processed a few times to ensure accuracy, but can be consumed by a massive number of people.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 06 Jun 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/06/06/on-a-crowdsourcing-model.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/06/06/on-a-crowdsourcing-model.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On product -&gt; strategy -&gt; model</title>
+        <description>&lt;p&gt;http://www.avc.com/a_vc/2013/06/product-strategy-business-model.html?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed%3A+AVc+%28A+VC%29&lt;/p&gt;
+
+&lt;p&gt;Great article. Sounds like some of the better stuff from amongst the business garbage I read.&lt;/p&gt;
+
+&lt;p&gt;Using his paradigm, I’d say, we’re still in the product phase and just beginning to articulate strategy (e.g., making data collection free so that people have what they need to use our great tools). I don’t think it’s bad to keep potential business models in mind (as we’re doing), as long as we’re not beholden to any one in particular.&lt;/p&gt;
+
+&lt;p&gt;One slight criticism of the note: FW doesn’t define strategy and assumes folks just know what the word means. I would argue that most people do not, in fact, know what it means and even if “they do”, it means different things to different people. For example, one could argue that strategy is really a spectrum across different time horizons. Strategy for getting the next sale would be on the short end and might be called a tactic. Strategy for bringing product to market might be a “strategy”. And strategy for the next ten years might be called vision.&lt;/p&gt;
+
+&lt;p&gt;So let’s define strategy, for the moment, as getting from A to B over some time horizon (say, the next year). Then what FW is really saying is that before we lock down a business model, we must determine B and our path to B, and that &lt;em&gt;good&lt;/em&gt; strategy finds some B where we add tremendous value / is very difficult for others to reach. When and only when we deliver massive, defensible value (i.e., the result of smart strategy), can we begin to truly think about monetizing the value created (i.e., the business model).&lt;/p&gt;
+
+&lt;p&gt;Put very simply: first figure out if people want it, then make them need it, then charge for it in the most natural and (hopefully) profitable way.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Jun 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/06/02/on-product-strategy-model.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/06/02/on-product-strategy-model.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On analog computing</title>
+        <description>&lt;p&gt;Today, there is:
+1. No general analog computing - if I want to modify an analog signal, I typically need specialized hardware. In the digital world, I can change bits however I want very quickly&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;No scalable analog computing - it is easy to have one analog source sending to another analog output. It is very challenging to scale the number of sources and outputs to the scale where computing becomes interesting
+a) Transmitting analog signal requires hard wiring between source and output, which becomes untenable very quickly (number of connections possible between n nodes is on the order of n^2)
+b) Even if there were some media by which arbitrary sources and outputs can connect, it would be very challenging for an output to sort through all the noise from other sources and without significant source decay&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Solving these two problems give rise to a new class of computing hardware that would dramatically change how we solve a number of problems today via:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Rapid data transmission / processing: today, we simulate an analog signal with a some number of bits because we cannot reliably measure an analog signal at scale. To demonstrate the power of analog computation, water will find the fastest path down a mountain rapidly, but this would freeze even the most powerful computers&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Arbitrary formation of new, directly linked connections: right now, we facilitate the connection of two computers over a network via centralized hardware – a bottleneck – or, in less common cases, via directly wired connections, which are expensive to implement at scale&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Energy efficiency: computing resources only work when they receive some signals to process and are otherwise off, instead of being always on&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The reason I’m excited by this is because it seems to be a very general use case for analog signaling. A very natural extension of this idea is analog inputs (like our sense of touch, for instance), which today would first be converted to a digital signal before being processed. True analog input to true analog computing would not require such a translation.&lt;/p&gt;
+
+&lt;p&gt;Today, we have CPUs that do logic and arithmetic very well and GPUs (graphics processing units) that do parallel logic and arithmetic very well. Analog computers (APUs?) would sit alongside existing hardware today to be used for specific types of problems in much the same way as CPUs and GPUs are used for very specific tasks today.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Jun 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/06/02/on-analog-computing.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/06/02/on-analog-computing.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>On artificial intelligence and the brain</title>
+        <description>&lt;p&gt;I wouldn’t read into the Wired hype too much. I would say the AI community agrees on a much less exciting set of statements:&lt;/p&gt;
+
+&lt;p&gt;1) Recent approaches (i.e., 5-10 years ago) to problems that benefit from ‘learning’ used paradigms not well-suited to AI (e.g., searching massive solution spaces, trying to prune exponentially growing trees)
+2) We can draw inspiration from how the brain might generally work based on simplistic observations (e.g., ordered memory, hierarchical pattern recognition)&lt;/p&gt;
+
+&lt;p&gt;In fact, I might go as far as to use the bird:plane::brain:computer analogy. We take important ideas from nature, but it takes time to calibrate out the mimicry that doesn’t work very well. It’s not immediately obvious that the plane shouldn’t have flapping wings! Once we figured out lift, we benefited massively and we can now fly longer and further than any bird. Of course, it’s still hard to do VTOL, so the analogy to brain:computer holds reasonably well.&lt;/p&gt;
+
+&lt;p&gt;Either way, I agree with the Cindy Crawford comment. The issue of human biases–from the completely erroneous to the mild association–is sort of swept under the rug because, well, computers that can think like brains are just the shit. And never mind the fact that electronic brains would have much greater plasticity (always assumed for better, but rarely considered for worse).&lt;/p&gt;
+
+&lt;p&gt;There certainly are folks in the AI community who want to &lt;em&gt;replicate&lt;/em&gt; the brain, but for now, it seems that many more are just interested in tackling challenging problems with whatever approach that might work. For recognition problems, hierarchical / recursive approaches are very promising (think OCR or speech recognition) because it just gets really tiring to write all these procedural rules for what cats look like.&lt;/p&gt;
+
+&lt;p&gt;But things get more interesting when you move beyond software-level solutions to the hardware layer. For example, neuromorphic chips promise both reliable analog signaling and massively parallel computation. The published approaches look silly now (borderline ridiculous, actually), but it’s an important area to research because…math says so: exaflops burn a lot of calories and aren’t even sufficient after a few iterations.&lt;/p&gt;
+
+&lt;p&gt;I think AI and theoretical neuroscience/learning algorithms are super cool, but I had to silent-LOL at this sentence:&lt;/p&gt;
+
+&lt;p&gt;“The rub is that we still don’t completely understand how the brain works, but scientists are pushing forward in this as well.” 
+The phrase “completely understand” should be replaced with “have any fucking clue.” And the phrase “scientists are pushing forward in this as well” should be replaced with “most scientists are struggling against NIH budget cuts and still trying to figure out when ‘big data’ became something not to cough uncomfortably at.”&lt;/p&gt;
+
+&lt;p&gt;There’s no question that this kind of learning algorithm has tons of important applications, but I don’t get the claim that it’s somehow more biomimetic. Anyone who watches a young child is struck by just how much the brain “learns” based on an extremely small number of examples. It’s an immense power that we don’t understand at the biological or theoretical levels, and as with the incredible recognition power of the immune system, it comes with serious consequences: a brain can “learn” that bunnies are terrifying, or that gambling is a great way to make money, despite overwhelming evidence to the contrary. There’s this unspoken sentiment that the brain’s power stems from its plasticity, without much appreciation for how inefficient and ballistic that plasticity can be. Surely there will soon be a computer that can recognize faces as well as any person, but will that computer see the girl down the hall with a mole and be forcefully reminded of Cindy Crawford, who was everywhere when it was being programmed?&lt;/p&gt;
+
+&lt;p&gt;This is more of a neuroscience than a computer science rant–but I think many researchers interested in the brain completely miss the most important question in neuroscience: what problems did &lt;em&gt;a&lt;/em&gt; brain evolve to solve? I say “a brain” because different animals evolved very different brains to do very different things, yet the aspects of brain structure that biologists study and computer scientists model are remarkably similar across species–at least from our low-resolution and primitive point of view. There’s no reason to think a biomimetic computer would be better than a rationally designed one, since cultural evolution works so much faster than genetic evolution–but I think we’re missing most of the underlying principles for how brains do what they do. I hope neuroscientists and computer scientists alike stick to the most important principle of science: the test of a new theory is experiment, and not whether it sounds fancy enough to get funded.&lt;/p&gt;
+
+&lt;p&gt;Also the ferret paper the article links to is a classic, but its use there is kind of misleading. It’s not like the ferrets see with anything approaching normal vision, and the remapping of cortical space within a sensory modality is much more facile than mapping to a new modality.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 May 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/05/27/on-artificial-intelligence-and-the-brain.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/05/27/on-artificial-intelligence-and-the-brain.html</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Don&#39;t hate (on the shitty start-ups)</title>
+        <description>&lt;p&gt;As much as I hate on ridiculous start-ups (the saving grace for mine is we’re tackling challenging computer vision problems…or something), I’m beginning to change my tune.&lt;/p&gt;
+
+&lt;p&gt;“Start-ups” as we’d typically conceive of the genre are really just small businesses that are looking to very rapidly become massive businesses by means of technology. The disillusion (and, consequently, my hate) is twofold: 1) it’s not OK to be a small company and 2) technology will enable away bad business.&lt;/p&gt;
+
+&lt;p&gt;But now, I’m thinking that maybe it’s not so bad to have such hype. For one, the allure of Billions is spurring people to be creative, if a bit silly. That’s ok! It wasn’t obvious that planes shouldn’t have flapping wings, but hey, had to fail a zillion ways first before we discovered lift.&lt;/p&gt;
+
+&lt;p&gt;Two, the hype is pushing more and more people to learn computer science. Not knowing how to program is like being illiterate. Not knowing algorithms and data structures is like not having read the classics.&lt;/p&gt;
+
+&lt;p&gt;And last (yes, McKinsey 3): technology is a great equalizer. Before, you just threw cheap labor at the problem, controlled the means of production and voila! You’re making cash money at the expense of the broletariat.&lt;/p&gt;
+
+&lt;p&gt;This was longer than I intended it to be, but I’ve been contemplating my dying hate (and growing amusement) and this is the first time I’m articulating. I do believe that there are pressing world problems to address and that technology will help us solve many of them, but it will take time. Is it annoying that every MBA who can find a code monkey is trying to start a fashion start-up? Sure, but we’re only 20 years in with the internet and Lord knows we’re having growing pains.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 May 2013 00:00:00 -0400</pubDate>
+        <link>http://www.danielsuo.com/beliefs/2013/05/27/not-hating-on-shitty-startups.html</link>
+        <guid isPermaLink="true">http://www.danielsuo.com/beliefs/2013/05/27/not-hating-on-shitty-startups.html</guid>
+      </item>
+      
+    
+  </channel>
+</rss>
