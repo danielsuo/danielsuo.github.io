@@ -1,8 +1,3 @@
 _site
 .DS_Store
 /node_modules
-
-/bitcoin
-/main
-/beliefs
-/five
