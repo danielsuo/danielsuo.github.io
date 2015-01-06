@@ -19,7 +19,7 @@
 <![endif]-->
 </head>
 
-  <body id='On reading a lot'>
+  <body id='Introduction to Cryptographic Hash Functions'>
     
     <div class='wrapper'>
       
@@ -39,24 +39,48 @@
 
       <section>
 
-        <h2><a href='/beliefs/2013/07/01/on-reading-a-lot.html'>On reading a lot</a></h2>
-
-        <p class="author">
-          <span class="date">1 July 2013</span>
-        </p>
-
         <div id='container'>
-          <p>http://danshipper.com/how-to-read-a-lot-of-books</p>
+          <h2><a href='/bitcoin/five/2015/01/05/hash-functions.html'>Introduction to Cryptographic Hash Functions</a></h2>
+  <p class="author">
+    <span class="date">5 January 2015</span>
+  </p>
 
-<p>He has some good ideas, but it’s missing a lot on the strategy of reading books quickly and understanding books holistically (way more important, I think).</p>
+  <h2 id="main-ideas">Main ideas</h2>
+<ul>
+  <li>Need function to convert arbitrary string of bits into a hash of some fixed length</li>
+  <li>Why?
+    <ul>
+      <li>To </li>
+    </ul>
+  </li>
+  <li>Easy to verify that string becomes hash given string and hash function</li>
+  <li>
+    <p>Want following properties</p>
+  </li>
+  <li>Needs to be a function</li>
+  <li>Deterministic</li>
+  <li>Uniform</li>
+  <li>Unique</li>
+  <li>Fixed size and short</li>
+  <li>
+    <p>Not invertible</p>
+  </li>
+  <li>Computes easily</li>
+  <li>Resists pre-image</li>
+  <li>Resists second pre-image</li>
+  <li>Resists collisions</li>
+</ul>
 
-<p>Both are accomplished, I think, by understanding the structure of a book fairly well. This takes 15 minutes of upfront time that includes such simple things as reading the TOC, reading the forward to understand motivation, browsing the first few paragraphs of each chapter to relate back to the TOC / forward.</p>
+<p>Person A: generates message and hash
+Person B: holds hash so others can validate
+Person C: attacker</p>
 
-<p>This by itself has sped up my reading the most because it provides context and meaning to the individual examples / paragraphs I’m reading. Sort of like how it’s easier to clean if you already have a place for everything (which, I do not…).</p>
+<p>it is easy to compute the hash value for any given message
+it is infeasible to generate a message that has a given hash
+it is infeasible to modify a message without changing the hash
+it is infeasible to find two different messages with the same hash</p>
 
-<p>Also…helps to know when to quit reading a book.</p>
-
-           <div id="disqus_thread"></div>
+   <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'danielsuo'; // required: replace example with your forum shortname
@@ -70,6 +94,7 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
+</div>
         </div>
 
       </section>

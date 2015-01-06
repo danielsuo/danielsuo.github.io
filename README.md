@@ -17,5 +17,6 @@ npm install
 gulp
 ```
 
-# Improvements
-- Pagination over categories
+# To Do
+- Add feeds for sub-projects
+- Add [search](http://dreamand.me/web/fulltext-search-at-jekyll-site/)
