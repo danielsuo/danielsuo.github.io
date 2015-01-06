@@ -9,6 +9,7 @@ jekyll build
 
 git checkout master
 git pull origin master
+ls | grep -v "_site" | xargs rm -rf
 cp -R _site/ .
 git add .
 git commit -m "$1"
