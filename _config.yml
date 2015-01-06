@@ -19,3 +19,4 @@ kramdown:
 
 include:
 - .gitignore
+- .nojekyll
