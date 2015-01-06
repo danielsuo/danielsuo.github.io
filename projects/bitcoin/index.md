@@ -40,6 +40,7 @@ To provide explanations and context.
 
 ## New ideas
 To address limitations and introduce extensions.
+
 - Speed and efficiency of verification
 - Security of wallets
 - Side chains
