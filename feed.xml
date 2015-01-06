@@ -8,7 +8,7 @@ layout: null
     <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
     <link>{{ site.url }}</link>
     <atom:link href="{{ site.url }}/feed.articles.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.posts %}
+    {% for post in site.categories['main'] limit:10 %}
       {% unless post.link %}
       <item>
         <title>{{ post.title | xml_escape }}</title>

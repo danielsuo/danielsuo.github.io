@@ -2,7 +2,20 @@ name: Daniel Suo
 description: Scientific progress goes 'boink'
 url: http://www.danielsuo.com
 
-paginate: 5
-custom_paginate: 5
+category_paginate: 5
+categories:
+- 
+  - 'main'
+  - '/index.html'
+-
+  - 'beliefs'
+  - '/projects/beliefs/index.md'
+-
+  - 'five'
+  - '/projects/five/index.md'
+
 kramdown:
   smart_quotes:  lsquo,rsquo,ldquo,rdquo
+
+include:
+- .gitignore

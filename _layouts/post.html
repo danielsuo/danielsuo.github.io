@@ -1,35 +1,12 @@
-<!doctype html>
-<html>
-  
-  {% include head.html %}
+---
+layout: base
+---
 
-  <body id='{{ page.title }}'>
-    
-    <div class='wrapper'>
-      
-      {% include header.html %}
+<h2><a href='{{ page.url }}'>{{ page.title }}</a></h2>
+  <p class="author">
+    <span class="date">{{ page.date | date: "%-d %B %Y" }}</span>
+  </p>
 
-      <section>
-
-        <h2><a href='{{ page.url }}'>{{ page.title }}</a></h2>
-
-        <p class="author">
-          <span class="date">{{ page.date | date: "%-d %B %Y" }}</span>
-        </p>
-
-        <div id='container'>
-          {{ content }}
-          {% include disqus.html %}
-        </div>
-
-      </section>
-
-      {% include footer.html %}
-      
-    </div>
-
-    <script src='/assets/js/scale.fix.js'></script>
-    {% include analytics.html %}
-
-  </body>
-</html>
+  {{ content }}
+  {% include disqus.html %}
+</div>

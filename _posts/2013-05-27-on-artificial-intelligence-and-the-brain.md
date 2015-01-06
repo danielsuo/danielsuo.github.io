@@ -2,6 +2,7 @@
 layout: post
 title: On artificial intelligence and the brain
 categories: [beliefs]
+published: false
 ---
 
 I wouldn't read into the Wired hype too much. I would say the AI community agrees on a much less exciting set of statements:

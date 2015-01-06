@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introduction to Cryptographic Hash Functions
+categories: [bitcoin, five]
 ---
 
 ## Main ideas

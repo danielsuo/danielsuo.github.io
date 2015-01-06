@@ -14,9 +14,9 @@ module Jekyll
       #
       # Returns nothing.
       def generate(site)
-        paginate(site, '/index.html', 'main')
-        paginate(site, '/beliefs/index.html', 'beliefs')
-        # paginate_categories(site, '/blog/categories', 'blog_category_index.html', site.categories['blog'])
+        # paginate(site, '/index.html', 'main')
+        # paginate(site, '/projects/beliefs/index.html', 'beliefs')
+        paginate_categories(site)
         # paginate_categories(site, '/questions/categories', 'question_category_index.html', site.categories['questions'])
       end
  
@@ -42,7 +42,7 @@ module Jekyll
           path == page_path
         end.first
 
-        pages = Pager.calculate_pages(all_posts, site.config['custom_paginate'].to_i)
+        pages = Pager.calculate_pages(all_posts, site.config['category_paginate'].to_i)
         (1..pages).each do |num_page|
           pager = Pager.new(site, num_page, all_posts, pages, page)
           if num_page > 1
@@ -56,39 +56,33 @@ module Jekyll
         end
       end
  
-      def paginate_categories(site, category_path, category_layout, posts)
-        categories = []
-        restricted_categories = ['blog', 'questions']
- 
-        for post in posts
-          for post_category in post.categories
-            categories.push(post_category) unless restricted_categories.include? post_category
-          end
-        end
- 
-        categories.sort!.uniq!
+      def paginate_categories(site)
+        categories = site.config['categories']
         
         for category in categories
-          all_posts = site.site_payload['site']['categories'][category]
- 
+          category_name = category[0]
+          category_path = category[1]
+
+          all_posts = site.site_payload['site']['categories'][category_name]
+
           page = site.pages.select do |page|
             path = page.dir + "/" + page.name
-            path == category_path + "/" + category + "/index.html"
+            path == category_path
           end.first
- 
-          pages = Pager.calculate_pages(all_posts, site.config['custom_paginate'].to_i)
+
+          pages = Pager.calculate_pages(all_posts, site.config['category_paginate'].to_i)
           (1..pages).each do |num_page|
             pager = Pager.new(site, num_page, all_posts, pages, page)
             if num_page > 1
-              newpage = CategoryIndex.new(site, site.source, page.dir, category, category_layout)
+              newpage = Page.new(site, site.source, page.dir, page.name)
               newpage.pager = pager
               newpage.dir = File.join(page.dir, "page#{num_page}")
               site.pages << newpage
             else
               page.pager = pager
             end
-          end 
-        end       
+          end
+        end     
       end
     end
   end
@@ -131,7 +125,10 @@ module Jekyll
     def self.paginate_path(site, num_page, target_page)
       return nil if num_page.nil?
       return target_page.url if num_page <= 1
-      format = site.config['paginate_path']
+
+      format = target_page.url.split('/')
+      format.pop()
+      format = format.join('/') + '/page:num'
       format = format.sub(':num', num_page.to_s)
       ensure_leading_slash(format)
     end
@@ -165,7 +162,7 @@ module Jekyll
     #             of pages calculated.
     def initialize(site, page, all_posts, num_pages = nil, target_page)
       @page = page
-      @per_page = site.config['custom_paginate'].to_i
+      @per_page = site.config['category_paginate'].to_i
       @total_pages = num_pages || Pager.calculate_pages(all_posts, @per_page)
  
       if @page > @total_pages
@@ -174,7 +171,7 @@ module Jekyll
  
       init = (@page - 1) * @per_page
       offset = (init + @per_page - 1) >= all_posts.size ? all_posts.size : (init + @per_page - 1)
- 
+
       @total_posts = all_posts.size
       @posts = all_posts[init..offset]
       @previous_page = @page != 1 ? @page - 1 : nil

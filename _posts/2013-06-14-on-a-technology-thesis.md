@@ -2,6 +2,7 @@
 layout: post
 title: On a technology thesis
 categories: [beliefs]
+published: false
 ---
 
 Thought this would be an interesting exercise, but the email got so long over the last hour that I have to have, like, a table of contents. My fear is that such a long email will cockblock a fruitful discussion (man, I don't have time for this shit), but the hope is that this topic is interesting enough to overcome that.

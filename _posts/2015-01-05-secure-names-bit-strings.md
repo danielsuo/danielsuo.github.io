@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Secure Names for Bit-Strings
+categories: [bitcoin, reviews]
 ---
 
 ## Main ideas

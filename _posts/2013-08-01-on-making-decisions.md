@@ -2,6 +2,7 @@
 layout: post
 title: On making decisions
 categories: [beliefs]
+published: false
 ---
 
 TTHAT'S AWESOME! Excitement aside, I see strong forward-looking arguments for both sides, so I'll just offer how I think about such things without much in the way of advice. That and I've never really articulated how I make decisions, so I was curious. Looks a bit long, but the whole process usually takes less than a minute:

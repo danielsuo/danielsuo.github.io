@@ -2,6 +2,7 @@
 layout: post
 title: On analog computing
 categories: [beliefs]
+published: false
 ---
 
 Today, there is:

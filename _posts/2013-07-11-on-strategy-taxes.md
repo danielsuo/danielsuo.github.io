@@ -2,6 +2,7 @@
 layout: post
 title: On strategy taxes
 categories: [beliefs]
+published: false
 ---
 
 From Michael:
