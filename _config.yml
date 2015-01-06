@@ -20,3 +20,6 @@ kramdown:
 include:
 - .gitignore
 - .nojekyll
+
+exclude:
+- publish
