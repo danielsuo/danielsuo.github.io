@@ -19,7 +19,7 @@
 <![endif]-->
 </head>
 
-  <body id='Introduction to Cryptographic Hash Functions'>
+  <body id='Secure Names for Bit-Strings'>
     
     <div class='wrapper'>
       
@@ -40,45 +40,25 @@
       <section>
 
         <div id='container'>
-          <h2><a href='/bitcoin/five/2015/01/05/hash-functions.html'>Introduction to Cryptographic Hash Functions</a></h2>
+          <h2><a href='/2015/01/05/secure-names-bit-strings'>Secure Names for Bit-Strings</a></h2>
   <p class="author">
     <span class="date">5 January 2015</span>
   </p>
 
   <h2 id="main-ideas">Main ideas</h2>
 <ul>
-  <li>Need function to convert arbitrary string of bits into a hash of some fixed length</li>
-  <li>Why?
-    <ul>
-      <li>To </li>
-    </ul>
-  </li>
-  <li>Easy to verify that string becomes hash given string and hash function</li>
-  <li>
-    <p>Want following properties</p>
-  </li>
-  <li>Needs to be a function</li>
-  <li>Deterministic</li>
-  <li>Uniform</li>
-  <li>Unique</li>
-  <li>Fixed size and short</li>
-  <li>
-    <p>Not invertible</p>
-  </li>
-  <li>Computes easily</li>
-  <li>Resists pre-image</li>
-  <li>Resists second pre-image</li>
-  <li>Resists collisions</li>
+  <li>Need to refer to documents conveniently, unambiguously; need location and need to verify correct</li>
+  <li>Digital documents easy to alter and locations are not persistent</li>
+  <li>Signing and one-way hash confirms not changed, but not easy to communicate and may not be persistent either</li>
+  <li>Use variation on time-stamping to keep repo of hash values that depend on many bit-string inputs, and to name each bit-string by a concise description</li>
+  <li>Better integrity-checking portion</li>
 </ul>
 
-<p>Person A: generates message and hash
-Person B: holds hash so others can validate
-Person C: attacker</p>
-
-<p>it is easy to compute the hash value for any given message
-it is infeasible to generate a message that has a given hash
-it is infeasible to modify a message without changing the hash
-it is infeasible to find two different messages with the same hash</p>
+<h2 id="possible-issues">Possible issues</h2>
+<ul>
+  <li>What defines document match? Why bit-string of document in current format?</li>
+  <li>Needs authority to verify and to link</li>
+</ul>
 
    <div id="disqus_thread"></div>
 <script type="text/javascript">

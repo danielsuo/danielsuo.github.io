@@ -19,7 +19,7 @@
 <![endif]-->
 </head>
 
-  <body id='Bitcoin project update'>
+  <body id='Hello, world!'>
     
     <div class='wrapper'>
       
@@ -40,14 +40,30 @@
       <section>
 
         <div id='container'>
-          <h2><a href='/main/bitcoin/coin.jl/crypto.jl/2014/12/30/bitcoin-project-update.html'>Bitcoin project update</a></h2>
+          <h2><a href='/2014/11/24/hello-world'>Hello, world!</a></h2>
   <p class="author">
-    <span class="date">30 December 2014</span>
+    <span class="date">24 November 2014</span>
   </p>
 
-  <p>At the expense of this front page, I have been logging updates over the last month on a separate <a href="projects/bitcoin">project</a> page. I don’t yet have a good system for documenting project increments, so this will have to do for now.</p>
+  <p>I’m starting a new project and will be documenting my progress here. I’m exploring (B|b)itcoin and will begin with reimplementing some basic parts of the protocol. I’ll be using <a href="http://julialang.org/"><code>Julia</code></a>.</p>
 
-<p>Briefly, there are now two software packages and a growing library of literature / my notes. I will post more in-depth updates if there is anything substantive to say.</p>
+<p>NB: even if I do everything correctly, I can’t recommend more strongly that you do not use this implementation for anything real.</p>
+
+<h3 id="why-are-you-reimplementing">Why are you reimplementing?</h3>
+<p>I don’t know Bitcoin well enough to meaningfully contribute. Rebuilding a few major pieces forces me into the technical details, the community, the issues, and the possibilities, without anyone depending on me.</p>
+
+<h3 id="why-are-you-using-julia">Why are you using <code>Julia</code>?</h3>
+<p>A few reasons:</p>
+
+<ul>
+  <li>I’m interested in <code>Julia</code> as a possible replacement for work I’d do in <code>R</code>, <code>Python</code>, and <code>MATLAB</code>.</li>
+  <li>It’s young enough that there are easy ways to contribute.</li>
+  <li>There doesn’t appear to be any <code>Julia</code> implementation of the Bitcoin protocol. In other words, I can’t get lazy and just copy someone else’s source code.</li>
+</ul>
+
+<h3 id="what-will-you-be-building">What will you be building?</h3>
+<p>I’ll be starting with a simple command-line wallet. It will generate private and public keys, sign transactions, and broadcast to the Bitcoin network. For now, checking your balance is considered a luxury feature.</p>
+
 
    <div id="disqus_thread"></div>
 <script type="text/javascript">
