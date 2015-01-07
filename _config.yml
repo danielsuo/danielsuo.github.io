@@ -2,6 +2,7 @@ name: Daniel Suo
 description: Scientific progress goes 'boink'
 url: http://www.danielsuo.com
 
+permalink: /:year/:month/:day/:title
 category_paginate: 5
 categories:
 - 
@@ -14,6 +15,8 @@ categories:
   - 'five'
   - '/projects/five/index.md'
 
+changefreq: 'daily'
+
 kramdown:
   smart_quotes:  lsquo,rsquo,ldquo,rdquo
 
@@ -23,3 +26,5 @@ include:
 
 exclude:
 - publish
+- Gemfile*
+- gulpfile.js

@@ -6,8 +6,11 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # Install NPM
 brew install node
 
-# Install jekyll
-gem install jekyll
+# Install jekyll and bundler
+gem install jekyll bunlder
+
+# Install gems
+bundle install
 
 # Install node dependencies
 npm install -g gulp
@@ -18,5 +21,5 @@ gulp
 ```
 
 # To Do
-- Add feeds for sub-projects
+- Add [feeds for sub-projects](https://github.com/recurser/jekyll-plugins#usage-1)
 - Add [search](http://dreamand.me/web/fulltext-search-at-jekyll-site/)
