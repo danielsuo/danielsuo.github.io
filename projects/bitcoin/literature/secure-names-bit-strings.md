@@ -68,7 +68,7 @@ In practice, the infeasibility of computing collisions for a particular hash fun
 
 We refer the reader to [Pre 93] for a thorough discussion of one-way hash functions.
 
-#### Theoretical model
+#### 2.3 Theoretical model
 We emphasize that this is a theoretical description of a the problem of verifiably "naming" bit-strings, which is only a piece of the larger problem of naming digital documents.
 
 The setting for our problem is a distributed network of parties. The network may include a _server_ $$S$$ as well as a _repository_ $$R$$; parties may query the repository, asking for a copy of a particular item it contains.
@@ -91,14 +91,14 @@ To illustrate our definitions, here is a simple example of a naming scheme, wher
 
 We remark that the roles of $$S$$ as trusted server and $$R$$ as trustworthy repository in these definitions are just an artifact of how we have chosen to present and to analyze our naming schemes, allowing a clean separation between issues of the security of the scheme itself and issues of how it might be implemented in practice. 
 
-#### Digital time-stamping
+#### 2.4 Digital time-stamping
 Our solution to the naming problem builds on the work of [HS 91] and [BHS 93], whose authors describe several procedures with which users can _certify_ (the bit-string contents of) their digital documents, computing for any particular document a time-stamp _certificate_. Later, any user of the system can _validate_ a document-certificate pair; that is, he or she can use the certificate to verify that the document existed, in exactly its current form, at the time asserted in the certificate. It is infeasible to compute an illegitimate document-certificate pair that will pass the validation procedure.
 
 Because we use it directly in our naming scheme, we summarize here one digital time-stamping scheme. A central "coordinating server" receives _certification_ requests essentially, hash values of files---from users. At regular intervals, the server builds a binary tree out of all the requests received during the interval, following Merkle’s tree authcntication technique; the leaves are the requests, and each internal node is the hash of the concatenation of its two children [Merk 80]. The root of this tree is hashed together with the previous "interval hash" to produce the current interval hash, which is placed in a widely available _repository_. The server then returns to each requester a time-stamp _certificate_ consisting of the time at which the interval ended, along with the list of sibling hash values along the path leading from the requester’s leaf up to the interval hash, each one accompanied by a bit indicating whether it is the right or the left sibling. The scheme also includes a _validation_ procedure, allowing a user to test whether a document has been certified in exactly its current form, by querying the repository for the appropriate interval hash, and comparing it against a hash value appropriately recomputed from the document and its certificate.
 
 It is noteworth that the trustworthiness of the certificates computed in this scheme depends only on the integrity of the repository, and not (for example) on trusting that a particular private key has not been compromised or that a particular party's computation has been performed correctly.
 
-### A naming scheme for bit strings
+### 3 A naming scheme for bit strings
 Next we describe a naming scheme for a network that includes a server $$S$$ and a repository $$R$$. Many executions of $$N$$ and of $$V$$ may be performed concurrently in the network. We assume that there exists a family $$\{H_k\}_k$$ of collision-free hash functions. Given an initial choice of security parameter $$k$$, $$S$$ announces to all parties its random choice of a one-way hash function $$h\in H_k$$. Our scheme is a variation on the time-stamping scheme described in §2.4 above, with $$S$$ playing the role of the coordinating server that computs certificates in response to requests and makes additions to the repository $$R$$.
 
 We abbreviate a bit-string's certificate by omitting the list of hash values, leaving only a pointer to the relevant interval hash (for example, the time at which it was computed), and an encoding of the position of the request in the tree for that interval (for example, the sequence of left or right bits). It is this abbreviation that we propose to use as the name of the bit-string.
@@ -117,14 +117,14 @@ $$\begin{equation}
 
 ![hash-tree.png](secure-names-bit-strings/hash-tree.png)
 
-#### Security
+#### 3.1 Security
 The security of this naming scheme follows directly from the infeasibility of computing hash collisions for functions from $$\{H_k\}_k$$, since the only possible counterfeit names include hash collisions. In essence, if $$x$$ is a bit-string on which $$N$$ was never invoked during a run, any triple $$x,n,c$$ that $$V$$ will accept (after the correct response to a query to $$R$$) will include a hash collision for the function $$h$$ announced by $$S$$ at the beginning of the run: either $$x$$ itself or one of the hash values $$z_t$$ in $$c$$ (when combined on the left or the right with $$y_i$$) collides with another argument to $$h$$ whose hash value was computed during the run. Therefore we have the following theorem.
 
 **Theorem 1** _If $$\{H_k\}_k is a family of collision-free hash functions, then the naming scheme [N,V,S] described above is secure_
 
 Because the reduction in the proof is so direct, it is easy to give an "exact security" analysis (cf. [Lev 85, BKR 94]) of the strength of this scheme, whether the hash functions used are from the collision-free family provided by a theoretical cryptographic assumption or rather practical hash functions, as in the implementations described in §6 below.
 
-#### Variations on the scheme
+#### 3.2 Variations on the scheme
 Of course, the secure verifiability of the names assigned by the scheme described above does not depend on the particular combination of binary trees and linked lists used. By systematically invoking the hash function on pairs or ordered lists of hash values, new hash values can be computed from old ones so as to form a directed acyclic graph (by directing an edge from each of the inputs to the hash value output). Design considerations (including those discussed in §6.1 below) may dictate several different combinatorial structures for this directed graph.
 
 Whatever the structure of the growing graph of hash values, it is secured by making portions of the graph widely witnessed and widely available. To insure the verifiability of the names, it suffices that every document in the naming structure be linked by a directed path to a widely witnessed hash value; a standard ordering of the incoming edges at each node can be used to encode the path. Then the name of a document is given by this encoding of its location in the graph, together with a pointer to the hash value at the end of the path, and the argument of Theorem 1 applies.
@@ -133,7 +133,7 @@ For example, in one variation of the scheme described above, a list of documents
 
 In another variation, the widely witnessed hash values in the repository could consist simply of a linked list (as in the simple linking scheme of [HS 91]). In this case the location information for a document is a simple pointer into the repository.
 
-### Applications
+### 4 Applications
 The problem of naming digital documents might have seemed like a curiosity only a few years ago. However, with the growth in use of the Internet, more and more people need to be able to refer confidently to meaningful bit-sequences. The problem is now a matter of immediate practical concern.
 
 The problem has become especially acute with the emergence of the World-Wide Web. Jumping from one URL (Uniform Resource Locator) to the next in a sequence of WWW documents may seem at first to be exactly analogous to following a bibliographic reference in a traditional scholarly paper. In fact it is something quite different: a URL is only a pointer to a location, with no guarantee that what a user finds there today is the same reference that the author originally intended. If on-line citations include secure names for the bit-string contents of the documents cited, then it is possible to traverse a path of citations with confidence that one is indeed following the authors’ intentions. This abiity would be especially useful for the many documents on the World-Wide Web that exist only on-line.
@@ -144,16 +144,36 @@ Software code is another class of digital document for which it would be useful 
 
 For another example of a type of large digital document whose integrity matters a great deal, consider the case of genetic data. Scientists now routinely download others' data sets for use in their own research. The use of our naming scheme would allow the user to be sure of the data's integrity, as well as providing a convenient and verifiable way to cite the data in published descriptions of the work that was done with it.
 
-### Long-lived names
+### 5. Long-lived names
 The technique described in [BHS 93] for renewing cryptographic certifications of authenticity applies directly to the certificates of the present naming scheme.
 
-The renewing process works as follows. Let us suppose that an implementation of a particular time-stamping system is in place, and consider the pair $$(z,C$), where $$C$$ is a valid time-stamp certificate (in this implementation) for the bit-string $$x$$. Now suppose that an improved time-stamping system is implemented and put into practice---by replacing the hash function used in the original system with a new hash function, or even perhaps after the invention of a completely new algorithm. Further suppose that the pair $$(x, C)$$ is time-stamped by the new system, resulting in a new certificate $$C’$$, and that. some time later, i.e. at a definite later date, the original method is compromised. $$C’$$ provides evidence not only that the document contents $$x$$ existed prior to the time of the new time-stamp, but that it existed at the time stated in the original certificate, $$C$$; prior to the compromise of the old implementation, the only way to create a certificate was by legitimate means. (It is similarly recommended that if a digitally signed document is likely to be important for a long time-perhaps longer than the signer’s key will be valid-then the document-signature pair should be time-stamped [BHS 93, Odl 95, HKS 95].)
+The renewing process works as follows. Let us suppose that an implementation of a particular time-stamping system is in place, and consider the pair $$(z,C)$$, where $$C$$ is a valid time-stamp certificate (in this implementation) for the bit-string $$x$$. Now suppose that an improved time-stamping system is implemented and put into practice---by replacing the hash function used in the original system with a new hash function, or even perhaps after the invention of a completely new algorithm. Further suppose that the pair $$(x, C)$$ is time-stamped by the new system, resulting in a new certificate $$C’$$, and that. some time later, i.e. at a definite later date, the original method is compromised. $$C’$$ provides evidence not only that the document contents $$x$$ existed prior to the time of the new time-stamp, but that it existed at the time stated in the original certificate, $$C$$; prior to the compromise of the old implementation, the only way to create a certificate was by legitimate means. (It is similarly recommended that if a digitally signed document is likely to be important for a long time-perhaps longer than the signer’s key will be valid-then the document-signature pair should be time-stamped [BHS 93, Odl 95, HKS 95].)
 
 In our naming schemes, the verifiable name for the bit-string $$x$$ is a standard abbreviation $$a$$ for its original certificate $$C$$. In order that a continue to be verifiable as a name for $$t$$, the certificate $$C$$ should be renewed (as above) from time to time as new time-stamping systems are put in place. As long as this is done, $$a$$ is still a verifiable name for $$x$$. There is now an additional step to the procedure for validating the name: after checking that $$a$$ is correctly extracted from $$C$$, one must follow the usual time-stamp validation procedure for the certificate, which now includes both the originalsystem validation of $$(x,C)$$ and the new-system validation of $$[(x, C), C’]$$. We note that in practice this additional validation step would be automated, and would not at all affect the convenient use of $$a$$ to name $$x$$.
 
-### Practical implementations
+### 6. Practical implementations
 A practical implementation of a naming scheme cannot use the known theoretical constructions of collision-free hash functions. If the decision is made to use practical one-may hash functions such as MD5, then users of the system do not need to trust the server’s random choice of a function $$h\in H_k$$. (However, they do have to hope that the hash function chosen is one-way in practice; see section §5 for one way to allay users’ concerns on this score.)
 
 The naming scheme described in §3 above, based on the digital time-stamping scheme described in $2.4, was implemented by Surety Technologies, and has been in continuous commercial use since January 1995. The implementation uses practical hash functions; SpecificaIly, the current implementation uses $$h(x) = (MD5(x),SHA(x))$$ as the hash value for any argument $$x$$. A number of supplemental mechanisms are employed in order to maintain the integrity and wide distribution of the repository [Sur 95].
 
 The names assigned by our scheme are indeed concise, growing essentially as slowly as possible while still providing unique names. If the repository contains $$n$$ interval hashes, and no more than $$m$$ naming requests are received during each interval, the names can be written with at most $$\log_2 nm$$ bits. Just to give a numerical example, a repository representing a thousand requests per minute for the length of a century requires 36-bit names; in the MIME encoding (six bits per alphanumeric character) such a name can be jotted down with six characters, while hash-value names of this length are completely insecure.
+
+#### 6.1 Meaningful names
+There are several variations of our naming scheme that allow an author a fair measure of control over the names of his or her documents, so that the author can choose a verifiable name that is meaningful in one or another useful way.
+
+First, and most obviously, observe that in the scheme described in detail in §3 a convenient way to encode the location in the repository to which a document's contents are linked is by the date and time at which the interval hash at that location was computed. Instead of (e.g.) a MIME encoding of the number of seconds since a moment in early 1970 (Unix standard time), it would often be useful to express at least a part of this date and time in human-readable form.
+
+In a slight variation, we can allow "personalized" naming requests, as follows. Suppose that the repository items are formatted in a standard way every day, and let $$F(\cdot)$$ denote any standard mapping from ASCII-encoded strings to the list of daily repository locations. When the server receives a personalized naming request that includes the ASCII string $$s$$, the request is held until the appropriate moment in the day and then linked to the widely witnessed hash value stored at location $$F(s)$$; in this way, s is made to be part of the name of the documents included in those special naming requests. Thus, for example, the author of _The History of Computers in Zurich_ can arrange for the verifiable name of its bit-string contents to have the form ["The History of Computers in Zurich" <code>date suffix</code>], where <code>suffix</cide> includes a few bits of disambiguating information that distinguishes this request from all others that mere linked to the same repository location.
+
+In another example, consider the tree-of-trees variation briefly mentioned in §3.2. An author can name a multi-part document by placing the contents of each successive part at consecutive leaf nodes of a local tree. The resulting request to the server gives the consecutive parts of the document consecutive local positions and therefore consecutive names. Furthermore, the other portions of these consecutive names are identical, explicitly encoding the fact that they are parts of the same document. And local trees can have sub-trees, so that our historian can arrange to name the ith section of the jth chapter of his masterpiece ["The History of Computers in Zurich" <code>infix</code> $$i,j$$], for all appropriate pairs $$(i,j)$$.
+
+More complicated ways of structuring the parts of a document can similarly be encoded in the verifiable names assigned by our naming scheme. Note that conventional naming schemes do allow for encoding document structure into names, but not in a verifiable manner.
+
+In another variation, a table of contents for a long or complicated multi-part document can be included in a standard place in the request---for example, as its last piece. The table of contents may contain more or less detailed descriptions of the parts of the document. At a later time, together with a list of documents to be authenticated and their certificates, such an authenticated table of contents can be used to verify (1) that each document in the list is an exact copy of one that was registered with the table of contents, and (2) that none of the documents in the list are missing.
+
+### Acknowledgements
+
+We would like to thank Ralph Merkle, R. Venkatesan, Matt Franklin, Avi Rubin, Bill Arms, and Dave Richards for helpful discussions about this work. We would also like to thank the anonymous referees for their very useful suggestions.
+
+### References
+See [original](secure-names-bit-strings.pdf).

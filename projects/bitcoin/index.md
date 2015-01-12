@@ -11,7 +11,7 @@ An ongoing learning project with several parts: software development, journal cl
 - [Coin.jl](https://github.com/danielsuo/Coin.jl): A (self-educational, incomplete, and likely incorrect) library for working with Bitcoin written in Julia
 
 ## Reading List
-Borrowed heavily from the [Satoshi Nakamoto Institute](http://nakamotoinstitute.org/). Bullets without links are future readings. Notes linked where available.
+Bullets without links are future readings. Notes linked where available.
 
 <ul>
 
