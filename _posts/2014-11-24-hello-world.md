@@ -4,7 +4,7 @@ title: Hello, world!
 categories: [main, bitcoin, Coin.jl, Crypto.jl]
 ---
 
-I'm starting a new project and will be documenting my progress here. I'm exploring (B\|b)itcoin and will begin with reimplementing some basic parts of the protocol. I'll be using [`Julia`](http://julialang.org/).
+I'm starting a new project and will be documenting my progress on this site. I'm exploring (B\|b)itcoin and will begin with reimplementing some basic parts of the protocol. I'll be using [`Julia`](http://julialang.org/).
 
 NB: even if I do everything correctly, I can't recommend more strongly that you do not use this implementation for anything real.
 

@@ -8,7 +8,7 @@ An ongoing learning project with several parts: software development, journal cl
 
 ## Software packages
 - [Crypto.jl](https://github.com/danielsuo/Crypto.jl): A library that wraps OpenSSL, but also has pure Julia implementations for reference.
-- [Coin.jl](https://github.com/danielsuo/Coin.jl): A (self-educational, incomplete, and likely incorrect) library for working with Bitcoin written in Julia
+- [Coin.jl](https://github.com/danielsuo/Coin.jl): A (self-educational, incomplete, and likely incorrect) library for working with Bitcoin written in Julia.
 
 ## Reading List
 Bullets without links are future readings. Notes linked where available.
