@@ -22,7 +22,7 @@
       
       <item>
         <title>Hello, world!</title>
-        <description>&lt;p&gt;I’m starting a new project and will be documenting my progress here. I’m exploring (B|b)itcoin and will begin with reimplementing some basic parts of the protocol. I’ll be using &lt;a href=&quot;http://julialang.org/&quot;&gt;&lt;code&gt;Julia&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;I’m starting a new project and will be documenting my progress on this site. I’m exploring (B|b)itcoin and will begin with reimplementing some basic parts of the protocol. I’ll be using &lt;a href=&quot;http://julialang.org/&quot;&gt;&lt;code&gt;Julia&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;NB: even if I do everything correctly, I can’t recommend more strongly that you do not use this implementation for anything real.&lt;/p&gt;
 
