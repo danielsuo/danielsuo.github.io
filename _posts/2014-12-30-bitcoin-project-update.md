@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Bitcoin project update
+published: false
 categories: [main, bitcoin, Coin.jl, Crypto.jl]
 ---
 
