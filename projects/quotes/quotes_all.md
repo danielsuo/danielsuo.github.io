@@ -6,6 +6,8 @@ published: false
 
 <div id="container">
 
+<p>&#8220;I wake up in the morning unsure of whether I want to savor the world or save the world,&#8221; White said, &#8220;This makes it hard to plan the day.&#8221;</p>
+
 <p>&#8220;Simplicity can come before or after complexity. If it comes before, you&#8217;re stupid. If it comes after, you&#8217;re a genius.&#8221;</p>
 
 <p>&#8220;Altruism and selfishness are no longer mutually exclusive.&#8221;</p>
