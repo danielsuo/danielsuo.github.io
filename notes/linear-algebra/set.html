@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Daniel Suo | Scientific progress goes 'boink'</title>
+
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/pygment_trac.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/assets/img/profile.jpg" />
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+  <body id='Set'>
+    
+    <div class='wrapper'>
+      
+      <header>
+    <h1>Daniel Suo</h1>
+    <p>Scientific progress goes 'boink'</p>
+    
+    <ul>
+    	<li><a href="/">home</a></li>
+      <li><a href="/projects">projects</a></li>
+      <li><a href="/notes">notes</a></li>
+    </ul>
+
+    <div class="cb-tip-button" data-content-location="" data-href="//www.coinbase.com/tip_buttons/show_tip" data-to-user-id="515097e7e82052a271000007"></div>
+    <script>!function(d,s,id) {var js,cjs=d.getElementsByTagName(s)[0],e=d.getElementById(id);if(e){return;}js=d.createElement(s);js.id=id;js.src="https://www.coinbase.com/assets/tips.js";cjs.parentNode.insertBefore(js,cjs);}(document, 'script', 'coinbase-tips');</script>
+</header>
+
+      <section>
+
+        <div id='container'>
+          <h2 id="set">Set</h2>
+<p>A <em>set</em> is a collection of distinct objects. Each object in the set is called an <em>element</em> or a <em>member</em> of the set. A set can have a finite or infinite number of elements. As we will soon see, sets are a fundamental concept in linear algebra.</p>
+
+<p><strong>Example</strong>. A set $S$ written as <script type="math/tex">\{5,1,2,10\}</script> contains as elements the numbers $5$, $1$, $2$, and $10$.</p>
+
+<p><strong>Example</strong>. A set $S$ written as <script type="math/tex">\{\{5,1\},\{2,10\}\}</script> contains as elements <script type="math/tex">\{5,1\}</script> and <script type="math/tex">\{2,10\}</script>, themselves sets. Here we see that sets are objects in their own right and can contain or belong in other sets.</p>
+
+<p><strong>Example</strong>. A set $S$ with zero members is called the <em>empty set</em> and is denoted by $\emptyset$. Note that the empty set is still a set and equivalent to neither nothing nor the number $0$.</p>
+
+<p><strong>Belonging</strong>. Given an element $x$ and a set $S$, we write $x\in S$ to mean $x$ is a member of, or belongs to, $S$. Inversely, we write $x\notin S$ to mean $x$ is not a member of, or does not belong to, $S$.</p>
+
+<p><strong>Subset and equality</strong>. Given two sets $A$ and $B$, if every element in $A$ is also an element in $B$, we say that $A$ is a subset of $B$ (written $A\subseteq B$) and $B$ is a super set of $A$ (written $B\supseteq A$). If every element in $B$ is also an element in $A$, we say $A$ is equal to $B$, or $A=B$. If not, then we say $A$ is a proper subset of $B$ (written $A\subset B$) and $B$ is a proper superset of $A$ (written $B\supset A$).</p>
+
+<p><strong>Example</strong>. The set of natural numbers, <script type="math/tex">\mathbb{N}=\{1,2,3\}</script> , is a proper subset of the set of integers, <script type="math/tex">\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}</script>. We can write this statement as $\mathbb{N}\subset\mathbb{Z}$.</p>
+
+<p><strong>Intersection, union, and complement</strong>. Given two sets $A$ and $B$, the intersection of $A$ and $B$, or $A\cap B$, is the set of elements contained in both $A$ and $B$. The union of the $A$ and $B$, or $A\cup B$, is the set of elements contained in either $A$ or $B$. The complement of $A$, or $\bar{A}$, with respect to some superset $B$ is the set of all elements not in $A$, but in $B$.</p>
+
+<p><strong>List</strong>. A <em>list</em> is a collection of objects in some order. Lists are special sets. Elements of a list need not be distinct. Lists with identical elements arranged different orders are different. Like sets, lists can have a finite or infinite number of elements. Lists with certain lengths sometimes have special names. For example, lists of length two are often called <em>ordered pairs</em>.</p>
+
+<p><strong>Cartesian product</strong>. If $A$ and $B$ are two sets, we define their <em>Cartesian product</em> or <em>cross product</em> as the set of all ordered pairs in which the first element of each pair is a member in $A$ and the second element is a member in $B$. We often write the Cartesian product between $A$ and $B$ as $A\times B$.</p>
+
+<p>If A has <script type="math/tex">\|A\|</script> elements and $B$ has <script type="math/tex">\|B\|</script> elements, then the length of $A\times B$, <script type="math/tex">\|A\times B\|</script>, is <script type="math/tex">\|A\|\cdot\|B\|</script>.</p>
+
+<p>Cartesian products can be extended to many sets. The Cartesian product of $A_1\times A_2 \times \ldots \times A_k$ is the set of all lists length $k$ in which the ith element of the list is a member of the set $A_i$.</p>
+
+<p><strong>Remark</strong>. We often organize sets that satisfy common axioms into types. In linear algebra, we will study many types of sets. We study elements and sets within each type, and relate elements in one set to elements in another set. The reader may wonder why we study this type or that relation. We study them because history has shown them to be useful models for real-world applications.</p>
+
+<p>We define a type by enumerating the axioms that each set of that type must satisfy. Each section in the following notes describes a different type of set.</p>
+
+
+        </div>
+
+      </section>
+
+      <footer>
+  <social>
+	<a href="http://facebook.com/danielsuo"><img src="/assets/img/facebook.png"></a>
+	<a href="http://twitter.com/danielsuo"><img src="/assets/img/twitter.png"></a>
+  <a href="http://www.linkedin.com/in/danielsuo"><img src="/assets/img/linkedin.png"></a>
+  <a href="https://github.com/danielsuo"><img src="/assets/img/github.png"></a> 
+  <a href="/feed.xml"><img src="/assets/img/rss.png"></a> 
+</social>
+  <br><br>
+  <small>Complain <a href="mailto:dsuo@post.harvard.edu">here</a>.</small>
+  <small><a href="/pubkey.txt">Securely</a>.</small>
+</footer>
+      
+    </div>
+
+    <script src='/assets/js/scale.fix.js'></script>
+    <script type="text/javascript">
+var gaJsHost = (('https:' == document.location.protocol) ? 'https://ssl.' : 'http://www.');
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+varpagetracker:_gat._getTracker(UA-37351701-1)
+}
+
+
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Daniel Suo | Scientific progress goes 'boink'</title>
+
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/pygment_trac.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/assets/img/profile.jpg" />
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+  <body id='Lighting'>
+    
+    <div class='wrapper'>
+      
+      <header>
+    <h1>Daniel Suo</h1>
+    <p>Scientific progress goes 'boink'</p>
+    
+    <ul>
+    	<li><a href="/">home</a></li>
+      <li><a href="/projects">projects</a></li>
+      <li><a href="/notes">notes</a></li>
+    </ul>
+
+    <div class="cb-tip-button" data-content-location="" data-href="//www.coinbase.com/tip_buttons/show_tip" data-to-user-id="515097e7e82052a271000007"></div>
+    <script>!function(d,s,id) {var js,cjs=d.getElementsByTagName(s)[0],e=d.getElementById(id);if(e){return;}js=d.createElement(s);js.id=id;js.src="https://www.coinbase.com/assets/tips.js";cjs.parentNode.insertBefore(js,cjs);}(document, 'script', 'coinbase-tips');</script>
+</header>
+
+      <section>
+
+        <div id='container'>
+          <h3 id="lighting">Lighting</h3>
+
+<h4 id="irradiance">Irradiance</h4>
+<p>Irradiance is the radiant flux incident on a surface per unit area. Radiant flux, or radiant power, is the radiant energy emitted, reflected, transmitted, or received, per unit time. Radiant flux is measured in watts, which are defined as joules per second, and describes the rate of energy transfer with respect to time. 1 joule is equal to the energy transferred, or work done, when applying a force of one newton (accelerate a one kilogram mass at 1 meter per second squared) through a distance of one meter. To sum up, irradiance is the energy transferred per second (watts) through an area (meters squared): $W/m^2$.</p>
+
+<p>Irradiance refers to incoming power (energy per time, measured in watts).</p>
+
+<h4 id="radiance">Radiance</h4>
+<p>Radiance is the radiant flux per unit solid angle per unit area. Solid angles are three-dimensional analogues to an angle between, for example, two vectors. They are measured in steradians. A radian is numerically equivalent to the length of a corresponding arc on a unity circle. Similarly, a steradian is numerically equivalent to the area subtended on a unit sphere.</p>
+
+<p>There are two use cases for radiance:</p>
+
+<ol>
+  <li>Describing angle-dependent diffuse reflections (i.e., the power reflected in a particular direction by a particular area)</li>
+  <li>Describing emission from light sources (i.e., the power received by a particular area in a particular direction)</li>
+</ol>
+
+<p>Radiance is ‘conserved’ along a ray. More generally, radiance divided by a medium’s index of refraction is ‘conserved’ before and after traveling through that medium.</p>
+
+<p>Radiant intensity is the radiant flux over a solid angle.</p>
+
+<h4 id="luminance">Luminance</h4>
+<p>From <a href="http://en.wikipedia.org/wiki/Luminance">Wikipedia</a>: Luminance is a measure of luminous intensity per unit area of light traveling in a given direction. It describes the amount of light that passes through, is emitted or reflected from a particular area, and falls within a given solid angle.</p>
+
+<p>The SI unit for luminous intensity is the candela, which is defined as the luminous intensity, in a given direction, of a source that emits monochromatic radiation of frequency 540 terahertz and that has a radiant intensity in that direction of 1⁄683 watt per steradian. In otherwords, a candela is a measure of power through a solid angle weighted by the lumosity function (a standardized model of the sensitivity of the human eye to different wavelengths, also known as the luminous efficiency function).</p>
+
+<p>A typical human eye responds to electromagnetic waves with wavelengths between 390 and 700 nm. This corresponds to 430 to 790 THz ($\lambda v = c$, where $\lambda$ is the wavelength, $v$ is the frequency, and $c$ is the speed of light).</p>
+
+<h4 id="plenoptic-function">Plenoptic Function</h4>
+<p>The plenoptic function attempts to fully describe a scene by giving the radiance as a function of a number of variables. The plenoptic function is typically not used in practice computationally. A common formulation:</p>
+
+<script type="math/tex; mode=display">L(x,y,z,\theta,\phi,t,\lambda)</script>
+
+<p>gives radiance $L$ at a given position, $(x, y, z)$, in a certain direction, $(\theta, \phi)$, at a certain time $t$ for a certain frequency $\lambda$. Sometimes other variables are considered (e.g., polarization angle).</p>
+
+<h4 id="references">References</h4>
+<ul>
+  <li>Wikipedia for <a href="http://en.wikipedia.org/wiki/Irradiance">irradiance</a> and <a href="http://en.wikipedia.org/wiki/Radiance">radiance</a></li>
+  <li><a href="http://www.astrohandbook.com/ch14/radiation_defs.pdf">Radiometry Definitions</a></li>
+  <li><a href="http://physics.stackexchange.com/questions/52959/radiance-equation">Radiance Equation</a></li>
+  <li><a href="http://www.physics.csbsju.edu/370/photometry/etendue.pdf">Radiance Theorem</a></li>
+  <li><a href="http://mrl.nyu.edu/~dzorin/cg05/lecture08.pdf">Lighting in Physics vs Graphics</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Light_field">Plenoptic Function</a></li>
+</ul>
+
+        </div>
+
+      </section>
+
+      <footer>
+  <social>
+	<a href="http://facebook.com/danielsuo"><img src="/assets/img/facebook.png"></a>
+	<a href="http://twitter.com/danielsuo"><img src="/assets/img/twitter.png"></a>
+  <a href="http://www.linkedin.com/in/danielsuo"><img src="/assets/img/linkedin.png"></a>
+  <a href="https://github.com/danielsuo"><img src="/assets/img/github.png"></a> 
+  <a href="/feed.xml"><img src="/assets/img/rss.png"></a> 
+</social>
+  <br><br>
+  <small>Complain <a href="mailto:dsuo@post.harvard.edu">here</a>.</small>
+  <small><a href="/pubkey.txt">Securely</a>.</small>
+</footer>
+      
+    </div>
+
+    <script src='/assets/js/scale.fix.js'></script>
+    <script type="text/javascript">
+var gaJsHost = (('https:' == document.location.protocol) ? 'https://ssl.' : 'http://www.');
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+varpagetracker:_gat._getTracker(UA-37351701-1)
+}
+
+
+  </body>
+</html>
