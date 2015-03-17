@@ -120,7 +120,7 @@ $$\begin{equation}
 #### 3.1 Security
 The security of this naming scheme follows directly from the infeasibility of computing hash collisions for functions from $$\{H_k\}_k$$, since the only possible counterfeit names include hash collisions. In essence, if $$x$$ is a bit-string on which $$N$$ was never invoked during a run, any triple $$x,n,c$$ that $$V$$ will accept (after the correct response to a query to $$R$$) will include a hash collision for the function $$h$$ announced by $$S$$ at the beginning of the run: either $$x$$ itself or one of the hash values $$z_t$$ in $$c$$ (when combined on the left or the right with $$y_i$$) collides with another argument to $$h$$ whose hash value was computed during the run. Therefore we have the following theorem.
 
-**Theorem 1** _If $$\{H_k\}_k is a family of collision-free hash functions, then the naming scheme [N,V,S] described above is secure_
+**Theorem 1** _If $$\{H_k\}_k$$ is a family of collision-free hash functions, then the naming scheme [N,V,S] described above is secure_
 
 Because the reduction in the proof is so direct, it is easy to give an "exact security" analysis (cf. [Lev 85, BKR 94]) of the strength of this scheme, whether the hash functions used are from the collision-free family provided by a theoretical cryptographic assumption or rather practical hash functions, as in the implementations described in §6 below.
 

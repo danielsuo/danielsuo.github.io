@@ -7,7 +7,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install node
 
 # Install jekyll and bundler
-gem install jekyll bunlder
+gem install jekyll bundler
 
 # Install gems
 bundle install
