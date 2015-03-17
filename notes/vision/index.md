@@ -47,7 +47,7 @@ On the other hand, if the aperture is very big, we don't need to expose the sens
 
 If the aperture is extremely small, we see a blurry image. This is because of the wave nature of light. Light diffracts through a pinhole and the effect increases as the pinhole's size becomes smaller.
 
-### Lenses
+#### Lenses
 In order to gather more light while still maintaining a focused image, we use a lens and rely on its ability to bend light. If we replace a large aperture with a lens, we still let in a lot of light. The lens shifts the extra rays that would have blurred our image. This refraction lets us take advantage of the extra light.
 
 ![pinhole-with-lens.png](pinhole-with-lens.png)
