@@ -16,7 +16,7 @@ Irradiance is the radiant flux incident on a surface per unit area. Radiant flux
 Irradiance refers to incoming power (energy per time, measured in watts).
 
 #### Radiance
-Radiance is the radiant flux per unit solid angle per unit area. Solid angles are three-dimensional analogues to an angle between, for example, two vectors. They are measured in steradians. A radian is numerically equivalent to the length of a corresponding arc on a unity circle. Similarly, a steradian is numerically equivalent to the area subtended on a unit sphere.
+  Radiance is the radiant flux per unit solid angle per unit area. Solid angles are three-dimensional analogues to an angle between, for example, two vectors. They are measured in steradians. A radian is numerically equivalent to the length of a corresponding arc on a unity circle. Similarly, a steradian is numerically equivalent to the area subtended on a unit sphere.
 
 There are two use cases for radiance:
 
@@ -35,7 +35,13 @@ The SI unit for luminous intensity is the candela, which is defined as the lumin
 A typical human eye responds to electromagnetic waves with wavelengths between 390 and 700 nm. This corresponds to 430 to 790 THz ($\lambda v = c$, where $\lambda$ is the wavelength, $v$ is the frequency, and $c$ is the speed of light).
 
 #### Plenoptic Function
+The plenoptic function attempts to fully describe a scene by giving the radiance as a function of a number of variables. The plenoptic function is typically not used in practice computationally. A common formulation:
 
+$$
+L(x,y,z,\theta,\phi,t,\lambda)
+$$
+
+gives radiance $L$ at a given position, $(x, y, z)$, in a certain direction, $(\theta, \phi)$, at a certain time $t$ for a certain frequency $\lambda$. Sometimes other variables are considered (e.g., polarization angle).
 
 #### References
 - Wikipedia for [irradiance](http://en.wikipedia.org/wiki/Irradiance) and [radiance](http://en.wikipedia.org/wiki/Radiance)
@@ -49,3 +55,18 @@ A typical human eye responds to electromagnetic waves with wavelengths between 3
 
 #### Pixels
 From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/): Conceptually, each pixel is a sample of the radiance arriving at a camera viewpoint from a direction. The camera records the number of photons captured for each pixel in its sensor in a given period of time and approximates the power (energy from the photons in a given time) for all pixels.
+
+#### Photograph
+From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/): A photograph is a slice of the plenoptic function 
+
+- At a particular point of view $(x,y,z)$
+- In the camera's field of view (range over $\theta$ and $\phi$)
+- At a certain time $t$
+- Over a range of frequencies $\lambda$
+
+#### References
+- [Class notes on image formation](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/)
+
+### Cameras and optics
+
+#### Camera obscura
