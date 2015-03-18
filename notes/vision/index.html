@@ -102,7 +102,7 @@
 </ul>
 
 <h4 id="homogenous-coordinates">Homogenous coordinates</h4>
-<p>Coordinate system where we can represent points at infinity using finite coordinates. Homogenous coordinates also let us easily represent affine and, in general, projective transformations by matrices.</p>
+<p>Homogenous, or projective coordinates form a coordinate system where we can represent points at infinity using finite coordinates. Homogenous coordinates also let us easily represent affine and, in general, projective transformations by matrices.</p>
 
 <p>To get the homogenous coordinate of some coordinate in $\mathbb{R}^n$, we append the number 1 to create a vector of length $n+1$. In the case of a coordinate in $\mathbb{R}^2$, we represent the coordinate $(x,y)$ as:</p>
 
@@ -205,6 +205,25 @@ y + t_y\\
 \right] %]]></script>
 
 <p>Translations are an example of an <em>affine transformation</em>.</p>
+
+<h4 id="affine-transformations">Affine transformations</h4>
+<p>Affine transformations are a superset of linear transformations; they relax the requirement that the origin is preserved. Affine transformations, like linear transformations, are still closed under composition and preserve</p>
+
+<ul>
+  <li>Lines</li>
+  <li>Parallelism</li>
+  <li>Ratios</li>
+</ul>
+
+<p>We can tell if a matrix represents an affine transformation if its last row contains all zeros except for a 1 in the last column. Physically, we interpret affine transformations as some combination of a linear transformation and a translation.</p>
+
+<h4 id="projective-transformations">Projective transformations</h4>
+<p>Projective transformations are a superset of affine transformations. Parallel lines do not necessarily remain parallel and ratios are not preserved. We can tell if a matrix represents a projective transformation if its last row is not $[0,0,\ldots,1]$ as is required for an affine transformation.</p>
+
+<h4 id="summary-of-transformations">Summary of transformations</h4>
+<p>From <a href="http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf">Szeliski’s book</a>.</p>
+
+<p><img src="transformations.png" alt="transformations.png" /></p>
 
 <h3 id="image-operations">Image operations</h3>
 
