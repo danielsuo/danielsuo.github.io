@@ -17,6 +17,9 @@ categories:
 
 changefreq: 'daily'
 
+redcarpet:
+  extensions: ['smart']
+
 kramdown:
   smart_quotes:  lsquo,rsquo,ldquo,rdquo
 

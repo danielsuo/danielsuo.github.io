@@ -3,9 +3,14 @@ layout: base
 title: Notes on Computer Vision
 ---
 
+## Computer Vision
+
+These notes are based on the course [COS429](http://vision.princeton.edu/courses/COS429/2014fa/), which is taught at Princeton by Professor Jianxiong Xiao.
+
 ## Notes with their own pages
-- [Homogenous coordinates](homogenous-coordinates.html)
 - [Lighting](lighting.html)
+- [Optics](optics.html)
+<!-- - [Homogenous coordinates](homogenous-coordinates.html) -->
 
 ## Notes that have not been organized
 
@@ -25,36 +30,131 @@ From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_c
 #### References
 - [Class notes on image formation](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/)
 
-### Cameras and optics
+### 2D and 3D Transformations
 
-#### Camera obscura
-A dark box with a hole in one side. Light from an external scene goes through the hole and projects on the surface opposite the hole (or some kind of sensor, in the case of a camera). Color and perspective are preserved, but the image is rotated 180 degrees. A _pinhole camera_ is a camera obscura that does not use a lens to focus light.
+#### Image transformations
+- Image warping changes the domain of the image. In other words, we move pixels around (e.g., moving, scaling, rotating, fisheye).
+- Image filtering changes the range of the image. In other words, we modify the pixels, but keep them in the same location (e.g., Instagram filters).
 
-**Why do we need a hole?** Asked a different way, why don't we see reflections of a scene on arbitrary pieces of paper? Without a hole, light from many directions hit the recording surface or sensor at a given point. It is not possible to record the light coming from only the area of the scene we want to record at that point on the sensor. 
+#### 2D Linear transformations
+- Closed under combinations of scale, rotation, sheer, mirror (interestingly, not translation)
+- Linear transformations preserve
+  - Origin
+  - Lines
+  - Parallelism
+  - Ratios
 
-![pinhole-no-hole.png](pinhole-no-hole.png)
+#### Homogenous coordinates
+Coordinate system where we can represent points at infinity using finite coordinates. Homogenous coordinates also let us easily represent affine and, in general, projective transformations by matrices.
 
-The pinhole camera only allows rays from one point in the scene to strike each point of the paper.
+To get the homogenous coordinate of some coordinate in $\mathbb{R}^n$, we append the number 1 to create a vector of length $n+1$. In the case of a coordinate in $\mathbb{R}^2$, we represent the coordinate $(x,y)$ as:
 
-![pinhole-with-hole.png](pinhole-with-hole.png)
+$$
+(x,y)\Rightarrow\left[
+\begin{array}{c}
+x\\
+y\\
+1\\
+\end{array}
+\right]
+$$
 
-#### Aperture
-From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/): In optics, an aperture is a hole or opening through which light travels. The aperture determines the cone angle of a bundle of rays that come to a focus in the image plane.
+We add a further stipulation that any scalar multiple of a homogenous coordinate is considered the same point. We can think of the homogenous coordinate for some $\mathbb{R}^2$ coordinate and all its scalar multiples as a line in $\mathbb{R}^3$.
 
-If the aperture is small, we need to expose the sensor for a long time to collect enough light (i.e., long exposure time). However, we get a high fidelity image. There are very few rays from the external scene that hit each part of the sensor.
+![homogenous-coordinates.png](homogenous-coordinates.png)
 
-On the other hand, if the aperture is very big, we don't need to expose the sensor for as long, but our image is blurry. Light from too many directions hit each part of the sensor.
+Converting back from some homogenous coordinate:
 
-If the aperture is extremely small, we see a blurry image. This is because of the wave nature of light. Light diffracts through a pinhole and the effect increases as the pinhole's size becomes smaller.
+$$\left[
+\begin{array}{c}
+x\\
+y\\
+w\\
+\end{array}
+\right] \Rightarrow (x/w,y/w)
+$$
 
-#### Lenses
-In order to gather more light while still maintaining a focused image, we use a lens and rely on its ability to bend light. If we replace a large aperture with a lens, we still let in a lot of light. The lens shifts the extra rays that would have blurred our image. This refraction lets us take advantage of the extra light.
+Continuing with our example in $\mathbb{R}^2$, let us consider the plane $z=1$, or all the points of the form $(x,y,1)$. Every point in $\mathbb{R^2}$ corresponds uniquely with a point $(x,y,z)$ on the plane $z=1$. However, if we want to consider all lines in $\mathbb{R}^3$ that pass through the origin, we must examine points of the form $(x,y,0)$. Intuitively, we call these 'points at infinity'.
 
-![pinhole-with-lens.png](pinhole-with-lens.png)
+Using homogenous coordinates, we can now use the power of linear algebra in ways we could not with normal coordinates.
+
+$$
+\left[
+\begin{array}{c}
+x'\\
+y'\\
+\end{array}
+\right]
+
+=
+
+\left[
+\begin{array}{cc}
+? & ?\\
+? & ?\\
+\end{array}
+\right] 
+
+\left[
+\begin{array}{c}
+x\\
+y\\
+\end{array}
+\right]
+
+=
+
+\left[
+\begin{array}{c}
+x + t_x\\
+y + t_y\\
+\end{array}
+\right]
+$$
+
+can now be computed via
+
+$$
+\left[
+\begin{array}{c}
+x'\\
+y'\\
+1\\
+\end{array}
+\right]
+
+=
+
+\left[
+\begin{array}{ccc}
+1 & 0 & t_x\\
+0 & 1 & t_y\\
+0 & 0 & 1\\
+\end{array}
+\right] 
+
+\left[
+\begin{array}{c}
+x\\
+y\\
+1\\
+\end{array}
+\right]
+
+=
+
+\left[
+\begin{array}{c}
+x + t_x\\
+y + t_y\\
+1\\
+\end{array}
+\right]
+$$
+
+Translations are an example of an _affine transformation_.
+
+### Image operations
 
 #### References
-- [Class notes on image formation](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/)
-
-### Anti-pinhole Cameras
-
-### 2D and 3D Transformations
+- [Image operations](http://www.cs.virginia.edu/~gfx/Courses/2011/IntroGraphics/lectures/3-Image.pdf)
