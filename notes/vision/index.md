@@ -45,7 +45,7 @@ From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_c
   - Ratios
 
 #### Homogenous coordinates
-Coordinate system where we can represent points at infinity using finite coordinates. Homogenous coordinates also let us easily represent affine and, in general, projective transformations by matrices.
+Homogenous, or projective coordinates form a coordinate system where we can represent points at infinity using finite coordinates. Homogenous coordinates also let us easily represent affine and, in general, projective transformations by matrices.
 
 To get the homogenous coordinate of some coordinate in $\mathbb{R}^n$, we append the number 1 to create a vector of length $n+1$. In the case of a coordinate in $\mathbb{R}^2$, we represent the coordinate $(x,y)$ as:
 
@@ -153,6 +153,23 @@ y + t_y\\
 $$
 
 Translations are an example of an _affine transformation_.
+
+#### Affine transformations
+Affine transformations are a superset of linear transformations; they relax the requirement that the origin is preserved. Affine transformations, like linear transformations, are still closed under composition and preserve
+
+- Lines
+- Parallelism
+- Ratios
+
+We can tell if a matrix represents an affine transformation if its last row contains all zeros except for a 1 in the last column. Physically, we interpret affine transformations as some combination of a linear transformation and a translation.
+
+#### Projective transformations
+Projective transformations are a superset of affine transformations. Parallel lines do not necessarily remain parallel and ratios are not preserved. We can tell if a matrix represents a projective transformation if its last row is not $[0,0,\ldots,1]$ as is required for an affine transformation.
+
+#### Summary of transformations
+From [Szeliski's book](http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf).
+
+![transformations.png](transformations.png)
 
 ### Image operations
 
