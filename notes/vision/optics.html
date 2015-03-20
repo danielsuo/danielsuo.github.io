@@ -52,7 +52,7 @@
 <h4 id="camera-obscura">Camera obscura</h4>
 <p>A dark box with a hole in one side. Light from an external scene goes through the hole and projects on the surface opposite the hole (or some kind of sensor, in the case of a camera). Color and perspective are preserved, but the image is rotated 180 degrees. A <em>pinhole camera</em> is a camera obscura that does not use a lens to focus light.</p>
 
-<p><strong>Why do we need a hole?</strong> Asked a different way, why don’t we see reflections of a scene on arbitrary pieces of paper? Without a hole, light from many directions hit the recording surface or sensor at a given point. It is not possible to record the light coming from only the area of the scene we want to record at that point on the sensor.</p>
+<p><strong>Why do we need a hole?</strong> Asked a different way, why don’t we see reflections of a scene on arbitrary pieces of paper? Without a hole, light from many directions hit the recording surface or sensor at a given point. It is not possible to record the light coming from only the area of the scene we want to record at that point on the sensor. In other words, a hole gives us an approximately one-to-one mapping of rays from points in the scene to points on the sensor.</p>
 
 <p><img src="pinhole-no-hole.png" alt="pinhole-no-hole.png" /></p>
 
@@ -93,6 +93,9 @@
 <p>We can show this is true via geometry or representing the three rays as a system of simultaneous equations.</p>
 
 <h4 id="anti-pinhole-cameras">Anti-pinhole Cameras</h4>
+<p>From <a href="http://en.wikipedia.org/wiki/Pinspeck_camera">Wikipedia</a>: A pinspeck camera is the optical reverse of a pinhole camera: a small (point-like) obstruction (the speck) is placed in front of the film where the (pin) hole would be in a pinhole camera. (The dark screen is “replaced” by the transparent nothing around the speck.)</p>
+
+<p>Whereas in a pinhole camera the hole allows rays of light from different parts of the scene to reach different parts of the film, the obstruction in the pinspeck camera causes the shadow of different points in the scene to fall on different points on the film. The result is a negative image.</p>
 
 <h4 id="modern-cameras">Modern Cameras</h4>
 <ul>

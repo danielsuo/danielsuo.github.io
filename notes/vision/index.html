@@ -66,7 +66,7 @@
 <p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: Conceptually, each pixel is a sample of the radiance arriving at a camera viewpoint from a direction. The camera records the number of photons captured for each pixel in its sensor in a given period of time and approximates the power (energy from the photons in a given time) for all pixels.</p>
 
 <h4 id="photograph">Photograph</h4>
-<p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: A photograph is a slice of the plenoptic function</p>
+<p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: A photograph is a slice of the plenoptic function </p>
 
 <ul>
   <li>At a particular point of view $(x,y,z)$</li>
@@ -106,13 +106,15 @@
 
 <p>To get the homogenous coordinate of some coordinate in $\mathbb{R}^n$, we append the number 1 to create a vector of length $n+1$. In the case of a coordinate in $\mathbb{R}^2$, we represent the coordinate $(x,y)$ as:</p>
 
-<script type="math/tex; mode=display">(x,y)\Rightarrow\left[
+<script type="math/tex; mode=display">
+(x,y)\Rightarrow\left[
 \begin{array}{c}
 x\\
 y\\
 1\\
 \end{array}
-\right]</script>
+\right]
+</script>
 
 <p>We add a further stipulation that any scalar multiple of a homogenous coordinate is considered the same point. We can think of the homogenous coordinate for some $\mathbb{R}^2$ coordinate and all its scalar multiples as a line in $\mathbb{R}^3$.</p>
 
@@ -126,13 +128,15 @@ x\\
 y\\
 w\\
 \end{array}
-\right] \Rightarrow (x/w,y/w)</script>
+\right] \Rightarrow (x/w,y/w)
+</script>
 
 <p>Continuing with our example in $\mathbb{R}^2$, let us consider the plane $z=1$, or all the points of the form $(x,y,1)$. Every point in $\mathbb{R^2}$ corresponds uniquely with a point $(x,y,z)$ on the plane $z=1$. However, if we want to consider all lines in $\mathbb{R}^3$ that pass through the origin, we must examine points of the form $(x,y,0)$. Intuitively, we call these ‘points at infinity’.</p>
 
 <p>Using homogenous coordinates, we can now use the power of linear algebra in ways we could not with normal coordinates.</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
+
 \left[
 \begin{array}{c}
 x'\\
@@ -163,11 +167,13 @@ y\\
 x + t_x\\
 y + t_y\\
 \end{array}
-\right] %]]></script>
+\right]
+ %]]></script>
 
 <p>can now be computed via</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
+
 \left[
 \begin{array}{c}
 x'\\
@@ -202,7 +208,8 @@ x + t_x\\
 y + t_y\\
 1\\
 \end{array}
-\right] %]]></script>
+\right]
+ %]]></script>
 
 <p>Translations are an example of an <em>affine transformation</em>.</p>
 
@@ -219,6 +226,15 @@ y + t_y\\
 
 <h4 id="projective-transformations">Projective transformations</h4>
 <p>Projective transformations are a superset of affine transformations. Parallel lines do not necessarily remain parallel and ratios are not preserved. We can tell if a matrix represents a projective transformation if its last row is not $[0,0,\ldots,1]$ as is required for an affine transformation.</p>
+
+<h4 id="d-rotations">3D rotations</h4>
+<ul>
+  <li>Euler angles</li>
+  <li>Quaternions</li>
+  <li>Exponential twist</li>
+</ul>
+
+<h4 id="d-to-2d-projections">3D to 2D projections</h4>
 
 <h4 id="summary-of-transformations">Summary of transformations</h4>
 <p>From <a href="http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf">Szeliski’s book</a>.</p>
