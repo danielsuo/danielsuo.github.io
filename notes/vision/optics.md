@@ -8,7 +8,7 @@ title: Optics
 #### Camera obscura
 A dark box with a hole in one side. Light from an external scene goes through the hole and projects on the surface opposite the hole (or some kind of sensor, in the case of a camera). Color and perspective are preserved, but the image is rotated 180 degrees. A _pinhole camera_ is a camera obscura that does not use a lens to focus light.
 
-**Why do we need a hole?** Asked a different way, why don't we see reflections of a scene on arbitrary pieces of paper? Without a hole, light from many directions hit the recording surface or sensor at a given point. It is not possible to record the light coming from only the area of the scene we want to record at that point on the sensor. 
+**Why do we need a hole?** Asked a different way, why don't we see reflections of a scene on arbitrary pieces of paper? Without a hole, light from many directions hit the recording surface or sensor at a given point. It is not possible to record the light coming from only the area of the scene we want to record at that point on the sensor. In other words, a hole gives us an approximately one-to-one mapping of rays from points in the scene to points on the sensor.
 
 ![pinhole-no-hole.png](pinhole-no-hole.png)
 
@@ -49,6 +49,9 @@ The distance between the two planes to the lens and the focal length is governed
 We can show this is true via geometry or representing the three rays as a system of simultaneous equations.
 
 #### Anti-pinhole Cameras
+From [Wikipedia](http://en.wikipedia.org/wiki/Pinspeck_camera): A pinspeck camera is the optical reverse of a pinhole camera: a small (point-like) obstruction (the speck) is placed in front of the film where the (pin) hole would be in a pinhole camera. (The dark screen is “replaced” by the transparent nothing around the speck.)
+
+Whereas in a pinhole camera the hole allows rays of light from different parts of the scene to reach different parts of the film, the obstruction in the pinspeck camera causes the shadow of different points in the scene to fall on different points on the film. The result is a negative image.
 
 #### Modern Cameras
 - All about capturing and focusing light

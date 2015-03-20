@@ -166,6 +166,13 @@ We can tell if a matrix represents an affine transformation if its last row cont
 #### Projective transformations
 Projective transformations are a superset of affine transformations. Parallel lines do not necessarily remain parallel and ratios are not preserved. We can tell if a matrix represents a projective transformation if its last row is not $[0,0,\ldots,1]$ as is required for an affine transformation.
 
+#### 3D rotations
+- Euler angles
+- Quaternions
+- Exponential twist
+
+#### 3D to 2D projections
+
 #### Summary of transformations
 From [Szeliski's book](http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf).
 
