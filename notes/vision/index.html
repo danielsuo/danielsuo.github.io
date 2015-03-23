@@ -66,7 +66,7 @@
 <p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: Conceptually, each pixel is a sample of the radiance arriving at a camera viewpoint from a direction. The camera records the number of photons captured for each pixel in its sensor in a given period of time and approximates the power (energy from the photons in a given time) for all pixels.</p>
 
 <h4 id="photograph">Photograph</h4>
-<p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: A photograph is a slice of the plenoptic function </p>
+<p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: A photograph is a slice of the plenoptic function</p>
 
 <ul>
   <li>At a particular point of view $(x,y,z)$</li>
@@ -106,17 +106,15 @@
 
 <p>To get the homogenous coordinate of some coordinate in $\mathbb{R}^n$, we append the number 1 to create a vector of length $n+1$. In the case of a coordinate in $\mathbb{R}^2$, we represent the coordinate $(x,y)$ as:</p>
 
-<script type="math/tex; mode=display">
-(x,y)\Rightarrow\left[
+<script type="math/tex; mode=display">(x,y)\Rightarrow\left[
 \begin{array}{c}
 x\\
 y\\
 1\\
 \end{array}
-\right]
-</script>
+\right]</script>
 
-<p>We add a further stipulation that any scalar multiple of a homogenous coordinate is considered the same point. We can think of the homogenous coordinate for some $\mathbb{R}^2$ coordinate and all its scalar multiples as a line in $\mathbb{R}^3$.</p>
+<p>We add a further stipulation that any non-zero scalar multiple of a homogenous coordinate is considered the same point. We can think of the homogenous coordinate for some $\mathbb{R}^2$ coordinate and all its non-zero scalar multiples as a line in $\mathbb{R}^3$.</p>
 
 <p><img src="homogenous-coordinates.png" alt="homogenous-coordinates.png" /></p>
 
@@ -128,15 +126,13 @@ x\\
 y\\
 w\\
 \end{array}
-\right] \Rightarrow (x/w,y/w)
-</script>
+\right] \Rightarrow (x/w,y/w)</script>
 
 <p>Continuing with our example in $\mathbb{R}^2$, let us consider the plane $z=1$, or all the points of the form $(x,y,1)$. Every point in $\mathbb{R^2}$ corresponds uniquely with a point $(x,y,z)$ on the plane $z=1$. However, if we want to consider all lines in $\mathbb{R}^3$ that pass through the origin, we must examine points of the form $(x,y,0)$. Intuitively, we call these ‘points at infinity’.</p>
 
 <p>Using homogenous coordinates, we can now use the power of linear algebra in ways we could not with normal coordinates.</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-
 \left[
 \begin{array}{c}
 x'\\
@@ -167,13 +163,11 @@ y\\
 x + t_x\\
 y + t_y\\
 \end{array}
-\right]
- %]]></script>
+\right] %]]></script>
 
 <p>can now be computed via</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-
 \left[
 \begin{array}{c}
 x'\\
@@ -208,8 +202,7 @@ x + t_x\\
 y + t_y\\
 1\\
 \end{array}
-\right]
- %]]></script>
+\right] %]]></script>
 
 <p>Translations are an example of an <em>affine transformation</em>.</p>
 
@@ -241,9 +234,15 @@ y + t_y\\
 
 <p><img src="transformations.png" alt="transformations.png" /></p>
 
+<h4 id="references-1">References</h4>
+<ul>
+  <li><a href="http://ais.informatik.uni-freiburg.de/teaching/ws13/mapping/pdf/slam02-homegenous.pdf">A short introduction to homogenous coordinates</a></li>
+  <li><a href="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/geometry/homo-coor.html">Homogenous coordinates</a></li>
+</ul>
+
 <h3 id="image-operations">Image operations</h3>
 
-<h4 id="references-1">References</h4>
+<h4 id="references-2">References</h4>
 <ul>
   <li><a href="http://www.cs.virginia.edu/~gfx/Courses/2011/IntroGraphics/lectures/3-Image.pdf">Image operations</a></li>
 </ul>
