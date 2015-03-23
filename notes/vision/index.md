@@ -59,7 +59,7 @@ y\\
 \right]
 $$
 
-We add a further stipulation that any scalar multiple of a homogenous coordinate is considered the same point. We can think of the homogenous coordinate for some $\mathbb{R}^2$ coordinate and all its scalar multiples as a line in $\mathbb{R}^3$.
+We add a further stipulation that any non-zero scalar multiple of a homogenous coordinate is considered the same point. We can think of the homogenous coordinate for some $\mathbb{R}^2$ coordinate and all its non-zero scalar multiples as a line in $\mathbb{R}^3$.
 
 ![homogenous-coordinates.png](homogenous-coordinates.png)
 
@@ -177,6 +177,10 @@ Projective transformations are a superset of affine transformations. Parallel li
 From [Szeliski's book](http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf).
 
 ![transformations.png](transformations.png)
+
+#### References
+- [A short introduction to homogenous coordinates](http://ais.informatik.uni-freiburg.de/teaching/ws13/mapping/pdf/slam02-homegenous.pdf)
+- [Homogenous coordinates](http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/geometry/homo-coor.html)
 
 ### Image operations
 
