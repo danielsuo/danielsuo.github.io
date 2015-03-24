@@ -53,9 +53,10 @@
 
 <h2 id="notes-with-their-own-pages">Notes with their own pages</h2>
 <ul>
+  <li><a href="transformations.html">2D and 3D transformations</a></li>
+  <li><a href="homogenous-coordinates.html">Homogenous coordinates</a></li>
   <li><a href="lighting.html">Lighting</a></li>
-  <li><a href="optics.html">Optics</a>
-<!-- - [Homogenous coordinates](homogenous-coordinates.html) --></li>
+  <li><a href="optics.html">Optics</a></li>
   <li><a href="color.html">Color</a></li>
 </ul>
 
@@ -67,7 +68,7 @@
 <p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: Conceptually, each pixel is a sample of the radiance arriving at a camera viewpoint from a direction. The camera records the number of photons captured for each pixel in its sensor in a given period of time and approximates the power (energy from the photons in a given time) for all pixels.</p>
 
 <h4 id="photograph">Photograph</h4>
-<p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: A photograph is a slice of the plenoptic function </p>
+<p>From <a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">class notes</a>: A photograph is a slice of the plenoptic function</p>
 
 <ul>
   <li>At a particular point of view $(x,y,z)$</li>
@@ -81,153 +82,6 @@
   <li><a href="http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/">Class notes on image formation</a></li>
 </ul>
 
-<h3 id="d-and-3d-transformations">2D and 3D Transformations</h3>
-
-<h4 id="image-transformations">Image transformations</h4>
-<ul>
-  <li>Image warping changes the domain of the image. In other words, we move pixels around (e.g., moving, scaling, rotating, fisheye).</li>
-  <li>Image filtering changes the range of the image. In other words, we modify the pixels, but keep them in the same location (e.g., Instagram filters).</li>
-</ul>
-
-<h4 id="d-linear-transformations">2D Linear transformations</h4>
-<ul>
-  <li>Closed under combinations of scale, rotation, sheer, mirror (interestingly, not translation)</li>
-  <li>Linear transformations preserve
-    <ul>
-      <li>Origin</li>
-      <li>Lines</li>
-      <li>Parallelism</li>
-      <li>Ratios</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="homogenous-coordinates">Homogenous coordinates</h4>
-<p>Homogenous, or projective coordinates form a coordinate system where we can represent points at infinity using finite coordinates. Homogenous coordinates also let us easily represent affine and, in general, projective transformations by matrices.</p>
-
-<p>To get the homogenous coordinate of some coordinate in $\mathbb{R}^n$, we append the number 1 to create a vector of length $n+1$. In the case of a coordinate in $\mathbb{R}^2$, we represent the coordinate $(x,y)$ as:</p>
-
-<script type="math/tex; mode=display">
-(x,y)\Rightarrow\left[
-\begin{array}{c}
-x\\
-y\\
-1\\
-\end{array}
-\right]
-</script>
-
-<p>We add a further stipulation that any non-zero scalar multiple of a homogenous coordinate is considered the same point. We can think of the homogenous coordinate for some $\mathbb{R}^2$ coordinate and all its non-zero scalar multiples as a line in $\mathbb{R}^3$.</p>
-
-<p><img src="homogenous-coordinates.png" alt="homogenous-coordinates.png" /></p>
-
-<p>Converting back from some homogenous coordinate:</p>
-
-<script type="math/tex; mode=display">\left[
-\begin{array}{c}
-x\\
-y\\
-w\\
-\end{array}
-\right] \Rightarrow (x/w,y/w)
-</script>
-
-<p>Continuing with our example in $\mathbb{R}^2$, let us consider the plane $z=1$, or all the points of the form $(x,y,1)$. Every point in $\mathbb{R^2}$ corresponds uniquely with a point $(x,y,z)$ on the plane $z=1$. However, if we want to consider all lines in $\mathbb{R}^3$ that pass through the origin, we must examine points of the form $(x,y,0)$. Intuitively, we call these ‘points at infinity’.</p>
-
-<p>Using homogenous coordinates, we can now use the power of linear algebra in ways we could not with normal coordinates.</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\left[
-\begin{array}{c}
-x'\\
-y'\\
-\end{array}
-\right]
-
-=
-
-\left[
-\begin{array}{cc}
-? & ?\\
-? & ?\\
-\end{array}
-\right] 
-
-\left[
-\begin{array}{c}
-x\\
-y\\
-\end{array}
-\right]
-
-=
-
-\left[
-\begin{array}{c}
-x + t_x\\
-y + t_y\\
-\end{array}
-\right]
- %]]></script>
-
-<p>can now be computed via</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\left[
-\begin{array}{c}
-x'\\
-y'\\
-1\\
-\end{array}
-\right]
-
-=
-
-\left[
-\begin{array}{ccc}
-1 & 0 & t_x\\
-0 & 1 & t_y\\
-0 & 0 & 1\\
-\end{array}
-\right] 
-
-\left[
-\begin{array}{c}
-x\\
-y\\
-1\\
-\end{array}
-\right]
-
-=
-
-\left[
-\begin{array}{c}
-x + t_x\\
-y + t_y\\
-1\\
-\end{array}
-\right]
- %]]></script>
-
-<p>Translations are an example of an <em>affine transformation</em>.</p>
-
-<h4 id="affine-transformations">Affine transformations</h4>
-<p>Affine transformations are a superset of linear transformations; they relax the requirement that the origin is preserved. Affine transformations, like linear transformations, are still closed under composition and preserve</p>
-
-<ul>
-  <li>Lines</li>
-  <li>Parallelism</li>
-  <li>Ratios</li>
-</ul>
-
-<p>We can tell if a matrix represents an affine transformation if its last row contains all zeros except for a 1 in the last column. Physically, we interpret affine transformations as some combination of a linear transformation and a translation.</p>
-
-<h4 id="projective-transformations">Projective transformations</h4>
-<p>Projective transformations are a superset of affine transformations. Parallel lines do not necessarily remain parallel and ratios are not preserved. We can tell if a matrix represents a projective transformation if its last row is not $[0,0,\ldots,1]$ as is required for an affine transformation.</p>
-
 <h4 id="d-rotations">3D rotations</h4>
 <ul>
   <li>Euler angles</li>
@@ -236,21 +90,40 @@ y + t_y\\
 </ul>
 
 <h4 id="d-to-2d-projections">3D to 2D projections</h4>
+<p>We often want to know how to project 3D objects onto a 2D plane (e.g., display an image on a screen).</p>
 
-<h4 id="summary-of-transformations">Summary of transformations</h4>
-<p>From <a href="http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf">Szeliski’s book</a>.</p>
+<p><strong>Orthographic</strong> Drop the $z$ component of any three-dimensional point $p$ to obtain the two-dimensional point $x$. We can write this transform as:</p>
 
-<p><img src="transformations.png" alt="transformations.png" /></p>
+<script type="math/tex; mode=display">x = \left[I_{2\times2}\ \vert\ 0\right]p</script>
 
-<h4 id="references-1">References</h4>
-<ul>
-  <li><a href="http://ais.informatik.uni-freiburg.de/teaching/ws13/mapping/pdf/slam02-homegenous.pdf">A short introduction to homogenous coordinates</a></li>
-  <li><a href="http://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/geometry/homo-coor.html">Homogenous coordinates</a></li>
-</ul>
+<p>If we use homogenous, or projective coordinates $\tilde{x}$ and $\tilde{p}$:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\tilde{x} = \left[
+\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+\end{array}
+\right] %]]></script>
+
+<p>Orthographic projections are fixed-depth.</p>
+
+<p><strong>Perspective</strong> The perspective projection divides the $x$ and $y$ components by the $z$ component, weighting them by distance to the camera. We can write this transform using homogenous coordinates as 
+<script type="math/tex">% <![CDATA[
+\tilde{x} = \left[
+\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+\end{array}
+\right] %]]></script></p>
+
+<p>where we drop the $w$ coordinate. Note that we do not divide by $z$ because homogenous coordinates are equivalent by a multiple.</p>
 
 <h3 id="image-operations">Image operations</h3>
 
-<h4 id="references-2">References</h4>
+<h4 id="references-1">References</h4>
 <ul>
   <li><a href="http://www.cs.virginia.edu/~gfx/Courses/2011/IntroGraphics/lectures/3-Image.pdf">Image operations</a></li>
 </ul>
