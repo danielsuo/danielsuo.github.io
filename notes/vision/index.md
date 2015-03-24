@@ -11,6 +11,7 @@ These notes are based on the course [COS429](http://vision.princeton.edu/courses
 - [Lighting](lighting.html)
 - [Optics](optics.html)
 <!-- - [Homogenous coordinates](homogenous-coordinates.html) -->
+- [Color](color.html)
 
 ## Notes that have not been organized
 
