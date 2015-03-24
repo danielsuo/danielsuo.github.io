@@ -21,16 +21,16 @@ A photon can interact with a surface in a number of ways:
 
 #### Bidirectional reflectance distribution function (BRDF)
 
-**Lambertian surfaces**
+- **Lambertian surfaces**
 
-**Specular surfaces**
+- **Specular surfaces**
 
 #### The physics of color
 
 #### Color mixing
-**Additive mixing**
+- **Additive mixing**
 
-**Subtractive mixing**
+- **Subtractive mixing**
 
 #### The eye and color perception
 

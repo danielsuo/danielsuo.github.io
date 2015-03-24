@@ -16,6 +16,8 @@ The pinhole camera only allows rays from one point in the scene to strike each p
 
 ![pinhole-with-hole.png](pinhole-with-hole.png)
 
+The geometry and mathematics of a pinhole camera are described [here](http://en.wikipedia.org/wiki/Pinhole_camera_model).
+
 #### Aperture
 From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/): In optics, an aperture is a hole or opening through which light travels. The aperture determines the cone angle of a bundle of rays that come to a focus in the image plane.
 
