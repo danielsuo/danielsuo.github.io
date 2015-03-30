@@ -5,10 +5,6 @@ title: 2D and 3D Transformations
 
 ### 2D and 3D Transformations
 
-#### Image transformations
-- Image warping changes the domain of the image. In other words, we move pixels around (e.g., moving, scaling, rotating, fisheye).
-- Image filtering changes the range of the image. In other words, we modify the pixels, but keep them in the same location (e.g., Instagram filters).
-
 #### 2D Linear transformations
 - Closed under combinations of scale, rotation, sheer, mirror (interestingly, not translation)
 - Linear transformations preserve
