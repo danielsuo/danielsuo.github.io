@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+  
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Daniel Suo | Scientific progress goes 'boink'</title>
+
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/pygment_trac.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/assets/img/profile.jpg" />
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+  <body id='Camera Matrix'>
+    
+    <div class='wrapper'>
+      
+      <header>
+    <h1>Daniel Suo</h1>
+    <p>Scientific progress goes 'boink'</p>
+    
+    <ul>
+    	<li><a href="/">home</a></li>
+      <li><a href="/projects">projects</a></li>
+      <li><a href="/notes">notes</a></li>
+    </ul>
+    
+</header>
+
+      <section>
+
+        <div id='container'>
+          <h3 id="camera-matrix">Camera matrix</h3>
+<p>The camera or projection matrix is a $3\times 4$ matrix, $\mathbf{C}$, that describes an ideal pinhole camera (i.e., the aperture is a point and no lenses focus light). It maps 3D points from the world (world coordinates / space) to 2D points on an image (image coordinates / space). Given two points, <script type="math/tex">\mathbf{Q}</script> and <script type="math/tex">\mathbf{P}</script> representing homogenous points in image and world space, respectively, we can write their relationship as</p>
+
+<script type="math/tex; mode=display">\mathbf{Q} \sim \mathbf{C}\mathbf{P}</script>
+
+<p>where $\sim$ indicates equality up to a non-zero scalar multiplication. Wikipedia provides the following geometry:</p>
+
+<p><img src="pinhole-3D-geometry.svg" alt="pinhole-3D-geometry.svg" /></p>
+
+<ul>
+  <li>A 3D orthogonal coordinate system with its origin at $\mathbf{O}$. This is also where the camera aperture is located. The three axes of the coordinate system are referred to as $X1$, $X2$, $X3$. Axis $X3$ is pointing in the viewing direction of the camera and is referred to as the <em>optical axis</em>, <em>principal axis</em>, or <em>principal ray</em>. The 3D plane which intersects with axes $X1$ and $X2$ is the front side of the camera, or <em>principal plane</em>.</li>
+  <li>An image plane where the 3D world is projected through the aperture of the camera. The image plane is parallel to axes $X1$ and $X2$ and is located at distance $f$ from the origin $\mathbf{O}$ in the negative direction of the $X3$ axis. A practical implementation of a pinhole camera implies that the image plane is located such that it intersects the $X3$ axis at coordinate $-f$ where $f &gt; 0$. $f$ is also referred to as the focal length of the pinhole camera.</li>
+  <li>A point $\mathbf{R}$ at the intersection of the optical axis and the image plane. This point is referred to as the <em>principal point</em> or <em>image center</em>.</li>
+  <li>A point $\mathbf{P}$ somewhere in the world at coordinate  <script type="math/tex">(x_1, x_2, x_3)</script>  relative to the axes $X1$, $X2$, $X3$.</li>
+  <li>The projection line of point $\mathbf{P}$ into the camera. This is the green line which passes through point $\mathbf{P}$ and the point $\mathbf{O}$.</li>
+  <li>The projection of point $\mathbf{P}$ onto the image plane, denoted $\mathbf{Q}$. This point is given by the intersection of the projection line (green) and the image plane. In any practical situation we can assume that $x_3 &gt; 0$ which means that the intersection point is well defined.</li>
+  <li>There is also a 2D coordinate system in the image plane, with origin at $\mathbf{R}$ and with axes $Y1$ and $Y2$ which are parallel to $X1$ and $X2$, respectively. The coordinates of point $\mathbf{Q}$ relative to this coordinate system is $(y_1, y_2)$.</li>
+</ul>
+
+<p>We want to relate $\mathbf{P}$ in world coordinates, <script type="math/tex">(x_1, x_2, x_3)</script> to $\mathbf{Q}$ in image coordinates, <script type="math/tex">(y_1, y_2)</script>. We can do so by examining the above figure from the $X2$ and $X1$ axes. From the $X2$ axis:</p>
+
+<p><img src="pinhole-2D-geometry.svg" alt="pinhole-2D-geometry.svg" /></p>
+
+<p>Using similar triangles, we note that</p>
+
+<script type="math/tex; mode=display">-\frac{y_1}{f} = \frac{x_1}{x_3}</script>
+
+<p>and, looking from positive $X1$,</p>
+
+<script type="math/tex; mode=display">-\frac{y_2}{f} = \frac{x_2}{x_3}</script>
+
+<p>so we have</p>
+
+<script type="math/tex; mode=display">\left(\begin{array}{c}
+  y_1 \\
+  y_2
+  \end{array}\right)
+
+  =
+
+  -\frac{f}{x_3}\left(\begin{array}{c}
+  x_1 \\
+  x_2
+  \end{array}\right)</script>
+
+<p>Because the image projected onto the image plane is rotated by 180º, we can rewrite the above as below to right the image:</p>
+
+<script type="math/tex; mode=display">\left(\begin{array}{c}
+  y_1 \\
+  y_2
+  \end{array}\right)
+
+  =
+
+  \frac{f}{x_3}\left(\begin{array}{c}
+  x_1 \\
+  x_2
+  \end{array}\right)</script>
+
+<p>The camera matrix describes this transformation. However, the camera matrix operates on homogenous coordinates because we want to be able to represent more complex transformations (e.g., affine transformations). Rewriting the relationship betweej $\mathbf{P}$ and $\mathbf{Q}$ as homogenous coordinates:</p>
+
+<script type="math/tex; mode=display">\left(
+  \begin{array}{c}
+    y_1 \\
+    y_2 \\
+    1
+  \end{array}
+\right)
+
+=
+
+\frac{f}{x_3}
+\left(
+  \begin{array}{c}
+    x_1 \\
+    x_2 \\
+    \frac{x_3}{f}
+  \end{array}
+\right)
+
+\sim
+
+\left(
+  \begin{array}{c}
+    x_1 \\
+    x_2 \\
+    \frac{x_3}{f}
+  \end{array}
+\right)</script>
+
+<p>We can rewrite this transformation as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\left(
+  \begin{array}{c}
+    y_1 \\
+    y_2 \\
+    1
+  \end{array}
+\right)
+
+\sim
+
+\left(
+  \begin{array}{cccc}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & \frac{1}{f} & 0 \\
+  \end{array}
+\right)
+\left(
+  \begin{array}{c}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    1
+  \end{array}
+\right) %]]></script>
+
+<p>The $3\times 4$ matrix is $\mathbf{C}$. We can further simplify $\mathbf{C}$ by multiplying it by $f$. $\mathbf{C}$ is relatively simple because we have chosen our 2D and 3D coordinate systems in a particular way (i.e., no rotation, aligned origins, same scale).</p>
+
+<h4 id="camera-calibration">Camera calibration</h4>
+
+<h4 id="references">References</h4>
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/Camera_matrix">Camera matrix</a>.</li>
+  <li><a href="http://www.ics.uci.edu/~majumder/vispercep/cameracalib.pdf">Camera calibration</a></li>
+  <li><a href="http://ksimek.github.io/2012/08/14/decompose/">Decomposing the camera matrix</a></li>
+  <li><a href="http://ksimek.github.io/2012/08/22/extrinsic/">Extrinsic camera matrix</a></li>
+  <li><a href="http://ksimek.github.io/2013/08/13/intrinsic/">Intrinsic camera matrix</a></li>
+</ul>
+
+        </div>
+
+      </section>
+
+      <footer>
+  <social>
+	<a href="http://facebook.com/danielsuo"><img src="/assets/img/facebook.png"></a>
+	<a href="http://twitter.com/danielsuo"><img src="/assets/img/twitter.png"></a>
+  <a href="http://www.linkedin.com/in/danielsuo"><img src="/assets/img/linkedin.png"></a>
+  <a href="https://github.com/danielsuo"><img src="/assets/img/github.png"></a> 
+  <a href="/feed.xml"><img src="/assets/img/rss.png"></a> 
+</social>
+  <br><br>
+  <small>Complain <a href="mailto:dsuo@post.harvard.edu">here</a>.</small>
+  <small><a href="/pubkey.txt">Securely</a>.</small>
+</footer>
+      
+    </div>
+
+    <script src='/assets/js/scale.fix.js'></script>
+    <script type="text/javascript">
+var gaJsHost = (('https:' == document.location.protocol) ? 'https://ssl.' : 'http://www.');
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+varpagetracker:_gat._getTracker(UA-37351701-1)
+}
+
+
+  </body>
+</html>

@@ -26,7 +26,7 @@
 <![endif]-->
 </head>
 
-  <body id='projects'>
+  <body id='3D to 2D Projections'>
     
     <div class='wrapper'>
       
@@ -45,11 +45,42 @@
       <section>
 
         <div id='container'>
-          <h1 id="projects">Projects</h1>
-<p>This page is a work in progress.</p>
+          <h3 id="d-to-2d-projections">3D to 2D projections</h3>
+<p>We often want to know how to project 3D objects onto a 2D plane (e.g., display an image on a screen).</p>
 
 <ul>
-  <li><a href="bitcoin">A family of bitcoin projects</a></li>
+  <li>
+    <p><strong>Orthographic</strong> Drop the $z$ component of any three-dimensional point $p$ to obtain the two-dimensional point $x$. We can write this transform as:</p>
+
+    <script type="math/tex; mode=display">x = \left[I_{2\times2}\ \vert\ 0\right]p</script>
+
+    <p>If we use homogenous, or projective coordinates $\tilde{x}$ and $\tilde{p}$:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\tilde{x} = \left[
+\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+\end{array}
+\right] %]]></script>
+
+    <p>Orthographic projections are fixed-depth.</p>
+  </li>
+  <li>
+    <p><strong>Perspective</strong> The perspective projection divides the $x$ and $y$ components by the $z$ component, weighting them by distance to the camera. We can write this transform using homogenous coordinates as:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\tilde{x} = \left[
+\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+\end{array}
+\right] %]]></script>
+
+    <p>where we drop the $w$ coordinate. Note that we do not divide by $z$ because homogenous coordinates are equivalent by a multiple.</p>
+  </li>
 </ul>
 
         </div>
