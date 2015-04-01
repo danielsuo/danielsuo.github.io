@@ -12,7 +12,7 @@ $$
 
 where $\sim$ indicates equality up to a non-zero scalar multiplication. Wikipedia provides the following geometry:
 
-![pinhole-3D-geometry.svg](pinhole-3D-geometry.svg)
+![pinhole-3d-geometry.svg](pinhole-3d-geometry.svg)
 
 - A 3D orthogonal coordinate system with its origin at $\mathbf{O}$. This is also where the camera aperture is located. The three axes of the coordinate system are referred to as $X1$, $X2$, $X3$. Axis $X3$ is pointing in the viewing direction of the camera and is referred to as the _optical axis_, _principal axis_, or _principal ray_. The 3D plane which intersects with axes $X1$ and $X2$ is the front side of the camera, or _principal plane_.
 - An image plane where the 3D world is projected through the aperture of the camera. The image plane is parallel to axes $X1$ and $X2$ and is located at distance $f$ from the origin $\mathbf{O}$ in the negative direction of the $X3$ axis. A practical implementation of a pinhole camera implies that the image plane is located such that it intersects the $X3$ axis at coordinate $-f$ where $f > 0$. $f$ is also referred to as the focal length of the pinhole camera.
@@ -24,7 +24,7 @@ where $\sim$ indicates equality up to a non-zero scalar multiplication. Wikipedi
 
 We want to relate $\mathbf{P}$ in world coordinates, $$(x_1, x_2, x_3)$$ to $\mathbf{Q}$ in image coordinates, $$(y_1, y_2)$$. We can do so by examining the above figure from the $X2$ and $X1$ axes. From the $X2$ axis:
 
-![pinhole-2D-geometry.svg](pinhole-2D-geometry.svg)
+![pinhole-2d-geometry.svg](pinhole-2d-geometry.svg)
 
 Using similar triangles, we note that
 
