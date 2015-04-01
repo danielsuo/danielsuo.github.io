@@ -8,6 +8,7 @@ title: Notes on Computer Vision
 These notes are based on the course [COS429](http://vision.princeton.edu/courses/COS429/2014fa/), which is taught at Princeton by Professor Jianxiong Xiao.
 
 ## Notes with their own pages
+- [Ordinary least squares](ols.html)
 - [Lighting](lighting.html)
 - [Optics](optics.html)
 - [Color](color.html)
