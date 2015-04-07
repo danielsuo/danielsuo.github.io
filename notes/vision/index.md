@@ -41,5 +41,8 @@ From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_c
 - Image warping changes the domain of the image. In other words, we move pixels around (e.g., moving, scaling, rotating, fisheye).
 - Image filtering changes the range of the image. In other words, we modify the pixels, but keep them in the same location (e.g., Instagram filters).
 
+#### Fourier transforms
+
 #### References
 - [Image operations](http://www.cs.virginia.edu/~gfx/Courses/2011/IntroGraphics/lectures/3-Image.pdf)
+- [Fourier transform for image processing](http://www.cs.unm.edu/~brayer/vision/fourier.html) and [here](http://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm)
