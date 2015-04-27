@@ -46,3 +46,4 @@ From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_c
 #### References
 - [Image operations](http://www.cs.virginia.edu/~gfx/Courses/2011/IntroGraphics/lectures/3-Image.pdf)
 - [Fourier transform for image processing](http://www.cs.unm.edu/~brayer/vision/fourier.html) and [here](http://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm)
+- [Fourier transform in Matlab](http://www.mathworks.com/help/images/fourier-transform.html?refresh=true)
