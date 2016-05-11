@@ -161,7 +161,10 @@ footer {
 social img {
   width:30px;
   float:left;
-  font-size: 24pt;
+}
+
+social {
+  font-size: 18pt;
 }
 
 #container {
