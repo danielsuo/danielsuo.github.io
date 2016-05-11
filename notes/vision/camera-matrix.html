@@ -46,11 +46,9 @@
 
         <div id='container'>
           <h3 id="camera-matrix">Camera matrix</h3>
-<p>The camera or projection matrix is a $3\times 4$ matrix, $\mathbf{C}$, that describes an ideal pinhole camera (i.e., the aperture is a point and no lenses focus light). It maps 3D points from the world (world coordinates / space) to 2D points on an image (image coordinates / space). Given two points, <script type="math/tex">\mathbf{Q}</script> and <script type="math/tex">\mathbf{P}</script> representing homogenous points in image and world space, respectively, we can write their relationship as </p>
+<p>The camera or projection matrix is a $3\times 4$ matrix, $\mathbf{C}$, that describes an ideal pinhole camera (i.e., the aperture is a point and no lenses focus light). It maps 3D points from the world (world coordinates / space) to 2D points on an image (image coordinates / space). Given two points, <script type="math/tex">\mathbf{Q}</script> and <script type="math/tex">\mathbf{P}</script> representing homogenous points in image and world space, respectively, we can write their relationship as</p>
 
-<script type="math/tex; mode=display">
-\mathbf{Q} \sim \mathbf{C}\mathbf{P}
-</script>
+<script type="math/tex; mode=display">\mathbf{Q} \sim \mathbf{C}\mathbf{P}</script>
 
 <p>where $\sim$ indicates equality up to a non-zero scalar multiplication. Wikipedia provides the following geometry:</p>
 
@@ -72,20 +70,15 @@
 
 <p>Using similar triangles, we note that</p>
 
-<script type="math/tex; mode=display">
-  -\frac{y_1}{f} = \frac{x_1}{x_3}
-</script>
+<script type="math/tex; mode=display">-\frac{y_1}{f} = \frac{x_1}{x_3}</script>
 
 <p>and, looking from positive $X1$,</p>
 
-<script type="math/tex; mode=display">
-  -\frac{y_2}{f} = \frac{x_2}{x_3}
-</script>
+<script type="math/tex; mode=display">-\frac{y_2}{f} = \frac{x_2}{x_3}</script>
 
-<p>so we have </p>
+<p>so we have</p>
 
-<script type="math/tex; mode=display">
-  \left(\begin{array}{c}
+<script type="math/tex; mode=display">\left(\begin{array}{c}
   y_1 \\
   y_2
   \end{array}\right)
@@ -95,13 +88,11 @@
   -\frac{f}{x_3}\left(\begin{array}{c}
   x_1 \\
   x_2
-  \end{array}\right)  
-</script>
+  \end{array}\right)</script>
 
 <p>Because the image projected onto the image plane is rotated by 180º, we can rewrite the above as below to right the image:</p>
 
-<script type="math/tex; mode=display">
-  \left(\begin{array}{c}
+<script type="math/tex; mode=display">\left(\begin{array}{c}
   y_1 \\
   y_2
   \end{array}\right)
@@ -111,14 +102,11 @@
   \frac{f}{x_3}\left(\begin{array}{c}
   x_1 \\
   x_2
-  \end{array}\right)  
-</script>
+  \end{array}\right)</script>
 
 <p>The camera matrix describes this transformation. However, the camera matrix operates on homogenous coordinates because we want to be able to represent more complex transformations (e.g., affine transformations). Rewriting the relationship betweej $\mathbf{P}$ and $\mathbf{Q}$ as homogenous coordinates:</p>
 
-<script type="math/tex; mode=display">
-
-\left(
+<script type="math/tex; mode=display">\left(
   \begin{array}{c}
     y_1 \\
     y_2 \\
@@ -145,15 +133,11 @@
     x_2 \\
     \frac{x_3}{f}
   \end{array}
-\right)
-
-</script>
+\right)</script>
 
 <p>We can rewrite this transformation as</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-
-
 \left(
   \begin{array}{c}
     y_1 \\
@@ -178,9 +162,7 @@
     x_3 \\
     1
   \end{array}
-\right)
-
- %]]></script>
+\right) %]]></script>
 
 <p>The $3\times 4$ matrix is $\mathbf{C}$. We can further simplify $\mathbf{C}$ by multiplying it by $f$. $\mathbf{C}$ is relatively simple because we have chosen our 2D and 3D coordinate systems in a particular way (i.e., no rotation, aligned origins, same scale).</p>
 

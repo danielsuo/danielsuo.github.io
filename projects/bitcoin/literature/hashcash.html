@@ -231,7 +231,7 @@ With connection-slot depletion attacks such as the syn-flood attack, and straigh
 
 <p>To combat this the server should change the public parameters periodically. However in the particular case of the public parameters used by time-lock puzzles (which are the same as the RSA modulus used in RSA encryption), this operation is itself moderately expensive, so this operation would not be performed too frequently. It would probably not be wise to deploy software based on key sizes below 768 bits for this aplication, in addition it would help to change keys periodically, say every hour or so. (RSA modulii of 512 bits have recently been factored by a closed group as discussed in [11] and more recently have been demonstrated by Nicko van Someren et al to be factorizable using standard equipment in an office as reported in [12]; DDoS attackers are known be able to muster significant resources, probably easily exceeding those used in this demonstration.)</p>
 
-<p>The time-lock puzzle cost-function also is necessarily trap-door as the server needs a private verification-key to allow it to efficiently verify tokens. The existance of a verification-key presents the added risk of key compromise allowing the attacker to by-pass the cost-function protection. (The interactive hashcash cost-function by comparison is trap-door-free, so there is no key which would allow an attacker a short-cut in computing tokens). In fact if the verification-key were compromised, it could be replaced, but this need adds complexity and administrative overhead as this event needs to be detected and manual intervention or some automated detection triggering key-replacement implemented. </p>
+<p>The time-lock puzzle cost-function also is necessarily trap-door as the server needs a private verification-key to allow it to efficiently verify tokens. The existance of a verification-key presents the added risk of key compromise allowing the attacker to by-pass the cost-function protection. (The interactive hashcash cost-function by comparison is trap-door-free, so there is no key which would allow an attacker a short-cut in computing tokens). In fact if the verification-key were compromised, it could be replaced, but this need adds complexity and administrative overhead as this event needs to be detected and manual intervention or some automated detection triggering key-replacement implemented.</p>
 
 <p>The time-lock puzzle cost-function also will tend to have larger messages as there is a need to communicate planned and emergency re-keyed public parameters. For some applications, for example the syn-cookie and hashcashcookie protocols, space is at a premium due to backwards compatibility and packet size constraints imposed by the network infrastructure.</p>
 
@@ -241,11 +241,11 @@ With connection-slot depletion attacks such as the syn-flood attack, and straigh
 <p>Apart from the initially proposed applications for hashcash of throttling DoS against remailer networks and detering emailspam,since publication the following applications have been discussed, explored and in some casesimplemented and deployed:</p>
 
 <ul>
-  <li>hashcash-cookies, a potential extension of the syn-cookie as discussed in section 4.2 for allowing more graceful service degradation in the face of connection-depletion attacks. </li>
-  <li>interactive-hashcash as discussed in section 4 for DoS throttling and graceful service degradation under CPU overload attacks on security protocols with computationally expensive connection establishment phases. No deployment but the analogous client-puzzle system was implemented with TLS in [13] </li>
-  <li>hashcash throttling of DoS publication floods in anonymous publication systems such as Freenet [14], Publius [15], Tangler [16], </li>
+  <li>hashcash-cookies, a potential extension of the syn-cookie as discussed in section 4.2 for allowing more graceful service degradation in the face of connection-depletion attacks.</li>
+  <li>interactive-hashcash as discussed in section 4 for DoS throttling and graceful service degradation under CPU overload attacks on security protocols with computationally expensive connection establishment phases. No deployment but the analogous client-puzzle system was implemented with TLS in [13]</li>
+  <li>hashcash throttling of DoS publication floods in anonymous publication systems such as Freenet [14], Publius [15], Tangler [16],</li>
   <li>hashcash throttling of service requests in the cryptographic Self-certifying File System [17]</li>
-  <li>hashcash throttling of USENET flooding via mail2news networks [18] </li>
+  <li>hashcash throttling of USENET flooding via mail2news networks [18]</li>
   <li>hashcash as a minting mechanism for Wei Dai’s b-money electronic cash proposal, an electronic cash scheme without a banking interface [19]</li>
 </ul>
 

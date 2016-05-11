@@ -253,10 +253,4 @@ social img {
   font-size: 0.9em !important;
 }
 
-#profile {
-  display: block;
-  margin: auto;
-  float: left;
-  padding: 0rem 1rem 0.5rem 0rem;
-  width: 10rem;
-}
+#profile { display: block; margin: auto; float: left; padding: 0rem 1rem 0.5rem 0rem; width: 10rem; }
