@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+usage() {
+  echo "Usage: $0 [-m COMMIT_MESSAGE]" 1>&2; exit 1;
+}
+
+publish() {
+  git pull origin dev
+  git add .
+  git commit -m "$1"
+  git push origin dev
+
+  jekyll build
+
+  git checkout master
+  git pull origin master
+  ls | grep -v "_site\|node_modules" | xargs rm -rf
+  cp -R _site/* .
+  git add .
+  git commit -m "$1"
+  git push origin master
+
+  git checkout dev
+
+  jekyll build
+}
+
+while getopts "m:" opt; do
+  case $opt in
+    m)
+      m=$OPTARG
+      publish "$m"
+      ;;
+    *)
+      usage
+      ;;
+  esac
+done
+
+shift $((OPTIND-1))
+if [ -z "$m" ]; then
+    usage
+fi
