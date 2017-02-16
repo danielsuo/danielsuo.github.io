@@ -1,0 +1,34 @@
+<h1 id="making-geo-replicated-systems-fast-as-possible-consistent-when-necessary">Making Geo-Replicated Systems Fast as Possible, Consistent when Necessary</h1>
+
+<p><strong>Key observation</strong>: not all operations require strong consistency, but some operations do.</p>
+
+<h2 id="contributions">Contributions</h2>
+<ol>
+  <li>
+    <p>Introduce ‘RedBlue’ consistency, which</p>
+
+    <blockquote>
+      <p>Enables blue operations to be fast (and eventually consistent) while the remaining red operations are strongly consistent (and slow)</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Identify the conditions separating red and blue operations</p>
+
+    <ul>
+      <li>Commutative operations that do not impact invariants can be blue</li>
+    </ul>
+  </li>
+  <li>
+    <p>Introduce a method to expand the number of blue operations</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  -   Decompose operations into generator and shadow operations
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="benchmarks">Benchmarks</h2>
+<ul>
+  <li><a href="http://www.tpc.org/tpcw/">TPC-W</a>, a transactional web benchmark from a typical internet commerce website.</li>
+  <li><a href="http://rubis.ow2.org/">RUBiS</a>, an auction site prototype modeled after <a href="eBay.com">eBay.com</a></li>
+</ul>
