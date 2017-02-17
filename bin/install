@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-sudo gem install bundler
-bundle install
-
-brew install node
-npm install -g gulp
-npm install
