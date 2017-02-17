@@ -1,6 +1,7 @@
 ---
 layout: base
 title: Notes
+use_math: true
 ---
 
 ## Notes

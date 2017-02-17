@@ -1,6 +1,7 @@
 ---
 layout: base
 title: Notes on Computer Vision
+use_math: true
 ---
 
 ## Computer Vision
@@ -25,7 +26,7 @@ These notes are based on the course [COS429](http://vision.princeton.edu/courses
 From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/): Conceptually, each pixel is a sample of the radiance arriving at a camera viewpoint from a direction. The camera records the number of photons captured for each pixel in its sensor in a given period of time and approximates the power (energy from the photons in a given time) for all pixels.
 
 #### Photograph
-From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/): A photograph is a slice of the plenoptic function 
+From [class notes](http://vision.princeton.edu/courses/COS429/2014fa/slides/02_camera/): A photograph is a slice of the plenoptic function
 
 - At a particular point of view $(x,y,z)$
 - In the camera's field of view (range over $\theta$ and $\phi$)

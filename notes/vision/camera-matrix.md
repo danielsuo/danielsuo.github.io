@@ -1,10 +1,11 @@
 ---
 layout: base
 title: Camera Matrix
+use_math: true
 ---
 
 ### Camera matrix
-The camera or projection matrix is a $3\times 4$ matrix, $\mathbf{C}$, that describes an ideal pinhole camera (i.e., the aperture is a point and no lenses focus light). It maps 3D points from the world (world coordinates / space) to 2D points on an image (image coordinates / space). Given two points, $$\mathbf{Q}$$ and $$\mathbf{P}$$ representing homogenous points in image and world space, respectively, we can write their relationship as 
+The camera or projection matrix is a $3\times 4$ matrix, $\mathbf{C}$, that describes an ideal pinhole camera (i.e., the aperture is a point and no lenses focus light). It maps 3D points from the world (world coordinates / space) to 2D points on an image (image coordinates / space). Given two points, $$\mathbf{Q}$$ and $$\mathbf{P}$$ representing homogenous points in image and world space, respectively, we can write their relationship as
 
 $$
 \mathbf{Q} \sim \mathbf{C}\mathbf{P}
@@ -38,7 +39,7 @@ $$
   -\frac{y_2}{f} = \frac{x_2}{x_3}
 $$
 
-so we have 
+so we have
 
 $$
   \left(\begin{array}{c}
@@ -51,7 +52,7 @@ $$
   -\frac{f}{x_3}\left(\begin{array}{c}
   x_1 \\
   x_2
-  \end{array}\right)  
+  \end{array}\right)
 $$
 
 Because the image projected onto the image plane is rotated by 180º, we can rewrite the above as below to right the image:
@@ -67,7 +68,7 @@ $$
   \frac{f}{x_3}\left(\begin{array}{c}
   x_1 \\
   x_2
-  \end{array}\right)  
+  \end{array}\right)
 $$
 
 The camera matrix describes this transformation. However, the camera matrix operates on homogenous coordinates because we want to be able to represent more complex transformations (e.g., affine transformations). Rewriting the relationship betweej $\mathbf{P}$ and $\mathbf{Q}$ as homogenous coordinates:

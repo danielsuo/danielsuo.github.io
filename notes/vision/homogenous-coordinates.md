@@ -1,6 +1,7 @@
 ---
 layout: base
 title: Homogenous Coordinates
+use_math: true
 ---
 
 ### Homogenous coordinates
@@ -52,7 +53,7 @@ y'\\
 ? & ?\\
 ? & ?\\
 \end{array}
-\right] 
+\right]
 
 \left[
 \begin{array}{c}
@@ -90,7 +91,7 @@ y'\\
 0 & 1 & t_y\\
 0 & 0 & 1\\
 \end{array}
-\right] 
+\right]
 
 \left[
 \begin{array}{c}

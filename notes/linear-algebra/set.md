@@ -1,6 +1,7 @@
 ---
 layout: base
 title: Set
+use_math: true
 ---
 
 ## Set
@@ -27,8 +28,7 @@ A _set_ is a collection of distinct objects. Each object in the set is called an
 If A has $$\|A\|$$ elements and $B$ has $$\|B\|$$ elements, then the length of $A\times B$, $$\|A\times B\|$$, is $$\|A\|\cdot\|B\|$$.
 
 Cartesian products can be extended to many sets. The Cartesian product of $A_1\times A_2 \times \ldots \times A_k$ is the set of all lists length $k$ in which the ith element of the list is a member of the set $A_i$.
- 
+
 **Remark**. We often organize sets that satisfy common axioms into types. In linear algebra, we will study many types of sets. We study elements and sets within each type, and relate elements in one set to elements in another set. The reader may wonder why we study this type or that relation. We study them because history has shown them to be useful models for real-world applications.
 
-We define a type by enumerating the axioms that each set of that type must satisfy. Each section in the following notes describes a different type of set. 
-
+We define a type by enumerating the axioms that each set of that type must satisfy. Each section in the following notes describes a different type of set.

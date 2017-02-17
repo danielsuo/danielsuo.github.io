@@ -4,3 +4,5 @@ _site
 /node_modules
 Gemfile.lock
 npm-debug.log
+*.jekyll-metadata
+*.ipynb_checkpoints

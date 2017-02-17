@@ -4,5 +4,4 @@ sudo gem install bundler
 bundle install
 
 brew install node
-npm install -g gulp
-npm install
+npm install -g bower

@@ -1,6 +1,7 @@
 ---
 layout: base
 title: Lighting
+use_math: true
 ---
 
 ### Lighting

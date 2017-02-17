@@ -10,6 +10,7 @@ publish() {
   git commit -m "$1"
   git push origin dev
 
+  ./bin/markdownify
   jekyll build
 
   git checkout master
