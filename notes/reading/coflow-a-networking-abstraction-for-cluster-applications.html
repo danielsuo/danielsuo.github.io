@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='Notes on Linear Algebra'>
+  <body id=''>
     
     <div class='wrapper'>
       
@@ -58,42 +58,20 @@
       <section>
 
         <div id='container'>
-          <h2 id="linear-algebra">Linear Algebra</h2>
+          <h1 id="coflow-a-networking-abstraction-for-cluster-applications">Coflow: A Networking Abstraction for Cluster Applications</h1>
+<p>(<a href="https://drive.google.com/open?id=0B_10gtxnPV-_VnloRm11SzhCejg">link</a>)</p>
+
+<p>A coflow is a collection of flows (data over network between two nodes) between two groups of machines with associated semantics and a collective objective (e.g., shuffle in MapReduce).</p>
+
+<p>Three primary patterns: shuffle, broadcast, aggregation. Two primary objectives: minimize completion times and meeting deadlines.</p>
+
+<p>Coflows can interact via sharing, prioritizing, and ordering.</p>
+
+<p>API:</p>
 <ul>
-  <li><a href="set.html">Set</a></li>
-</ul>
-
-<p>Original notes <a href="http://imechanica.org/node/19709">here</a>.
-<a href="notes/linear-algebra/notes/linear-algebra/index.md">notes/linear-algebra/index.md</a>
-<a href="notes/linear-algebra/notes/linear-algebra/set.md">notes/linear-algebra/set.md</a>
-[](
-[](
-[index.md](
-[set.md](
-<a href="">index.md</a>
-<a href="">set.md</a>
-<a href="notes/linear-algebra/index.md">index.md</a>
-<a href="notes/linear-algebra/set.md">set.md</a>
-<a href="notes/linear-algebra/index.html">index.md</a>
-<a href="notes/linear-algebra/set.html">set.md</a>
-<a href="notes/linear-algebra/index.html">index</a>
-<a href="notes/linear-algebra/set.html">set</a>
-\n<a href="notes/linear-algebra/index.html">index</a>
-\n<a href="notes/linear-algebra/set.html">set</a></p>
-
-<p><a href="notes/linear-algebra/index.html">index</a></p>
-
-<p><a href="notes/linear-algebra/set.html">set</a></p>
-<ul>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
+  <li>create / update a coflow</li>
+  <li>get / put (senders and receivers create pairs on content id)</li>
+  <li>terminate (coflow is done)</li>
 </ul>
 
         </div>

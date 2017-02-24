@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='Notes on Linear Algebra'>
+  <body id=''>
     
     <div class='wrapper'>
       
@@ -58,43 +58,41 @@
       <section>
 
         <div id='container'>
-          <h2 id="linear-algebra">Linear Algebra</h2>
+          <h1 id="real-time-scheduling-of-dataflow--graphs">Real-time Scheduling of Dataflow  Graphs</h1>
+<p>(<a href="https://drive.google.com/open?id=0B_10gtxnPV-_TmdDdzJjREdZMUU">link</a>)</p>
+
+<h2 id="dataflow-models-of-computation">Dataflow models of computation</h2>
 <ul>
-  <li><a href="set.html">Set</a></li>
+  <li>Kahn process networks</li>
+  <li>Dataflow process networks</li>
+  <li>Dataflow synchronous languages
+    <ul>
+      <li>Directed graph where computation nodes (actors) communicate via one-to-one FIFO buffers. Actor consumes predefined number of tokens from its input channels and produces a predefined number of tokens on its output channels (either constant or cyclically changing)</li>
+      <li>Less expressive than the first two, but easy to model</li>
+      <li>Expressive enough for most of digital signal processing (DSP)</li>
+      <li>Both whether the system can be executed with bounded buffers and whether each actor can fire infinitely often are decidable. Can easily construct static-periodic schedules (i.e., infinite repetitions of firing sequences of actors)</li>
+    </ul>
+  </li>
 </ul>
 
-<p>Original notes <a href="http://imechanica.org/node/19709">here</a>.
-<a href="notes/linear-algebra/notes/linear-algebra/index.md">notes/linear-algebra/index.md</a>
-<a href="notes/linear-algebra/notes/linear-algebra/set.md">notes/linear-algebra/set.md</a>
-[](
-[](
-[index.md](
-[set.md](
-<a href="">index.md</a>
-<a href="">set.md</a>
-<a href="notes/linear-algebra/index.md">index.md</a>
-<a href="notes/linear-algebra/set.md">set.md</a>
-<a href="notes/linear-algebra/index.html">index.md</a>
-<a href="notes/linear-algebra/set.html">set.md</a>
-<a href="notes/linear-algebra/index.html">index</a>
-<a href="notes/linear-algebra/set.html">set</a>
-\n<a href="notes/linear-algebra/index.html">index</a>
-\n<a href="notes/linear-algebra/set.html">set</a></p>
-
-<p><a href="notes/linear-algebra/index.html">index</a></p>
-
-<p><a href="notes/linear-algebra/set.html">set</a></p>
+<p>Other models</p>
 <ul>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
+  <li>Actor models</li>
+  <li>Petri nets</li>
 </ul>
+
+<h2 id="assumptions">Assumptions</h2>
+<ul>
+  <li>Periodic (i.e., sample at regular intervals)</li>
+  <li>Embedded (i.e., integrates software with hardware to accomplish some dedicated function subject to physical constraints)</li>
+  <li>Reactive (i.e., maintains permanent interaction with environment); all reactive systems are embedded systems, but not vice versa</li>
+  <li>Relies on real-time operating system</li>
+</ul>
+
+<h2 id="notes-on-real-time-operating-systems">Notes on real-time operating systems</h2>
+<p><a href="http://www.cis.upenn.edu/~lee/06cse480/lec-real-time-scheduling.pdf">link</a> <a href="https://en.wikipedia.org/wiki/Real-time_operating_system">wiki</a></p>
+
+<p><img src="assets/real-time-scheduling-of-dataflow-graphs-56d2d.png" alt="" /></p>
 
         </div>
 

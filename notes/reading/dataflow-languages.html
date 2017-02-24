@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='Notes on Linear Algebra'>
+  <body id=''>
     
     <div class='wrapper'>
       
@@ -58,43 +58,31 @@
       <section>
 
         <div id='container'>
-          <h2 id="linear-algebra">Linear Algebra</h2>
-<ul>
-  <li><a href="set.html">Set</a></li>
-</ul>
+          <h1 id="data-flow-languages">Data flow languages</h1>
+<p>(<a href="https://drive.google.com/open?id=0B_10gtxnPV-_YXpxbHBhVER0SDA">link</a>)</p>
 
-<p>Original notes <a href="http://imechanica.org/node/19709">here</a>.
-<a href="notes/linear-algebra/notes/linear-algebra/index.md">notes/linear-algebra/index.md</a>
-<a href="notes/linear-algebra/notes/linear-algebra/set.md">notes/linear-algebra/set.md</a>
-[](
-[](
-[index.md](
-[set.md](
-<a href="">index.md</a>
-<a href="">set.md</a>
-<a href="notes/linear-algebra/index.md">index.md</a>
-<a href="notes/linear-algebra/set.md">set.md</a>
-<a href="notes/linear-algebra/index.html">index.md</a>
-<a href="notes/linear-algebra/set.html">set.md</a>
-<a href="notes/linear-algebra/index.html">index</a>
-<a href="notes/linear-algebra/set.html">set</a>
-\n<a href="notes/linear-algebra/index.html">index</a>
-\n<a href="notes/linear-algebra/set.html">set</a></p>
+<p>Data flow programming languages must satisfy two criteria</p>
 
-<p><a href="notes/linear-algebra/index.html">index</a></p>
+<ol>
+  <li>Must be able to deduce data dependency of program operations</li>
+  <li>Sequencing constraints must always be exactly the same as data dependencies, so that the instruction firing rule can be based simply on the availability of data</li>
+</ol>
 
-<p><a href="notes/linear-algebra/set.html">set</a></p>
-<ul>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-</ul>
+<p>Two general properties of language which make it possible to meet these criteria:</p>
+
+<ol>
+  <li>Locality of effect</li>
+</ol>
+
+<p>Determining how code fragments affect each other made much harder by reusing variable names and GOTO statements. Can make easier by having definite scope or received as arguments.</p>
+
+<ol>
+  <li>Freedom from side effects</li>
+</ol>
+
+<p>Necessary to make sure data dependencies are the same as sequencing of constraints. Much harder than locality. Most common form is modifying variables in the calling program. Avoid global variables and control variable scope. Pointers to complex data structures make this hard, but can use call by value or const.</p>
+
+<p>Efficiency is still an open question. If everything is pass by value and no side-effects.</p>
 
         </div>
 

@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='Notes on Linear Algebra'>
+  <body id=''>
     
     <div class='wrapper'>
       
@@ -58,42 +58,33 @@
       <section>
 
         <div id='container'>
-          <h2 id="linear-algebra">Linear Algebra</h2>
+          <h1 id="resilient-distributed-datasets-spark">Resilient Distributed Datasets (Spark)</h1>
+<p><em>A fault-tolerant abstraction for in-memory cluster computing</em> (<a href="https://drive.google.com/file/d/0B_10gtxnPV-_VW14M281OWN3UVU/view?usp=sharing">link</a>)</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Enables</p>
 <ul>
-  <li><a href="set.html">Set</a></li>
+  <li>Interactive data manipulation</li>
+  <li>Iterative computations</li>
 </ul>
 
-<p>Original notes <a href="http://imechanica.org/node/19709">here</a>.
-<a href="notes/linear-algebra/notes/linear-algebra/index.md">notes/linear-algebra/index.md</a>
-<a href="notes/linear-algebra/notes/linear-algebra/set.md">notes/linear-algebra/set.md</a>
-[](
-[](
-[index.md](
-[set.md](
-<a href="">index.md</a>
-<a href="">set.md</a>
-<a href="notes/linear-algebra/index.md">index.md</a>
-<a href="notes/linear-algebra/set.md">set.md</a>
-<a href="notes/linear-algebra/index.html">index.md</a>
-<a href="notes/linear-algebra/set.html">set.md</a>
-<a href="notes/linear-algebra/index.html">index</a>
-<a href="notes/linear-algebra/set.html">set</a>
-\n<a href="notes/linear-algebra/index.html">index</a>
-\n<a href="notes/linear-algebra/set.html">set</a></p>
-
-<p><a href="notes/linear-algebra/index.html">index</a></p>
-
-<p><a href="notes/linear-algebra/set.html">set</a></p>
+<p>By</p>
 <ul>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
+  <li>Leveraging distributed shared memory for performance</li>
+  <li>Using coarse-grained transformations for fault-tolerance
+    <ul>
+      <li>Lineage allows in-memory storage while still achieving fault-tolerance</li>
+    </ul>
+  </li>
+  <li>Offering a wider set of computations (i.e., not just map and reduce)</li>
+</ul>
+
+<h2 id="what-are-limitations">What are limitations</h2>
+<ul>
+  <li>Memory-intensive</li>
+  <li>Communication among nodes challenging outside well-defined abstractions</li>
+  <li>Applications that need to asynchronously update fine-grained state</li>
 </ul>
 
         </div>

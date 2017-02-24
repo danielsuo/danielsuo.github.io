@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+  
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Daniel Suo | Scientific progress goes 'boink'</title>
+
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/pygment_trac.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/assets/img/profile.jpg" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"> </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+
+  <body id=''>
+    
+    <div class='wrapper'>
+      
+      <header>
+    <h1>Daniel Suo</h1>
+    <p>Scientific progress goes 'boink'</p>
+
+    <p>
+      Ph.D. Candidate<br>
+      Princeton University<br>
+      Department of Computer Science
+    </p>
+
+    <ul>
+    	<li><a href="/">home</a></li>
+      <!-- <li><a href="https://blog.danielsuo.com">blog</a></li>
+      <li><a href="/projects">projects</a></li> -->
+      <li><a href="/notes">notes</a></li>
+    </ul>
+
+</header>
+
+
+      <section>
+
+        <div id='container'>
+          <h1 id="deadline-assignment-in-a-distributed-soft-real-time-system">Deadline Assignment in a Distributed Soft Real Time System</h1>
+<p>(<a href="https://drive.google.com/open?id=0B_10gtxnPV-_eHBjSUxPa2VPa2s">link</a>)</p>
+
+<h2 id="problem">Problem</h2>
+<ul>
+  <li>Assign local deadline to subtasks such that global deadline is met</li>
+</ul>
+
+<h2 id="assumptions">Assumptions</h2>
+<ul>
+  <li>Soft real-time system (i.e., minimize number of deadlines that are missed)
+    <ul>
+      <li>May not know how many computations ahead of times</li>
+      <li>Computations may be complex and hard to predict task times</li>
+    </ul>
+  </li>
+  <li>Each subtask is submitted to some component, which may have local tasks that compete for resources with subtasks assigned there</li>
+  <li>Subtask deadlines are assigned online (i.e., not known ahead of time); may depend on earlier subtasks, for example</li>
+  <li>Scheduler at each component (or node) is independent of others. That is, each scheduler only decides based on the subtasks and deadlines that it has</li>
+  <li>Components are unique; subtasks must be executed at a particular component and cannot be moved</li>
+  <li>Network communication can be considered another task</li>
+</ul>
+
+<h2 id="system-models">System models</h2>
+<ul>
+  <li>Distributed real-time system has several nodes representing components, which manage one or more resources. Each node has its own real-time scheduler (e.g., earliest deadline first)</li>
+  <li>Local (visit only one node; only sees scheduler once) and global tasks, which has stages. Associated with execution node.</li>
+  <li>Process manager monitors global task and submits subtasks to appropriate execution nodes; manager is notified when subtasks are finished</li>
+  <li>Each task X (local, global, or subtask) has the following attributes:
+    <ul>
+      <li>arrival time</li>
+      <li>slack time</li>
+      <li>deadline time</li>
+      <li>execution time</li>
+      <li>predicted execution time</li>
+      <li>Note that dl(X) = ar(X) + ex(X) + sl(X)</li>
+    </ul>
+  </li>
+  <li>Global tasks arrive with their arrival time and deadline known</li>
+  <li>
+    <p>Sometimes, prediction may be available</p>
+  </li>
+  <li>Flexibility fl(X) = sl(X) / ex(X). In otherwords, how much slack to how much execution time (hope ex(X) &lt; dl(X) - ar(X))</li>
+  <li>stage(X) = i if X is the ith task of its global task</li>
+</ul>
+
+<h2 id="algorithms">Algorithms</h2>
+<ul>
+  <li><strong>Ultimate deadline (UD)</strong>: set subtask deadline equal to deadline of global task. Execution time of future subtasks are treated as slack for current subtask.</li>
+  <li><strong>Effective deadline (ED)</strong>: deadline of global task minus total expected execution time of subtasks following the subtask. Slack of future subtasks treated as slack of current subtask.</li>
+  <li><strong>Equal slack (EQS)</strong>: divide remaining slack equally among remaining subtasks</li>
+  <li><strong>Equal flexibility (EQF)</strong>: divide remaining slack among subtasks in proportion to their predicted execution time</li>
+</ul>
+
+<h2 id="simulation">Simulation</h2>
+<ul>
+  <li>All global tasks have fixed number of subtasks, <em>m</em>.</li>
+  <li><em>k</em> homogenous nodes in the system</li>
+  <li>All nodes use earliest-deadline-first scheduling and there is no preemption</li>
+  <li>Understand ratio of missed deadline under different loads and algorithms</li>
+</ul>
+
+        </div>
+
+      </section>
+
+      <footer>
+  <!--email_off-->
+    <small>Complain <a href="mailto:dsuo@cs.princeton.edu" target="_blank">here</a>.</small>
+  <!--/email_off-->
+  <small><a href="/pubkey.txt" target="_blank">Securely</a>.</small>
+</footer>
+
+      
+    </div>
+
+    <script src='/assets/js/scale.fix.js'></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37351701-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

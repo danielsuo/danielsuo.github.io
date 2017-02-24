@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Daniel Suo | Scientific progress goes 'boink'</title>
+
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/pygment_trac.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/assets/img/profile.jpg" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"> </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+
+  <body id=''>
+    
+    <div class='wrapper'>
+      
+      <header>
+    <h1>Daniel Suo</h1>
+    <p>Scientific progress goes 'boink'</p>
+
+    <p>
+      Ph.D. Candidate<br>
+      Princeton University<br>
+      Department of Computer Science
+    </p>
+
+    <ul>
+    	<li><a href="/">home</a></li>
+      <!-- <li><a href="https://blog.danielsuo.com">blog</a></li>
+      <li><a href="/projects">projects</a></li> -->
+      <li><a href="/notes">notes</a></li>
+    </ul>
+
+</header>
+
+
+      <section>
+
+        <div id='container'>
+          <h1 id="static-scheduling-of-synchronous-data-flow-programs-for-digital-signal-processing">Static Scheduling of Synchronous Data Flow Programs for Digital Signal Processing</h1>
+
+<p>(<a href="https://drive.google.com/open?id=0B_10gtxnPV-_VVE4M3AxVU9iRm8">link</a>)</p>
+
+<h2 id="definitions">Definitions</h2>
+
+<ul>
+  <li><strong>Large grain data flow</strong>: in contrast to atomic data flow, where each node in the data flow graph represents a nonatomic computation (e.g., FFT, filters) as opposed to atomic operations (e.g., adders or multipliers).</li>
+  <li><strong>Granularity</strong>: of a function describes its complexity, and determines the amount of parallelism available to the overall computation. Blocks can happen concurrently, but the model does not consider concurrency within a block.</li>
+  <li>Concurrency: dealing with lots of things at once. Parallelism: doings lots of things at once.</li>
+  <li><strong>Asynchronicity</strong>: In digital signal processing (DSP), asynchronicity refers to systems with sample rates that are not related by a rational multiplicative factor. This has nothing to do with concurrency.</li>
+  <li><strong>Block</strong>: a function that is invoked when there is enough input available to perform a computation (blocks lacking inputs can be invoked at any time). The ‘node’ in a data flow graph. When a block is invoked, it will <em>consume</em> a fixed number of new input samples on each input path.</li>
+  <li><strong>Synchronocity</strong>: If we can specify <em>a priori</em> the number of input samples consumed on each input and the number of output samples produced on each output each time the block is invoked.</li>
+  <li><strong>Delay</strong>: The sample offset between the input and the output (i.e., how many samples between when one block outputs and another inputs)</li>
+  <li><strong>Admissible sequential schedule</strong>: sequential schedule of nodes (i.e., blocks) such that if the nodes are executed in the sequence, the amount of data in the buffers is nonnegative and bounded. Each node must appear in the schedule at least once.</li>
+  <li><strong>Periodic admissible sequential schedule (PASS)</strong>: specified by a schedule for a single period; repeated indefinitely</li>
+</ul>
+
+<h2 id="major-steps">Major steps</h2>
+
+<ul>
+  <li>Define computational model</li>
+  <li>Find necessary and sufficient conditions for the existence of PASS / PAPS</li>
+  <li>Find algorithm for finding PASS, if one exists</li>
+  <li>Find algorithm for constructing PAPS, if PASS exists</li>
+</ul>
+
+<h2 id="assumptions">Assumptions</h2>
+
+<ul>
+  <li>No communication time</li>
+  <li>Processors are heterogeneous</li>
+  <li>Blocks take identical time to execute each time</li>
+</ul>
+
+<h2 id="questions">Questions</h2>
+
+<ul>
+  <li>Why does periodic admissible parallel schedule (PAPS) necessarily follow from periodic admissible sequential schedule (PASS)?</li>
+</ul>
+
+        </div>
+
+      </section>
+
+      <footer>
+  <!--email_off-->
+    <small>Complain <a href="mailto:dsuo@cs.princeton.edu" target="_blank">here</a>.</small>
+  <!--/email_off-->
+  <small><a href="/pubkey.txt" target="_blank">Securely</a>.</small>
+</footer>
+
+      
+    </div>
+
+    <script src='/assets/js/scale.fix.js'></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37351701-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
