@@ -32,3 +32,4 @@ exclude:
 - bin
 - .bowerrc
 - .git
+- CNAME
