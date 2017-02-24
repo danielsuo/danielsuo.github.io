@@ -45,3 +45,5 @@ This is an automatically generated index file of the current directory.
 - [real-time-scheduling-of-dataflow-graphs-56d2d](/notes/reading/assets/real-time-scheduling-of-dataflow-graphs-56d2d.html)
 - [markdown-img-paste-20170221130356416](/notes/reading/assets/markdown-img-paste-20170221130356416.html)
 - [real-time-scheduling-of-dataflow-graphs-56d2d](/notes/reading/assets/real-time-scheduling-of-dataflow-graphs-56d2d.html)
+- [markdown-img-paste-20170221130356416](/notes/reading/assets/markdown-img-paste-20170221130356416.html)
+- [real-time-scheduling-of-dataflow-graphs-56d2d](/notes/reading/assets/real-time-scheduling-of-dataflow-graphs-56d2d.html)

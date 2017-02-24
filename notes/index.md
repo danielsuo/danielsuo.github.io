@@ -12,3 +12,4 @@ For when I didn't totally understand something. These are all works in progress 
 - [Computer Vision](vision)
 - [Systems](systems)
 - [AI/ML](aiml)
+- [Reading](reading): as yet unclassified notes on papers, books, articles
