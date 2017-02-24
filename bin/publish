@@ -9,7 +9,7 @@ publish() {
 
   ./bin/indexify notes
   ./bin/markdownify
-  
+
   git add .
   git commit -m "$1"
   git push origin dev
@@ -18,7 +18,7 @@ publish() {
 
   git checkout master
   git pull origin master
-  ls | grep -v "_site\|node_modules" | xargs rm -rf
+  gls | grep -v "_site\|node_modules" | xargs rm -rf
   cp -R _site/* .
   git add .
   git commit -m "$1"
