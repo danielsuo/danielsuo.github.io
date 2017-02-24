@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # MILP-based Deadline Assignment for End-to-End Flows in Distributed Real-Time Systems
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_LUItc3RTd19sREE))
 

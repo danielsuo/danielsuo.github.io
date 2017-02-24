@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Real-time Scheduling of Dataflow  Graphs
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_TmdDdzJjREdZMUU))
 

@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Data flow languages
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_YXpxbHBhVER0SDA))
 

@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # The Tail at Scale
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_NW5MNUlQWExWNlU))
 

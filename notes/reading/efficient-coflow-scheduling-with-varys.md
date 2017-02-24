@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Efficient Coflow Scheduling with Varys
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_bEVRd3BBaE9qcUE))
 

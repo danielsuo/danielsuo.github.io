@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Kahn Process Networks
 ([Original paper](https://drive.google.com/open?id=0B_10gtxnPV-_UlV2TlV3eGVPZ2c))
 ([Wiki](https://en.wikipedia.org/wiki/Kahn_process_networks))

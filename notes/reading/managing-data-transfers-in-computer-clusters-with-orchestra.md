@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Managing Data Transfers in Computer Clusters with Orchestra
 
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_bTVrTEJsb1FlMDg))

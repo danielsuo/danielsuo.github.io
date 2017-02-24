@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Cyclo-static Data Flow
 
 ([theory link](https://drive.google.com/open?id=0B_10gtxnPV-_WmNNb2NMbndOY2s))

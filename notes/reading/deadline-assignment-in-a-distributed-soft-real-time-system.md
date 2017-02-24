@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Deadline Assignment in a Distributed Soft Real Time System
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_eHBjSUxPa2VPa2s))
 

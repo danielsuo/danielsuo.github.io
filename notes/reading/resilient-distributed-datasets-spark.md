@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Resilient Distributed Datasets (Spark)
 *A fault-tolerant abstraction for in-memory cluster computing* ([link](https://drive.google.com/file/d/0B_10gtxnPV-_VW14M281OWN3UVU/view?usp=sharing))
 

@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Static Scheduling of Synchronous Data Flow Programs for Digital Signal Processing
 
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_VVE4M3AxVU9iRm8))

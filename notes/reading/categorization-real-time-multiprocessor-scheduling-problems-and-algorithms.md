@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # A Categorization of Real-time Multiprocessor Scheduling Problems and Algorithms
 
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_OXR5M0Z3bDBuQkE))

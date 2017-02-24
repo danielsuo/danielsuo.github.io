@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Coflow: A Networking Abstraction for Cluster Applications
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_VnloRm11SzhCejg))
 

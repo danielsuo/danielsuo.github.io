@@ -1,3 +1,7 @@
+---
+layout: base
+---
+
 # Raft: In Search of an Understandable Consensus Algorithm
 ([link](https://drive.google.com/open?id=0B_10gtxnPV-_SFpSRk1hWEJmeUE))
 
