@@ -11,6 +11,7 @@ publish() {
   git push origin dev
 
   ./bin/markdownify
+  ./bin/indexify
   jekyll build
 
   git checkout master

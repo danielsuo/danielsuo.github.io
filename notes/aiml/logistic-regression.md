@@ -63,7 +63,7 @@ $$
 \log \frac{p}{1 - p} = \beta_0 + x\cdot \beta
 $$
 
-gives us the two properties that we want: bounded between 1 and 0 regardless of $x$, and small changes in $p$ with respect to $x$ as $p$ gets close to 0 or 1. In the plot below, we let
+gives us the two properties that we want: $p$ bounded between 1 and 0 regardless of $x$, and $p$ changes little with respect to $x$ as $p$ gets close to 0 or 1. In the plot below, we let
 
 $$
 u=\beta_0 + x\cdot\beta

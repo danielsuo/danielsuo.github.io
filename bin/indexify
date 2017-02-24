@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+for file in `find $1`; do
+  if [ ! -d $file ]; then
+    filename="${file%.*}"
+
+    if [[ ! $(basename $filename) == "index" ]]; then
+      echo "- [$(basename $filename)]($filename.html)" >> $(dirname $file)/index.md
+    fi
+  else
+    if [[ ! -f $file/index.md || $(sed -n '2p' $file/index.md) == *"automatic"* ]]; then
+      cp ./_includes/index.md $file
+    fi
+  fi
+done
