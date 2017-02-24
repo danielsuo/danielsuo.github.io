@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='3D Rotations'>
+  <body id=''>
     
     <div class='wrapper'>
       
@@ -58,12 +58,37 @@
       <section>
 
         <div id='container'>
-          <h3 id="3d-rotations">3D rotations</h3>
+          <h1 id="the-parsec-benchmark-suite-characterization-and-architectural-implications">The PARSEC Benchmark Suite: Characterization and Architectural Implications</h1>
+<p><a href="http://parsec.cs.princeton.edu/doc/parsec-report.pdf">link</a></p>
+
+<h2 id="1-contributions">1. Contributions</h2>
 <ul>
-  <li>Euler angles</li>
-  <li>Quaternions</li>
-  <li>Exponential twist</li>
+  <li>Shortcomings of existing benchmarks
+    <ul>
+      <li>E.g., HPC, smaller, not parallelized</li>
+    </ul>
+  </li>
+  <li>Benchmark suite to focus on emerging applications
+    <ul>
+      <li>Recognition, mining, and synthesis</li>
+      <li>Large-scale multi-threaded commercial applications</li>
+    </ul>
+  </li>
+  <li>What future chip multi-processors (CMPs) need to have</li>
 </ul>
+
+<h2 id="2-requirements-for-cmp-benchmark-suites">2. Requirements for CMP benchmark suites</h2>
+<ol>
+  <li>Multi-threaded applications with shared memory</li>
+  <li>Emerging workloads (see section 3)</li>
+  <li>Diverse</li>
+  <li>State-of-art programming techniques</li>
+  <li>Support research (e.g., provide infrastructure for instrumentation)</li>
+</ol>
+
+<p><strong>Pipeline parallelism</strong>: In work-sharing, split each loop so that multiple iterations are run in parallel. Pipeline parallelism splits each loop iteration into stages and threads and operate on different stages from different iterations concurrently. Each stage is assigned one or more worker threads and an in-queue, which stores the work to be processed by that stage. It exposes parallelism in ordered loops where iterations are non-independent and cannot run concurrently. By splitting each loop iteration into segments, we can expose intra-iteration parallelism. (<a href="http://www.futurechips.org/parallel-programming-2/parallel-programming-clarifying-pipeline-parallelism.html">Source</a>)</p>
+
+<h2 id="3-the-parsec-benchmark-suite">3. The PARSEC benchmark suite</h2>
 
         </div>
 

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Daniel Suo | Scientific progress goes 'boink'</title>
+
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/pygment_trac.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/assets/img/profile.jpg" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"> </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+
+  <body id=''>
+    
+    <div class='wrapper'>
+      
+      <header>
+    <h1>Daniel Suo</h1>
+    <p>Scientific progress goes 'boink'</p>
+
+    <p>
+      Ph.D. Candidate<br>
+      Princeton University<br>
+      Department of Computer Science
+    </p>
+
+    <ul>
+    	<li><a href="/">home</a></li>
+      <!-- <li><a href="https://blog.danielsuo.com">blog</a></li>
+      <li><a href="/projects">projects</a></li> -->
+      <li><a href="/notes">notes</a></li>
+    </ul>
+
+</header>
+
+
+      <section>
+
+        <div id='container'>
+          <h1 id="scheduler-activations-effective-kernel-support-for-the-user-level-management-of-parallelism">Scheduler Activations: Effective Kernel Support for the User-Level Management of Parallelism</h1>
+<p><a href="http://flint.cs.yale.edu/cs422/doc/sched-act.pdf">link</a></p>
+
+<p><strong>Problem</strong>: user-level threads have a lot of flexibility and often (inherently) better performance, but may not be portable or even correct under some simple assumptions (not inherent, but consequence of inadequate kernel support). Kernel-level threads threads, on the otherhand, are safer, but can be much slower.</p>
+
+<p><strong>Goals</strong>:</p>
+<ol>
+  <li>when threads don’t need kernel intervention, have good performance.</li>
+  <li>When kernel, must be involved, be as efficient as kernel-thread systems</li>
+  <li>Simplify user-level part for easy customization</li>
+</ol>
+
+<p><strong>Approach</strong></p>
+<ul>
+  <li>Provide each application with <em>virtual multiprocessor</em></li>
+  <li>Use <em>scheduler activations</em> to enable communication between kernel events and user-level threads.</li>
+</ul>
+
+<h2 id="2-the-case-for-user-level-thread-management">2. The case for user-level thread management</h2>
+<ul>
+  <li>Inherent cost to access thread management operations (e.g., safety) even when switching between threads in the same address space</li>
+  <li>Cost of general kernel-level thread managemenet (e.g., scheduling)</li>
+  <li>Simultaneously improve flexibility and performance</li>
+</ul>
+
+<p><img src="assets/markdown-img-paste-20170221130356416.png" alt="" /></p>
+
+<h3 id="however-there-is-or-was-poor-integration-in-user-level-threads">However, there is (or was) poor integration in user-level threads.</h3>
+<ul>
+  <li>Kernel threads block, resume, pre-empt without notification to user level</li>
+  <li>Kernel threads are scheduled obliviously with respect to the user-level thread state</li>
+</ul>
+
+<p>Different solutions fail:</p>
+<ul>
+  <li>Have same number of kernel threads as processors can lead to an entire process address space being blocked</li>
+  <li>Have more kernely threads than processors, more runnable kernel threads than processors</li>
+  <li>Time-slicing causes all kinds of problems for user-level thread systems</li>
+</ul>
+
+<h2 id="3-effective-kernely-support-for-the-user-level-management-of-parallelism">3. Effective kernely support for the user-level management of parallelism</h2>
+
+        </div>
+
+      </section>
+
+      <footer>
+  <!--email_off-->
+    <small>Complain <a href="mailto:dsuo@cs.princeton.edu" target="_blank">here</a>.</small>
+  <!--/email_off-->
+  <small><a href="/pubkey.txt" target="_blank">Securely</a>.</small>
+</footer>
+
+      
+    </div>
+
+    <script src='/assets/js/scale.fix.js'></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37351701-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

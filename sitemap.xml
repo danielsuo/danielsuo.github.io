@@ -5,203 +5,231 @@
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/3d-rotations</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/bitcoin/literature/b-money</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/bitcoin/literature/bitcoin</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/camera-matrix</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/color</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/bitcoin/literature/hashcash</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/homogenous-coordinates</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/bitcoin/literature/improving-time-stamping</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.danielsuo.com/archive/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.danielsuo.com/projects/five/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.danielsuo.com/projects/bitcoin/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.danielsuo.com/notes/vision/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.danielsuo.com/projects/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.danielsuo.com/notes/linear-algebra/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/beliefs/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/notes/linear-algebra/</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/projects/</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/notes/vision/</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/projects/bitcoin/</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/projects/five/</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/archive/</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/lighting</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/aiml/logistic-regression</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/ols</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/optics</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/notes/aiml/optimization</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/notes/reading/parsec-benchmark-suite</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/projections</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/bitcoin/literature/public-key-cryptosystems</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/reading/redblue</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/notes/reading/scheduler-activations</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/bitcoin/literature/secure-names-bit-strings</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/bitcoin/literature/secure-timestamping-service</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/linear-algebra/set</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.danielsuo.com/notes/aiml/support-vector-machines</loc>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/projects/bitcoin/literature/time-stamp-digital-document</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://www.danielsuo.com/notes/vision/transformations</loc>
-    <lastmod>2017-02-16T20:54:36-05:00</lastmod>
+    <lastmod>2017-02-23T21:29:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
