@@ -3,8 +3,9 @@
 for file in `find $1`; do
   if [ ! -d $file ]; then
     filename="${file%.*}"
+    extension="${file##*.}"
 
-    if [[ ! $(basename $filename) == "index" ]]; then
+    if [[ ! $(basename $filename) == "index" && $extension == "md" ]]; then
       echo "- [$(basename $filename)](/$filename.html)" >> $(dirname $file)/index.md
     fi
   else
