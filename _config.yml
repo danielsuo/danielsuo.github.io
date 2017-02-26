@@ -31,4 +31,3 @@ exclude:
 - Gemfile*
 - bin
 - .bowerrc
-- .git

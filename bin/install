@@ -2,6 +2,3 @@
 
 sudo gem install bundler
 bundle install
-
-brew install node
-npm install -g bower
