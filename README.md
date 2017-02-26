@@ -5,6 +5,9 @@
 
 # Run the server
 ./bin/serve
+
+# Publish changes
+./bin/publish -m [commit_message]
 ```
 
 # To Do
