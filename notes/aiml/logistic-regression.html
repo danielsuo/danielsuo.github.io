@@ -132,7 +132,7 @@ Y = \left\{
 
 <p>for simplicity.</p>
 
-<div id="quadratic"></div>
+<div id="sigmoid"></div>
 
 <script>
 functionPlot({
@@ -144,7 +144,7 @@ functionPlot({
     label: 'p - axis',
     domain: [0, 1.2]
   },
-  target: '#quadratic',
+  target: '#sigmoid',
   data: [{
     fn: '1 / (1 + exp(-x))'
   }],
@@ -152,15 +152,116 @@ functionPlot({
 })
 </script>
 
-<h2 id="comparing-linear-and-logistic-regressions">Comparing linear and logistic regressions</h2>
+<p>This curve is known as the sigmoid curve.</p>
 
-<h2 id="examining-how-logistic-regression-changes-based-on-parameters">Examining how logistic regression changes based on parameters</h2>
+<h2 id="linear-vs-logistic-regression">Linear vs. logistic regression</h2>
+<p>To illustrate why we may want a logistic regression, we borrow an example from the Vanderbilt slides linked below.</p>
+
+<p>The following figure shows 30 day mortality in a sample of septic
+patients as a function of their baseline APACHE II Score.
+Patients are coded as 1 or 0 depending on whether they are dead
+or alive in 30 days, respectively.</p>
+
+<p><img src="assets/markdown-img-paste-20170228094113562.png" alt="" /></p>
+
+<p>If we wanted to somehow separate the two cases (based on the APACHE II score i.e., we cannot draw a horizontal line at $died = 0.5$), we can see that a line isn’t going to work very well! Recall that we want to model the <em>probability</em> that a patient will die (that’s the vertical axis). To find this probabiltiy we would take the patient’s APACHE II score and find the corresponding value on the red line. The linear regression cleary extends well above 1 and below 0; a no-no for probabilities.</p>
+
+<p><img src="assets/markdown-img-paste-20170228094745590.png" alt="" /></p>
+
+<p>Now suppose we model the log odds of the probability ($p / (1-p)$) with a linear regression. We can see that all probabilities along the red curve lie between 0 and 1. The model predicts that all APACHE II scores to the right of the inflection point indicate death and those to the left indicate survival.</p>
+
+<p><img src="assets/markdown-img-paste-20170228100607396.png" alt="" /></p>
+
+<h2 id="playing-with-the-sigmoid">Playing with the sigmoid</h2>
+
+<p>In the graph below, we vary the coefficient $\beta$ of $x$ in</p>
+
+<script type="math/tex; mode=display">\log \frac{p}{1 - p} = \beta_0 + x\cdot \beta</script>
+
+<p>As $\beta$ gets larger, the curve gets steeper.</p>
+
+<div id="sigmoid2"></div>
+
+<script>
+functionPlot({
+  disableZoom: true,
+  xAxis: {
+    label: 'u - axis'
+  },
+  yAxis: {
+    label: 'p - axis',
+    domain: [0, 1.2]
+  },
+  target: '#sigmoid2',
+  data: [{
+    fn: '1 / (1 + exp(-x))'
+  }, {
+    fn: '1 / (1 + exp(-2*x))'
+  }, {
+    fn: '1 / (1 + exp(-3*x))'
+  }],
+  grid: true
+})
+</script>
+
+<p>Varying $\beta_0$ moves the sigmoid to the left ($\beta_0 &lt; 0$) or right ($\beta_0 &gt; 0$).</p>
+
+<div id="sigmoid3"></div>
+
+<script>
+functionPlot({
+  disableZoom: true,
+  xAxis: {
+    label: 'u - axis'
+  },
+  yAxis: {
+    label: 'p - axis',
+    domain: [0, 1.2]
+  },
+  target: '#sigmoid3',
+  data: [{
+    fn: '1 / (1 + exp(-x))'
+  }, {
+    fn: '1 / (1 + exp(-x + 1))'
+  }, {
+    fn: '1 / (1 + exp(-x - 1))'
+  }],
+  grid: true
+})
+</script>
+
+<p>Regressing the log odds of the probability on some linear function of the inputs helps find the best shape for the data whether a sharp cutoff:</p>
+
+<p><img src="assets/markdown-img-paste-20170228133322288.png" alt="" /></p>
+
+<p>or a much less certain signal:</p>
+
+<p><img src="assets/markdown-img-paste-2017022813335334.png" alt="" /></p>
 
 <h2 id="the-decision-boundary">The decision boundary</h2>
 
-<h2 id="maximizing-the-likelihood-function-for-logistic-regression">Maximizing the likelihood function for logistic regression</h2>
+<h2 id="computing-an-example-by-hand">Computing an example by hand</h2>
+
+<h2 id="likelihood-function-for-logistic-regression">Likelihood function for logistic regression</h2>
+
+<script type="math/tex; mode=display">L(\beta_0, \beta) = \prod_{i=1}^np(x_i)^{y_i}(1-p(x_i))^{1-y_i}</script>
+
+<p>Typically maximize log-likelihood because dealing with sums are easier and because multiplying a number of probabilities together exposes us to numerical error (they get too small!):</p>
+
+<script type="math/tex; mode=display">\log L(\beta_0, \beta) = \sum_{i=1}^n y_i \log p(x_i) + (1-y_i)\log (1-p(x_i))</script>
+
+<p>Note that this looks a lot like cross-entropy:</p>
+<ul>
+  <li><a href="http://math.stackexchange.com/questions/1074276/how-is-logistic-loss-and-cross-entropy-related">http://math.stackexchange.com/questions/1074276/how-is-logistic-loss-and-cross-entropy-related</a></li>
+  <li><a href="http://stats.stackexchange.com/questions/198038/cross-entropy-or-log-likelihood-in-output-layer">http://stats.stackexchange.com/questions/198038/cross-entropy-or-log-likelihood-in-output-layer</a></li>
+</ul>
+
+<h2 id="maximizing-the-likelihood-function">Maximizing the likelihood function</h2>
+<p>See equations 12.7 to 12.12 in the CMU notes below.</p>
 
 <h2 id="logistic-regression-with-more-than-two-classes-multinomial-regression">Logistic regression with more than two classes (multinomial regression)</h2>
+
+<script type="math/tex; mode=display">\Pr (Y = c | X = x) = \frac{e^{\beta_0^{(c)} + x\cdot \beta^{(c)}}}{\sum_ie^{\beta_0^{(i)} + x\cdot \beta^{(i)}}}</script>
 
 <h2 id="further-topics">Further topics</h2>
 <ul>
@@ -169,16 +270,24 @@ functionPlot({
   <li>Generalized linear models</li>
 </ul>
 
-<h2 id="questions-to-answer">Questions to answer</h2>
+<h2 id="faq">FAQ</h2>
 <ul>
-  <li><a href="https://www.quora.com/Why-is-logistic-regression-called-regression-if-it-doesnt-model-continuous-outcomes">Why is it called a regression?</a></li>
+  <li>Why is the logistic regression called a regression if it’s used to classify binary outcomes?
+    <ul>
+      <li>Notice that we are actually ‘regressing’ the log odds of the probability that our outcome $Y$ is 1 against a linear combination of the explanatory variables.</li>
+      <li>The ‘classification’ part comes when we apply a threshold (e.g., $Y=1$ for $p\geq0.5$ and $Y=0$ for $y&lt;0.5\ $).</li>
+      <li>More details <a href="https://www.quora.com/Why-is-logistic-regression-called-regression-if-it-doesnt-model-continuous-outcomes">here</a></li>
+    </ul>
+  </li>
+  <li><strong>TODO</strong> Odds ratio vs. relative ratio</li>
+  <li><strong>TODO</strong> Why do we use odds ratio for logistic regression <a href="http://stats.stackexchange.com/questions/215349/why-use-odds-and-not-probability-in-logistic-regression">here</a></li>
 </ul>
 
 <h2 id="references">References</h2>
 <ul>
-  <li><a href="https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf">Introduction 1</a></li>
-  <li><a href="http://data.princeton.edu/wws509/notes/c3.pdf">Introduction 2</a></li>
-  <li><a href="http://www.mc.vanderbilt.edu/gcrc/workshop_files/2004-11-12.pdf">Basic Introduction</a></li>
+  <li><a href="http://www.mc.vanderbilt.edu/gcrc/workshop_files/2004-11-12.pdf">Vanderbilt medical perspective</a></li>
+  <li><a href="https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf">CMU statistics perspective</a></li>
+  <li><a href="http://data.princeton.edu/wws509/notes/c3.pdf">Princeton Woodrow Wilson School of Public Policy</a></li>
 </ul>
 
         </div>
