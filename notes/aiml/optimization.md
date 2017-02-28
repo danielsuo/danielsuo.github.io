@@ -5,6 +5,12 @@ use_math: true
 
 # Optimization
 
+## Convex optimziation
+- John Duchi's slides: https://people.eecs.berkeley.edu/~jordan/courses/294-fall09/lectures/optimization/slides.pdf
+
+## Non-convex optimization
+- http://www.cs.ubc.ca/labs/lci/mlrg/slides/non_convex_optimization.pdf
+
 ## Lagrange multipliers
 - [Introduction 1](http://www.slimy.com/~steuard/teaching/tutorials/Lagrange.html)
 - [Introduction 2](https://people.eecs.berkeley.edu/~klein/papers/lagrange-multipliers.pdf)
@@ -18,3 +24,8 @@ use_math: true
 ```python
 
 ```
+
+
+References
+- Convex optimization: https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf
+- Online convex optimization: http://ocobook.cs.princeton.edu/OCObook.pdf

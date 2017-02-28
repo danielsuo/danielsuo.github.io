@@ -71,7 +71,7 @@ $$
 
 for simplicity.
 
-<div id='quadratic'></div>
+<div id='sigmoid'></div>
 
 <script>
 functionPlot({
@@ -83,7 +83,7 @@ functionPlot({
     label: 'p - axis',
     domain: [0, 1.2]
   },
-  target: '#quadratic',
+  target: '#sigmoid',
   data: [{
     fn: '1 / (1 + exp(-x))'
   }],
@@ -91,27 +91,137 @@ functionPlot({
 })
 </script>
 
-## Comparing linear and logistic regressions
+This curve is known as the sigmoid curve.
 
-## Examining how logistic regression changes based on parameters
+## Linear vs. logistic regression
+To illustrate why we may want a logistic regression, we borrow an example from the Vanderbilt slides linked below.
+
+The following figure shows 30 day mortality in a sample of septic
+patients as a function of their baseline APACHE II Score.
+Patients are coded as 1 or 0 depending on whether they are dead
+or alive in 30 days, respectively.
+
+![](assets/markdown-img-paste-20170228094113562.png)
+
+If we wanted to somehow separate the two cases (based on the APACHE II score i.e., we cannot draw a horizontal line at $died = 0.5$), we can see that a line isn't going to work very well! Recall that we want to model the *probability* that a patient will die (that's the vertical axis). To find this probabiltiy we would take the patient's APACHE II score and find the corresponding value on the red line. The linear regression cleary extends well above 1 and below 0; a no-no for probabilities.
+
+![](assets/markdown-img-paste-20170228094745590.png)
+
+Now suppose we model the log odds of the probability ($p / (1-p)$) with a linear regression. We can see that all probabilities along the red curve lie between 0 and 1. The model predicts that all APACHE II scores to the right of the inflection point indicate death and those to the left indicate survival.
+
+![](assets/markdown-img-paste-20170228100607396.png)
+
+## Playing with the sigmoid
+
+In the graph below, we vary the coefficient $\beta$ of $x$ in
+
+$$
+\log \frac{p}{1 - p} = \beta_0 + x\cdot \beta
+$$
+
+As $\beta$ gets larger, the curve gets steeper.
+
+<div id='sigmoid2'></div>
+
+<script>
+functionPlot({
+  disableZoom: true,
+  xAxis: {
+    label: 'u - axis'
+  },
+  yAxis: {
+    label: 'p - axis',
+    domain: [0, 1.2]
+  },
+  target: '#sigmoid2',
+  data: [{
+    fn: '1 / (1 + exp(-x))'
+  }, {
+    fn: '1 / (1 + exp(-2*x))'
+  }, {
+    fn: '1 / (1 + exp(-3*x))'
+  }],
+  grid: true
+})
+</script>
+
+Varying $\beta_0$ moves the sigmoid to the left ($\beta_0 < 0$) or right ($\beta_0 > 0$).
+
+<div id='sigmoid3'></div>
+
+<script>
+functionPlot({
+  disableZoom: true,
+  xAxis: {
+    label: 'u - axis'
+  },
+  yAxis: {
+    label: 'p - axis',
+    domain: [0, 1.2]
+  },
+  target: '#sigmoid3',
+  data: [{
+    fn: '1 / (1 + exp(-x))'
+  }, {
+    fn: '1 / (1 + exp(-x + 1))'
+  }, {
+    fn: '1 / (1 + exp(-x - 1))'
+  }],
+  grid: true
+})
+</script>
+
+Regressing the log odds of the probability on some linear function of the inputs helps find the best shape for the data whether a sharp cutoff:
+
+![](assets/markdown-img-paste-20170228133322288.png)
+
+or a much less certain signal:
+
+![](assets/markdown-img-paste-2017022813335334.png)
 
 ## The decision boundary
 
-## Maximizing the likelihood function for logistic regression
+## Computing an example by hand
+
+## Likelihood function for logistic regression
+
+$$
+L(\beta_0, \beta) = \prod_{i=1}^np(x_i)^{y_i}(1-p(x_i))^{1-y_i}
+$$
+
+Typically maximize log-likelihood because dealing with sums are easier and because multiplying a number of probabilities together exposes us to numerical error (they get too small!):
+
+$$
+\log L(\beta_0, \beta) = \sum_{i=1}^n y_i \log p(x_i) + (1-y_i)\log (1-p(x_i))
+$$
+
+Note that this looks a lot like cross-entropy:
+- [http://math.stackexchange.com/questions/1074276/how-is-logistic-loss-and-cross-entropy-related](http://math.stackexchange.com/questions/1074276/how-is-logistic-loss-and-cross-entropy-related)
+- [http://stats.stackexchange.com/questions/198038/cross-entropy-or-log-likelihood-in-output-layer](http://stats.stackexchange.com/questions/198038/cross-entropy-or-log-likelihood-in-output-layer)
+
+## Maximizing the likelihood function
+See equations 12.7 to 12.12 in the CMU notes below.
 
 ## Logistic regression with more than two classes (multinomial regression)
+
+$$
+\Pr (Y = c | X = x) = \frac{e^{\beta_0^{(c)} + x\cdot \beta^{(c)}}}{\sum_ie^{\beta_0^{(i)} + x\cdot \beta^{(i)}}}
+$$
 
 ## Further topics
 - Newton's method in one or more dimensions
 - Iteratively re-weighted least squares
 - Generalized linear models
 
-## Questions to answer
-- [Why is it called a regression?](https://www.quora.com/Why-is-logistic-regression-called-regression-if-it-doesnt-model-continuous-outcomes)
-
-
+## FAQ
+- Why is the logistic regression called a regression if it's used to classify binary outcomes?
+  - Notice that we are actually 'regressing' the log odds of the probability that our outcome $Y$ is 1 against a linear combination of the explanatory variables.
+  - The 'classification' part comes when we apply a threshold (e.g., $Y=1$ for $p\geq0.5$ and $Y=0$ for $y<0.5\ $).
+  - More details [here](https://www.quora.com/Why-is-logistic-regression-called-regression-if-it-doesnt-model-continuous-outcomes)
+- **TODO** Odds ratio vs. relative ratio
+- **TODO** Why do we use odds ratio for logistic regression [here](http://stats.stackexchange.com/questions/215349/why-use-odds-and-not-probability-in-logistic-regression)
 
 ## References
-- [Introduction 1](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf)
-- [Introduction 2](http://data.princeton.edu/wws509/notes/c3.pdf)
-- [Basic Introduction](http://www.mc.vanderbilt.edu/gcrc/workshop_files/2004-11-12.pdf)
+- [Vanderbilt medical perspective](http://www.mc.vanderbilt.edu/gcrc/workshop_files/2004-11-12.pdf)
+- [CMU statistics perspective](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf)
+- [Princeton Woodrow Wilson School of Public Policy](http://data.princeton.edu/wws509/notes/c3.pdf)

@@ -67,7 +67,7 @@ code, pre {
 
 pre {
   padding:8px 15px;
-  background: #f8f8f8;  
+  background: #f8f8f8;
   border-radius:5px;
   border:1px solid #e5e5e5;
   overflow-x: auto;
@@ -167,34 +167,40 @@ social img {
   text-align: justify;
 }
 
+#container img {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
 @media print, screen and (max-width: 960px) {
-  
+
   div.wrapper {
     width:auto;
     margin:0;
   }
-  
+
   header, section, footer {
     float:none;
     position:static;
     width:auto;
   }
-  
+
   header {
     padding-right:320px;
   }
-  
+
   section {
     border:1px solid #e5e5e5;
     border-width:1px 0;
     padding:20px 0;
     margin:0 0 20px;
   }
-  
+
   header a small {
     display:inline;
   }
-  
+
   header ul {
     position:absolute;
     right:50px;
@@ -221,15 +227,15 @@ social img {
   body {
     word-wrap:break-word;
   }
-  
+
   header {
     padding:0;
   }
-  
+
   header ul, header p.view {
     position:static;
   }
-  
+
   pre, code {
     word-wrap:normal;
   }
@@ -249,7 +255,7 @@ social img {
   }
 }
 
-.math {
+.MathJax {
   font-size: 0.9em !important;
 }
 
