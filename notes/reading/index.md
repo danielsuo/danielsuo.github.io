@@ -7,6 +7,7 @@ This is an automatically generated index file of the current directory.
 
 # Index
 - [apache-flink-stream-and-batch-processing-in-a-single-engine](/notes/reading/apache-flink-stream-and-batch-processing-in-a-single-engine.html)
+- [c-store](/notes/reading/c-store.html)
 - [categorization-real-time-multiprocessor-scheduling-problems-and-algorithms](/notes/reading/categorization-real-time-multiprocessor-scheduling-problems-and-algorithms.html)
 - [coflow-a-networking-abstraction-for-cluster-applications](/notes/reading/coflow-a-networking-abstraction-for-cluster-applications.html)
 - [column-stores-vs-row-stores](/notes/reading/column-stores-vs-row-stores.html)
