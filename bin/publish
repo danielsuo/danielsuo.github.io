@@ -5,6 +5,7 @@ usage() {
 }
 
 publish() {
+  git fetch origin master
   git pull origin dev
 
   ./bin/indexify notes
