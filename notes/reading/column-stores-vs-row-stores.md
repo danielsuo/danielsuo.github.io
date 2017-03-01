@@ -1,5 +1,6 @@
 ---
 layout: base
+tags:
 ---
 
 # Column-Stores vs. Row-Stores: How Different Are They Really?
