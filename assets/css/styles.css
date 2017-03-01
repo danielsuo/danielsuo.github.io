@@ -5,7 +5,7 @@ body {
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#444;
   font-size: 14px;
-  font-weight:300;
+  font-weight:300px;
   line-height: 1.6em;
 }
 
@@ -36,7 +36,7 @@ h3, h4, h5, h6 {
 
 a {
   color:#39c;
-  font-weight:300;
+  font-weight:300px;
   text-decoration:none;
 }
 
@@ -86,7 +86,7 @@ th, td {
 
 dt {
   color:#444;
-  font-weight:700;
+  font-weight:700px;
 }
 
 th {
@@ -115,7 +115,7 @@ header ul li {
 
 strong {
   color:#222;
-  font-weight:700;
+  font-weight:700px;
 }
 
 header ul li + li {

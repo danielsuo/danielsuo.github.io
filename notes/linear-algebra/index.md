@@ -43,3 +43,4 @@ Original notes [here](http://imechanica.org/node/19709).
 - [set](/notes/linear-algebra/set.html)
 - [set](/notes/linear-algebra/set.html)
 - [set](/notes/linear-algebra/set.html)
+- [set](/notes/linear-algebra/set.html)
