@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='Notes on Linear Algebra'>
+  <body id=''>
     
     <div class='wrapper'>
       
@@ -58,49 +58,32 @@
       <section>
 
         <div id='container'>
-          <h2 id="linear-algebra">Linear Algebra</h2>
+          <h1 id="c-store-a-column-oriented-dbms">C-Store: A Column-oriented DBMS</h1>
+<p><a href="http://db.csail.mit.edu/projects/cstore/vldb.pdf">link</a></p>
+
+<p><strong>Main idea</strong>: read-optimized relational DBMS (as opposed to write-optimized) that</p>
 <ul>
-  <li><a href="set.html">Set</a></li>
+  <li>Stores data by column rather than by row</li>
+  <li>Uses a number of tricks to pack data</li>
+  <li>Offers high availability and snapshot islation</li>
 </ul>
 
-<p>Original notes <a href="http://imechanica.org/node/19709">here</a>.
-<a href="notes/linear-algebra/notes/linear-algebra/index.md">notes/linear-algebra/index.md</a>
-<a href="notes/linear-algebra/notes/linear-algebra/set.md">notes/linear-algebra/set.md</a>
-[](
-[](
-[index.md](
-[set.md](
-<a href="">index.md</a>
-<a href="">set.md</a>
-<a href="notes/linear-algebra/index.md">index.md</a>
-<a href="notes/linear-algebra/set.md">set.md</a>
-<a href="notes/linear-algebra/index.html">index.md</a>
-<a href="notes/linear-algebra/set.html">set.md</a>
-<a href="notes/linear-algebra/index.html">index</a>
-<a href="notes/linear-algebra/set.html">set</a>
-\n<a href="notes/linear-algebra/index.html">index</a>
-\n<a href="notes/linear-algebra/set.html">set</a></p>
-
-<p><a href="notes/linear-algebra/index.html">index</a></p>
-
-<p><a href="notes/linear-algebra/set.html">set</a></p>
+<h2 id="introduction">Introduction</h2>
 <ul>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/index.html">index</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
-  <li><a href="/notes/linear-algebra/set.html">set</a></li>
+  <li>Most major DBMS write records contiguously in storage (i.e., by row)
+    <ul>
+      <li>High-perfoormance writes</li>
+      <li>Good for online transaction processing (OLTP) workloads</li>
+    </ul>
+  </li>
+  <li>Many scenarios require read-optimized DBMS where there is bulk load followed by relatively long period of ad-hoc queries</li>
+</ul>
+
+<p>Several ways to address read-optimized workload</p>
+<ul>
+  <li>Use column stores to access relevant attributes</li>
+  <li>Use CPU cycles, which have increased much faster than disk bandwidth, to compress data and avoid padding (to preserve byte or word boundaries)</li>
+  <li>Query executor operate on compressed representations wherever possible</li>
 </ul>
 
         </div>

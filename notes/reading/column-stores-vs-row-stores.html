@@ -66,6 +66,10 @@
   <p>Column-stores are more I/O efficient for read-only queries since they only have to read from disk (or from memory) those attributes accessed by a query</p>
 </blockquote>
 
+<p>If this is the case, why can’t we achieve column-store performance with row-stores by vertically partitioning the schema or by indexing every column?</p>
+
+<p>Answer: must make fundamental changes to both storage layer and query executor.</p>
+
         </div>
 
       </section>
