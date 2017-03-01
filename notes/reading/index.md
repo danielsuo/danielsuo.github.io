@@ -9,6 +9,7 @@ This is an automatically generated index file of the current directory.
 - [apache-flink-stream-and-batch-processing-in-a-single-engine](/notes/reading/apache-flink-stream-and-batch-processing-in-a-single-engine.html)
 - [categorization-real-time-multiprocessor-scheduling-problems-and-algorithms](/notes/reading/categorization-real-time-multiprocessor-scheduling-problems-and-algorithms.html)
 - [coflow-a-networking-abstraction-for-cluster-applications](/notes/reading/coflow-a-networking-abstraction-for-cluster-applications.html)
+- [column-stores-vs-row-stores](/notes/reading/column-stores-vs-row-stores.html)
 - [cyclo-static-data-flow](/notes/reading/cyclo-static-data-flow.html)
 - [dataflow-languages](/notes/reading/dataflow-languages.html)
 - [deadline-assignment-in-a-distributed-soft-real-time-system](/notes/reading/deadline-assignment-in-a-distributed-soft-real-time-system.html)

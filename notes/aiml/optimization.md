@@ -11,6 +11,11 @@ use_math: true
 ## Non-convex optimization
 - http://www.cs.ubc.ca/labs/lci/mlrg/slides/non_convex_optimization.pdf
 
+## Numerical optimization
+- http://www.personal.psu.edu/cxg286/Math555.pdf
+- http://terminus.sdsu.edu/SDSU/Math693a/Lectures/18/lecture.pdf
+- http://users.eecs.northwestern.edu/~morales/PSfiles/aml.pdf
+
 ## Lagrange multipliers
 - [Introduction 1](http://www.slimy.com/~steuard/teaching/tutorials/Lagrange.html)
 - [Introduction 2](https://people.eecs.berkeley.edu/~klein/papers/lagrange-multipliers.pdf)
