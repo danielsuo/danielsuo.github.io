@@ -5,7 +5,8 @@ usage() {
 }
 
 publish() {
-  git fetch origin master
+  cp ~/.vimrc .
+  git fetch origin master:master
   git pull origin dev
 
   ./bin/indexify notes
