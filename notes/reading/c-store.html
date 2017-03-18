@@ -65,7 +65,7 @@
 <ul>
   <li>Stores data by column rather than by row</li>
   <li>Uses a number of tricks to pack data</li>
-  <li>Offers high availability and snapshot islation</li>
+  <li>Offers high availability and snapshot isolation</li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
@@ -84,6 +84,19 @@
   <li>Use column stores to access relevant attributes</li>
   <li>Use CPU cycles, which have increased much faster than disk bandwidth, to compress data and avoid padding (to preserve byte or word boundaries)</li>
   <li>Query executor operate on compressed representations wherever possible</li>
+</ul>
+
+<p>C-store also looks to address distributed systems</p>
+<ul>
+  <li>Automatically shard data using shared-nothing architecture across cluster or some number of clusters</li>
+  <li>Intra-query parallelism by horizontally partitioning data (i.e., across keys)</li>
+  <li>Replicas that store different projections for high availability and high performance</li>
+</ul>
+
+<p>Balance read and write (tension: append may be good for write, but bad for read)</p>
+<ul>
+  <li>Combine read-optimized column store with write-optimized update/insert store connected by a <em>tuple mover</em></li>
+  <li>Read-only queries operate in historical mode, so offer snapshot isolation</li>
 </ul>
 
         </div>

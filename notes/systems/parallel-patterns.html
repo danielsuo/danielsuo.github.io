@@ -16,11 +16,26 @@
 
 
 
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
 
 
 
 
 
+
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<script src="https://wzrd.in/standalone/function-plot@1.17.3"></script>
 
 
 
@@ -58,15 +73,52 @@
       <section>
 
         <div id='container'>
-          <p>This is an automatically generated index file of the current directory.</p>
+          <h1 id="parallel-programming-patterns">Parallel programming patterns</h1>
 
-<h1 id="index">Index</h1>
+<h2 id="amdahls-law">Amdahl’s Law</h2>
+<p>A simple model describing how parallelism can speed up a given task. Let <script type="math/tex">S</script> be the fraction of the task that cannot be parallelized and <script type="math/tex">P = 1-S</script> be the fraction that can be. If we have $N$ available processors, the speed-up in this model is given by</p>
+
+<script type="math/tex; mode=display">speedup = \frac{1}{\frac{1-S}{N} + S} = \frac{1}{\frac{P}{N} + S}</script>
+
+<p>Below are some speed-up curves by number of available processors $N$ (2, 4, 8, 16).</p>
+
+<div id="amdahl"></div>
+
+<script>
+functionPlot({
+  disableZoom: true,
+  xAxis: {
+    label: '% serial',
+    domain: [0, 1]
+  },
+  yAxis: {
+    label: 'speed-up',
+    domain: [0, 20]
+  },
+  target: '#amdahl',
+  data: [{
+    fn: '1 / ((1-x)/2 + x)'
+  }, {
+    fn: '1 / ((1-x)/4 + x)'
+  }, {
+    fn: '1 / ((1-x)/8 + x)'
+  }, {
+    fn: '1 / ((1-x)/16 + x)'
+  }],
+  grid: true
+})
+</script>
+
+<h2 id="finding-concurrency">Finding concurrency</h2>
+<p>Two primary sources of concurrency:</p>
 <ul>
-  <li><a href="/notes/systems/consistency.html">consistency</a></li>
-  <li><a href="/notes/systems/containers.html">containers</a></li>
-  <li><a href="/notes/systems/distributed-clocks.html">distributed-clocks</a></li>
-  <li><a href="/notes/systems/numa.html">numa</a></li>
-  <li><a href="/notes/systems/parallel-patterns.html">parallel-patterns</a></li>
+  <li><strong>Task parallelism</strong>: work on independent functional tasks simultaneously</li>
+  <li><strong>Data parallelism</strong>: work on independent data elements simultaneously</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+<ul>
+  <li>http://www.cc.gatech.edu/~hyesoon/spr11/lec_parallel_pattern.pdf</li>
 </ul>
 
         </div>
