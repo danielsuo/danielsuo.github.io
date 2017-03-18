@@ -5,7 +5,7 @@ usage() {
 }
 
 publish() {
-  cp ~/.vimrc .
+  cp ~/.vimrc vimrc.txt 
   git fetch origin master:master
   git pull origin dev
 
