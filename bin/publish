@@ -5,7 +5,8 @@ usage() {
 }
 
 publish() {
-  cp ~/.vimrc vimrc.txt 
+  cp ~/.vimrc dotfiles/vimrc.txt
+  cp ~/.tmux.conf dotfiles/tmux.conf
   git fetch origin master:master
   git pull origin dev
 

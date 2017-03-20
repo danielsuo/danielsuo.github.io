@@ -8,7 +8,7 @@
 "
 " Sections:
 "	  -> General
-"	  -> Plugins
+"	  -> Plugs
 "	  -> VIM user interface
 "	  -> Colors and Fonts
 "	  -> Files, backups, and undo
@@ -37,35 +37,48 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Map leader
+let mapleader = ','
+let g:mapleader = ','
+
+nmap <leader>w :w!<cr>
+
+" Set long history
+set history=1000
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
+" => Plugs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Manage statusline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='solarized'
 set laststatus=2
 
 " Git gutter
-Plugin 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 
 " Solarized theme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " Syntastic
-Plugin 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
-call vundle#end()
-filetype plugin indent on
+" Code completer
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+
+" Fuzzy finding
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+nmap <c-p> :Files<cr>
+
+" Git
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -162,6 +175,7 @@ map 0 ^
 " Alt-j/k to move lines up and down
 nnoremap <M-j> :m .+1<CR>==
 nnoremap <M-k> :m .-2<CR>==
+
 inoremap <M-j> <Esc>:m .+1<CR>==gi
 inoremap <M-k> <Esc>:m .-2<CR>==gi
 vnoremap <M-j> :m '>+1<CR>gv=gv
@@ -173,6 +187,13 @@ if has("mac") || has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
+
+map <space> /
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

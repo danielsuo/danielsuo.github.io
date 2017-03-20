@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# bash <(curl -s http://danielsuo.com/vim)
+# bash <(curl -s http://danielsuo.com/dotfiles/vim)
 
 # Assume we have vim, git, and curl installed
 

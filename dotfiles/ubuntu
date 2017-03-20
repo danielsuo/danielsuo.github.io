@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+sudo apt-get install -y \
+  git \
+  tmux \
+  vim \
+  cmake
+
+bash <(curl -s http://danielsuo.com/dotfiles/vim)
+bash <(curl -s http://danielsuo.com/dotfiles/tmux)
