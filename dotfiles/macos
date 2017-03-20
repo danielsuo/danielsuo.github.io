@@ -14,8 +14,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew doctor
 
 # Grab dotfiles directory
-git clone https://www.github.com/danielsuo/dotfiles.git
+# git clone https://www.github.com/danielsuo/dotfiles.git
 
 # Run main setup file
-cd dotfiles
-sh main.sh
+# cd dotfiles
+# sh main.sh
