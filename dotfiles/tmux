@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# bash <(curl -s http://danielsuo.com/dotfiles/tmux)
+
+# Assumes tmux, git, and bash are installed
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+curl http://danielsuo.com/tmux.conf -o ~/.tmux.conf
+~/.tmux/plugins/tpm/bin/install_plugins
