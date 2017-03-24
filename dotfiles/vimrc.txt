@@ -78,6 +78,9 @@ nmap <c-p> :Files<cr>
 " Git
 Plug 'tpope/vim-fugitive'
 
+" Sessions
+Plug 'tpope/obsession'
+
 call plug#end()
 
 
@@ -95,7 +98,7 @@ set whichwrap+=<,>,h,l
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Ignore case when searching
 set ignorecase
@@ -107,7 +110,7 @@ set smartcase
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
@@ -197,7 +200,7 @@ map <C-l> <C-W>l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => On-save actions 
+" => On-save actions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
@@ -219,5 +222,3 @@ function! HasPaste()
     endif
     return ''
 endfunction
-
-
