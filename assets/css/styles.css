@@ -170,7 +170,7 @@ social img {
 #container img {
   display: block;
   margin: auto;
-  width: 100%;
+  /*width: 100%;*/
 }
 
 @media print, screen and (max-width: 960px) {
@@ -259,4 +259,14 @@ social img {
   font-size: 0.9em !important;
 }
 
-#profile { display: block; margin: auto; float: left; padding: 0rem 1rem 0.5rem 0rem; width: 10rem; }
+img.home {
+  /*display: block;
+  margin: auto;
+  float: left;
+  padding: 0rem 1rem 0.5rem 0rem;*/
+  /*width: 60%;*/
+}
+
+img.nand {
+  width: 45%;
+}
