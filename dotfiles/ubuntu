@@ -29,6 +29,3 @@ make
 sudo make install
 
 echo 'PATH=/usr/share/bcc/tools:$PATH' >> ~/.bashrc
-
-bash <(curl -s http://danielsuo.com/dotfiles/vim)
-bash <(curl -s http://danielsuo.com/dotfiles/tmux)
