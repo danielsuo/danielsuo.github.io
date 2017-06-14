@@ -172,13 +172,7 @@
 [github]
 	user = danielsuo
 [filter "lfs"]
-<<<<<<< HEAD
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-=======
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
->>>>>>> 526bc4d0ebbd2031865a571f848eb44f9f78b777
