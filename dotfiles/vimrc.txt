@@ -73,7 +73,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-nmap <c-p> :Files<cr>
+nmap <space> :Files<cr>
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -191,7 +191,7 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-map <space> /
+" map <space> /
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
