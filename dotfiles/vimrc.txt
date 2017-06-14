@@ -42,6 +42,7 @@ let mapleader = ','
 let g:mapleader = ','
 
 nmap <leader>w :w!<cr>
+nmap <leader>r :so %<cr>:PlugInstall<cr>:PlugInstall<cr>
 
 " Set long history
 set history=1000
@@ -80,6 +81,10 @@ Plug 'tpope/vim-fugitive'
 
 " Sessions
 Plug 'tpope/vim-obsession'
+
+" NERDCommenter
+Plug 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
 
 call plug#end()
 
