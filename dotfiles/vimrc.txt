@@ -84,6 +84,9 @@ Plug 'tpope/vim-obsession'
 
 " NERDCommenter
 Plug 'scrooloose/nerdcommenter'
+
+" Auto pair matching
+Plug 'jiangmiao/auto-pairs'
 let g:NERDSpaceDelims = 1
 
 call plug#end()
