@@ -8,7 +8,8 @@ sudo apt-get install -y \
   vim \
   cmake \
   xclip \
-  mosh
+  curl \
+  cmake
 
 # Monitoring
 sudo apt-get install -y \
@@ -17,15 +18,3 @@ sudo apt-get install -y \
   sysstat \
   linux-tools-common \
   linux-tools-generic
-
-echo "deb [trusted=yes] https://repo.iovisor.org/apt/xenial xenial-nightly main" | sudo tee /etc/apt/sources.list.d/iovisor.list
-sudo apt-get update
-sudo apt-get install bcc-tools
-
-git clone https://github.com/iovisor/bcc.git
-mkdir bcc/build; cd bcc/build
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-make
-sudo make install
-
-echo 'PATH=/usr/share/bcc/tools:$PATH' >> ~/.bashrc
