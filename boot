@@ -5,4 +5,4 @@ git clone --recursive https://www.github.com/danielsuo/dotfiles.git
 
 # Run main setup file
 cd dotfiles
-./main
+./bin/install
