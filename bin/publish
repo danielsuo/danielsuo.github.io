@@ -11,6 +11,7 @@ publish() {
 
   if [ -f ~/drive/sync/cv/cv.pdf ]; then
     cp ~/drive/sync/cv/cv.pdf cv.pdf
+    git add -f cv.pdf
   fi
 
   git fetch origin master:master
