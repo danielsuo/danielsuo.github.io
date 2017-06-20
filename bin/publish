@@ -8,6 +8,11 @@ publish() {
   cp ~/.vimrc dotfiles/vimrc.txt
   cp ~/.tmux.conf dotfiles/tmux.conf
   cp ~/.gitconfig dotfiles/gitconfig.txt
+
+  if [ -f ~/drive/sync/cv/cv.pdf ]; then
+    cp ~/drive/sync/cv/cv.pdf cv.pdf
+  fi
+
   git fetch origin master:master
   git pull origin dev
 
