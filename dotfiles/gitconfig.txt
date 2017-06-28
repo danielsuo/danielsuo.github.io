@@ -81,7 +81,7 @@
 
 [core]
 
-  editor = emacs
+  editor = vim
 
   # Use custom `.gitignore` and `.gitattributes`
   excludesfile = ~/.gitignore
@@ -95,6 +95,7 @@
   # Make `git rebase` safer on OS X
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
   trustctime = false
+	sshCommand = ssh -i ~/.ssh/id_rsa_github -F /dev/null
 
 [color]
 
