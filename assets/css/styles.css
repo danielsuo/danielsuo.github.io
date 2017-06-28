@@ -255,11 +255,7 @@ footer {
 }
 
 img.home {
-  /*display: block;
-  margin: auto;
-  float: left;
-  padding: 0rem 1rem 0.5rem 0rem;*/
-  /*width: 60%;*/
+  width: 40%;
 }
 
 img.nand {
@@ -274,7 +270,7 @@ social ul {
 
 social ul li {
   display: inline;
-  padding: .2em;
+  padding: 0.2em;
 }
 
 social ul li:first-child {
@@ -282,5 +278,5 @@ social ul li:first-child {
 }
 
 social ul li a {
-  padding: .2em, 1em;
+  color: #aaa;
 }
