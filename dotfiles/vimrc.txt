@@ -1,21 +1,22 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"	Author:
-"	  Daniel Suo
-"	  dsuo@post.harvard.edu
+" Author:
+"   Daniel Suo
+"   dsuo@post.harvard.edu
 "
 " Version:
-"	  0.1
+"   0.1
 "
 " Sections:
-"	  -> General
-"	  -> Plugs
-"	  -> VIM user interface
-"	  -> Colors and Fonts
-"	  -> Files, backups, and undo
-"	  -> Text, tab, and indent
-"	  -> Edit mappings
-"	  -> On-save actions
-"	  -> Helper functions
+"   -> General
+"   -> Plugs
+"   -> VIM user interface
+"   -> Colors and Fonts
+"   -> Files, backups, and undo
+"   -> Text, tab, and indent
+"   -> Edit mappings
+"   -> On-save actions
+"   -> Helper functions
+"   -> Programming
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -32,6 +33,9 @@ set secure
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Auto change working directory to file currently open
+" set autochdir
+
 " Detect filetype, load associated plugin, and associated indent file
 filetype on
 filetype plugin on
@@ -43,7 +47,7 @@ let mapleader = ','
 let g:mapleader = ','
 
 nmap <leader>w :wq<cr>
-nmap <leader>r :so %<cr>:PlugInstall<cr>
+nmap <leader>r :so %<cr>:PlugInstall<cr>:q<cr>
 nmap <leader>q :q!<cr>
 
 " Set long history
@@ -70,9 +74,18 @@ endif
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
 
-" Cycle through buffers
-:nnoremap <C-n> :bnext<CR>
-:nnoremap <C-p> :bprevious<CR>
+" Command line
+cabbr <expr> %% expand('%:p:h')
+
+"Get diff with saved
+function! s:DiffGitWithSaved()
+  let filename = expand('%')
+  let diffname = tempname()
+  execute 'silent w! '.diffname
+  execute '!git diff --color=always --no-index -- '.shellescape(filename).' '.diffname
+endfunction
+com! DiffGitSaved call s:DiffGitWithSaved()
+nmap <leader>d :DiffGitSaved<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugs
@@ -85,11 +98,14 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='solarized'
 set laststatus=2
 
+" Color schemes
+Plug 'altercation/vim-colors-solarized'
+Plug 'flazz/vim-colorschemes'
+Plug 'ajmwagar/vim-deus'
+Plug 'fneu/breezy'
+
 " Git gutter
 Plug 'mhinz/vim-signify'
-
-" Solarized theme
-Plug 'altercation/vim-colors-solarized'
 
 " Syntastic
 Plug 'vim-syntastic/syntastic'
@@ -99,14 +115,43 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
+let g:syntastic_c_clang_tidy_post_args = ""
 
 " Code completer
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/unix/apps/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+nnoremap <Leader>gd :YcmCompleter GoToDeclaration<CR>
+
+if has('macunix')
+  let g:clang_library_path='/usr/local/opt/llvm/lib'
+elseif has('unix')
+  " TODO
+endif
+
+" Automatically regenerate ctags
+Plug 'craigemery/vim-autotag'
+
+" Automatically format on save
+Plug 'Chiel92/vim-autoformat'
+au BufWrite * :Autoformat
+if !exists('g:formatdef_clangformat')
+  let s:configfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=file'"
+  let s:noconfigfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=google'"
+  let g:formatdef_clangformat = "g:ClangFormatConfigFileExists() ? (" . s:configfile_def . ") : (" . s:noconfigfile_def . ")"
+endif
+
+" Navigating header / source files
+Plug 'derekwyatt/vim-fswitch'
+nmap <silent> <Leader>go :FSHere<cr>
 
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-nmap <space> :Files<cr>
+nmap <Leader>f :Files<cr>
+nmap <Leader>t :Tags<cr>
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -118,8 +163,8 @@ Plug 'tpope/vim-obsession'
 Plug 'scrooloose/nerdcommenter'
 
 " Auto pair matching
-Plug 'jiangmiao/auto-pairs'
 let g:NERDSpaceDelims = 1
+Plug 'jiangmiao/auto-pairs'
 
 " Commands that come in pairs
 Plug 'tpope/vim-unimpaired'
@@ -188,7 +233,6 @@ set background=dark
 " Set color scheme to solarized
 colorscheme solarized
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -230,8 +274,6 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-nmap oo o<Esc>k
-nmap OO O<Esc>j
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => On-save actions
@@ -251,8 +293,15 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Returns true if paste mode is enabled
 function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
+  if &paste
+    return 'PASTE MODE  '
+  endif
+  return ''
 endfunction
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Programming
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set tag files to look at
+set tags+=./tags,tags;$HOME
