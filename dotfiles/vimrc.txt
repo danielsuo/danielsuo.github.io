@@ -53,10 +53,6 @@ nmap <leader>q :q!<cr>
 " Set long history
 set history=1000
 
-" Window splitting defaults
-set splitbelow
-set splitright
-
 " Clipboard
 " set clipboard=unnamed,unnamedplus
 
@@ -97,6 +93,22 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='solarized'
 set laststatus=2
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Rename tabs
+let g:airline#extensions#taboo#enabled = 1
+
+" Tablines
+Plug 'mkitt/tabline.vim'
+
+" Rename tabs
+Plug 'gcmt/taboo.vim'
+let g:taboo_tabline = 0
 
 " Color schemes
 Plug 'altercation/vim-colors-solarized'
@@ -151,7 +163,8 @@ nmap <silent> <Leader>go :FSHere<cr>
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nmap <Leader>f :Files<cr>
-nmap <Leader>t :Tags<cr>
+nmap <Leader>c :Tags<cr>
+nmap <Leader>t :Windows<cr>
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -220,6 +233,26 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Navigation
+nmap <silent> tt :tabnew<CR>
+nmap <silent> [t :tabprevious<CR>
+nmap <silent> ]t :tabnext<CR>
+nmap <silent> [T :tabrewind<CR>
+nmap <silent> ]T :tablast<CR>
+
+" Splits
+nmap <silent> vv :vsp<CR>
+nmap <silent> ss :sp<CR>
+
+" Window splitting defaults
+set splitbelow
+set splitright
+
+" Navigating splits
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -267,12 +300,12 @@ set wrap "Wrap lines
 map 0 ^
 
 " Move lines
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <C-n> :m .+1<CR>==
+nnoremap <C-p> :m .-2<CR>==
+inoremap <C-n> <Esc>:m .+1<CR>==gi
+inoremap <C-p> <Esc>:m .-2<CR>==gi
+vnoremap <C-n> :m '>+1<CR>gv=gv
+vnoremap <C-p> :m '<-2<CR>gv=gv
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
