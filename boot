@@ -8,7 +8,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Grab dotfiles directory
-git clone --recursive https://www.github.com/danielsuo/dotfiles.git
+git clone --recursive https://www.github.com/danielsuo/dotfiles
 
 # Run main setup file
 cd dotfiles

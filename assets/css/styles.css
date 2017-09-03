@@ -158,11 +158,6 @@ footer {
   bottom:50px;
 }
 
-social img {
-  width:30px;
-  float:left;
-}
-
 #container {
   text-align: justify;
 }
@@ -260,13 +255,28 @@ social img {
 }
 
 img.home {
-  /*display: block;
-  margin: auto;
-  float: left;
-  padding: 0rem 1rem 0.5rem 0rem;*/
-  /*width: 60%;*/
+  width: 40%;
 }
 
 img.nand {
   width: 45%;
+}
+
+social ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+social ul li {
+  display: inline;
+  padding: 0.2em;
+}
+
+social ul li:first-child {
+  padding-left: 0em;
+}
+
+social ul li a {
+  color: #aaa;
 }
