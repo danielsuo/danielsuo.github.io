@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-# bash <(curl -s https://danielsuo.com/nosudo)
+if [ ! -f ~/.dotfiles ]; then
+  # Leave a mark
+  echo "export DOTFILES_HOME=$(pwd)" >> ~/.dotfiles
+  echo 'export PATH=~/.local/bin:$PATH' >> ~/.dotfiles
+fi
 
-# Assumes git is installed
+# Source environment variables
+source ~/.dotfiles
 
 if [ ! `which git` ]; then
   echo 'ERROR: Requires at least git. Come on, really?'
@@ -45,3 +50,7 @@ source ~/.profile
 
 runner $SUO/tmux
 runner $SUO/vim
+
+if [ -z $DOTFILES_INSTALLED ]; then
+  echo "export DOTFILES_INSTALLED=TRUE" >> ~/.dotfiles
+fi

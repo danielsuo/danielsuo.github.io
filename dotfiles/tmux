@@ -2,16 +2,18 @@
 
 # bash <(curl -s https://danielsuo.com/dotfiles/tmux)
 
-git clone https://github.com/tmux/tmux.git
-cd tmux
-sh autogen.sh
-mkdir -p $HOME/.local
-./configure --prefix=$HOME/.local
-make -j
-make install
+if [ -z $DOTFILES_INSTALLED ]; then
+  git clone https://github.com/tmux/tmux.git
+  cd tmux
+  sh autogen.sh
+  mkdir -p $HOME/.local
+  ./configure --prefix=$HOME/.local
+  make -j
+  make install
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# curl http://danielsuo.com/dotfiles/tmux.conf -o ~/.tmux.conf
+fi
+
 tmux source-file ~/.tmux.conf
 ~/.tmux/plugins/tpm/bin/install_plugins

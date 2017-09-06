@@ -11,8 +11,6 @@ PS1='\[\033[02;32m\]\u@\H:\[\033[02;34m\]\w\$\[\033[00m\] '
 
 source ~/.dotfiles
 
-export PATH=$HOME/.local/bin:$PATH
-
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   alias ls='ls -Gpla --color=auto'
   eval `dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
