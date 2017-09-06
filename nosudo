@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+# bash <(curl -s https://danielsuo.com/nosudo)
+
+# Assumes git is installed
+
+if [ ! `which git` ]; then
+  echo 'ERROR: Requires at least git. Come on, really?'
+  exit
+fi
+
+function downloader_wget {
+  wget -O $2 $1
+}
+
+function downloader_curl {
+  curl -o $2 $1
+}
+
+function runner_wget {
+  wget -O - $1 | bash
+}
+
+function runner_curl {
+  bash <(curl -s $1)
+}
+
+if [ `which wget` ]; then
+  alias downloader=downloader_wget
+  alias runner=runner_wget
+else
+  alias downloader=downloader_curl
+  alias runner=runner_curl
+fi
+
+SUO="https://danielsuo.com/dotfiles"
+
+downloader $SUO/profile.txt $HOME/.profile
+downloader $SUO/bashrc.txt $HOME/.bashrc
+downloader $SUO/gitconfig.txt $HOME/.gitconfig
+downloader $SUO/vimrc.txt $HOME/.vimrc
+downloader $SUO/tmux.conf $HOME/.tmux.conf
+
+source ~/.profile
+
+runner $SUO/tmux
+runner $SUO/vim
