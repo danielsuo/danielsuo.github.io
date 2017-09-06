@@ -31,25 +31,25 @@ function runner_curl {
 }
 
 if [ `which wget` ]; then
-  alias downloader=downloader_wget
-  alias runner=runner_wget
+  downloader=downloader_wget
+  runner=runner_wget
 else
-  alias downloader=downloader_curl
-  alias runner=runner_curl
+  downloader=downloader_curl
+  runner=runner_curl
 fi
 
 SUO="https://danielsuo.com/dotfiles"
 
-downloader $SUO/profile.txt $HOME/.profile
-downloader $SUO/bashrc.txt $HOME/.bashrc
-downloader $SUO/gitconfig.txt $HOME/.gitconfig
-downloader $SUO/vimrc.txt $HOME/.vimrc
-downloader $SUO/tmux.conf $HOME/.tmux.conf
+$downloader $SUO/profile.txt $HOME/.profile
+$downloader $SUO/bashrc.txt $HOME/.bashrc
+$downloader $SUO/gitconfig.txt $HOME/.gitconfig
+$downloader $SUO/vimrc.txt $HOME/.vimrc
+$downloader $SUO/tmux.conf $HOME/.tmux.conf
 
 source ~/.profile
 
-runner $SUO/tmux
-runner $SUO/vim
+$runner $SUO/tmux
+$runner $SUO/vim
 
 if [ -z $DOTFILES_INSTALLED ]; then
   echo "export DOTFILES_INSTALLED=TRUE" >> ~/.dotfiles
