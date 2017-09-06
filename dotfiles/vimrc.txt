@@ -57,7 +57,8 @@ if !exists(":E")
 endif
 nmap <leader>e :E<space>
 
-nmap <leader>r :so %<cr>:PlugInstall<cr>:q<cr>
+nmap <leader>r :redraw!<cr>
+nmap <leader>` :so %<cr>:PlugInstall<cr>:q<cr>
 nmap <leader>q :q<cr>
 nmap <leader>x :BD<cr>
 nmap <leader>b :b<space>
