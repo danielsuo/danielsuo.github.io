@@ -15,15 +15,15 @@ if [ ! `which git` ]; then
 fi
 
 function downloader_wget {
-  wget -O $2 $1
+  wget -O $2 $1 -q
 }
 
 function downloader_curl {
-  curl -o $2 $1
+  curl -o $2 $1 -s
 }
 
 function runner_wget {
-  wget -O - $1 | bash
+  wget -O - $1 -q | bash
 }
 
 function runner_curl {
@@ -40,6 +40,7 @@ fi
 
 SUO="https://danielsuo.com/dotfiles"
 
+echo
 $downloader $SUO/profile.txt $HOME/.profile
 $downloader $SUO/bashrc.txt $HOME/.bashrc
 $downloader $SUO/gitconfig.txt $HOME/.gitconfig
