@@ -40,7 +40,7 @@ fi
 
 SUO="https://danielsuo.com/dotfiles"
 
-echo
+echo 'Downloading configuration files'
 $downloader $SUO/profile.txt $HOME/.profile
 $downloader $SUO/bashrc.txt $HOME/.bashrc
 $downloader $SUO/gitconfig.txt $HOME/.gitconfig
@@ -49,7 +49,10 @@ $downloader $SUO/tmux.conf $HOME/.tmux.conf
 
 source ~/.profile
 
+echo 'Install tmux'
 $runner $SUO/tmux
+
+echo 'Install vim'
 $runner $SUO/vim
 
 if [ -z $DOTFILES_INSTALLED ]; then
