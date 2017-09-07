@@ -57,7 +57,7 @@ if !exists(":E")
 endif
 nmap <leader>e :E<space>
 
-nmap <leader>r :redraw!<cr>
+nmap <leader>d :redraw!<cr>
 nmap <leader>` :so %<cr>:PlugInstall<cr>:q<cr>
 nmap <leader>q :q<cr>
 nmap <leader>x :BD<cr>
@@ -95,7 +95,7 @@ function! s:DiffGitWithSaved()
   execute '!git diff --color=always --no-index -- '.shellescape(filename).' '.diffname
 endfunction
 com! DiffGitSaved call s:DiffGitWithSaved()
-nmap <leader>d :DiffGitSaved<CR>
+nmap <leader>gd :DiffGitSaved<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugs
@@ -169,7 +169,7 @@ Plug 'craigemery/vim-autotag'
 
 " Automatically format on save
 Plug 'Chiel92/vim-autoformat'
-au BufWrite * :Autoformat
+<leader>r :Autoformat<cr>
 if !exists('g:formatdef_clangformat')
   let s:configfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=file'"
   let s:noconfigfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=google'"
