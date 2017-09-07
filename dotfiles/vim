@@ -4,13 +4,15 @@
 
 if [ -z $DOTFILES_INSTALLED ]; then
   git clone https://github.com/vim/vim.git
-  cd vim
+  pushd vim
   make distclean
   ./configure --with-features=huge \
               --enable-pythoninterp \
               --prefix=$HOME/.local
   make -j
   make install
+  popd
+  rm -rf vim
 
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
