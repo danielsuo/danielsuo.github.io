@@ -2,20 +2,36 @@
 
 # bash <(curl -s http://danielsuo.com/dotfiles/vim)
 
-if [ -z $DOTFILES_INSTALLED ]; then
-  git clone https://github.com/vim/vim.git
-  pushd vim
-  make distclean
-  ./configure --with-features=huge \
-              --enable-pythoninterp \
-              --prefix=$HOME/.local
-  make -j
+if [ -z $DOTFILES_INSTALLED ] && [ "$OSTYPE" == "linux-gnu" ]; then
+
+  git clone https://github.com/neovim/neovim.git
+  pushd neovim
+
+  # Make dependencies
+  mkdir .deps
+  pushd .deps
+  cmake ../third-party
+  make
+  # make install
+  popd
+
+  mkdir build
+  pushd build
+  cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local ..
+  make
   make install
   popd
-  rm -rf vim
+  popd
+  rm -rf neovim
 
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+  git clone https://github.com/powerline/fonts
+  pushd fonts
+  ./install.sh
+  popd
+  rm -rf fonts
 fi
+nvim +PlugInstall +qall
 
-vim +PlugInstall +qall

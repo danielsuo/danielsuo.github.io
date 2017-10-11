@@ -5,7 +5,7 @@ usage() {
 }
 
 publish() {
-  cp ~/.vimrc dotfiles/vimrc.txt
+  cp ~/.config/nvim/init.vim dotfiles/vimrc.txt
   cp ~/.tmux.conf dotfiles/tmux.conf
   cp ~/.gitconfig dotfiles/gitconfig.txt
   cp ~/.profile dotfiles/profile.txt
