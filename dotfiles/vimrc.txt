@@ -53,12 +53,12 @@ nmap <leader>s :w<cr>
 nmap <leader>a :sav<space>
 
 if !exists(":E")
-	command -complete=file -nargs=1 E execute('silent! !mkdir -p "$(dirname "<args>")"') <Bar> e <args>
+  command -complete=file -nargs=1 E execute('silent! !mkdir -p "$(dirname "<args>")"') <Bar> e <args>
 endif
 nmap <leader>e :E<space>
 
 nmap <leader>d :redraw!<cr>
-nmap <leader>` :so %<cr>:PlugInstall<cr>:q<cr>
+nmap <leader>` :so %<cr>:PlugInstall<cr>:UpdateRemotePlugins<cr>:q<cr>
 nmap <leader>q :q<cr>
 nmap <leader>x :BD<cr>
 nmap <leader>b :b<space>
@@ -75,11 +75,11 @@ set mouse=a
 
 " Change cursor depending on mode (for tmux and iTerm2 on macOS only)
 if exists('$TMUX')
-	let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-	let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-	let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-	let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
@@ -89,10 +89,10 @@ cabbr <expr> %% expand('%:p:h')
 
 "Get diff with saved
 function! s:DiffGitWithSaved()
-	let filename = expand('%')
-	let diffname = tempname()
-	execute 'silent w! '.diffname
-	execute '!git diff --color=always --no-index -- '.shellescape(filename).' '.diffname
+  let filename = expand('%')
+  let diffname = tempname()
+  execute 'silent w! '.diffname
+  execute '!git diff --color=always --no-index -- '.shellescape(filename).' '.diffname
 endfunction
 com! DiffGitSaved call s:DiffGitWithSaved()
 nmap <leader>gd :DiffGitSaved<CR>
@@ -138,12 +138,12 @@ Plug 'ajmwagar/vim-deus'
 Plug 'fneu/breezy'
 Plug 'joshdick/onedark.vim'
 if (empty($TMUX))
-	if (has("nvim"))
-		let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-	endif
-	if (has("termguicolors"))
-		set termguicolors
-	endif
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
 endif
 
 " Git gutter
@@ -160,9 +160,9 @@ let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
 let g:syntastic_c_clang_tidy_post_args = ""
 let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
 augroup filetype_sbt
-	autocmd!
-	autocmd BufNewFile,BufRead *.sbt set filetype=sbt
-	autocmd FileType sbt setlocal syntax=scala
+  autocmd!
+  autocmd BufNewFile,BufRead *.sbt set filetype=sbt
+  autocmd FileType sbt setlocal syntax=scala
 augroup END
 let g:syntastic_ignore_files = ['\m\c\.h$', '\m\.sbt$']
 
@@ -176,9 +176,9 @@ nnoremap <Leader>gt :YcmCompleter GoTo<CR>
 nnoremap <Leader>gtt :YcmCompleter GetType<CR>
 
 if has('macunix')
-	let g:clang_library_path='/usr/local/opt/llvm/lib'
+  let g:clang_library_path='/usr/local/opt/llvm/lib'
 elseif has('unix')
-	" TODO
+  " TODO
 endif
 
 " Automatically regenerate ctags
@@ -191,9 +191,9 @@ Plug 'lyuts/vim-rtags'
 Plug 'Chiel92/vim-autoformat'
 nmap <leader>cr :Autoformat<cr>
 if !exists('g:formatdef_clangformat')
-	let s:configfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=file'"
-	let s:noconfigfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=google'"
-	let g:formatdef_clangformat = "g:ClangFormatConfigFileExists() ? (" . s:configfile_def . ") : (" . s:noconfigfile_def . ")"
+  let s:configfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=file'"
+  let s:noconfigfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=google'"
+  let g:formatdef_clangformat = "g:ClangFormatConfigFileExists() ? (" . s:configfile_def . ") : (" . s:noconfigfile_def . ")"
 endif
 
 " Navigating header / source files
@@ -224,6 +224,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-unimpaired'
 nmap [; g;
 nmap ]; g,
+
+" Keyboard
+Plug 'tpope/vim-rsi'
 
 " Easymotion
 Plug 'easymotion/vim-easymotion'
@@ -257,8 +260,12 @@ nmap ga <Plug>(EasyAlign)"
 " Syntax highlighting
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'dcharbon/vim-flatbuffers'
-Plug 'derekwyatt/vim-scala'
 Plug 'sheerun/vim-polyglot'
+
+" Scala
+Plug 'ensime/ensime-vim'
+Plug 'derekwyatt/vim-scala'
+autocmd BufWritePost *.scala silent :EnTypeCheck
 
 " IDE
 Plug 'kien/rainbow_parentheses.vim'
@@ -394,9 +401,9 @@ inoremap <C-p> <Up>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
-	exe "normal mz"
-	%s/\s\+$//ge
-	exe "normal `z"
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
@@ -407,10 +414,10 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Returns true if paste mode is enabled
 function! HasPaste()
-	if &paste
-		return 'PASTE MODE  '
-	endif
-	return ''
+  if &paste
+    return 'PASTE MODE  '
+  endif
+  return ''
 endfunction
 
 

@@ -10,9 +10,11 @@ ssh-add ~/.ssh/id_rsa_github &> /dev/null
 PS1='\[\033[02;32m\]\u@\H:\[\033[02;34m\]\w\$\[\033[00m\] '
 
 source ~/.dotfiles
-alias neo=nvim
-alias v="cd ~/dotfiles/vagrant && vagrant ssh"
+alias vim=nvim
 alias d="cd ~/dotfiles"
+
+export EDITOR=$(which nvim)
+export PATH="~/.local/bin:$PATH"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   alias ls='ls -Gpla --color=auto'
@@ -50,7 +52,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
   export PATH="/usr/local/opt/llvm/bin:$PATH"
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-  export PATH="~/.local/bin:$PATH"
+
+  alias v="ssh -i $HOME/dotfiles/vagrant/.vagrant/machines/default/virtualbox/private_key ubuntu@127.0.0.1 -p 2222"
 
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 fi
