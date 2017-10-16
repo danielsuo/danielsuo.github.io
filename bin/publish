@@ -11,11 +11,6 @@ publish() {
   cp ~/.profile dotfiles/profile.txt
   cp ~/.bashrc dotfiles/bashrc.txt
 
-  if [ -f ../cv/cv.pdf ]; then
-    cp ../cv/cv.pdf cv.pdf
-    git add -f cv.pdf
-  fi
-
   git fetch origin master:master
   git pull origin dev
 
