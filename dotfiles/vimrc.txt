@@ -58,7 +58,7 @@ endif
 nmap <leader>e :E<space>
 
 nmap <leader>d :redraw!<cr>
-nmap <leader>` :so %<cr>:PlugInstall<cr>:q<cr>
+nmap <leader>` :so %<cr>:PlugInstall<cr>:UpdateRemotePlugins<cr>:q<cr>
 nmap <leader>q :q<cr>
 nmap <leader>x :BD<cr>
 nmap <leader>b :b<space>
@@ -104,12 +104,13 @@ nmap <leader>gd :DiffGitSaved<CR>
 " - https://github.com/tenfyzhong/CompleteParameter.vim
 " - https://github.com/SirVer/ultisnips
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Manage statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='solarized'
+" let g:airline_theme='solarized'
+let g:airline_theme='onedark'
 set laststatus=2
 
 " Enable the list of buffers
@@ -135,6 +136,15 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'flazz/vim-colorschemes'
 Plug 'ajmwagar/vim-deus'
 Plug 'fneu/breezy'
+Plug 'joshdick/onedark.vim'
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 
 " Git gutter
 Plug 'mhinz/vim-signify'
@@ -148,6 +158,13 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
 let g:syntastic_c_clang_tidy_post_args = ""
+let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
+augroup filetype_sbt
+  autocmd!
+  autocmd BufNewFile,BufRead *.sbt set filetype=sbt
+  autocmd FileType sbt setlocal syntax=scala
+augroup END
+let g:syntastic_ignore_files = ['\m\c\.h$', '\m\.sbt$']
 
 " Code completer
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
@@ -167,9 +184,12 @@ endif
 " Automatically regenerate ctags
 Plug 'craigemery/vim-autotag'
 
+" Rtags
+Plug 'lyuts/vim-rtags'
+
 " Automatically format on save
 Plug 'Chiel92/vim-autoformat'
-<leader>r :Autoformat<cr>
+nmap <leader>cr :Autoformat<cr>
 if !exists('g:formatdef_clangformat')
   let s:configfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=file'"
   let s:noconfigfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=google'"
@@ -202,6 +222,24 @@ Plug 'jiangmiao/auto-pairs'
 
 " Commands that come in pairs
 Plug 'tpope/vim-unimpaired'
+nmap [; g;
+nmap ]; g,
+
+" Keyboard
+Plug 'tpope/vim-rsi'
+
+" Easymotion
+Plug 'easymotion/vim-easymotion'
+map <leader>m <Plug>(easymotion-prefix)
+Plug 'haya14busa/vim-easyoperator-line'
+Plug 'haya14busa/vim-easyoperator-phrase'
+Plug 'terryma/vim-multiple-cursors'
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_key='<leader>n'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch.vim'
+map <leader>/ <Plug>(incsearch-easymotion-/)
+map <leader>? <Plug>(incsearch-easymotion-?)
 
 " Surround text with other stuff
 Plug 'tpope/vim-surround'
@@ -221,6 +259,17 @@ nmap ga <Plug>(EasyAlign)"
 
 " Syntax highlighting
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'dcharbon/vim-flatbuffers'
+Plug 'sheerun/vim-polyglot'
+
+" Scala
+Plug 'ensime/ensime-vim'
+Plug 'derekwyatt/vim-scala'
+autocmd BufWritePost *.scala silent :EnTypeCheck
+
+" IDE
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'jceb/vim-hier'
 
 call plug#end()
 
@@ -283,6 +332,7 @@ nmap <leader>h <C-w>h
 nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
+nmap <leader>o <C-w>w
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -294,7 +344,8 @@ syntax on
 set background=dark
 
 " Set color scheme to solarized
-colorscheme solarized
+" colorscheme solarized
+colorscheme onedark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -332,10 +383,14 @@ map 0 ^
 " Move lines
 nnoremap <C-n> :m .+1<CR>==
 nnoremap <C-p> :m .-2<CR>==
-inoremap <C-n> <Esc>:m .+1<CR>==gi
-inoremap <C-p> <Esc>:m .-2<CR>==gi
+" inoremap <C-n> <Esc>:m .+1<CR>==gi
+" inoremap <C-p> <Esc>:m .-2<CR>==gi
 vnoremap <C-n> :m '>+1<CR>gv=gv
 vnoremap <C-p> :m '<-2<CR>gv=gv
+
+" Move in insert mode
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
 
 " Yank region without moving cursor
 :vmap y ygv<Esc>

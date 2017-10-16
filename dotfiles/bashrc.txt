@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
 source ~/.profile
+
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH=/usr/local/Cellar/node/7.4.0/bin:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export TURKEY_HOME=/home/ubuntu/turkey

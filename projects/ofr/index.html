@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <title> fp2model </title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script type="text/javascript" src="js/three.min.js"></script>
+  <script type="text/javascript" src="js/TrackballControls.js"></script>
+  <script type="text/javascript" src="js/OBJLoader.js"></script>
+  <script type="text/javascript" src="js/Detector.js"></script>
+  <script type="text/javascript" src="js/Primitives.js"></script>
+  <script type="text/javascript" src="js/SpaceManager.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+<h2> fp2model </h2>
+<div>
+  <a id="objDownload" download="floorplan.obj">Download OBJ</a>
+
+  <div id="mode">
+    Mode: select
+  </div>
+  <div>
+    Wall thickness factor: <input id="thickness" type="text" value="1"></input>
+  </div>
+
+  <table>
+    <tr>
+      <td class="tools">
+        <div>
+          <div class="walls_control">
+            <div id="walls" class="control walls">Walls</div>
+          </div>
+          <div class="doors_control">
+            <div id="doors" class="control doors">Doors</div>
+          </div>
+          <div class="windows_control">
+            <div id="windows" class="control windows">Windows</div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="floorplan">
+          <canvas id="fp2model_canvas" width="800" height = "600"> </canvas>
+        </div>
+
+        <div id="preview" class="preview"></div>
+      </td>
+    </tr>
+    
+  </table>
+  
+</div>
+
+</body>
+
+</html>

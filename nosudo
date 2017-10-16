@@ -44,7 +44,9 @@ echo 'Downloading configuration files'
 $downloader $SUO/profile.txt $HOME/.profile
 $downloader $SUO/bashrc.txt $HOME/.bashrc
 $downloader $SUO/gitconfig.txt $HOME/.gitconfig
-$downloader $SUO/vimrc.txt $HOME/.vimrc
+
+mkdir -p $HOME/.config/nvim
+$downloader $SUO/vimrc.txt $HOME/.config/nvim/init.vim
 $downloader $SUO/tmux.conf $HOME/.tmux.conf
 
 source ~/.profile
