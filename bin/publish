@@ -31,9 +31,6 @@ publish() {
   cd _site
   git add .
 
-  # Forced file adds
-  git add -f cv.pdf
-
   git commit -m "$1"
   git push origin master
 
