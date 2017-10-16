@@ -11,8 +11,8 @@ publish() {
   cp ~/.profile dotfiles/profile.txt
   cp ~/.bashrc dotfiles/bashrc.txt
 
-  if [ -f ~/drive/sync/cv/cv.pdf ]; then
-    cp ~/drive/sync/cv/cv.pdf cv.pdf
+  if [ -f ../cv/cv.pdf ]; then
+    cp ../cv/cv.pdf cv.pdf
     git add -f cv.pdf
   fi
 
