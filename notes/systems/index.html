@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  
+
   <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -31,10 +31,10 @@
 </head>
 
 
-  <body id=''>
-    
+  <body id='systems'>
+
     <div class='wrapper'>
-      
+
       <header>
     <h1>Daniel Suo</h1>
     <p>Scientific progress goes 'boink'</p>
@@ -57,12 +57,118 @@
 </header>
 
       <section>
+        <nav class="breadcrumbs bootstrap hidden-sm-down" >
+  <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+    
+    
+      
+
+      
+
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/"><span property="name">home</span><meta property="position" content="1" /></a>
+      </li>
+    
+      
+
+      
+
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/notes/"><span property="name">notes</span><meta property="position" content="2" /></a>
+      </li>
+    
+      
+
+      
+
+      
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">systems</span><meta property="position" content="3" /></li>
+        
+
+  </ol>
+</nav>
+
+
+<!-- This is an example of CSS. Maybe you want to implement the css code into your main css file or modify it as you want -->
+<style>
+nav.breadcrumbs.bootstrap {
+  /* from Twitter Bootstrap 4 */
+  /* If you already use Twitter, you do not need these css lines above, cause they already in Twitter Bootstrap */
+  /* Additions: image integration */
+}
+nav.breadcrumbs.bootstrap ol {
+  margin-left: 0
+}
+nav.breadcrumbs.bootstrap .breadcrumb {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #f1f2ed;
+  border-radius: 0.25rem;
+}
+nav.breadcrumbs.bootstrap .breadcrumb::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item {
+  float: left;
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #818a91;
+  content: "/";
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: underline;
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: none;
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item-active {
+  color: #818a91;
+}
+
+nav.breadcrumbs.bootstrap .breadcrumb a.breadcrumb-item:after {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  content: "/";
+  text-decoration: none;
+}
+nav.breadcrumbs.bootstrap .breadcrumb .icon:after {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #818a91;
+  content: "/";
+}
+nav.breadcrumbs.bootstrap .breadcrumb .icon {
+  display: inline-block;
+}
+nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
+  height: 0.7rem;
+  width: 0.7rem;
+}
+</style>
+
 
         <div id='container'>
-          <p>This is an automatically generated index file of the current directory.</p>
+          <h1 id="notes-on-systems">Notes on Systems</h1>
 
-<h1 id="index">Index</h1>
+<p>Despite multiple efforts, I prefer reading and scribbling on paper copies of papers. Indubitably worse, I read papers pretty sloppily during the research process because I generally feel a rush to find answers. So here’s an attempt to read in a more…“scholarly” way…and take some notes electronically.</p>
+
+<h2 id="sosp-2017-program">SOSP 2017 (<a href="https://www.sigops.org/sosp/sosp17/program.html">Program</a>)</h2>
 <ul>
+  <li>(<a href="2017-sosp/deepxplore.html">summary</a>) DeepXplore: Automated Whitebox Testing
+of Deep Learning Systems (Added: 2017-10-18)</li>
   <li><a href="/notes/systems/parallel-patterns.html">parallel-patterns</a></li>
   <li><a href="/notes/systems/numa.html">numa</a></li>
   <li><a href="/notes/systems/distributed-clocks.html">distributed-clocks</a></li>
@@ -96,7 +202,7 @@
   </social>
 </footer>
 
-      
+
     </div>
 
     <script src='/assets/js/scale.fix.js'></script>

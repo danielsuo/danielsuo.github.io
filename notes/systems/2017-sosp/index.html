@@ -171,103 +171,11 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <h1 id="consistency">Consistency</h1>
+          <p>This is an automatically generated index file of the current directory.</p>
 
-<p>Consistency is a confusing term because it’s used to mean different things in different contexts. First, some quick definitions:</p>
-
+<h1 id="index">Index</h1>
 <ul>
-  <li><strong>Operation</strong>: typically refers to a single access operation (e.g., read or write) on a single data item in a system</li>
-  <li><strong>Transaction</strong>: one or more operations that may touch multiple pieces of data on multiple machines that must be committed atomically (either all of them happen according to the system or none of them do)</li>
-</ul>
-
-<p>In the database community, consistency most often refers to the so-called “ACID” properties that are desirable for transactions:</p>
-<ul>
-  <li><strong>A</strong>tomicty: either all constituent operations of the transaction complete successfully, or none do</li>
-  <li><strong>C</strong>onsistency: each transaction (in isolation) preserves a set of integrity contraints on the data
-    <ul>
-      <li>Note: this is application-specific!</li>
-      <li>For example, a consistenct bank database might require that no transaction contains a series of operations that allows a customer to spend money he or she doesn’t have</li>
-    </ul>
-  </li>
-  <li><strong>I</strong>solation: transactions are not impacted by the presence of other concurrent transactions
-    <ul>
-      <li>Note: confusingly, this is actually a consistency model in the distributed system community!</li>
-    </ul>
-  </li>
-  <li><strong>D</strong>urability: the transaction’s effects survive failures</li>
-</ul>
-
-<p>In distributed systems (e.g., shared memory, distributed data stores, replicated state machines), consistency often refers to a set of models that define the rules for how operations sent to a system appear to be executed from different observers.</p>
-
-<ul>
-  <li>ACID consistency: related to data integrity not ordering of operations</li>
-</ul>
-
-<p>This is not handled by Coherence as coherence deals with maintaining a global order in which writes only to a single location or a single variable are seen by all processors. Consistency deals with the ordering of operations to multiples locations with respect to all processors.</p>
-
-<p>Consider a key-value storage system, with a record containing a single key and a single value. Let T-Linearizability be a property of a system where the linearized operations are the transactions and Op-Linearizability be a property of a system where the linearized operations are read/write operations of single records (henceforth operations). Define T-Serializability as usual transaction serializability for key-value record systems. Define Op-Serializability as the property that concurrent execution of operations corresponds to some sequential execution of those operations, where operations are concurrent if their transactions are.</p>
-
-<p>A transaction is a deterministic piece of sequential code which, among other things, contains possibly multiple operations.</p>
-
-<p>Are the following correct conclusions?</p>
-
-<ol>
-  <li>Only serialializability (strict serializability not necessary) suffices for Isolation from ACID</li>
-  <li>Since transactions are sequential, T-Serializability implies Op-Serializability</li>
-  <li>T-Linearizability does not suffice for Op-Linearizability</li>
-  <li>Op-Linearizability does not suffice for T-Linearizability</li>
-  <li>Let ? be one of (T, Op). ?-Linearizability implies ?-Serializability.</li>
-  <li>T-Linearizability equals Strict Serializability (as defined in lecture)</li>
-  <li>T-Serializability and Op-Linearizability equals Strict Serializability</li>
-</ol>
-
-<p>Let’s see. It sounds like
-Op-linearizability is the usual linearizability
-T-linearizability is strict serializability (serializability + linearizability) (not sure if that’s what you mean)
-T-serializability is serializability
-Op-serializability is sequential consistency</p>
-
-<p>Given the somewhat limited kv store and my understanding of definitions:</p>
-<ol>
-  <li>True; in isolation, we don’t care about ordering</li>
-  <li>True; since Ts are atomic and sequential</li>
-  <li>What’s the example you’re thinking of?</li>
-  <li>True; no guarantee that a transaction will be linearizable if only operations are linearizable</li>
-  <li>True; for both; a linear order is a serial order</li>
-  <li>True; Lol, ok so I guess my assumption above was right</li>
-  <li>True</li>
-</ol>
-
-<ul>
-  <li>Strict</li>
-  <li>Sequential</li>
-  <li>Causal</li>
-  <li>Processor</li>
-  <li>Pipelined RAM</li>
-  <li>Cache</li>
-  <li>Slow</li>
-  <li>Weak ordering</li>
-  <li>Release</li>
-  <li>Entry</li>
-  <li>General</li>
-  <li>Local</li>
-  <li>Causal +</li>
-  <li>Delta</li>
-  <li>Fork</li>
-  <li>Serializability</li>
-  <li>Vector-field</li>
-  <li>Weak</li>
-  <li>
-    <p>Strong</p>
-  </li>
-  <li>Eventual consistency</li>
-  <li>Strong eventual consistency</li>
-</ul>
-
-<h1 id="references">References</h1>
-<ul>
-  <li><a href="http://blog.thislongrun.com/2015/03/the-confusing-cap-and-acid-wording.html">ACID vs. CAP: different words for the same thing and the same words for different things</a></li>
-  <li><a href="https://www.quora.com/What-is-the-difference-between-cache-consistency-and-cache-coherence">Memory consistency vs. cache coherence</a></li>
+  <li><a href="/notes/systems/2017-sosp/deepxplore.html">deepxplore</a></li>
 </ul>
 
         </div>

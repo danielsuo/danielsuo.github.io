@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  
+
   <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -42,10 +42,10 @@
 </head>
 
 
-  <body id='Notes'>
-    
+  <body id='notes'>
+
     <div class='wrapper'>
-      
+
       <header>
     <h1>Daniel Suo</h1>
     <p>Scientific progress goes 'boink'</p>
@@ -68,6 +68,98 @@
 </header>
 
       <section>
+        <nav class="breadcrumbs bootstrap hidden-sm-down" >
+  <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+    
+    
+      
+
+      
+
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/"><span property="name">home</span><meta property="position" content="1" /></a>
+      </li>
+    
+      
+
+      
+
+      
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">notes</span><meta property="position" content="2" /></li>
+        
+
+  </ol>
+</nav>
+
+
+<!-- This is an example of CSS. Maybe you want to implement the css code into your main css file or modify it as you want -->
+<style>
+nav.breadcrumbs.bootstrap {
+  /* from Twitter Bootstrap 4 */
+  /* If you already use Twitter, you do not need these css lines above, cause they already in Twitter Bootstrap */
+  /* Additions: image integration */
+}
+nav.breadcrumbs.bootstrap ol {
+  margin-left: 0
+}
+nav.breadcrumbs.bootstrap .breadcrumb {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #f1f2ed;
+  border-radius: 0.25rem;
+}
+nav.breadcrumbs.bootstrap .breadcrumb::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item {
+  float: left;
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #818a91;
+  content: "/";
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: underline;
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: none;
+}
+nav.breadcrumbs.bootstrap .breadcrumb-item-active {
+  color: #818a91;
+}
+
+nav.breadcrumbs.bootstrap .breadcrumb a.breadcrumb-item:after {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  content: "/";
+  text-decoration: none;
+}
+nav.breadcrumbs.bootstrap .breadcrumb .icon:after {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #818a91;
+  content: "/";
+}
+nav.breadcrumbs.bootstrap .breadcrumb .icon {
+  display: inline-block;
+}
+nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
+  height: 0.7rem;
+  width: 0.7rem;
+}
+</style>
+
 
         <div id='container'>
           <h2 id="notes">Notes</h2>
@@ -75,10 +167,10 @@
 <p>For when I didn’t totally understand something. These are all works in progress and have no guarantees for correctness or sanity. To my enemies: see my weaknesses here.</p>
 
 <ul>
-  <li><a href="linear-algebra">Linear Algebra</a>: in collaboration with <a href="http://www.seas.harvard.edu/suo/">Zhigang Suo</a>. This is a work in progress that will eventually be brought into <script type="math/tex">\LaTeX</script>. Original notes <a href="http://imechanica.org/node/19709">here</a>.</li>
-  <li><a href="vision">Computer Vision</a></li>
-  <li><a href="systems">Systems</a></li>
-  <li><a href="aiml">AI/ML</a></li>
+  <li><a href="systems">Systems</a>: I spend most of my time in distributed systems now. I have a long and unorganized history of notes, so finally trying to consolidate here.</li>
+  <li><a href="linear-algebra">Linear Algebra</a>: in collaboration with <a href="http://www.seas.harvard.edu/suo/">Zhigang Suo</a>. This is a work in progress that will eventually be brought into <script type="math/tex">\LaTeX</script>. Original notes [here](http://imechanica.org/node/19709</li>
+  <li><a href="vision">Computer Vision</a>: I spent about a year tinkering in vision and robotics. <a href="Lots of fun">Lots</a> (and <a href="https://photos.google.com/share/AF1QipM-gw84bVVaIP-uQoGXTUlZM2MPBrJqzOhyYj5fdWOHy8zU_SxZKoJkm60k_c3hOA?key=aGExRU5UVmZLRkFKMUNOUkxDcW1MektvUlZ1a2t3">lots of photos</a>), but the time to move on eventually came.</li>
+  <li><a href="aiml">AI/ML</a>: I <a href="https://github.com/plaidlab">dabble</a> with some friends.</li>
   <li><a href="reading">Reading</a>: as yet unclassified notes on papers, books, articles</li>
 </ul>
 
@@ -108,7 +200,7 @@
   </social>
 </footer>
 
-      
+
     </div>
 
     <script src='/assets/js/scale.fix.js'></script>
