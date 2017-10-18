@@ -10,7 +10,7 @@ for file in `find $1`; do
     fi
   else
     if [[ ! -f $file/index.md || $(sed -n '2p' $file/index.md) == *"automatic"* ]]; then
-      cp ./_includes/index.md $file
+      cp ./_layouts/index.md $file
     fi
   fi
 done
