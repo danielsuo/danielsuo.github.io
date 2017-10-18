@@ -1,14 +1,15 @@
 <!doctype html>
 <html>
-  
+
   {% include head.html %}
 
   <body id='{{ page.title }}'>
-    
+
     <div class='wrapper'>
-      
+
       {% include header.html %}
       <section>
+        {% include nav-breadcrumbs.html %}
 
         <div id='container'>
           {{ content }}
@@ -17,7 +18,7 @@
       </section>
 
       {% include footer.html %}
-      
+
     </div>
 
     <script src='/assets/js/scale.fix.js'></script>
