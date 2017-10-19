@@ -98,7 +98,7 @@
       
 
       <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-          <a property="item" typeof="WebPage" href="/notes/systems/2017-sosp/"><span property="name"></span><meta property="position" content="4" /></a>
+          <a property="item" typeof="WebPage" href="/notes/systems/2017-sosp/"><span property="name">2017-sosp</span><meta property="position" content="4" /></a>
       </li>
     
       
@@ -183,6 +183,42 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
         <div id='container'>
           <h1 id="deepxplore-automated-whitebox-testing-of-deep-learning-systems">DeepXplore: Automated Whitebox Testing of Deep Learning Systems</h1>
 <p>(<a href="http://www.cs.columbia.edu/~suman/docs/deepxplore.pdf">link</a>) Kexin Pei, Yinzhi Cao, Junfeng Yang, Suman Jana</p>
+
+<h2 id="main-idea">Main idea</h2>
+<ul>
+  <li><strong>What is the problem?</strong> No systematic way to check correctness or coverage for deep learning models.</li>
+  <li><strong>Why is it important?</strong> Deep learning is increasingly deployed in safety- and security-critical domains.</li>
+  <li><strong>What is the approach?</strong>
+    <ol>
+      <li>Use ‘neuron coverage’ as metric for measuring which parts of model are tested by inputs</li>
+      <li>Use other, similar models to cross-check output to avoid manual checking</li>
+      <li>Pose the search for inputs that both a) trigger many differential behaviors and b) trigger high neuron coverage as a joint optimization problem to solve via gradiant-based search</li>
+    </ol>
+  </li>
+  <li><strong>What is the result?</strong>
+    <ul>
+      <li>Can generate bad test input without much compute</li>
+      <li>Can use generated bad test inputs to improve model accuracy by up to 3%</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="vspace"></div>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>Adversarial images expose some errors, but only cover limited portion of a model’s logic</li>
+  <li>Neuron coverage is # of unique activated neurons for all test inputs / total number of neurons</li>
+  <li>Maximize differential behavior means have different behaviors (e.g., classification) from different DNNs on the same input</li>
+</ul>
+
+<h2 id="questions">Questions</h2>
+<ul>
+  <li>Is neuron coverage a good metric? How many neurons are likely to be dead with a large enough training set? What indication do we have that neuron coverage is correlated with unusual input or wrong behavior?</li>
+  <li>Isn’t this just another (hand-crafted) mechanism for generating adversarial images? Why is neuron coverage important? We could relax standard adversarial deep learning and use similar domain-specific constraints</li>
+</ul>
+
+<h2 id="extension-ideas">Extension ideas</h2>
 
         </div>
 
