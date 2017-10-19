@@ -1,5 +1,6 @@
 ---
 automatic: true
+title: algorithms-data-structures
 layout: base
 ---
 

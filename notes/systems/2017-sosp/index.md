@@ -1,5 +1,6 @@
 ---
 automatic: true
+title: 2017-sosp
 layout: base
 ---
 

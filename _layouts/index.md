@@ -1,5 +1,6 @@
 ---
 automatic: true
+title: null
 layout: base
 ---
 
