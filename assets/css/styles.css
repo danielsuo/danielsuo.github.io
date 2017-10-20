@@ -169,9 +169,17 @@ footer {
 }
 
 #container ul {
-  margin: 0;
-  padding: 0;
   list-style-type: none;
+}
+
+#container ul ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#container ul ol {
+  margin: 0px;
+  padding: 0px;
 }
 
 #container ul > li {
@@ -186,8 +194,6 @@ footer {
 }
 
 #container ol {
-  margin: 0;
-  padding: 0;
   counter-reset: item;
   list-style-type: none;
 }

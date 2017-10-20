@@ -11,8 +11,6 @@ layout: base
 - **What is the approach?**
 - **What is the result?**
 
-<div style="padding-bottom: 20px;"></div>
-
 ## Notes
 
 ## Questions

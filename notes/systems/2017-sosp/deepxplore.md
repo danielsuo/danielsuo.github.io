@@ -16,8 +16,6 @@ layout: base
   - Can generate bad test input without much compute
   - Can use generated bad test inputs to improve model accuracy by up to 3%
 
-<div class="vspace"></div>
-
 ## Notes
 - Adversarial images expose some errors, but only cover limited portion of a model's logic
 - Neuron coverage is # of unique activated neurons for all test inputs / total number of neurons
@@ -28,3 +26,5 @@ layout: base
 - Isn't this just another (hand-crafted) mechanism for generating adversarial images? Why is neuron coverage important? We could relax standard adversarial deep learning and use similar domain-specific constraints
 
 ## Extension ideas
+- Are there other ways to generate "reasonable inputs" that produce diverse outputs (i.e., different results on different models trained for the same task)
+- Can we show whether or not neuron coverage is actually a good metric (i.e., if we have good neuron coverage, does that really mean we have a good sample of the real world?)

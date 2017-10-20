@@ -10,3 +10,5 @@ Despite multiple efforts, I prefer reading and scribbling on paper copies of pap
 ## SOSP 2017 ([Program](https://www.sigops.org/sosp/sosp17/program.html))
 - ([summary](2017-sosp/deepxplore.html)) DeepXplore: Automated Whitebox Testing
 of Deep Learning Systems (Added: 2017-10-18)
+- ([summary](2017-sosp/pensieve.html)) Pensieve: Non-Intrusive Failure Reproduction for Distributed Systems using the Event Chaining Approach (TBD: paper not available)
+- ([summary](2017-sosp/canopy.html)) Canopy: An End-to-End Performance Tracing And Analysis System (Added: 2017-10-19)
