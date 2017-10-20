@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='systems'>
+  <body id=''>
 
     <div class='wrapper'>
 
@@ -86,7 +86,27 @@
       
 
       
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">systems</span><meta property="position" content="3" /></li>
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/notes/systems/"><span property="name">systems</span><meta property="position" content="3" /></a>
+      </li>
+    
+      
+
+      
+
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/notes/systems/2017-sosp/"><span property="name">2017-sosp</span><meta property="position" content="4" /></a>
+      </li>
+    
+      
+
+      
+
+      
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name"></span><meta property="position" content="5" /></li>
         
 
   </ol>
@@ -161,17 +181,34 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <h1 id="notes-on-systems">Notes on Systems</h1>
+          <h1 id="canopy-an-end-to-end-performance-tracing-and-analysis-system">Canopy: An End-to-End Performance Tracing And Analysis System</h1>
+<p>(<a href="http://cs.brown.edu/~jcmace/papers/kaldor2017canopy.pdf">link</a>) Jonathan Kaldor, Jonathan Mace, Joe O’Neill, Kian Win Ong, Vinod Venkataraman, Michał Bejda, Edison Gao, Wiktor Kuropatwa, Bill Schaller, Pingjia Shan, Brendan Viscomi, Kaushik Veeraraghavan, Yee Jiun Song</p>
 
-<p>Despite multiple efforts, I prefer reading and scribbling on paper copies of papers. Indubitably worse, I read papers pretty sloppily during the research process because I generally feel a rush to find answers. So here’s an attempt to read in a more…“scholarly” way…and take some notes electronically.</p>
-
-<h2 id="sosp-2017-program">SOSP 2017 (<a href="https://www.sigops.org/sosp/sosp17/program.html">Program</a>)</h2>
+<h2 id="main-idea">Main idea</h2>
 <ul>
-  <li>(<a href="2017-sosp/deepxplore.html">summary</a>) DeepXplore: Automated Whitebox Testing
-of Deep Learning Systems (Added: 2017-10-18)</li>
-  <li>(<a href="2017-sosp/pensieve.html">summary</a>) Pensieve: Non-Intrusive Failure Reproduction for Distributed Systems using the Event Chaining Approach (TBD: paper not available)</li>
-  <li>(<a href="2017-sosp/canopy.html">summary</a>) Canopy: An End-to-End Performance Tracing And Analysis System (Added: 2017-10-19)</li>
+  <li><strong>What is the problem?</strong> Analyzing performance in large-scale distributed systems is challenging, especially when that system is used in many ways and at scale.</li>
+  <li><strong>Why is it important?</strong> Understanding and resolving performance issues is critical to increasingly complex services.</li>
+  <li><strong>What is the approach?</strong> Provide an end-to-end performance tracing infrastructure that can trace causally related performance data from client application to backend service.</li>
+  <li><strong>What is the result?</strong> Currently in production at Facebook and processes over 1 billion traces per day</li>
 </ul>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>Three main challenges
+    <ol>
+      <li>Performance data is heterogeneous: how to collect, how to consume?</li>
+      <li>Granularity mismatch between raw data and analysis: how to conduct high-level analyses on immense amounts of raw data?</li>
+      <li>Tracing infrastructure must serve many users</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="questions">Questions</h2>
+<ul>
+  <li>What happens if a sub-system that’s causing the problem hasn’t been instrumented into the Canopy system yet?</li>
+</ul>
+
+<h2 id="extension-ideas">Extension ideas</h2>
 
         </div>
 
