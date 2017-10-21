@@ -12,3 +12,4 @@ Despite multiple efforts, I prefer reading and scribbling on paper copies of pap
 of Deep Learning Systems (Added: 2017-10-18)
 - ([summary](2017-sosp/pensieve.html)) Pensieve: Non-Intrusive Failure Reproduction for Distributed Systems using the Event Chaining Approach (TBD: paper not available)
 - ([summary](2017-sosp/canopy.html)) Canopy: An End-to-End Performance Tracing And Analysis System (Added: 2017-10-19)
+- ([summary](2017-sosp/algorand.html)) Algorand: Scaling Byzantine Agreements for Cryptocurrencies (Added: 2017-10-20)
