@@ -216,6 +216,16 @@ Plug 'tpope/vim-obsession'
 " NERDCommenter
 Plug 'scrooloose/nerdcommenter'
 
+" File tree
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
+map <leader>g :NERDTreeToggle<cr>
+
 " Auto pair matching
 let g:NERDSpaceDelims = 1
 Plug 'jiangmiao/auto-pairs'
@@ -261,11 +271,12 @@ nmap ga <Plug>(EasyAlign)"
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'dcharbon/vim-flatbuffers'
 Plug 'sheerun/vim-polyglot'
+Plug 'PProvost/vim-markdown-jekyll'
 
 " Scala
-Plug 'ensime/ensime-vim'
+" Plug 'ensime/ensime-vim'
+" autocmd BufWritePost *.scala silent :EnTypeCheck
 Plug 'derekwyatt/vim-scala'
-autocmd BufWritePost *.scala silent :EnTypeCheck
 
 " IDE
 Plug 'kien/rainbow_parentheses.vim'

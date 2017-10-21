@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='2017-sosp'>
+  <body id=''>
 
     <div class='wrapper'>
 
@@ -96,7 +96,17 @@
       
 
       
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">2017-sosp</span><meta property="position" content="4" /></li>
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/notes/systems/2017-sosp/"><span property="name">2017-sosp</span><meta property="position" content="4" /></a>
+      </li>
+    
+      
+
+      
+
+      
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name"></span><meta property="position" content="5" /></li>
         
 
   </ol>
@@ -171,15 +181,58 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <p>This is an automatically generated index file of the current directory.</p>
+          <h1 id="algorand-scaling-byzantine-agreements-for-cryptocurrencies">Algorand: Scaling Byzantine Agreements for Cryptocurrencies</h1>
+<p>(<a href="https://people.csail.mit.edu/nickolai/papers/gilad-algorand-eprint.pdf">link</a>) Yossi Gilad, Rotem Hemo, Silvio Micali, Georgios Vlachos, Nickolai Zeldovich</p>
 
-<h1 id="index">Index</h1>
+<h2 id="main-idea">Main idea</h2>
 <ul>
-  <li><a href="/notes/systems/2017-sosp/canopy.html">canopy</a></li>
-  <li><a href="/notes/systems/2017-sosp/algorand.html">algorand</a></li>
-  <li><a href="/notes/systems/2017-sosp/pensieve.html">pensieve</a></li>
-  <li><a href="/notes/systems/2017-sosp/deepxplore.html">deepxplore</a></li>
+  <li><strong>What is the problem?</strong> Existing cryptocurrencies require on the order of an hour to confirm transactions with high confidence</li>
+  <li><strong>Why is it important?</strong> Cryptocurrencies enable many new applications, but transaction latency and throughput are among two of the major limitations of existing cryptocurrencies</li>
+  <li><strong>What is the approach?</strong>
+    <ul>
+      <li>Never allow forks; users always have consistent view of transactions even if some users are malicious or the network is temporarily partitioned</li>
+      <li>Scale consensus by sampling some number of users to participate</li>
+    </ul>
+  </li>
+  <li><strong>What is the result?</strong> Simulate 500K users on 1K virtual machines with transaction latency under one minute and 125 times Bitcoin’s throughput with minimal penalty for scaling to more users</li>
 </ul>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>Existing cryptocurrencies trade-off latency with confidence</li>
+  <li>Reaching consensus is hard because you don’t trust most nodes; need way more nodes to reach consensus than if you had honest nodes</li>
+  <li>Three core challenges
+    <ol>
+      <li>Sybil attacks: adversary creates many pseudonyms to influence Byzantine agreement protocol</li>
+      <li>Scale: many more users than existing Byzantine agreement protocols handle</li>
+      <li>Resilient: to DoS attacks or if honest users are disconnected</li>
+    </ol>
+  </li>
+  <li>Techniques
+    <ul>
+      <li>Weight users by the money in their account. Require that 2/3 of money is owned by honest users</li>
+      <li>Reach consensus by committee.</li>
+      <li>Select committee members in a private, non-interactive way. Anyone can independently determine if they’re on a committee or if someone who claims to be on the committee is indeed on said committee. Adversaries do not know in advance who will be on the committee.</li>
+      <li>Replace committee members. Only require committee members to send a single message (thus revealing their place on committee) before being replaced. Made possible by only depending on user’s private key and no other private state that needs to be transferred.</li>
+    </ul>
+  </li>
+  <li>Related work
+    <ul>
+      <li>Proof of work: Bitcoin’s mechanism for reaching consensus. Make it expensive to double spend.</li>
+      <li>Byzantine consensus: protocols for reaching consensus in the face of faulty (or malicious) servers. Authors claim their algorithm lifts the restriction of fixed number of servers (prevents Sybil attacks since random people can’t join) and using verifiable random functions to select random committees for scaling up.</li>
+      <li>Proof of stake: rather than rely on computational expense of proof of work, prove stake in cryptocurrency instead</li>
+    </ul>
+  </li>
+</ul>
+
+<p>TODO: add protocol description</p>
+
+<h2 id="questions">Questions</h2>
+<ul>
+  <li>What are the limits of how long network partitions can last for? Does the system still make progress during extended partition?</li>
+</ul>
+
+<h2 id="extension-ideas">Extension ideas</h2>
 
         </div>
 
