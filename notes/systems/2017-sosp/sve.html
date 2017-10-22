@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='2017-sosp'>
+  <body id=''>
 
     <div class='wrapper'>
 
@@ -96,7 +96,17 @@
       
 
       
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">2017-sosp</span><meta property="position" content="4" /></li>
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/notes/systems/2017-sosp/"><span property="name">2017-sosp</span><meta property="position" content="4" /></a>
+      </li>
+    
+      
+
+      
+
+      
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name"></span><meta property="position" content="5" /></li>
         
 
   </ol>
@@ -171,16 +181,28 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <p>This is an automatically generated index file of the current directory.</p>
+          <h1 id="sve-distributed-video-processing-at-facebook-scale">SVE: Distributed Video Processing at Facebook Scale</h1>
+<p>(<a href="http://www.cs.princeton.edu/~wlloyd/papers/sve-sosp17.pdf">link</a>) 
+Qi Huang, Petchean Ang, Peter Knowles, Tomasz Nykiel, Iaroslav Tverdokhlib, Amit Yajurvedi, Paul Dapolito IV, Xifan Yan, Maxim Bykov, Chuen Liang, Mohit Talwar, Abhishek Mathur, Sachin Kulkarni (Facebook); Matthew Burke (University of Southern California; Facebook; Cornell); Wyatt Lloyd (University of Southern California; Facebook; Princeton)</p>
 
-<h1 id="index">Index</h1>
+<h2 id="main-idea">Main idea</h2>
 <ul>
-  <li><a href="/notes/systems/2017-sosp/canopy.html">canopy</a></li>
-  <li><a href="/notes/systems/2017-sosp/algorand.html">algorand</a></li>
-  <li><a href="/notes/systems/2017-sosp/pensieve.html">pensieve</a></li>
-  <li><a href="/notes/systems/2017-sosp/sve.html">sve</a></li>
-  <li><a href="/notes/systems/2017-sosp/deepxplore.html">deepxplore</a></li>
-  <li><a href="/notes/systems/2017-sosp/scalefs.html">scalefs</a></li>
+  <li><strong>What is the problem?</strong> Facebook processes enormous numbers of videos each day and must make those available as quickly as possible with as much flexibility for processing (e.g., computer vision algorithms) as possible</li>
+  <li><strong>Why is it important?</strong> Videos are increasingly defining the online experience, but can be quite complex to process at scale</li>
+  <li><strong>What is the approach?</strong> See Figure 2. Exploit inherent parallelism in video data to process and store chunks of video while uploading (pipelining)</li>
+  <li><strong>What is the result?</strong> All of Facebook video data is processed by this system and developers can create new processing stages or paths for video easily</li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>The challenge appears to be scale and robustness, not necessarily algorithm or design. There are <em>many</em> corner cases to consider.</li>
+</ul>
+
+<h2 id="questions">Questions</h2>
+
+<h2 id="extension-ideas">Extension ideas</h2>
+<ul>
+  <li>How can we modify this infrastructure to support real-time (i.e., live video or even deadlines)?</li>
 </ul>
 
         </div>
