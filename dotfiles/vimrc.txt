@@ -272,6 +272,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'dcharbon/vim-flatbuffers'
 Plug 'sheerun/vim-polyglot'
 Plug 'PProvost/vim-markdown-jekyll'
+Plug 'tpope/vim-markdown'
 
 " Scala
 " Plug 'ensime/ensime-vim'
