@@ -1,0 +1,21 @@
+---
+layout: base
+---
+
+# SVE: Distributed Video Processing at Facebook Scale
+([link](http://www.cs.princeton.edu/~wlloyd/papers/sve-sosp17.pdf)) 
+Qi Huang, Petchean Ang, Peter Knowles, Tomasz Nykiel, Iaroslav Tverdokhlib, Amit Yajurvedi, Paul Dapolito IV, Xifan Yan, Maxim Bykov, Chuen Liang, Mohit Talwar, Abhishek Mathur, Sachin Kulkarni (Facebook); Matthew Burke (University of Southern California; Facebook; Cornell); Wyatt Lloyd (University of Southern California; Facebook; Princeton)
+
+## Main idea
+- **What is the problem?** Facebook processes enormous numbers of videos each day and must make those available as quickly as possible with as much flexibility for processing (e.g., computer vision algorithms) as possible
+- **Why is it important?** Videos are increasingly defining the online experience, but can be quite complex to process at scale
+- **What is the approach?** See Figure 2. Exploit inherent parallelism in video data to process and store chunks of video while uploading (pipelining)
+- **What is the result?** All of Facebook video data is processed by this system and developers can create new processing stages or paths for video easily
+
+## Notes
+- The challenge appears to be scale and robustness, not necessarily algorithm or design. There are _many_ corner cases to consider.
+
+## Questions
+
+## Extension ideas
+- How can we modify this infrastructure to support real-time (i.e., live video or even deadlines)?
