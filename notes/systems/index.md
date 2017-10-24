@@ -7,7 +7,7 @@ title: systems
 
 Despite multiple efforts, I prefer reading and scribbling on paper copies of papers. Indubitably worse, I read papers pretty sloppily during the research process because I generally feel a rush to find answers. So here's an attempt to read in a more..."scholarly" way...and take some notes electronically.
 
-Streak length (one paper a day): Current: 6, Best: 6
+Streak length (one paper a day): Current: 7, Best: 7
 
 ## SOSP 2017 ([Program](https://www.sigops.org/sosp/sosp17/program.html))
 - ([summary](2017-sosp/deepxplore.html)) DeepXplore: Automated Whitebox Testing
@@ -18,3 +18,4 @@ of Deep Learning Systems (Added: 2017-10-18)
 - ([summary](2017-sosp/scalefs.html)) Scaling a file system to many cores using an operation log (Added: 2017-10-21)
 - ([summary](2017-sosp/sve.html)) SVE: Distributed Video Processing at Facebook Scale (Added: 2017-10-22)
 - ([summary](2017-sosp/eris.html)) Eris: Coordination-Free Consistent Transactions Using In-Network Concurrency Control (Added: 2017-10-23)
+- ([summary](2017-sosp/netcache.html)) NetCache: Balancing Key-Value Stores with Fast In-Network Caching (Added: 2017-10-24)
