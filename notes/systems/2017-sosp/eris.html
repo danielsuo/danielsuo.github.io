@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='2017-sosp'>
+  <body id=''>
 
     <div class='wrapper'>
 
@@ -96,7 +96,17 @@
       
 
       
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">2017-sosp</span><meta property="position" content="4" /></li>
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/notes/systems/2017-sosp/"><span property="name">2017-sosp</span><meta property="position" content="4" /></a>
+      </li>
+    
+      
+
+      
+
+      
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name"></span><meta property="position" content="5" /></li>
         
 
   </ol>
@@ -171,18 +181,25 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <p>This is an automatically generated index file of the current directory.</p>
+          <h1 id="eris-coordination-free-consistent-transactions-using-in-network-concurrency-control">Eris: Coordination-Free Consistent Transactions Using In-Network Concurrency Control</h1>
+<p>(<a href="http://delivery.acm.org/10.1145/3140000/3132751/p104-li.pdf?ip=71.168.224.8&amp;id=3132751&amp;acc=OPEN&amp;key=4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E6D218144511F3437&amp;CFID=817327380&amp;CFTOKEN=37195893&amp;__acm__=1508816887_88b6a9d74daeee4bb5d7e05f1ecfbe89">link</a>) Jialin Li, Ellis Michael, Dan R. K. Ports (University of Washington)</p>
 
-<h1 id="index">Index</h1>
+<h2 id="main-idea">Main idea</h2>
 <ul>
-  <li><a href="/notes/systems/2017-sosp/canopy.html">canopy</a></li>
-  <li><a href="/notes/systems/2017-sosp/algorand.html">algorand</a></li>
-  <li><a href="/notes/systems/2017-sosp/pensieve.html">pensieve</a></li>
-  <li><a href="/notes/systems/2017-sosp/eris.html">eris</a></li>
-  <li><a href="/notes/systems/2017-sosp/sve.html">sve</a></li>
-  <li><a href="/notes/systems/2017-sosp/deepxplore.html">deepxplore</a></li>
-  <li><a href="/notes/systems/2017-sosp/scalefs.html">scalefs</a></li>
+  <li><strong>What is the problem?</strong> Strong consistency and isolation are hard in a highly distributed setting and typically quite expensive</li>
+  <li><strong>Why is it important?</strong> These guarantees make higher components of a distributed stack much easier to reason about</li>
+  <li><strong>What is the approach?</strong> Move core piece of concurrency control into datacenter network (i.e., co-design network with software)</li>
+  <li><strong>What is the result?</strong> Process large class of distributed systems in a single round trip between client to strage without explicit coordination among shards or replicas while providing atomicity, consistency, and fault tolerance with ~10% overhead with up to an order of magnitude higher throughput and ~80% lower latency.</li>
 </ul>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>I’ll be honest…didn’t get the kids to bed until midnight and couldn’t make it past the introduction. In my defense, I’ve seen Dan Ports give a talk on this paper already. See y’all tomorrow.</li>
+</ul>
+
+<h2 id="questions">Questions</h2>
+
+<h2 id="extension-ideas">Extension ideas</h2>
 
         </div>
 
