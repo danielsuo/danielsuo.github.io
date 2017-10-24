@@ -99,7 +99,7 @@
       
 
       <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-          <a property="item" typeof="WebPage" href="/notes/aiml/"><span property="name">aiml</span><meta property="position" content="3" /></a>
+          <a property="item" typeof="WebPage" href="/notes/systems/"><span property="name">systems</span><meta property="position" content="3" /></a>
       </li>
     
       
@@ -107,7 +107,17 @@
       
 
       
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name"></span><meta property="position" content="4" /></li>
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/notes/systems/2017-sosp/"><span property="name">2017-sosp</span><meta property="position" content="4" /></a>
+      </li>
+    
+      
+
+      
+
+      
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name"></span><meta property="position" content="5" /></li>
         
 
   </ol>
@@ -182,46 +192,38 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <h1 id="optimization">Optimization</h1>
+          <h1 id="netcache-balancing-key-value-stores-with-fast-in-network-caching">NetCache: Balancing Key-Value Stores with Fast In-Network Caching</h1>
+<p>(<a href="https://www.cs.jhu.edu/~xinjin/files/SOSP17_NetCache.pdf">link</a>) Xin Jin (Johns Hopkins University); Xiaozhou Li (Barefoot Networks); Haoyu Zhang (Princeton University); Robert Soulé (Barefoot Networks and Università della Svizzera italiana); Jeongkeun Lee (Barefoot Networks); Nate Foster (Barefoot Networks and Cornell University); Changhoon Kim (Barefoot Networks); Ion Stoica (UC Berkeley)</p>
 
-<h2 id="convex-optimziation">Convex optimziation</h2>
+<h2 id="main-idea">Main idea</h2>
 <ul>
-  <li>John Duchi’s slides: https://people.eecs.berkeley.edu/~jordan/courses/294-fall09/lectures/optimization/slides.pdf</li>
+  <li><strong>What is the problem?</strong> Caching is hard, especially with balancing load in the face of hot keys</li>
+  <li><strong>Why is it important?</strong> Faster is always better. Also one of the first systems to bring sophisicated application-level functionality into switches at line rate</li>
+  <li><strong>What is the approach?</strong> Use programmable switches to efficiently detect, index, cache, and serve hot key-value items in the switches’ data planes</li>
+  <li><strong>What is the result?</strong> Improve throughput by 3-10x and reduces latency of up to 40% of queries by 50%</li>
 </ul>
 
-<h2 id="non-convex-optimization">Non-convex optimization</h2>
+<h2 id="notes">Notes</h2>
 <ul>
-  <li>http://www.cs.ubc.ca/labs/lci/mlrg/slides/non_convex_optimization.pdf</li>
+  <li>Major challenge for scaling key-value stores: hot items (10% of items account for 60-90% of queries in Memcached deployment at Facebook)</li>
+  <li>Key insight is to use switches as load-balancing cache, not necessarily primary cache</li>
+  <li>Caching <script type="math/tex">O(N\log N)</script> items is sufficient to balance the load for <script type="math/tex">N</script> storage servers (or CPU cores)</li>
+  <li>Only need to program top-of-rack (ToR) switch and leave the rest unmodified</li>
+  <li>Cache coherence is maintained because control plane only responsible for inserting and evicting; write-through</li>
 </ul>
 
-<h2 id="numerical-optimization">Numerical optimization</h2>
+<h2 id="questions">Questions</h2>
 <ul>
-  <li>http://www.personal.psu.edu/cxg286/Math555.pdf</li>
-  <li>http://terminus.sdsu.edu/SDSU/Math693a/Lectures/18/lecture.pdf</li>
-  <li>http://users.eecs.northwestern.edu/~morales/PSfiles/aml.pdf</li>
+  <li>How can you keep track of which keys are hot with such limited memory? Count-Min sketch to report hot uncached keys and Bloom filter to remove duplicate reports</li>
+  <li>How to handle larger items? Divide up into smaller chunks and retrieve with multiple packets</li>
+  <li>What are the different caching policies?</li>
+  <li>What workloads are bad for NetCache?</li>
 </ul>
 
-<h2 id="lagrange-multipliers">Lagrange multipliers</h2>
+<h2 id="extension-ideas">Extension ideas</h2>
 <ul>
-  <li><a href="http://www.slimy.com/~steuard/teaching/tutorials/Lagrange.html">Introduction 1</a></li>
-  <li><a href="https://people.eecs.berkeley.edu/~klein/papers/lagrange-multipliers.pdf">Introduction 2</a></li>
-</ul>
-
-<h2 id="kkt-conditions">KKT conditions</h2>
-<h2 id="duality">Duality</h2>
-<h2 id="simulated-annleaing">Simulated annleaing</h2>
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Simulated_annealing">Wiki</a></li>
-</ul>
-
-<div class="language-python highlighter-rouge"><pre class="highlight"><code>
-</code></pre>
-</div>
-
-<p>References</p>
-<ul>
-  <li>Convex optimization: https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf</li>
-  <li>Online convex optimization: http://ocobook.cs.princeton.edu/OCObook.pdf</li>
+  <li>Use a hierarchy of switches to maintain a hierarchy of caches. Complexity ftw.</li>
+  <li>Network-accelerated distributed machine learning; are there a small percentage of parameters we can store in network switches to move at line rate?</li>
 </ul>
 
         </div>
