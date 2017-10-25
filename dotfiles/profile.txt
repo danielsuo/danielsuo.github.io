@@ -1,59 +1,62 @@
-eval `ssh-agent -s` &> /dev/null
-if [ -z "$SSH_AGENT_PID" ]
-then
-  exec ssh-agent bash
-fi
-ssh-add ~/.ssh/id_rsa &> /dev/null
-ssh-add ~/.ssh/id_rsa_github &> /dev/null
+export SHELL=`which zsh`
+[ -z "$ZSH_VERSION" ] && exec "$SHELL" -l
 
-# Change prompt
-PS1='\[\033[02;32m\]\u@\H:\[\033[02;34m\]\w\$\[\033[00m\] '
-
-source ~/.dotfiles
-alias vim=nvim
-alias d="cd ~/dotfiles"
-
-export EDITOR=$(which nvim)
-export PATH="~/.local/bin:$PATH"
-
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  alias ls='ls -Gpla --color=auto'
-  eval `dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
-  export LSCOLORS=$LS_COLORS
-
-  if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-  fi
-
-  # enable programmable completion features (you don't need to enable
-  # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-  # sources /etc/bash.bashrc).
-  if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-      . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-      . /etc/bash_completion
-    fi
-  fi
-
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  # Load GNU aliases
-  # source /usr/local/Cellar/coreutils/8.26/aliases
-  alias ls='gls -Gpla --color=auto'
-  alias make='gmake'
-  eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
-  export LSCOLORS=$LS_COLORS
-
-  sync() {
-    cd ~/drive/sync/$1
-  }
-
-  alias s=sync
-
-  export PATH="/usr/local/opt/llvm/bin:$PATH"
-  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-  alias v="ssh -i $HOME/dotfiles/vagrant/.vagrant/machines/default/virtualbox/private_key ubuntu@127.0.0.1 -p 2222"
-
-  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-fi
+# eval `ssh-agent -s` &> /dev/null
+# if [ -z "$SSH_AGENT_PID" ]
+# then
+#   exec ssh-agent bash
+# fi
+# ssh-add ~/.ssh/id_rsa &> /dev/null
+# ssh-add ~/.ssh/id_rsa_github &> /dev/null
+#
+# # Change prompt
+# PS1='\[\033[02;32m\]\u@\H:\[\033[02;34m\]\w\$\[\033[00m\] '
+#
+# source ~/.dotfiles
+# alias vim=nvim
+# alias d="cd ~/dotfiles"
+#
+# export EDITOR=$(which nvim)
+# export PATH="~/.local/bin:$PATH"
+#
+# if [[ "$OSTYPE" == "linux-gnu" ]]; then
+#   alias ls='ls -Gpla --color=auto'
+#   eval `dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
+#   export LSCOLORS=$LS_COLORS
+#
+#   if [ -f ~/.bash_aliases ]; then
+#     . ~/.bash_aliases
+#   fi
+#
+#   # enable programmable completion features (you don't need to enable
+#   # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+#   # sources /etc/bash.bashrc).
+#   if ! shopt -oq posix; then
+#     if [ -f /usr/share/bash-completion/bash_completion ]; then
+#       . /usr/share/bash-completion/bash_completion
+#     elif [ -f /etc/bash_completion ]; then
+#       . /etc/bash_completion
+#     fi
+#   fi
+#
+# elif [[ "$OSTYPE" == "darwin"* ]]; then
+#   # Load GNU aliases
+#   # source /usr/local/Cellar/coreutils/8.26/aliases
+#   alias ls='gls -Gpla --color=auto'
+#   alias make='gmake'
+#   eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
+#   export LSCOLORS=$LS_COLORS
+#
+#   sync() {
+#     cd ~/drive/sync/$1
+#   }
+#
+#   alias s=sync
+#
+#   export PATH="/usr/local/opt/llvm/bin:$PATH"
+#   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+#
+#   alias v="ssh -i $HOME/dotfiles/vagrant/.vagrant/machines/default/virtualbox/private_key ubuntu@127.0.0.1 -p 2222"
+#
+#   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+# fi
