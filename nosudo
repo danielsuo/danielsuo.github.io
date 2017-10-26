@@ -40,10 +40,14 @@ fi
 
 SUO="https://danielsuo.com/dotfiles"
 
+echo 'Install zsh'
+$runner $SUO/zsh
+
 echo 'Downloading configuration files'
 $downloader $SUO/profile.txt $HOME/.profile
 $downloader $SUO/bashrc.txt $HOME/.bashrc
 $downloader $SUO/gitconfig.txt $HOME/.gitconfig
+$downloader $SUO/zshrc.txt $HOME/.zshrc
 
 mkdir -p $HOME/.config/nvim
 $downloader $SUO/vimrc.txt $HOME/.config/nvim/init.vim
@@ -56,6 +60,9 @@ $runner $SUO/tmux
 
 echo 'Install vim'
 $runner $SUO/vim
+
+echo 'Finish installing zsh'
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 if [ -z $DOTFILES_INSTALLED ]; then
   echo "export DOTFILES_INSTALLED=TRUE" >> ~/.dotfiles

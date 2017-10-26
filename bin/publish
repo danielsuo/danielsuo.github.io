@@ -10,6 +10,7 @@ publish() {
   cp ~/.gitconfig dotfiles/gitconfig.txt
   cp ~/.profile dotfiles/profile.txt
   cp ~/.bashrc dotfiles/bashrc.txt
+  cp ~/.zshrc dotfiles/zshrc.txt
 
   git fetch origin master:master
   git pull origin dev

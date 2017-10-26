@@ -205,7 +205,7 @@ Plug 'autozimu/LanguageClient-neovim'
 Plug 'craigemery/vim-autotag'
 
 " Rtags
-Plug 'lyuts/vim-rtags'
+" Plug 'lyuts/vim-rtags'
 
 " Automatically format on save
 Plug 'Chiel92/vim-autoformat'
