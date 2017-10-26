@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ -z $DOTFILES_INSTALLED ]; then
+  git clone https://github.com/zsh-users/zsh
+  pushd zsh
+
+  ./Util/preconfig
+  ./configure  --prefix=$HOME/.local
+  export CC=gcc && make
+  make install
+  
+  popd
+  rm -rf zsh
+
+  sh -c "$(wget https://raw.github.com/danielsuo/oh-my-zsh/master/tools/install.sh -O -)"
+fi
