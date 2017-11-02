@@ -40,7 +40,6 @@ set autoread
 filetype on
 filetype plugin on
 filetype indent on
-au! FileType python setl nosmartindent
 set omnifunc=syntaxcomplete#Complete
 
 " Folding
@@ -96,7 +95,7 @@ function! s:DiffGitWithSaved()
   execute '!git diff --color=always --no-index -- '.shellescape(filename).' '.diffname
 endfunction
 com! DiffGitSaved call s:DiffGitWithSaved()
-nmap <leader>gd :DiffGitSaved<CR>
+nmap <leader>gds :DiffGitSaved<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugs
@@ -147,17 +146,23 @@ if (empty($TMUX))
   endif
 endif
 
+" Local vimrc
+Plug 'MarcWeber/vim-addon-local-vimrc'
+let g:local_vimrc = {'names':['.vimrc', '.exrc'],'hash_fun':'LVRHashOfFile'}
+
 " Git gutter
 Plug 'mhinz/vim-signify'
+
+" Autoload
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Syntastic
 Plug 'vim-syntastic/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 
-let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
 let g:syntastic_c_clang_tidy_post_args = ""
 let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
 augroup filetype_sbt
@@ -166,6 +171,7 @@ augroup filetype_sbt
   autocmd FileType sbt setlocal syntax=scala
 augroup END
 let g:syntastic_ignore_files = ['\m\c\.h$', '\m\.sbt$']
+map <leader>gs :SyntasticToggleMode<cr>
 
 " Code completer
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
@@ -193,13 +199,14 @@ Plug 'zchee/deoplete-zsh'
 
 Plug 'wellle/tmux-complete.vim'
 let g:tmuxcomplete#trigger = ''
+Plug 'tmux-plugins/vim-tmux'
 
 if has('macunix')
   Plug 'thalesmello/webcomplete.vim'
   set completefunc=webcomplete#complete
 endif
 
-Plug 'autozimu/LanguageClient-neovim'
+" Plug 'autozimu/LanguageClient-neovim'
 
 " Automatically regenerate ctags
 Plug 'craigemery/vim-autotag'
@@ -218,7 +225,8 @@ endif
 
 " Navigating header / source files
 Plug 'derekwyatt/vim-fswitch'
-nmap <silent> <Leader>go :FSHere<cr>
+autocmd FileType cpp nmap <Leader>go :FSHere<cr>
+autocmd FileType c nmap <Leader>go :FSHere<cr>
 
 " Fuzzy finding
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -232,6 +240,16 @@ Plug 'tpope/vim-fugitive'
 
 " Sessions
 Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
+
+" Text objects
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'          " al / il
+Plug 'beloglazov/vim-textobj-quotes'  " aq / iq
+Plug 'jecb/vim-textobj-uri'           " au / iu / go
+Plug 'sgur/vim-textobj-parameter'     " a / i
+Plug 'adriaanzon/vim-textobj-matchit' " am / im
+Plug 'thinca/vim-textobj-between'     " af{char} / if{char}
 
 " NERDCommenter
 Plug 'scrooloose/nerdcommenter'
@@ -244,7 +262,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-map <leader>g :NERDTreeToggle<cr>
+map <leader>gf :NERDTreeToggle<cr>
 
 " Auto pair matching
 let g:NERDSpaceDelims = 1
@@ -268,6 +286,10 @@ Plug 'haya14busa/vim-easyoperator-phrase'
 Plug 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_start_key='<leader>n'
+let g:multi_cursor_next_key='<C-j>'
+let g:multi_cursor_prev_key='<C-k>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
 map <leader>/ <Plug>(incsearch-easymotion-/)
@@ -292,9 +314,26 @@ nmap ga <Plug>(EasyAlign)"
 " Syntax highlighting
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'dcharbon/vim-flatbuffers'
-Plug 'sheerun/vim-polyglot'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'tpope/vim-markdown'
+
+" TODO: Refactor these into filetype mappings
+
+" Python
+if has('python')
+  let python_version = get(matchlist(system('python --version'), '\d'), 0, '2')
+
+  if python_version <= 2
+    Plug 'python-rope/ropevim'
+    autocmd FileType python nmap <leader>gt :RopeGotoDefinition<cr>
+    autocmd FileType python nmap <leader>gd :RopeShowDoc<cr>
+    let g:ropevim_goto_def_newwin = 'vnew'
+  endif
+
+  au! FileType python setl nosmartindent
+  let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
+  Plug 'bps/vim-textobj-python'
+endif
 
 " Scala
 " Plug 'ensime/ensime-vim'
@@ -302,6 +341,7 @@ Plug 'tpope/vim-markdown'
 Plug 'derekwyatt/vim-scala'
 Plug 'dansomething/vim-eclim'
 let g:EclimCompletionMethod = 'omnifunc'
+let g:EclimFileTypeValidate = 0
 autocmd FileType scala nmap <leader>gt :ScalaSearch<cr>
 
 " IDE
@@ -416,6 +456,8 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
 map 0 ^
+nmap <C-e> $
+nmap <C-a> 0
 
 " Move lines
 nnoremap <C-n> :m .+1<CR>==
