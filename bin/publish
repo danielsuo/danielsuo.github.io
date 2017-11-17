@@ -28,7 +28,7 @@ publish() {
   git checkout master
   git pull origin master
   cd ../
-  jekyll build
+  bundle exec jekyll build
   cd _site
   git add .
 
