@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id=''>
+  <body id='Eris: Coordination-Free Consistent Transactions Using In-Network Concurrency Control'>
 
     <div class='wrapper'>
 
@@ -106,7 +106,7 @@
       
 
       
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name"></span><meta property="position" content="5" /></li>
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">Eris: Coordination-Free Consistent Transactions Using In-Network Concurrency Control</span><meta property="position" content="5" /></li>
         
 
   </ol>
@@ -181,37 +181,25 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <h1 id="scaling-a-file-system-to-many-cores-using-an-operation-log">Scaling a file system to many cores using an operation log</h1>
-<p>(<a href="https://people.csail.mit.edu/nickolai/papers/bhat-scalefs.pdf">link</a>) Srivatsa S. Bhat (MIT CSAIL and VMware); Rasha Eqbal (MIT CSAIL and Apple); Austin T. Clements (MIT CSAIL and Google); M. Frans Kaashoek, Nickolai Zeldovich (MIT CSAIL)</p>
+          <h1 id="eris-coordination-free-consistent-transactions-using-in-network-concurrency-control">Eris: Coordination-Free Consistent Transactions Using In-Network Concurrency Control</h1>
+<p>(<a href="http://delivery.acm.org/10.1145/3140000/3132751/p104-li.pdf?ip=71.168.224.8&amp;id=3132751&amp;acc=OPEN&amp;key=4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E6D218144511F3437&amp;CFID=817327380&amp;CFTOKEN=37195893&amp;__acm__=1508816887_88b6a9d74daeee4bb5d7e05f1ecfbe89">link</a>) Jialin Li, Ellis Michael, Dan R. K. Ports (University of Washington)</p>
 
 <h2 id="main-idea">Main idea</h2>
 <ul>
-  <li><strong>What is the problem?</strong> Many-core machines are becoming more prevalent. Many other parts of software stack are being parallelized to take advantage of new hardware. However, file systems still suffer from weaker cores (i.e., don’t have a fast core to do I/O) and poor multicore scalability.</li>
-  <li><strong>Why is it important?</strong> File systems need an upgrade for new manycore realities.</li>
-  <li><strong>What is the approach?</strong> Decouple in-memory file system from on-disk file system using per-core operation logs, allowing highly concurrent data structures for in-memory representation, while allowing commutative operations to write to disk in parallel without cache conflicts.</li>
-  <li><strong>What is the result?</strong> Provides performance comparable to that of Linux ext4 with no cache conflicts for 99% of test cases of commutative operations.</li>
+  <li><strong>What is the problem?</strong> Strong consistency and isolation are hard in a highly distributed setting and typically quite expensive</li>
+  <li><strong>Why is it important?</strong> These guarantees make higher components of a distributed stack much easier to reason about</li>
+  <li><strong>What is the approach?</strong> Move core piece of concurrency control into datacenter network (i.e., co-design network with software)</li>
+  <li><strong>What is the result?</strong> Process large class of distributed systems in a single round trip between client to strage without explicit coordination among shards or replicas while providing atomicity, consistency, and fault tolerance with ~10% overhead with up to an order of magnitude higher throughput and ~80% lower latency.</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
 <ul>
-  <li>Provides crash safety and good disk throughput (requirements for any file system) in addition to manycore scalability</li>
-  <li>Combines an in-memory file system (sv6) with an on-disk file system (xv6) by extending sv6 with an operation log to track linearization points</li>
+  <li>I’ll be honest…didn’t get the kids to bed until midnight and couldn’t make it past the introduction. In my defense, I’ve seen Dan Ports give a talk on this paper already. See y’all tomorrow.</li>
 </ul>
 
 <h2 id="questions">Questions</h2>
-<ul>
-  <li>Comparable performance with Linux ext4 on manycores? Or on a fast, low-core machine? Comparable to Linux ext4 on a low number of cores, but with much better speed-up as cores increase</li>
-  <li>How do we know cache conflict tests have good coverage? Generate all possible pairs of commutative operations to check</li>
-  <li>What happens to operations that <em>don’t</em> commute? Perhaps this is up to the application developer to handle? Undefined behavior if across multiple applications?</li>
-  <li>How does ScaleFS handle reading a single large file? Does it parallelize the read?</li>
-</ul>
 
 <h2 id="extension-ideas">Extension ideas</h2>
-
-<h2 id="other">Other</h2>
-<ul>
-  <li>Liked that the evaluation section is prefaced with a list of questions to answer</li>
-</ul>
 
         </div>
 

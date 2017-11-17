@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# bash <(curl -s http://danielsuo.com/dotfiles/boot)
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  bash <(curl -s http://danielsuo.com/dotfiles/ubuntu)
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  bash <(curl -s http://danielsuo.com/dotfiles/macos)
+fi
+
+bash <(curl -s http://danielsuo.com/dotfiles/git)
+bash <(curl -s http://danielsuo.com/dotfiles/tmux)
+bash <(curl -s http://danielsuo.com/dotfiles/vim)

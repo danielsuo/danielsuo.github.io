@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id=''>
+  <body id='SVE: Distributed Video Processing at Facebook Scale'>
 
     <div class='wrapper'>
 
@@ -106,7 +106,7 @@
       
 
       
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name"></span><meta property="position" content="5" /></li>
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">SVE: Distributed Video Processing at Facebook Scale</span><meta property="position" content="5" /></li>
         
 
   </ol>
@@ -181,25 +181,28 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <h1 id="eris-coordination-free-consistent-transactions-using-in-network-concurrency-control">Eris: Coordination-Free Consistent Transactions Using In-Network Concurrency Control</h1>
-<p>(<a href="http://delivery.acm.org/10.1145/3140000/3132751/p104-li.pdf?ip=71.168.224.8&amp;id=3132751&amp;acc=OPEN&amp;key=4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E6D218144511F3437&amp;CFID=817327380&amp;CFTOKEN=37195893&amp;__acm__=1508816887_88b6a9d74daeee4bb5d7e05f1ecfbe89">link</a>) Jialin Li, Ellis Michael, Dan R. K. Ports (University of Washington)</p>
+          <h1 id="sve-distributed-video-processing-at-facebook-scale">SVE: Distributed Video Processing at Facebook Scale</h1>
+<p>(<a href="http://www.cs.princeton.edu/~wlloyd/papers/sve-sosp17.pdf">link</a>) Qi Huang, Petchean Ang, Peter Knowles, Tomasz Nykiel, Iaroslav Tverdokhlib, Amit Yajurvedi, Paul Dapolito IV, Xifan Yan, Maxim Bykov, Chuen Liang, Mohit Talwar, Abhishek Mathur, Sachin Kulkarni (Facebook); Matthew Burke (University of Southern California; Facebook; Cornell); Wyatt Lloyd (University of Southern California; Facebook; Princeton)</p>
 
 <h2 id="main-idea">Main idea</h2>
 <ul>
-  <li><strong>What is the problem?</strong> Strong consistency and isolation are hard in a highly distributed setting and typically quite expensive</li>
-  <li><strong>Why is it important?</strong> These guarantees make higher components of a distributed stack much easier to reason about</li>
-  <li><strong>What is the approach?</strong> Move core piece of concurrency control into datacenter network (i.e., co-design network with software)</li>
-  <li><strong>What is the result?</strong> Process large class of distributed systems in a single round trip between client to strage without explicit coordination among shards or replicas while providing atomicity, consistency, and fault tolerance with ~10% overhead with up to an order of magnitude higher throughput and ~80% lower latency.</li>
+  <li><strong>What is the problem?</strong> Facebook processes enormous numbers of videos each day and must make those available as quickly as possible with as much flexibility for processing (e.g., computer vision algorithms) as possible</li>
+  <li><strong>Why is it important?</strong> Videos are increasingly defining the online experience, but can be quite complex to process at scale</li>
+  <li><strong>What is the approach?</strong> See Figure 2. Exploit inherent parallelism in video data to process and store chunks of video while uploading (pipelining)</li>
+  <li><strong>What is the result?</strong> All of Facebook video data is processed by this system and developers can create new processing stages or paths for video easily</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
 <ul>
-  <li>I’ll be honest…didn’t get the kids to bed until midnight and couldn’t make it past the introduction. In my defense, I’ve seen Dan Ports give a talk on this paper already. See y’all tomorrow.</li>
+  <li>The challenge appears to be scale and robustness, not necessarily algorithm or design. There are <em>many</em> corner cases to consider.</li>
 </ul>
 
 <h2 id="questions">Questions</h2>
 
 <h2 id="extension-ideas">Extension ideas</h2>
+<ul>
+  <li>How can we modify this infrastructure to support real-time (i.e., live video or even deadlines)?</li>
+</ul>
 
         </div>
 

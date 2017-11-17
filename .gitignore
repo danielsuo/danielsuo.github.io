@@ -1,0 +1,13 @@
+*~*
+_site
+.DS_Store
+/node_modules
+Gemfile.lock
+npm-debug.log
+*.jekyll-metadata
+
+
+*.ipynb
+*.pptx
+*.psd
+*.pdf
