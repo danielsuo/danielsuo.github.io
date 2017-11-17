@@ -7,8 +7,3 @@ use_math: true
 
 ## Resources
 - [Introduction](https://www.med.nyu.edu/chibi/sites/default/files/chibi/Final.pdf)
-
-
-```python
-
-```

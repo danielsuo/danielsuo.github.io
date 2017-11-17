@@ -4,16 +4,6 @@ url: http://www.danielsuo.com
 
 permalink: /:year/:month/:day/:title
 category_paginate: 5
-categories:
--
-  - 'main'
-  - '/index.html'
--
-  - 'beliefs'
-  - '/projects/beliefs/index.md'
--
-  - 'five'
-  - '/projects/five/index.md'
 
 changefreq: 'daily'
 

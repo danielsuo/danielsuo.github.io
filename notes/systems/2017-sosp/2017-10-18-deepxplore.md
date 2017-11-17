@@ -1,9 +1,16 @@
 ---
 layout: base
+date: 2017-10-18
+title: "DeepXplore: Automated Whitebox Testing of Deep Learning Systems"
+authors: "Kexin Pei, Yinzhi Cao, Junfeng Yang, Suman Jana"
+link: "http://www.cs.columbia.edu/~suman/docs/deepxplore.pdf"
+venue: SOSP
+year: 2017
+categories: [systems, deep learning, bug hunting]
 ---
 
-# DeepXplore: Automated Whitebox Testing of Deep Learning Systems
-([link](http://www.cs.columbia.edu/~suman/docs/deepxplore.pdf)) Kexin Pei, Yinzhi Cao, Junfeng Yang, Suman Jana
+# {{ page.title }}
+([link]({{ page.link }})) {{ page.authors }}
 
 ## Main idea
 - **What is the problem?** No systematic way to check correctness or coverage for deep learning models.
