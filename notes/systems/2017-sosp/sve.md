@@ -6,6 +6,7 @@ authors: "Qi Huang, Petchean Ang, Peter Knowles, Tomasz Nykiel, Iaroslav Tverdok
 link: "http://www.cs.princeton.edu/~wlloyd/papers/sve-sosp17.pdf"
 venue: SOSP
 year: 2017
+type: paper
 categories: [systems, scalability, streaming, video]
 ---
 

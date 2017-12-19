@@ -6,6 +6,7 @@ authors: "Yossi Gilad, Rotem Hemo, Silvio Micali, Georgios Vlachos, Nickolai Zel
 link: "https://people.csail.mit.edu/nickolai/papers/gilad-algorand-eprint.pdf"
 venue: SOSP
 year: 2017
+type: paper
 categories: [systems, cryptocurrencies, scalability]
 ---
 

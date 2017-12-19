@@ -6,6 +6,7 @@ authors: "Xin Jin (Johns Hopkins University); Xiaozhou Li (Barefoot Networks); H
 link: "https://www.cs.jhu.edu/~xinjin/files/SOSP17_NetCache.pdf"
 venue: SOSP
 year: 2017
+type: paper
 categories: [systems, bug hunting]
 ---
 

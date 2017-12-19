@@ -6,6 +6,7 @@ authors: "Jonathan Kaldor, Jonathan Mace, Joe O’Neill, Kian Win Ong, Vinod Ven
 link: "http://cs.brown.edu/~jcmace/papers/kaldor2017canopy.pdf"
 venue: SOSP
 year: 2017
+type: paper
 categories: [systems, performance, bug hunting]
 ---
 

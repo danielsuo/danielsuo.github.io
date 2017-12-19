@@ -1,9 +1,17 @@
 ---
 layout: base
+date:
+title:
+authors:
+link:
+venue:
+year:
+type: paper
+categories:
 ---
 
-# [TITLE]
-([link](url)) [AUTHORS]
+# {{ page.title }}
+([link]({{ page.link }})) {{ page.authors }}
 
 ## Main idea
 - **What is the problem?**
@@ -12,7 +20,5 @@ layout: base
 - **What is the result?**
 
 ## Notes
-
 ## Questions
-
 ## Extension ideas

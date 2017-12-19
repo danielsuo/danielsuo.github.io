@@ -6,6 +6,7 @@ authors: "Srivatsa S. Bhat (MIT CSAIL and VMware); Rasha Eqbal (MIT CSAIL and Ap
 link: "https://people.csail.mit.edu/nickolai/papers/bhat-scalefs.pdf"
 venue: SOSP
 year: 2017
+type: paper
 categories: [systems, scalability, many-core, file systems]
 ---
 

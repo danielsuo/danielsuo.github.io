@@ -6,6 +6,7 @@ authors: "Kexin Pei, Yinzhi Cao, Junfeng Yang, Suman Jana"
 link: "http://www.cs.columbia.edu/~suman/docs/deepxplore.pdf"
 venue: SOSP
 year: 2017
+type: paper
 categories: [systems, deep learning, bug hunting]
 ---
 
