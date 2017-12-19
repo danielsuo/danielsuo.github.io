@@ -31,7 +31,7 @@
 </head>
 
 
-  <body id='reading'>
+  <body id='The Case for Learned Index Structures'>
 
     <div class='wrapper'>
 
@@ -86,7 +86,17 @@
       
 
       
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">reading</span><meta property="position" content="3" /></li>
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/notes/systems/"><span property="name">systems</span><meta property="position" content="3" /></a>
+      </li>
+    
+      
+
+      
+
+      
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">The Case for Learned Index Structures</span><meta property="position" content="4" /></li>
         
 
   </ol>
@@ -161,39 +171,55 @@ nav.breadcrumbs.bootstrap .breadcrumb .icon svg {
 
 
         <div id='container'>
-          <p>This is an automatically generated index file of the current directory.</p>
+          <h1 id="the-case-for-learned-index-structures">The Case for Learned Index Structures</h1>
+<p>(<a href="https://arxiv.org/abs/1712.01208">link</a>) Tim Kraska, Alex Beutel, Ed H. Chi, Jeffrey Dean, Neoklis Polyzotis</p>
 
-<h1 id="index">Index</h1>
+<h2 id="main-idea">Main idea</h2>
 <ul>
-  <li><a href="/notes/reading/raft-in-search-of-an-understandable-consensus-algorithm.html">raft-in-search-of-an-understandable-consensus-algorithm</a></li>
-  <li><a href="/notes/reading/kahn-process-networks.html">kahn-process-networks</a></li>
-  <li><a href="/notes/reading/corfu.html">corfu</a></li>
-  <li><a href="/notes/reading/big-table.html">big-table</a></li>
-  <li><a href="/notes/reading/scheduling-algorithms-for-multiprogramming-in-a-hard-real-time-environment.html">scheduling-algorithms-for-multiprogramming-in-a-hard-real-time-environment</a></li>
-  <li><a href="/notes/reading/fair-scheduling-of-real-time-tasks-on-multiprocessors.html">fair-scheduling-of-real-time-tasks-on-multiprocessors</a></li>
-  <li><a href="/notes/reading/ssdalloc.html">ssdalloc</a></li>
-  <li><a href="/notes/reading/hyperdex.html">hyperdex</a></li>
-  <li><a href="/notes/reading/column-stores-vs-row-stores.html">column-stores-vs-row-stores</a></li>
-  <li><a href="/notes/reading/coflow-a-networking-abstraction-for-cluster-applications.html">coflow-a-networking-abstraction-for-cluster-applications</a></li>
-  <li><a href="/notes/reading/real-time-scheduling-of-dataflow-graphs.html">real-time-scheduling-of-dataflow-graphs</a></li>
-  <li><a href="/notes/reading/drizzle.html">drizzle</a></li>
-  <li><a href="/notes/reading/parsec-vs-splash-2.html">parsec-vs-splash-2</a></li>
-  <li><a href="/notes/reading/milp-based-deadline-assignment.html">milp-based-deadline-assignment</a></li>
-  <li><a href="/notes/reading/dataflow-languages.html">dataflow-languages</a></li>
-  <li><a href="/notes/reading/redblue.html">redblue</a></li>
-  <li><a href="/notes/reading/tail-at-scale.html">tail-at-scale</a></li>
-  <li><a href="/notes/reading/apache-flink-stream-and-batch-processing-in-a-single-engine.html">apache-flink-stream-and-batch-processing-in-a-single-engine</a></li>
-  <li><a href="/notes/reading/cyclo-static-data-flow.html">cyclo-static-data-flow</a></li>
-  <li><a href="/notes/reading/ripq.html">ripq</a></li>
-  <li><a href="/notes/reading/efficient-coflow-scheduling-with-varys.html">efficient-coflow-scheduling-with-varys</a></li>
-  <li><a href="/notes/reading/categorization-real-time-multiprocessor-scheduling-problems-and-algorithms.html">categorization-real-time-multiprocessor-scheduling-problems-and-algorithms</a></li>
-  <li><a href="/notes/reading/managing-data-transfers-in-computer-clusters-with-orchestra.html">managing-data-transfers-in-computer-clusters-with-orchestra</a></li>
-  <li><a href="/notes/reading/resilient-distributed-datasets-spark.html">resilient-distributed-datasets-spark</a></li>
-  <li><a href="/notes/reading/deadline-assignment-in-a-distributed-soft-real-time-system.html">deadline-assignment-in-a-distributed-soft-real-time-system</a></li>
-  <li><a href="/notes/reading/parsec-benchmark-suite.html">parsec-benchmark-suite</a></li>
-  <li><a href="/notes/reading/c-store.html">c-store</a></li>
-  <li><a href="/notes/reading/scheduler-activations.html">scheduler-activations</a></li>
-  <li><a href="/notes/reading/static-scheduling-of-synchronous-data-flow-programs-for-digital-signal-processing.html">static-scheduling-of-synchronous-data-flow-programs-for-digital-signal-processing</a></li>
+  <li><strong>What is the problem?</strong> Efficiently access data under different scenarios. An old problem.</li>
+  <li><strong>Why is it important?</strong> Lots of data that needs to be searched.</li>
+  <li><strong>What is the approach?</strong> Treat indexes as models that can be specified (e.g., B-Trees) or learned</li>
+  <li><strong>What is the result?</strong> 70% speedup while saving &gt; 1 OOM of space</li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+<h3 id="main-points">Main points</h3>
+<ul>
+  <li>Databases use models of / assumptions about data already</li>
+  <li>However, typically assumes much less about data than might be fruitful; if we can make more assumptions without  incurring too much cost (e.g., inflexibility, guarantees), can we improve performance?</li>
+  <li>Training / executing models becoming very fast, especially with growing parallelism and simple operators</li>
+  <li>Must be absolutely clear about guarantees and tradeoffs</li>
+  <li>No point in ML for ML’s sake. Don’t be shy about using a hybrid approach</li>
+</ul>
+
+<h3 id="range-index">Range index</h3>
+<ul>
+  <li>If data is sorted, think of range index as model to predict cumalitive distribution function (CDF). The CDF gives the density of items before the item we care about, so we can get a very good estimate of where the range we care about is if our model of the data’s CDF is good</li>
+  <li>Traditional models are very good at overfitting in the local case. Consider hybrid approaches that use ML to get to approximate location and then traditional model for last-mile search</li>
+</ul>
+
+<h3 id="recursive-model-index">Recursive model index</h3>
+<ul>
+  <li>Use a hierarchy of small models rather than one large model</li>
+</ul>
+
+<h3 id="point-index">Point index</h3>
+<ul>
+  <li>Use neural nets as a learned hashing function to reduce collisions. Just scale the CDF to size of hash map</li>
+</ul>
+
+<h3 id="existence-index">Existence index</h3>
+<ul>
+  <li>Use learned bloom filter as classifier</li>
+  <li>But other classifiers could also work</li>
+</ul>
+
+<h2 id="questions">Questions</h2>
+<h2 id="extension-ideas">Extension ideas</h2>
+<ul>
+  <li>The authors sketch some ideas for write-heavy loads</li>
+  <li>Authors make no claim about exhaustively searching models</li>
+  <li>Data domains / simple decisions based on rich data may benefit most immediately, but what about more complex decision-making domains?</li>
 </ul>
 
         </div>

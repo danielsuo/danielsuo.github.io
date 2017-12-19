@@ -1,5 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -56,7 +55,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast tmux tmuxinator z ssh-agent)
+plugins=(git gitfast tmux tmuxinator z ssh-agent autoenv)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles
@@ -67,21 +66,17 @@ export SHELL='~/.local/bin/zsh'
 
 # User-defined functions
 weather() {
-  curl wttr.in/$1
+   curl wttr.in/$1
 }
 
-runvenv() {
-  if [ -d venv ]; then
-    source venv/bin/activate
-  fi
-}
+# Cloud providers
+function ec2-ssh () {
+   instance_user="$(cat ~/.ssh/ec2 | jq -r '.'$1'.user')"
+   instance_id="$(cat ~/.ssh/ec2 | jq -r '.'$1'.id')"
+   instance_key="$(cat ~/.ssh/ec2 | jq -r '.'$1'.key')"
 
-cd() {
-  builtin cd "$@" && runvenv
+   ssh $instance_user@$(aws ec2 describe-instances --filter Name=instance-id,Values=$instance_id | jq -r '.Reservations[0].Instances[0].PublicIpAddress') -i ~/.ssh/pem/$instance_key.pem
 }
-
-# Activate virtual environment if it exists
-runvenv
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -98,24 +93,72 @@ zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_github
 
 # Operating system specific
 if [[ "$OSTYPE" == "linux-gnu"  ]]; then
-  alias ls='ls -Gpla --color=auto'
+   alias ls='ls -Gpla --color=auto'
 
-  if [ -f ~/dotfiles/macos/apps/dircolors/solarized-dark.colors ]; then
-    eval `dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
-  fi
+   if [ -f ~/dotfiles/macos/apps/dircolors/solarized-dark.colors ]; then
+      eval `dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
+   fi
 
-  export LSCOLORS=$LS_COLORS
+   export LSCOLORS=$LS_COLORS
+
+   test -d ~/.linuxbrew && export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 elif [[ "$OSTYPE" == "darwin"*  ]]; then
-  alias ls='gls -Gpla --color=auto'
-  alias v="ssh -X -Y -i $HOME/dotfiles/vagrant/.vagrant/machines/default/virtualbox/private_key vagrant@127.0.0.1 -p 2222"
-  alias make='gmake'
+   alias ls='gls -Gpla --color=auto'
+   alias v="ssh -X -Y -i $HOME/dotfiles/vagrant/.vagrant/machines/default/virtualbox/private_key vagrant@127.0.0.1 -p 2222"
+   alias make='gmake'
 
-  eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
+   eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
 
-  export PATH="/usr/local/opt/llvm/bin:$PATH"
-  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+   export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 fi
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# autoenv
+source `which activate.sh`
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME
+source /usr/local/bin/virtualenvwrapper.sh
+
+runvenv() {
+   if [ -d venv ]; then
+      source venv/bin/activate
+   fi
+
+   if [[ -n $VIRTUAL_ENV ]] && [[ `basename $VIRTUAL_ENV` != "venv" ]]; then
+      PROJECT_NAME=$(echo "$VIRTUAL_ENV" | awk -F '/' '{print $NF}')
+      if [[ $PWD != *"$PROJECT_NAME"* ]]; then
+         echo "Deactivating $PROJECT_NAME"
+         deactivate
+      fi
+   else
+    if [[ $PWD != *`dirname $VIRTUAL_ENV` ]]; then
+      deactivate
+    fi
+   fi
+
+   envs=($(lsvirtualenv -b))
+
+   for env in $envs
+   do
+      if [[ $PWD == *"$env"* ]]; then
+         echo "Activating $env"
+         workon $env
+      fi
+   done
+}
+
+function cd() {
+   builtin cd "$@" && runvenv
+}
+
+# Activate virtual environment if it exists
+runvenv
+
+# added by travis gem
+[ -f /Users/dsuo/.travis/travis.sh ] && source /Users/dsuo/.travis/travis.sh

@@ -97,6 +97,8 @@ endfunction
 com! DiffGitSaved call s:DiffGitWithSaved()
 nmap <leader>gds :DiffGitSaved<CR>
 
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -250,6 +252,7 @@ Plug 'jecb/vim-textobj-uri'           " au / iu / go
 Plug 'sgur/vim-textobj-parameter'     " a / i
 Plug 'adriaanzon/vim-textobj-matchit' " am / im
 Plug 'thinca/vim-textobj-between'     " af{char} / if{char}
+Plug 'whatyouhide/vim-textobj-xmlattr' " ax / ix
 
 " NERDCommenter
 Plug 'scrooloose/nerdcommenter'
@@ -321,7 +324,13 @@ Plug 'tpope/vim-markdown'
 
 " Python
 if has('python')
+  Plug 'tpict/vim-virtualenv'
+
   let python_version = get(matchlist(system('python --version'), '\d'), 0, '2')
+  let python_executable = systemlist('which python')[0]
+  let python3_executable = systemlist('which python3')[0]
+  let g:python_host_prog = python_executable
+  let g:python3_host_prog = python3_executable
 
   if python_version <= 2
     Plug 'python-rope/ropevim'
@@ -330,10 +339,31 @@ if has('python')
     let g:ropevim_goto_def_newwin = 'vnew'
   endif
 
-  au! FileType python setl nosmartindent
+  autocmd FileType python,pyrex setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab nosmartindent
+
   let g:syntastic_python_checkers = ['flake8', 'pylint', 'pyflakes']
   Plug 'bps/vim-textobj-python'
+  Plug 'heavenshell/vim-pydocstring'
+  Plug 'ivanov/vim-ipython'
+  let g:ipy_perform_mappings = 0
+
+  map <C-Return> :python run_this_file()<cr>
+  map <leader>r :python run_this_line()<cr>j
+  map <M-r> :python dedent_run_this_line()<cr>j
+  xmap <leader>r :python run_these_lines()<cr>
+  xmap <M-r> :python dedent_run_these_lines()<cr>
+
 endif
+
+if has('python3')
+  Plug 'roxma/nvim-yarp'
+endif
+ 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Matlab
+Plug 'daeyun/vim-matlab'
+Plug 'lazywei/vim-matlab'
 
 " Scala
 " Plug 'ensime/ensime-vim'
@@ -410,6 +440,12 @@ nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
 nmap <leader>o <C-w>w
+
+" Moving windows
+nmap <leader>H <C-w>H
+nmap <leader>J <C-w>J
+nmap <leader>K <C-w>K
+nmap <leader>L <C-w>L
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -498,7 +534,6 @@ function! HasPaste()
   endif
   return ''
 endfunction
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Programming
