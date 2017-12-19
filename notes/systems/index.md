@@ -15,7 +15,7 @@ Last updated on {{ papers | last | map: 'date' }}.
 <ul>
 {% for paper in papers %}
 {% if paper.venue == "SOSP" and paper.year == 2017 %}
-  <li><a href="{{ paper.url }}">(summary)</a> {{ paper.title }} (Added: {{ paper.date }})</li>
+  <li><a href="{{ paper.url }}.html">(summary)</a> {{ paper.title }} (Added: {{ paper.date }})</li>
 {% endif %}
 {% endfor %}
 </ul>
@@ -25,7 +25,7 @@ Last updated on {{ papers | last | map: 'date' }}.
 
 {% for paper in papers %}
 {% if paper.categories contains 'unorganized' %}
-  <li><a href="{{ paper.url }}">(summary)</a> {{ paper.title }} (Added: {{ paper.date }})</li>
+  <li><a href="{{ paper.url }}.html">(summary)</a> {{ paper.title }} (Added: {{ paper.date }})</li>
 {% endif %}
 {% endfor %}
 </ul>
