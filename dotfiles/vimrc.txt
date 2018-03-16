@@ -321,6 +321,9 @@ Plug 'PProvost/vim-markdown-jekyll'
 Plug 'tpope/vim-markdown'
 
 " TODO: Refactor these into filetype mappings
+" Javascript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Python
 if has('python')
