@@ -55,7 +55,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast tmux tmuxinator z ssh-agent autoenv)
+plugins=(git gitfast tmux tmuxinator z ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles
@@ -111,54 +111,18 @@ elif [[ "$OSTYPE" == "darwin"*  ]]; then
 
    export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
    export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+   export PATH="/usr/local/anaconda3/bin:$PATH"
+   export PATH="$HOME/.fastlane/bin:$PATH"
+   export LC_ALL=en_US.UTF-8
+   export LANG=en_US.UTF-8
 fi
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# autoenv
-source `which activate.sh`
-
-# virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME
-source /usr/local/bin/virtualenvwrapper.sh
-
-runvenv() {
-   if [ -d venv ]; then
-      source venv/bin/activate
-   fi
-
-   if [[ -n $VIRTUAL_ENV ]] && [[ `basename $VIRTUAL_ENV` != "venv" ]]; then
-      PROJECT_NAME=$(echo "$VIRTUAL_ENV" | awk -F '/' '{print $NF}')
-      if [[ $PWD != *"$PROJECT_NAME"* ]]; then
-         echo "Deactivating $PROJECT_NAME"
-         deactivate
-      fi
-   else
-    if [[ $PWD != *`dirname $VIRTUAL_ENV` ]]; then
-      deactivate
-    fi
-   fi
-
-   envs=($(lsvirtualenv -b))
-
-   for env in $envs
-   do
-      if [[ $PWD == *"$env"* ]]; then
-         echo "Activating $env"
-         workon $env
-      fi
-   done
-}
-
-function cd() {
-   builtin cd "$@" && runvenv
-}
-
-# Activate virtual environment if it exists
-runvenv
+# GO
+export GOPATH=$HOME
 
 # added by travis gem
 [ -f /Users/dsuo/.travis/travis.sh ] && source /Users/dsuo/.travis/travis.sh
