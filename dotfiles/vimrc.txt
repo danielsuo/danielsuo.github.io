@@ -139,14 +139,14 @@ Plug 'flazz/vim-colorschemes'
 Plug 'ajmwagar/vim-deus'
 Plug 'fneu/breezy'
 Plug 'joshdick/onedark.vim'
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+" if (empty($TMUX))
+  " if (has("nvim"))
+    " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  " endif
+  " if (has("termguicolors"))
+    " set termguicolors
+  " endif
+" endif
 
 " Local vimrc
 Plug 'MarcWeber/vim-addon-local-vimrc'
@@ -198,6 +198,14 @@ Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/neco-vim'
 Plug 'zchee/deoplete-zsh'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+let g:LanguageClient_serverCommands = { 'cpp': ['yourCQueryDirectory/build/release/bin/cquery', '--log-file=/tmp/cq.log'] } 
+let g:LanguageClient_loadSettings = 1
 
 Plug 'wellle/tmux-complete.vim'
 let g:tmuxcomplete#trigger = ''
@@ -388,7 +396,7 @@ call plug#end()
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display line numbers
-set number
+set number relativenumber
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -456,12 +464,13 @@ nmap <leader>L <C-w>L
 " Enable syntax highlighting
 syntax on
 
-" Set background to dark
-set background=dark
+" Set terminal gui colors
+set termguicolors
 
 " Set color scheme to solarized
 " colorscheme solarized
 colorscheme onedark
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
