@@ -55,7 +55,9 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast tmux tmuxinator z ssh-agent)
+plugins=(git gitfast tmux tmuxinator z ssh-agent zsh-completions)
+autoload -U compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles
@@ -93,29 +95,54 @@ zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_github
 
 # Operating system specific
 if [[ "$OSTYPE" == "linux-gnu"  ]]; then
-   alias ls='ls -Gpla --color=auto'
+  alias ls='ls -Gpla --color=auto'
 
-   if [ -f ~/dotfiles/macos/apps/dircolors/solarized-dark.colors ]; then
-      eval `dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
-   fi
+  if [ -f ~/dotfiles/macos/apps/dircolors/solarized-dark.colors ]; then
+    eval `dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
+  fi
 
-   export LSCOLORS=$LS_COLORS
+  export LSCOLORS=$LS_COLORS
 
-   test -d ~/.linuxbrew && export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+  test -d ~/.linuxbrew && export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 elif [[ "$OSTYPE" == "darwin"*  ]]; then
-   alias ls='gls -Gpla --color=auto'
-   alias v="ssh -X -Y -i $HOME/dotfiles/vagrant/.vagrant/machines/default/virtualbox/private_key vagrant@127.0.0.1 -p 2222"
-   alias make='gmake'
+  alias ls='gls -Gpla --color=auto'
+  alias v="ssh -X -Y -i $HOME/dotfiles/vagrant/.vagrant/machines/default/virtualbox/private_key vagrant@127.0.0.1 -p 2222"
+  alias make='gmake'
 
-   eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
+  eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/dotfiles/macos/apps/dircolors/solarized-dark.colors`
 
-   export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
-   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-   export PATH="/usr/local/anaconda3/bin:$PATH"
-   export PATH="$HOME/.fastlane/bin:$PATH"
-   export LC_ALL=en_US.UTF-8
-   export LANG=en_US.UTF-8
+  export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+  export PATH="$HOME/.fastlane/bin:$PATH"
+  export PATH="/Library/TeX/texbin/:$PATH"
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
 fi
+
+# Anaconda
+export PATH="$HOME/miniconda3/bin:$PATH"
+. $HOME/miniconda3/etc/profile.d/conda.sh
+
+alias ac="source activate"
+alias de="source deactivate"
+# # complete source activate. Thanks to Paul Kienzle from NIST for the
+# # suggestion.
+_activate_complete ()
+{
+    local cur="${COMP_WORDS[COMP_CWORD]}";
+    COMPREPLY=($(compgen -W "$(ls -C1 $HOME/miniconda3/envs | grep "^[^\.]" | xargs basename | lam -s \" - -s \")" -- "$cur" ));
+}
+
+_activate_complete_zsh ()
+{
+  compadd _activate_complete
+}
+
+# complete -F _activate_complete "ac"
+compdef _activate_complete_zsh ac
+
+. $HOME/miniconda3/bin/conda_autoenv.sh
+precmd() { eval "$PROMPT_COMMAND" }
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
