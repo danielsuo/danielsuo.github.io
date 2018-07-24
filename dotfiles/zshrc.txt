@@ -63,7 +63,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles
 
 # User configuration
-export EDITOR='nvim'
+export EDITOR='emacs'
 export SHELL='~/.local/bin/zsh'
 
 # User-defined functions
@@ -114,7 +114,6 @@ elif [[ "$OSTYPE" == "darwin"*  ]]; then
   export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
   export PATH="/usr/local/opt/python/libexec/bin:$PATH"
   export PATH="$HOME/.fastlane/bin:$PATH"
-  export PATH="/Library/TeX/texbin/:$PATH"
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
 fi
