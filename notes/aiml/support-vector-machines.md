@@ -14,6 +14,10 @@ use_math: true
 layout: base
 use_math: true
 ---
+---
+layout: base
+use_math: true
+---
 
 # Support vector machines
 
