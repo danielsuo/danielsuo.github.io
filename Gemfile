@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'jekyll-sitemap'
-gem 'jekyll-pandoc'
+gem 'jekyll', '3.8.4'
 
 group :jekyll_plugins do
-    gem 'jekyll-livereload'
+  gem 'jekyll-paginate'
+  gem 'jekyll-sitemap'
 end

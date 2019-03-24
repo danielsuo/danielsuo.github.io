@@ -1,20 +1,55 @@
-<header>
-    <h1>Daniel Suo</h1>
-    <p>Scientific progress goes 'boink'</p>
+<header class="header">
 
+	<div class="header__content">
 
-    <p>
-      Ph.D. Candidate<br>
-      Princeton University<br>
-      Department of Computer Science
-    </p>
+		{% if site.data.settings.header_settings.logo_image %}
+		<a href="/" class="header__logo">
+			<img src="{{ site.data.settings.header_settings.logo_image }}" class="header__logo__img">
+		</a>
+		{% else %}
+		<a href="/" class="header__title">
+			{{ site.data.settings.basic_settings.site_title }}
+		</a>
+		{% endif %}
 
-    <ul>
-    	<li><a href="/">home</a></li>
-      <!-- <li><a href="https://blog.danielsuo.com">blog</a> -->
-      <!-- <li><a href="/projects">projects</a></li> -->
-      <li><a href="/notes">notes</a></li>
-      <li><a href="https://github.com/danielsuo/cv/raw/master/cv.pdf">cv</a></li>
-    </ul>
+		<h1 class="header__tagline">{{ site.data.settings.basic_settings.site_tagline }}</h1>
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					{% for item in site.data.settings.menu_settings.menu_items %}
+					<li class="menu__list__item">
+						<a href="{{ item.url }}" class="menu__list__item__link">{{ item.title }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="projects-menu">
+			<ul class="menu__list">
+				{% for project in site.projects reversed %}
+				<li class="menu__list__item">
+					<a href="{{ project.url }}" class="menu__list__item__link">{{ project.title }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="header__lower">
+
+			{% include socials.html %}
+
+			<div class="footer__copyright">
+				<span>© {{ 'now' | date: "%Y" }} {{ site.data.settings.basic_settings.site_title }}</span>
+				<a href="https://danielsuo.com" target="_blank">Home</a>
+			</div>
+
+		</div>
+
+	</div>
 
 </header>

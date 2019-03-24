@@ -1,0 +1,28 @@
+name: Daniel Suo
+description: Scientific progress goes 'boink'
+url: http://www.danielsuo.com
+
+permalink: /:year/:month/:day/:title
+category_paginate: 5
+
+changefreq: 'daily'
+
+redcarpet:
+  extensions: ['smart']
+
+kramdown:
+  smart_quotes:  lsquo,rsquo,ldquo,rdquo
+
+include:
+- .gitignore
+- .nojekyll
+
+exclude:
+- Gemfile*
+- bin
+- .bowerrc
+
+breadcrumbs:
+  root:
+    hide: true  # show breadcrumbs on root/home page
+    image: false # Show image or title text
