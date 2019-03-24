@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# bash <(curl -s http://danielsuo.com/dotfiles/git)
-
-# Assume we have vim, git, and curl installed
-
-curl http://danielsuo.com/dotfiles/gitconfig.txt -o ~/.gitconfig
