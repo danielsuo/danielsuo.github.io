@@ -32,8 +32,9 @@
 		<div class="projects-menu">
 			<ul class="menu__list">
 				{% for project in site.projects reversed %}
-				<li class="menu__list__item">
-					<a href="{{ project.url }}" class="menu__list__item__link">{{ project.title }}</a>
+				<li class="menu__list__item" style="padding-bottom: 1rem;">
+					<div style="font-weight: 900; font-size: 1rem;">{{ project.date | date: "%Y %B" }}</div>
+					<a href="{{ project.url }}" class="menu__list__item__link"><div style="font-weight: 300;">{{ project.title }}</div></a>
 				</li>
 				{% endfor %}
 			</ul>
