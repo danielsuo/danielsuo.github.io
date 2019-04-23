@@ -1,0 +1,398 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	Daniel Suo
+
+	Index Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your blog or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Page Info -->
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<title>Mobot: An autonomous room-mapping robot – Daniel Suo</title>
+	<meta name="description" content="A mobile robot that autonomously scans and reconstructs indoor spaces.">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Mobot: An autonomous room-mapping robot – Daniel Suo">
+	<meta name="twitter:description" content="A mobile robot that autonomously scans and reconstructs indoor spaces.">
+	<meta name="twitter:image:src" content="https://lh3.googleusercontent.com/VCbUJtzTAEgITOZOeNgZ_rM1tIiAQcaLgYfnKZUbUdyBdVzEUXrh5G31OHOZuYG6G1On0dB9hUWgV2gv7SsU1WqR9br0HGySqfBMM1Yg1cMzMevXZDwSq30b1RzPRy7Fqx0UtknYdgSs6M8yG775PvtFLlgeUA4WEypWhRZrBkrCjpVKzStHOaIEN8ogGa20mH6hXM5rEUOZZWCtdewMBgWDZJX-KTEZvtcZ38UWk08xuBsNzIHLFV1tmMWUUX1vh8SasygYI5Fc5KHQ_kQF_A-hKE6aXn43GFaje563Oma1aGE3rGbiWKDxyZK8-_paKto5uYCpELZPL4_oD5NE2Q9cr2fhdEBg4fqqVy_D5_J6fAR9WbTeWEehmFGumihfb-JpgPfp5Nb8TIMg1RqUw3VkfQPoQ_a3pTbvV3pL5yag_mbv42FIClPm-xD7pzrNL939tYqi8bc4UZc5K7BB_OXV6zI1JVgoYtvD9VvEd08s9W-Pv5oDfqYgwA4AmqcZAhD_3JufrAk7GHlw241rzx6_e1DUf_k3AYq2tqK9GsweiI7VEVeD-nH44p30CGE-d27nkcH13SJAqqVbEun0WrBX64wenJe4U-j4VWRmtN_VCfec-xcC_IsbrDNaccZaiSKm_SbcKOldZiifLYZjEWpmMB4JrRiZ1mg4Gr9uj7i_JJ3Sd0gDb5TohJpQ13AOX5wM5A2WuQgJJzzFR7-NcVut5Q=w1100-h1466-no">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Mobot: An autonomous room-mapping robot – Daniel Suo" />
+	<meta property="og:description" content="A mobile robot that autonomously scans and reconstructs indoor spaces." />
+	<meta property="og:image" content="https://lh3.googleusercontent.com/VCbUJtzTAEgITOZOeNgZ_rM1tIiAQcaLgYfnKZUbUdyBdVzEUXrh5G31OHOZuYG6G1On0dB9hUWgV2gv7SsU1WqR9br0HGySqfBMM1Yg1cMzMevXZDwSq30b1RzPRy7Fqx0UtknYdgSs6M8yG775PvtFLlgeUA4WEypWhRZrBkrCjpVKzStHOaIEN8ogGa20mH6hXM5rEUOZZWCtdewMBgWDZJX-KTEZvtcZ38UWk08xuBsNzIHLFV1tmMWUUX1vh8SasygYI5Fc5KHQ_kQF_A-hKE6aXn43GFaje563Oma1aGE3rGbiWKDxyZK8-_paKto5uYCpELZPL4_oD5NE2Q9cr2fhdEBg4fqqVy_D5_J6fAR9WbTeWEehmFGumihfb-JpgPfp5Nb8TIMg1RqUw3VkfQPoQ_a3pTbvV3pL5yag_mbv42FIClPm-xD7pzrNL939tYqi8bc4UZc5K7BB_OXV6zI1JVgoYtvD9VvEd08s9W-Pv5oDfqYgwA4AmqcZAhD_3JufrAk7GHlw241rzx6_e1DUf_k3AYq2tqK9GsweiI7VEVeD-nH44p30CGE-d27nkcH13SJAqqVbEun0WrBX64wenJe4U-j4VWRmtN_VCfec-xcC_IsbrDNaccZaiSKm_SbcKOldZiifLYZjEWpmMB4JrRiZ1mg4Gr9uj7i_JJ3Sd0gDb5TohJpQ13AOX5wM5A2WuQgJJzzFR7-NcVut5Q=w1100-h1466-no" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="" data-page-url="/project/2016-02-mobot">
+
+
+	<header class="header">
+
+	<div class="header__content">
+
+		
+		<a href="/" class="header__title">
+			Daniel Suo
+		</a>
+		
+
+		<h1 class="header__tagline">Scientific progress goes 'boink'.</h1>
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="http://danielsuo.com/cv/cv.pdf" class="menu__list__item__link">CV</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/about" class="menu__list__item__link">About</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/contact" class="menu__list__item__link">Contact</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+
+		<div class="projects-menu">
+			<ul class="menu__list">
+				
+				<li class="menu__list__item" style="padding-bottom: 1rem;">
+					<div style="font-weight: 900; font-size: 1rem;">2019 March</div>
+					<a href="/project/2019-03-dactyl-manuform" class="menu__list__item__link"><div style="font-weight: 300;">Dactyl-Manuform Keyboard: Where keyboard keyboards you!</div></a>
+				</li>
+				
+				<li class="menu__list__item" style="padding-bottom: 1rem;">
+					<div style="font-weight: 900; font-size: 1rem;">2019 February</div>
+					<a href="/project/2019-02-zone-camera" class="menu__list__item__link"><div style="font-weight: 300;">Zone Camera: A camera without a view</div></a>
+				</li>
+				
+				<li class="menu__list__item" style="padding-bottom: 1rem;">
+					<div style="font-weight: 900; font-size: 1rem;">2016 May</div>
+					<a href="/project/2016-05-apc" class="menu__list__item__link"><div style="font-weight: 300;">Amazon Picking Challenge: Warehouse automation</div></a>
+				</li>
+				
+				<li class="menu__list__item" style="padding-bottom: 1rem;">
+					<div style="font-weight: 900; font-size: 1rem;">2016 February</div>
+					<a href="/project/2016-02-mobot" class="menu__list__item__link"><div style="font-weight: 300;">Mobot: An autonomous room-mapping robot</div></a>
+				</li>
+				
+			</ul>
+		</div>
+
+		<div class="header__lower">
+
+			<ul class="socials">
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://twitter.com/danielsuo" target="_blank" class="socials__item__link" title="Twitter">
+			<i class="fab fa-twitter" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://www.instagram.com/dinosuo/" target="_blank" class="socials__item__link" title="Instagram">
+			<i class="fab fa-instagram" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://github.com/danielsuo" target="_blank" class="socials__item__link" title="Github">
+			<i class="fab fa-github" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://www.linkedin.com/in/danielsuo/" target="_blank" class="socials__item__link" title="Linkedin">
+			<i class="fab fa-linkedin" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+</ul>
+
+			<div class="footer__copyright">
+				<span>© 2019 Daniel Suo</span>
+				<a href="https://danielsuo.com" target="_blank">Home</a>
+			</div>
+
+		</div>
+
+	</div>
+
+</header>
+
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Mobot: An autonomous room-mapping robot – Daniel Suo">
+
+			<section class="intro">
+
+	<div class="wrap">
+
+		<h1>Mobot: An autonomous room-mapping robot</h1>
+		<p>The little roomba that &hellip; couldn't vacuum</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<p>A mobile robot that autonomously scans and reconstructs indoor spaces with the help of four iPod touches and a couple of <a href="https://structure.io">Structure Sensors</a>. All code <a href="https://github.com/danielsuo/mobot">here</a>. A partial photo album of “progress” <a href="https://photos.google.com/share/AF1QipM-gw84bVVaIP-uQoGXTUlZM2MPBrJqzOhyYj5fdWOHy8zU_SxZKoJkm60k_c3hOA?key=aGExRU5UVmZLRkFKMUNOUkxDcW1MektvUlZ1a2t3">here</a>.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SEKjOCBeejc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h2 id="trial-error">Trial, error.</h2>
+<p>Who knew making two wheels go at the same speed would be so complicated…</p>
+<div class="gallery" data-columns="3">
+  <img src="https://lh3.googleusercontent.com/antav5Ab_HzuDGPgQ8wj6smBDgKhsMejcl4LfYKkhkbbuuVocPEfVw_XFRt_EhMV4HQP8Z8TD9Pj5_-uu3is5WpKLdbLToSQCKhpj2nC1rnhmTmdqTsejLNDlqhSDH5Z4m1q_IVhTYr7d1UbQWpAVdAbv9wiyAurGxpClXA7Z4LEZdKYd2U-56h_PcPsQ_bdKaZIkZ1UKw_qJuZNTZA-6b_PhTQuhm4CjTg5DtsUnp9K5gq6P1QU1Rw5KuUEVpa2Z8nudhrq6kjo8MHLqPxT1bBoVr7yoy6yK1tyVIEfB9hT4UhJAv8x-pqfWVStWi1tc5-yAm8HHbwI_DcNQ0DXvxDjYkfk5NbIdQNQ2_2wZRUKnUhGeCweKDf1T3NhNOhlzaRkGnLeIDGwlFJBk1HDOnSut2F4rpVEVnWlTS6sDyiDAkW6A885QOn7oJ6dcbiTMJ2D6xvdslKBAQMSlb9TWCUBd0IKfSKTyrFYIWaD5qYaRkpzPeXvluQDGeTtaZWyPo-wn0tKMRl3bhtyXRCPfWU__p5CUATQK5osiN20vnqVfNoOPD8wHtNlNbRg3gwNwENG_UF-qONwN1o18DpdqPIAFUbDK50umHJOHfZvm5-PnjXy_YLcH0TGvHFLtHir6eCEdfeKJ6Z4EoaMB0zK61OVgZ_wR2dSpqAO8qtYktSPkiW9l1As-Nw3CBSJN_K5e51nhSvvcdBF4cLcsqdZ1Klv_A=w1280-h960-no" />
+  <img src="https://lh3.googleusercontent.com/-JGP1sVCnDvCSkRH5POTH4fqaFj6WqSikFAseqOQHwYC40KDvy6MkW-M8pxA6yxyq7CjKuT-r4NcZlX0I3WphIiZ_4j7sLLItnZBvNcNjB-D24B00M2z8aVGyQvyckx6RaFAZJo-WNNhWqogbjOGbm257Mt3_SYbvhiR8CvqyPscs1y_M53VOYD3-kJtO_8-VnsJn2A6T-bdJteQZ60Dby1V2PEUpIbkOIT22caUj_a1E47O8iXxjsxzuRb51pdSoPGlqMwr2L4Prth5TNUzlnCUDQyp9X2yzHIvYBCJn7tXK7SZ9MLE5n9akzeQhhrczTn3Gu_MqzRDAoDstVTm9k88sxZpIOtdTfX2r6yJSU5vP5wAqeWa7ZOKZW5brlvv-VE3PvDocpfNU_Ha41ZPXxjXJ0RnurenE1cyNfb8XlSaTZTvXbQOCetc9a-ShyZFJZvq7p7w7rWpplngqWeJ9gA2mEZZU3FasbrBmg5MRiUxfnzWRbfoWqI1-6CFGp3nfX3XYYNbzuKloSWTxJwbmOHYjJCwG8FYENRKCLWj4pr5IP3YNaArS4h-21Yb0hZKnC94V94OjPetuo66K_C9DyJmLZwEkS-ZQmmae0Jyzm8k5X0QdnmeW4eHvF5dvP_iFP1QzuDuJ6EwZ3Nx-DiWGyygP5tAyw3A7tSeykCV-4V2flAuRJRKr7IJ6-jqjt42l96pij-8QFTs8I9gGbhNL_vQlQ=w1280-h960-no" />
+  <img src="https://lh3.googleusercontent.com/761uLA3bzCJHmlAq6eoZkucLGTkm8QBext0kKgLuC6uSvLI0Hxct0sUlM3mgEAgpGCZV4umdGxbjIcD_beM9PZ-uQT7u0eTLRhAsNXXfmBzoC-lQ37-spDXhvymmv1whPQixh2eipxxahA90bJTbgoM09eoK9Jp3sY3cjZOux0OFB8dW2pVAvqG2Bp0_htEi8i0VEWIFDjR92OwvyMZ1jN68IP5WQKgnPHVJsosv4t5MRvSj4-q2w6UU5GhW5H1huuMRxK40beob9HSy3J1V8PiY71dVjLldzAFu64Bq03w64cvJ0SCeUdjXpeEuhwhhytatvxcNktVY-xdEvSBhCLT1pfGnP3OG-2z_NdmBEsWKvqww5_sLoWRUK-tGLZ3kD_cNhQ7y5-GYrdbyMa31GaXrXaG8ZGRSgHr3SaWBOYorFAfEtUc6gqXHyaBVQTe6vaojL__veIzENDeLgWjzQyuph3OVZ1czeGAGNNudqSJwpOBTLNhiz6mfoslmHKdyPtx2SksMTFmH2QrN4CeqOzNZcVE1qQvV21hUUopAvlhoUqOHqLwGUggepxy-75hqcL3R-UUm_RV5_9TWoBbyDZAk_OkcDDscZrB-KJdZf2VOJjaDV6aB36CF5S29HSYQfz3KzT-7ZX2EEN_v-TZvhycxhjgNl0yd7GzwPI2apI1OT72zfD3qZIj7m75GZlQkYYV_9Yh9G1JPC7_640Kuq7vt6w=w1280-h960-no" />
+  <img src="https://lh3.googleusercontent.com/sJXeGVgmP8_HRe1XgygOCGp5fa7MgSfk6sEn_5V33U4qgxMOZqDksd4LOKyBmF_XWR-idzNQG86mBFITGWTEjYQIylCI0zRvLDZtRshP4s4J6lZ0BoHHBttqKG4KFJPu_UYgwZZtmO61pEajUJpKJsWNU4cLlY9HRckX9Wtf6PPl5wuVapNL4HQ-K9NzFmlIVUAhSfCNkW6nK2hDWFIr9CgyasNCcPtAsR7ItjHHXx8I3nSEySsEoBpfz6-6jE7CXsdbT8awwPkv4_jkKy_gCUCQANkhz20CXGgNl2gxmL3CEreKLglw6tRq8SaqTUuQuVdSkafLfaULi9v8Tfq5gJljeECnZGxam8RzGXpSCcJMZCgw_3EATyv4fdwTnoyqVx_fOya54vmM_EHiyZpz7JPiTTKevSlYW28UdBUMIG_4RKa_Fvn1tisgfNjfbUyI3lYmfanyTu1eWXfFbyqrNXJamDlMDPRIguv2Xv2ozSkhHIrdvZcH3uR6ZX7QlZf9K3vHtR1tTHZECJ8Skc_-myVk_PRGBZgwVXCC9DvKAavIJuX7ESyF0jHCRTIPpLJx8o99NQEpqNuScXd8yKggqTTdGKlyycBdy8a80Q5Y3pGQC4G7eTeqeRJf18hcOZWXVYY4HoDJ5AAD0ZtPz1XBeG7E1ZtNp0xFHS4vTGzHElLjJgL3D0B2eErT1YWrIdsqMOGqQlOI8m4UGtN4K7ZiKPsF6Q=w1280-h960-no" />
+  <img src="https://lh3.googleusercontent.com/VCbUJtzTAEgITOZOeNgZ_rM1tIiAQcaLgYfnKZUbUdyBdVzEUXrh5G31OHOZuYG6G1On0dB9hUWgV2gv7SsU1WqR9br0HGySqfBMM1Yg1cMzMevXZDwSq30b1RzPRy7Fqx0UtknYdgSs6M8yG775PvtFLlgeUA4WEypWhRZrBkrCjpVKzStHOaIEN8ogGa20mH6hXM5rEUOZZWCtdewMBgWDZJX-KTEZvtcZ38UWk08xuBsNzIHLFV1tmMWUUX1vh8SasygYI5Fc5KHQ_kQF_A-hKE6aXn43GFaje563Oma1aGE3rGbiWKDxyZK8-_paKto5uYCpELZPL4_oD5NE2Q9cr2fhdEBg4fqqVy_D5_J6fAR9WbTeWEehmFGumihfb-JpgPfp5Nb8TIMg1RqUw3VkfQPoQ_a3pTbvV3pL5yag_mbv42FIClPm-xD7pzrNL939tYqi8bc4UZc5K7BB_OXV6zI1JVgoYtvD9VvEd08s9W-Pv5oDfqYgwA4AmqcZAhD_3JufrAk7GHlw241rzx6_e1DUf_k3AYq2tqK9GsweiI7VEVeD-nH44p30CGE-d27nkcH13SJAqqVbEun0WrBX64wenJe4U-j4VWRmtN_VCfec-xcC_IsbrDNaccZaiSKm_SbcKOldZiifLYZjEWpmMB4JrRiZ1mg4Gr9uj7i_JJ3Sd0gDb5TohJpQ13AOX5wM5A2WuQgJJzzFR7-NcVut5Q=w1100-h1466-no" />
+  <img src="https://lh3.googleusercontent.com/tNFQI6cT6vQHXforbNWNL0Z7rpnRg_F2KVT2SOAUhaZtQ8RQAlmIlLVtklA0WtvKDLMY-FRccdb7HA9DB_hKhDwfRlB9MAD_vImvux-9h-ZTbO6PuwGYFGtW8rtNjWXXGd0yV6DRjsV0pDA5TcYLQydPB_dgm9tLxWOos9tVrC4qDlauMSDnmGxLuIsVzkZdpv5MVUqr7gHz3HUUPpTcP4lWte7Yj18Xcs5QqCUxlSbW1nQJxkEeJFifNI5F-7-Z6bINBoia2g2q4MZ5lWf3dzsb_R67txmQSP6at9wX20d1s4L6XnPImhfX7JL4tudziugoyfqr63iWG-W52o6QWASJaJcgzDjRiZQUo9-NcJGCthtpXMD5veJF99h3hFEPVvYLKOYqDLscfh3j5hUQtDGXJNvcFE1bTqXBsdPWt9xHvlxE2CBWwMIV--8fz_qxfYC5NmOoeUsotga1kgDfv8utAhQwo7gEni4PdL43xIFYij25iBzFiP4-1uZ63pX8tpAPtLmG5Op6BswJwWez2ypCfCO4kBxParVx0APRgMuyCu8ffGcEVFPaIWDGpEcQBSNWYy3t9DvsFFMYHu8jj6ZKVqA8AD-vsSHl81G4OYkvN6DcCmPXcsAAEUK6ER0Kb10f8oJDrvDSNtqU1RyCwO9TZfugPr0yJgqZfG-uwg1bepkzchQ7PoWgRK41WMExdP6lCfMukk-fK_oyPyUqmPKUVQ=w1280-h960-no" />
+</div>
+
+<h2 id="steroids">Steroids.</h2>
+<p>When a lonely Jetson TX1 just won’t cut it and you have to find a way to power Titan Xs.</p>
+<div class="gallery" data-columns="3">
+  <img src="https://lh3.googleusercontent.com/_G8q1XuL5A1WYDuJFk-356GC8_ySNxVm9Ly4wcXFfOw1pGM1ZE_JDT91jD7TOrpeg6hzOFdo7Vgfj_J1RlGKWDkjaowFy26C51t2S0yrwCzgV6shWlY5eRImFhdtL425iPXGqbr3RcRrmO-Y51Yvk-4NTs5RlQ-vMh5WVcmcqU9yk91TH84u8vP2Z1geDa5yizWF04TWqZh4V1XMoEpP6oEnAxPGntx88e-4SViQCIrldpuHFAjWLoLAQV3rpNpR1p86v0xfgzcxMGqtaoVbODfJGCWGTV7uo_xumvzX_UeZWj509v_25cDAeQm-7-ybZvKl0Ob9wzQHD-QzKiPJjH_rkvx_qFpY0LRK-eLdGj9XF8LvZG9hI8Lz6mLwdCLF8jBQerY3vdZrTISzMs6yUrwjpNUf29JwvK-xjGzRGP9dFhRzU6CUZS84IKb0vH-aFBTzaoqn9iC1FHKCDAC_9DZMoN0hf9v2ZFqnOw5jcE4LGRvn39kody3xrzK7KVX7gi0AJspKMUvCIPcL2jOBE0HqtMvOiDTO6X8wroszKYXgG2nkTOTy6sUTiTHJQwLVDKhYxK4NHalpkDKi6H2YBh9LAlBwW4GNW-PxJelecsppoeaVBJJFtQlrHqBWo83EuVLmWAtsMmuSgzFRfnEYaPVVupyXelyYgADekLo3TFrZ0lAUJVn5xh5HMq8NceJW7QtYU4skNyqeQp8gVLBJ6krjIw=w1100-h1466-no" />
+  <img src="https://lh3.googleusercontent.com/4HY8toZs4HeEra3SezPG_MnkMnWyV7_LWRT3w6P2K8K2qtlCMp4Mc7xajJKo8DenoxaMi9f5DjrnrBkPBZ91WcahgLyKMGxo32p5_VuQyRrSOm0Z8_zGCFwiKbwk-Gh9UXw7HU69wW2NY4Wv47K4xs0b0VqtoCiC8iwa06KpqM0oJPgYZXmuHOag32mYlJgHO347G9KaPRKyNhzenJ5jvddD9tKihfxN4Q7sKpWanoTcWkKOrIDUg3X2W91kBipkSTmfFuW0iTuChzTWeZetU4mlPIW4QQg8WpUTeSZOV0eSmo5fhkVy7DW8WmspLTttkcr6p0RyfaiCeUcYh8-q26HRFWIEqyZACLXJipFtaDv4FrytU9eh5xOF7SQhUc1QOGu7_z1rwc7ePlHNqM5ENnATrxBJyoxKyimCPUWxJn2XKfLytG0WNje3ZS_XpxM3pO6fl490g3_vgk3WtwmEwFcXIW-IPbvt3ZVJtqAd2PaidquEMWCXwOAzc8Rpo3Uji20_fUOYnWkVDTl0Qm8JDt_tnBEsBV0OKOgg8sfLPmoMIcCnTvXVCWKI_EAnfvWvFnpQPmgeCpQlqnAJiLKC80WfIqy5GNhTfGzZEuY-72Qec8D9c_nrmM-Zt6UovbKLj6WTVBNdUmHQvoZf20jN_FgXHQhJEAPwLpkbCGNIiayX6dD3wgLzW4Vh7mxCdyi_urgDd_OU91q9PSXZeZ_rlqeOCQ=w1100-h1466-no" />
+  <img src="https://lh3.googleusercontent.com/JQg2r2D4KeDqnVFgwD-WCspU0NMIA725kC0FEHFjZzMq1mJwUI5H_LzVHCHec3mj9isf55abRKXA9FXKdaZ2wXJ7zDvEfP7Na9cZw8pjgJ8c67EyhfztidcMu6ZTLVYr5W8vz6BO_Y8kHvI4eSrOoPknWw5IaIUBo_C9OsgIvP6FF18UMIgq-7mK76zXpkWGRMKCK91pb9UoNJgpbZSDmUEcH7t4dWs-HPJiLQ9ICMkHgui1dcjQDdIEbaV8Sr-kRiITUwrKiM7lFF6zvOgLLd9WLZ7wycdWFJmudaSr3kWMb5pkqF01Xmf_o6C6hxlwydHkGWq4CmAsw5CjyBxAbKM7_uabAjAmT7M3ZVA35VnG4yaDnzpRSwRNkuBojY7vhuutYMLhaztZ7S7QzuFDOTFHcQK2pPjayw8NX3pvYDJAgFQtQYvNdGKij7hfvdBvGtAhKP9yT5MTm6mXdRvTIs5GehxwuKls5ZRnFpleskRl-8Iss_3TUolbekWIFrwWuqkfMF-qOLlFdgWLsypHM68M2U-Y_fHNq7OyCdrtUJK1Lun7kTvNrozc2dOjVffQvCZArof_nE9BCGHMCGGZPx1X0j9SOCYblF1Ivp4tA9mpmjyQxNmpjuPxq33pa_kKGnICgDLYxq5cA_tXZIFGhmJUmjbShvZkvpJYie4mNHyw28E5bDVigaJUWFeXwYjR3jO5ZOz-gqmu3_j7XQ9Ms0OLng=w1280-h960-no" />
+  <img src="https://lh3.googleusercontent.com/KLUXyMmrdTnqQsvnUjWWLdMWzQR0eM-4orROLAS9UH5UuWd5T0aCa823JpFHuxw6Ff8n3oYLQDufooi6NmyLttip9dn922OyBzzCczWrN12wLWstjLNifuzQKhYeW4Wl1clZNa3ytz9sJEMGmC_iubNlqpY5-U0kHG_U3EruQSTYpPzbkjPv0Dh2IZmmWFH67uR-FbQJcK8nv07400hjLGi9aPq_wlfZ2vNbsAl23S_BrKyC5ukoXiZQSf4DsUY4ndZ21-8f6opQSEe-Q4t_D_upzx50TLoWbIyITB4ri1vEud8X_lQ_gXBN_FN9Jlrt2gNV1fRhKeC6KMoeIkBjr3n09rfK2RXs6k7TcbE-7KQiYmf9jpbrJwx5ATLWklgDQgsJHQgBSaS0eav_9q4e3NzyIyvUtv1aabVrKWIZjnpIaC8uX9mquAkoZwuUpt_vZqIzxDIK6raPy51wQyiUam1MI-nlCV6k2OVvkajiJANMqUphMwRCHKHe9EwYMLdZwYpcdFY2H0vJkeJgiXUB9yNrkwWixlsz0108A-FJ6l3WJf3Pkpe-JAn8Ba0bBU-S1R0vmjZDA5tjReDCvHxA32KyjG5SOQbRr5Wqhp7qUHKDh2YE300nRIVLp4TLk-tJbLTzw6x4F4JX4j_Eea2uWmkA3qAYZg1IsdaeKy4hHIJQtFeTZX4QNA3WaofSmpJFTyExuX2INjpAYh732AR3z-H1tg=w408-h307-no" />
+  <img src="https://lh3.googleusercontent.com/0WQ7GIrvyfy_cRgJq5_A_fhq8sREAXK9DsELpsYhayZFApN7G7tpzPrx2l29D-U3EcinCbQJuMm_z7C4iku0mDrUDM75WnR1TSRKblIQkdAcfHGh3dFCRFu4A_QF3twHpvDWNedq9hnvUDbmZzLrxqzKtQmrtCJi2A_AkhST9vaaWZI8Aiqj8sVg8CiPdiywOmywZVvNvZkbAO9T1uyQorA5bihd_TNopSXfETHHu5MegG1adL4mqD8B-oEC26CLnPJ-fgJR3kebXjYR92p-Qg6I9ML7tfFBJQYgYQlg_A-RtSbRL3eC9oGObVV6zus0xDgQShrnAQI4zt9LUqfQCV1VRPIDdetfLCLq_NjtwmRb16h2SS-xT7PHT0PiZu6aCl9QG-_f1J7VzUTvbLuhnSMFuAjxg8-wg-zrQdPJwjNujXmT6p8MkPRv15rdGb0gOUYNa2Dyw-4F6XxH7vaRFn4AlJG7Y0RCViR5Dz8w5L4IVPRg-haR_JREysrOYUUY3ms9WcILItN4WEIAp2Pqtuad-iOAKddFY9FfhRp2WO2Oj47qIeIs6LHVYe5VCRqVUI-8mKp_HT2a7-2udjP7TBwq9oukPlaEy0d22lBqRDi-YiBJB3OTj5gOxRjICOBzOQRQIB3VzmvsG_lcduHGNU2dIL7puZH2kmaPZlzgH7Y9BIyaDAG06HAMJUxLg2IXls1T7Dg7VvrqMDMjy6PS_oFPtA=w1280-h960-no" />
+  <img src="https://lh3.googleusercontent.com/EOjRDmgwdvhjkmv7LT8EU1PbedndErXmPhwWgBNbrCgvMp35RPWVcV9tCWzaWmK3fff2_Bu6-SmxDNe2SAjFxYZYuDYhXMycX_2MDr5H5Uu_HEa8qbOmnWovRkNREV1NgW84ZY8Yb1EJv2AzO6B7i4ZtLfp8JqNhS2AarCC0isLnRwLjhb3WLXOppaoDxkkIOQkruk8BhFL_RwwMB4Tf9JdqXSiI3wLmoeWiLTmYC4VJ-fAv-sQXJG6SwT830-tdwpugqoNFyp27ZcIHMDtzljxLNG9o7uwRKMQUC24gNlJYsqdDsLE3GWAu1DvgXbBcWc0CG-M9wTsQhtWUmRYwOEMOpq5hqk1UpYDapIOJacZcoYguiR18vp-fSM_hWbq_F1CKulUtTkducgYtuOSwZU71BWt4FWYFnfOD0Gc0C8SmXlk66msV8XBec6hgKq5cn0LQ8KaPwEYhrxeR8IvL8wNV_ntTtXHjt811CiTf6CgsmLOAE4Zi913IG-nMm2sBEZJfOqAhKESYVIzzdS4Rbx16PcIBC-3x6P_PV0Pv4VE2f_hX48ubmtj2fGRMqKlprGQOvwhx41Ni9Odfui4KBL0adVZ22AGJT2nPoO5i5jL393uTov99g9bGwvtdM2C05LHbGWWXhfTWVCYI9-rKHFMRks-tmCojZnaMZ_s-Bn7fYdHxyRgv0ywFFAJrtu0BM8clOKK14Zwe8cqQ4C8jG9kiRA=w1280-h960-no" />
+  <img src="https://lh3.googleusercontent.com/fo-eo60Y-7bjigZsnDINjlOLAgsK5WaCGMZ79Z2BdKbN46mXAAqArJJRTClJGMV2xkvKSLp7FsB6VlSa3PXhcb0iQqyqnUSjtuF-ZJo_E5vNRwPxK17yySedCYyv4FuFMF5xP2eYQ2nWbdKim9VDV4R7wLyTtdHf4aSm0fzdgtctmsFBsTHU2BBpzAO8UfhIQOvvKt7EuddtT56rkyjtY5TpPzaaixyJvtUe8pdHbpUg0MC_Ee5qoxor0mIHaUGmnoBxgAap_d5BLaOWN9w334ELSwqNtYvAo3KmxQ0ZmE0AYyYjl0QZisquFydOMd5nfUpFj5EHyBY-uu5x8sou6IHnkkK4rFj-JYL4abZgfUJjoLwEcuK9qQpMamf9v0rzy-jnsWxmN-tvd2bnr0IUNTWQYwtyiFFNTZgi-Lj9cDkpk6vJNFajAHwO_t_rZAw1iRX2wgO_SpVsHdBPqBYyOTsKWCAUD5uM9TbN_quaLtWS-iUs6AtLegNfbMrl3EaTOe5mGLHU3j9jiYssU5k8r96odZeg6jAu4GGaJ-sWsOuyTRHO4VlCjLP0poiRZz8xog4p_U_00tZGZZEjrHusShsF_TJo6SIPcR8N3oJOEZD7FyRELSnHaJXst3ZHJwB-pG_JVqFbK9Uczm7V4JDJBXqyqp-rt3IfNjcg7N-6GTL9wd26wrSIGm6PuN6z4Uvr-p3ZOfK8K7uQHhhaqnEJM8UaGw=w1100-h1466-no" />
+</div>
+
+<h2 id="what-pretty-much-everyone-realizes-about-segways">What pretty much everyone realizes about Segways</h2>
+
+<p>Just add more wheels…</p>
+
+<p><img src="https://lh3.googleusercontent.com/NJ83_EUwYHKx8uLPpiPvNVOxLJ7aqsxI0O63CuHjzMXObtSNgbcjE13u5xRxAFnTI4Er_IMnT62JTA5mM6e08ayXWZNJ_Of5rKhGIF3KOPKeU17tDYviTemCpq4AcOPxmhj-czHrrQGfgDxIvcY-9QeqHAvHUaDYWCdUhUsFsnERyu1I_6PAi2xLWSq2ys1phmmqqe7MzMGqQTSpg66uLdtO7tpM0Tz22hds9Ok-XZFCyL10dScYRuJhn1TOTf7kAMm-FBCmORu07Mr5tgjJ3KJVFI5Fb3ik5cHnrUm-l1q6w24snhj7P_nPkBXnLhebz38LH64QGQNe3J-kqYSnyEiZkcKQdh8stD44Uz5R09ovWDB62Mt3kvGrlHycLRhdXpKNaIjOPBQIVzu-zQ0gNlXUAHgNuVG3Jfddamsh7C3f410BooetAN4vVHMwMDV90Ti-Tp0Sos-SWt9TeWjG68d2fmab6LJ2mZlZJ8X3CFEmieJjMPm5k6lJRF84G6dckJ2L_5gbIn_YkvZm5CvATvqt0LSwc4lxP4tNLaaSX2dFHR21rOe8BFmKeSr-1_i5Mp2bQ_qXPsU79i2z5D0Y97xWVSsc2e-44xO2ZdYdGSL2ZODoMJ7dFjar47uvD5ZZN0pqUswGafvwzOqU60P9iVacVNXRFsrAw2xsFBdDWcPdOe1HakEsw4FWvKKwJ_KWVApMKwq6e-FEkPaVKDXW_lawkQ=w1280-h960-no" alt="" /></p>
+
+
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<ul class="socials">
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://twitter.com/danielsuo" target="_blank" class="socials__item__link" title="Twitter">
+			<i class="fab fa-twitter" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://www.instagram.com/dinosuo/" target="_blank" class="socials__item__link" title="Instagram">
+			<i class="fab fa-instagram" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://github.com/danielsuo" target="_blank" class="socials__item__link" title="Github">
+			<i class="fab fa-github" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://www.linkedin.com/in/danielsuo/" target="_blank" class="socials__item__link" title="Linkedin">
+			<i class="fab fa-linkedin" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+</ul>
+
+	<div class="footer__copyright">
+		<span>© 2019 Daniel Suo</span>
+		<a href="https://danielsuo.com" target="_blank">Home</a>
+	</div>
+
+</footer>
+
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/index-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+
+</body>
+
+</html>
