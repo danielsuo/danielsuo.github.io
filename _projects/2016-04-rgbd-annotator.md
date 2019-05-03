@@ -1,0 +1,9 @@
+---
+title: "RGBD Annotator: labeling point clouds."
+subtitle: "Data!"
+date: April 2016
+description: A tool for objects in labeling point clouds.
+featured_image: 'https://lh3.googleusercontent.com/2ohJwMZ5C4gaM6h7On9XPzjo1-XsRNUovZtssf9dmfo-YASDnii0muKeJbWzT4XfR1JTG05P0L5e_4Bcl05EsEb--aUPo2NQr3Wn1VAevCaeBDB3OHp9Dr10jl2J7usalFLu3_IRbXnhLw6cmQGsMZ4D8XyDnlL_y3_IWH391ELq9n87nmmcPoCR0ZEE2z3hMWQxcEmcEEv5XFTY6Za7ZyIxOozrZqYDWaXH4d8d8mc7uqtYS1aHsEvaPWP0JDNaV3THq4A7lFrYRuT3P0JbQMVuZ4v_hXq4h310GVVrnPMJbVjbDxvhquqPvpYgeMwahd9g2R05g7L5LcS2Zyl4yXu-JvlQ4bVCwUrgNgrQiczP6DSv4OCtOvyn9NIMpIXO7jo_OGa22op5yRoKDFhP34yIh4acYPAno8AEkBUsUiWoO7AMIiFtCA5aUSFapXDFqow_0uY0h3oeBh45XNapJJoWFgWyCTn83s52-fff_FHa-yYVQMaPVGBQRFRT_risPfpU__ktkNhzTR8JQlCZaBQ8E7Dv1a3-l4M_1gfz4utjDEPcuXH2jWM-iUYxgfEKzlYbFsJSx3Z9UEdXI4LMmvP4_fc6OYGwMyxzTiQzg6EoOi08eyMkeIfTufz7zFN3iZeDit06cGGj161Cij7tIP_FrKVsu3RA=w479-h317-no'
+---
+
+Code [here](https://github.com/danielsuo/rgbd-annotator).
