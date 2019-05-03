@@ -1,5 +1,5 @@
 ---
-title: "RGBD Annotator: labeling point clouds."
+title: "RGBD Annotator: Labeling point clouds."
 subtitle: "Data!"
 date: April 2016
 description: A tool for objects in labeling point clouds.
