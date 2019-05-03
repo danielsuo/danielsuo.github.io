@@ -32,7 +32,6 @@ function draw() {
     for (var c = 0; c < num; c++) {
         cities[c].move();
     }
-  exit();
     // cycle limiter
     // if (cnt++ > (120 * 30)) {
     //     cnt = 0;
@@ -51,9 +50,10 @@ function resetAll() {
     background(255);
     var vt = 4.2;
     var vvt = 0.2;
-    var ot = random(TWO_PI);
+
     cities = [];
     for (t = 0; t < num; t++) {
+        var ot = random(TWO_PI);
         var tinc = ot + (1.1 - t / num) * 2 * t * TWO_PI / num;
         var vx = vt * sin(tinc);
         var vy = vt * cos(tinc);
