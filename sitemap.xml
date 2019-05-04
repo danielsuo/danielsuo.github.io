@@ -2,19 +2,23 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/about</loc>
-<lastmod>2019-05-03T16:39:31-04:00</lastmod>
+<lastmod>2019-05-03T21:28:22-04:00</lastmod>
 </url>
 <url>
 <loc>/contact</loc>
-<lastmod>2019-05-03T16:39:31-04:00</lastmod>
+<lastmod>2019-05-03T21:28:22-04:00</lastmod>
 </url>
 <url>
 <loc>/thanks</loc>
-<lastmod>2019-05-03T16:39:31-04:00</lastmod>
+<lastmod>2019-05-03T21:28:22-04:00</lastmod>
 </url>
 <url>
 <loc>/blog/demo-post</loc>
 <lastmod>2018-06-29T20:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>/project/2004-06-ballade-gaspard</loc>
+<lastmod>2004-06-01T00:00:00-04:00</lastmod>
 </url>
 <url>
 <loc>/project/2009-05-sand-traveler</loc>
