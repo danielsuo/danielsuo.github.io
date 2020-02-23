@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/danielsuo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://danielsuo.com
+  * I am danielsuo (https://keybase.io/danielsuo) on keybase.
+  * I have a public key with fingerprint 1E76 9585 EBCD 36F0 E62A  1CD5 B136 A0CD 3950 E7E5
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101feebaee1cdfcff2a79978ecd72c1c608fdc2e45e0b7edb4bad48adb702179ac80a",
+            "fingerprint": "1e769585ebcd36f0e62a1cd5b136a0cd3950e7e5",
+            "host": "keybase.io",
+            "key_id": "b136a0cd3950e7e5",
+            "kid": "0101feebaee1cdfcff2a79978ecd72c1c608fdc2e45e0b7edb4bad48adb702179ac80a",
+            "uid": "8445c8fb2c95d82fab680919e65fbc19",
+            "username": "danielsuo"
+        },
+        "service": {
+            "hostname": "danielsuo.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1492914373,
+    "expire_in": 157680000,
+    "prev": "39927c5b93d766acbac9fd3c6f4a45f8e411104f755c3587afeb6083cbe09c4c",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.68
+Comment: https://keybase.io/crypto
+
+yMM/AnicrZJtUFRVGMcXXAhoEEYkqICJazZj4HbfX9ZpMkeHDdAUTFEctnvPPXe5
+suxddu8u4kqo6UgYyAQlMIYooqKojQamwezISkBYIxpo4YSSE9lQCb42Mdm9TH1p
++tj5cuY85///nf/zzLkYOcsQEeQ08kuvxJUeCxq4UO8x5ExH9/gQQRFLELMPKYAz
+G7SL0K1aC2QRMSMohmIShAIPIQZECUgSzjMcx7AQiAwOMECjrCQCHJIURAUGigIp
+8CLJ8qLAoDjGcDxgUR5JRSTZYYMup0t2qBoWgwzNUSwFBSAStIRCGuc1PiVgBM2j
+Wo2jUMhASjPmK27doYUTeDc0yYpW0w7WmXj/of+fc3tmcCxJUoCVBBxwlMjiEi/Q
+LMphHKQpSQAYpwvd0OXgC6GmFnmHDO1uj4KUpiJa2SsDqE9Wb+XfEhNQCjW306Wo
+ClDs2lW+qjrdZt2qljh1bTEUrH9TrILsELVJag4vdLllxYGYMU0JVFnHYiSHcxhJ
+MEQqAjc5ZRe0yrqCYrS42tLfgV4NSXAczgBK4AiRoWkeCDzgJJEAtETyJCWxkMQw
+DCUlhqIAQbEML0FBmxgBBIhygASI3leRQ0HMlBaTt2lIt2xz8KrHBZHS7gsbjIag
+CENoSLD+wwwR4dH//Lu5aLQhEPj1zvAkk7toDtfnj3/1g3NF30XmvX1rS/u64Pzk
+lAAib35YP0ZsPNPc/1yYrC4f9DZHzfe+EZMeQxz5eMARUvWw4FHyruOfpvkLv96+
++HLM6Lv+L9YLsSUDIR0ns2IqsmvCru7sCPS2X1o21MqvS6kf9415BXgvOGXLU9TN
+Q8bjn0S9NNV608gbXumxsFd2MbW722JrL1/KhtNps18fat+zIDyxI6f/yEehaQtC
+Vg/VHexk/IfVpLZvv4pdNf4od2/umsk373/4jeFB1A+PB1dkdg2/FXf7fHEFPr72
+yxfCx0aA1FK+77eGjadWXq9qGQ183lR8KKEz3te21da4t7N31uw/Xsut39SYHRqo
+tQ/4Ud+D6QOx7YXL5t04udZ0V9lz4OVjJUs8nZUNzcSduBVleEJlTl3z1uETP/dM
+jJQuyWrB7JbMed3TUevfO+xPJcoaUrPUG12fnUvfEQ+6d+yUF1qyAxlm45RnkVgR
+OJN4N5lMeievfmVR29yqFNrbnlhVbUs425Rhftx3sKFrtek0OuULvnbq2T8riCdZ
+z2wrf19trR54cfT6T7+ULf7+yRzR8nvf/jyJmzTV1A3az59YU2u0NLZmhB69WK4E
+kFtNYbvl0/evPT2ylH6+sghFPZmdWfsm0mvUzfO7rt6z3T66P2n51NmJbT9GrjL3
+cgu3Vytj/Y6CDZ6yvwAR1caq
+=/dca
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/danielsuo
