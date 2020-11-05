@@ -1,1 +1,346 @@
-Hello, world!
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta
+      name="google-site-verification"
+      content="P3xX2YVbtW3Yiet-ccDmYTKLLi5IB5QL803BaZkxGtA"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300|Roboto:300,500"
+      rel="stylesheet"
+    />
+    <style>
+      /* Vanilla HTML/CSS. How quaint. */
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        background: white;
+      }
+
+      .container {
+        margin: auto;
+        padding: 30px;
+        max-width: 600px;
+      }
+
+      .dsuo,
+      .dsuo a {
+        color: #555;
+        font-weight: 100;
+      }
+      .dsuo {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-family: "Roboto Slab", serif;
+        font-size: 250%;
+      }
+
+      .headblock {
+        margin-bottom: 25px;
+      }
+
+      .contact {
+        font-family: monospace, "Lucida Console";
+        color: #999;
+        font-weight: 100;
+        font-size: 14px;
+      }
+
+      .contact > div {
+        margin-left: 10px;
+        margin-right: 10px;
+        display: inline;
+      }
+
+      .contact > div:first-child {
+        margin-left: 0;
+      }
+
+      h2,
+      h2 a {
+        color: #555;
+        font-weight: 300;
+      }
+      h2 {
+        margin-top: 70px;
+        font-size: 150%;
+      }
+
+      .bio p {
+        color: #555;
+        font-weight: 300;
+        line-height: 1.3;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .bio a,
+      .pub a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .bio a:hover,
+      h2 a:hover,
+      .pub a:hover,
+      h1 a:hover {
+        opacity: 0.5;
+      }
+
+      .pub {
+        color: #555;
+        font-weight: 300;
+        margin-bottom: 15px;
+        line-height: 1.3;
+      }
+
+      .authors {
+        font-size: 14px;
+      }
+
+      .bio a.princeton {
+        color: #de7c00;
+      }
+
+      .bio a.harvard {
+        color: #a51c30;
+      }
+
+      .contact {
+      }
+
+      @media only screen and (max-device-width: 800px) {
+        body {
+          font-size: 40px;
+        }
+
+        .container {
+          padding: 50px 50px 100px 50px;
+          max-width: none;
+        }
+
+        .dsuo,
+        .dsuo a {
+          font-weight: 300;
+        }
+
+        .dsuo {
+          font-size: 200%;
+        }
+
+        h2 {
+          margin-top: 150px;
+          font-size: 150%;
+        }
+
+        .pub {
+          margin-bottom: 40px;
+          line-height: 1.1;
+        }
+      }
+    </style>
+
+    <title>Daniel Suo</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="headblock">
+        <h1 class="dsuo"><a href="https://danielsuo.com">Daniel Suo</a></h1>
+      </div>
+
+      <div class="bio">
+        <p>
+          Greetings! I'm a software engineer at
+          <a href="https://ai.google">Google AI</a> interested in systems and
+          machine learning. I've worked on projects in computer vision,
+          real-time computing, and, most recently, control algorithms.
+        </p>
+
+        <p>
+          I am finishing my Ph.D. in Computer Science at
+          <a class="princeton" href="https://www.princeton.edu/">Princeton</a>,
+          under the supervision of Prof.
+          <a href="https://www.cs.princeton.edu/~li/">Kai Li</a>. Before that, I
+          completed an A.B. in Computer Science at
+          <a class="harvard" href="https://www.harvard.edu">Harvard</a>.
+        </p>
+      </div>
+
+      <h2>
+        Ongoing work
+      </h2>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Adaptive control for medical ventilators</b>
+          </div>
+          <div class="authors">
+            (<a href="https://github.com/MinRegret/lung">code</a>, <a href="https://photos.app.goo.gl/eKYxKnEPnwQTcZTm7">photos</a>)
+            with Paula Gradu, Xinyi Chen, Naman Agarwal, Udaya Ghai,
+            Karan Singh, Cyril Zhang, Anirudha Majumdar, and Elad Hazan
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>deluca &ndash; differentiable environments and control algorithms</b>
+          </div>
+          <div class="authors">
+            (<a href="https://github.com/MinRegret/deluca">code</a>)
+            with Paula Gradu, John Hallman, Alex Yu, Naman Agarwal, Udaya Ghai,
+            Karan Singh, Cyril Zhang, Anirudha Majumdar, and Elad Hazan
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>timecast &ndash; performant, composable online learning for
+              timeseries prediction</b>
+          </div>
+          <div class="authors">
+            (<a href="https://github.com/google/timecast">code</a>)
+            with Cyril Zhang, Alex Yu, Naman Agarwal, Paula Gradu, John
+            Hallman, and Elad Hazan
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Co-designing phase-based caching and prefetching policies</b>
+          </div>
+          <div class="authors">
+            (<a href="https://github.com/danielsuo/PhaseSim">code</a>)
+            with Steve Tarsa, Chit-Kwan Lin, Gautham Chinya, and Kai Li
+          </div>
+        </div>
+      </div>
+
+      <h2>
+        <a href="https://scholar.google.com/citations?user=MWxN1VgAAAAJ&hl=en&authuser=1"
+          >Publications</a
+        >
+      </h2>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Distributed deadline computing for real-time brain imaging
+              analysis</b>
+          </div>
+          Organization for Human Brain Mapping 2018.
+          <div class="authors">
+            with Grant Wallace, Mihai Capotă, Benjamin J. Hutchinson, Megan
+            deBettencourt, Anne Mennen, Yida Wang, Ted Willke, Nicholas B.
+            Turk-Browne, Kenneth A. Norman, Jonathan D. Cohen, and Kai Li.
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Enabling large-scale fmri analysis with brainiak</b>
+          </div>
+          Organization for Human Brain Mapping 2018.
+          <div class="authors">
+            with Mihai Capotă, Ted Willke, Kenneth A. Norman, Nicholas B.
+            Turk-Browne, Kai Li, and Jonathan D. Cohen
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Real-time fMRI analysis in cloud computing environments</b>
+          </div>
+          Society for Neuroscience 2017
+          <div class="authors">
+            with Benjamin J. Hutchinson, Megan deBettencourt, Anne Mennen, Yida
+            Wang, Ted Willke, Nicholas B. Turk-Browne, Kenneth A. Norman,
+            Johnathan D. Cohen, and Kai Li.
+          </div>
+        </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Multi-view self-supervised deep learning for 6d pose estimation
+              in the amazon picking challenge</b>
+          </div>
+          ICRA 2017
+          <div class="authors">
+            with Andy Zeng, Kuan-Ting Yu, Shuran Song, Ed Walker, Alberto
+            Rodruigez, Jianxiong Xiao
+          </div>
+        </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Continual learning in generative adversarial nets</b>
+          </div>
+          Preprint.
+          <div class="authors">
+            with Ari Seff, Alex Beatson, and Han Liu
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Deadlines for streaming machine learning algorithms</b>
+          </div>
+          Preprint.
+          <div class="authors">
+            with Kai Li
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>The cast for cooperative resource sharing for parallel
+              applications on manycore processors</b>
+          </div>
+          Preprint.
+          <div class="authors">
+            with Michael Suo and Kai Li
+          </div>
+        </div>
+      </div>
+
+      <div class="pubs">
+        <div class="pub">
+          <div class="pub-title">
+            <b>Mobot &ndash; an autonomous indoor mapper</b>
+          </div>
+          <div class="authors">
+            (<a href="https://github.com/danielsuo/mobot">code</a>, <a
+              href="https://goo.gl/photos/9QNGBF5YyEdv1PNG9">photos</a>) with
+            Andy Zeng, Shuran Song, and Jianxiong Xiao
+          </div>
+        </div>
+      </div>
+
+  </body>
+</html>
+
+
